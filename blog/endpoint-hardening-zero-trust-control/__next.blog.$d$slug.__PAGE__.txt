@@ -1,0 +1,169 @@
+1:"$Sreact.fragment"
+2:I[778454,["/_next/static/chunks/601dc1a12bda3fda.js","/_next/static/chunks/8a07e6fd7e614a7b.js","/_next/static/chunks/9988c4a59e44ac76.js","/_next/static/chunks/720d3f3cc420c663.js","/_next/static/chunks/2079049d5abbbd3d.js","/_next/static/chunks/9297aeb96eeb50db.js"],"Row"]
+3:I[273323,["/_next/static/chunks/601dc1a12bda3fda.js","/_next/static/chunks/8a07e6fd7e614a7b.js","/_next/static/chunks/9988c4a59e44ac76.js","/_next/static/chunks/720d3f3cc420c663.js","/_next/static/chunks/2079049d5abbbd3d.js","/_next/static/chunks/9297aeb96eeb50db.js"],"Column"]
+4:I[479520,["/_next/static/chunks/601dc1a12bda3fda.js","/_next/static/chunks/8a07e6fd7e614a7b.js","/_next/static/chunks/9988c4a59e44ac76.js","/_next/static/chunks/720d3f3cc420c663.js","/_next/static/chunks/2079049d5abbbd3d.js","/_next/static/chunks/9297aeb96eeb50db.js"],""]
+5:I[624379,["/_next/static/chunks/601dc1a12bda3fda.js","/_next/static/chunks/8a07e6fd7e614a7b.js","/_next/static/chunks/9988c4a59e44ac76.js","/_next/static/chunks/720d3f3cc420c663.js","/_next/static/chunks/2079049d5abbbd3d.js","/_next/static/chunks/9297aeb96eeb50db.js"],"SmartLink"]
+6:I[145250,["/_next/static/chunks/601dc1a12bda3fda.js","/_next/static/chunks/8a07e6fd7e614a7b.js","/_next/static/chunks/9988c4a59e44ac76.js","/_next/static/chunks/720d3f3cc420c663.js","/_next/static/chunks/2079049d5abbbd3d.js","/_next/static/chunks/9297aeb96eeb50db.js"],"Avatar"]
+7:I[398382,["/_next/static/chunks/601dc1a12bda3fda.js","/_next/static/chunks/8a07e6fd7e614a7b.js","/_next/static/chunks/9988c4a59e44ac76.js","/_next/static/chunks/720d3f3cc420c663.js","/_next/static/chunks/2079049d5abbbd3d.js","/_next/static/chunks/9297aeb96eeb50db.js"],"Media"]
+8:I[811052,["/_next/static/chunks/601dc1a12bda3fda.js","/_next/static/chunks/8a07e6fd7e614a7b.js","/_next/static/chunks/9988c4a59e44ac76.js","/_next/static/chunks/720d3f3cc420c663.js","/_next/static/chunks/2079049d5abbbd3d.js","/_next/static/chunks/9297aeb96eeb50db.js"],"HeadingLink"]
+29:I[436122,["/_next/static/chunks/601dc1a12bda3fda.js","/_next/static/chunks/8a07e6fd7e614a7b.js","/_next/static/chunks/9988c4a59e44ac76.js","/_next/static/chunks/720d3f3cc420c663.js","/_next/static/chunks/2079049d5abbbd3d.js","/_next/static/chunks/9297aeb96eeb50db.js"],"List"]
+2a:I[626935,["/_next/static/chunks/601dc1a12bda3fda.js","/_next/static/chunks/8a07e6fd7e614a7b.js","/_next/static/chunks/9988c4a59e44ac76.js","/_next/static/chunks/720d3f3cc420c663.js","/_next/static/chunks/2079049d5abbbd3d.js","/_next/static/chunks/9297aeb96eeb50db.js"],"ListItem"]
+2b:I[311451,["/_next/static/chunks/601dc1a12bda3fda.js","/_next/static/chunks/8a07e6fd7e614a7b.js","/_next/static/chunks/9988c4a59e44ac76.js","/_next/static/chunks/720d3f3cc420c663.js","/_next/static/chunks/2079049d5abbbd3d.js","/_next/static/chunks/9297aeb96eeb50db.js"],"Line"]
+2c:I[448588,["/_next/static/chunks/601dc1a12bda3fda.js","/_next/static/chunks/8a07e6fd7e614a7b.js","/_next/static/chunks/9988c4a59e44ac76.js","/_next/static/chunks/720d3f3cc420c663.js","/_next/static/chunks/2079049d5abbbd3d.js","/_next/static/chunks/9297aeb96eeb50db.js"],"ShareSection"]
+2d:I[89532,["/_next/static/chunks/601dc1a12bda3fda.js","/_next/static/chunks/8a07e6fd7e614a7b.js","/_next/static/chunks/9988c4a59e44ac76.js","/_next/static/chunks/720d3f3cc420c663.js","/_next/static/chunks/2079049d5abbbd3d.js","/_next/static/chunks/9297aeb96eeb50db.js"],"Grid"]
+2e:I[814360,["/_next/static/chunks/601dc1a12bda3fda.js","/_next/static/chunks/8a07e6fd7e614a7b.js","/_next/static/chunks/9988c4a59e44ac76.js","/_next/static/chunks/720d3f3cc420c663.js","/_next/static/chunks/2079049d5abbbd3d.js","/_next/static/chunks/9297aeb96eeb50db.js"],"default"]
+31:I[988654,["/_next/static/chunks/601dc1a12bda3fda.js","/_next/static/chunks/8a07e6fd7e614a7b.js","/_next/static/chunks/9988c4a59e44ac76.js","/_next/static/chunks/720d3f3cc420c663.js","/_next/static/chunks/2079049d5abbbd3d.js","/_next/static/chunks/9297aeb96eeb50db.js"],"ScrollToHash"]
+32:I[605649,["/_next/static/chunks/601dc1a12bda3fda.js","/_next/static/chunks/8a07e6fd7e614a7b.js","/_next/static/chunks/9988c4a59e44ac76.js","/_next/static/chunks/720d3f3cc420c663.js","/_next/static/chunks/2079049d5abbbd3d.js","/_next/static/chunks/9297aeb96eeb50db.js"],"HeadingNav"]
+33:I[897367,["/_next/static/chunks/d96012bcfc98706a.js","/_next/static/chunks/73e3194f06db260e.js"],"OutletBoundary"]
+34:"$Sreact.suspense"
+0:{"buildId":"uvqJfAvDvtV8lD0yzPRtq","rsc":["$","$1","c",{"children":[["$","$L2",null,{"fillWidth":true,"children":[["$","$L2",null,{"maxWidth":12,"m":{"hide":true}}],["$","$L2",null,{"fillWidth":true,"horizontal":"center","children":["$","$L3",null,{"as":"section","maxWidth":"m","horizontal":"center","gap":"l","paddingTop":"24","children":[["$","$L4",null,{"id":"schema-blogPosting-/blog/endpoint-hardening-zero-trust-control","type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"BlogPosting\",\"url\":\"https://rohirikman.dev/blog/endpoint-hardening-zero-trust-control\",\"sameAs\":[],\"headline\":\"Endpoint Hardening as a Zero Trust Control\",\"description\":\"A compliant device in Conditional Access is only meaningful if your compliance policies check things that actually matter. Here's what to harden and how to measure it.\",\"image\":\"https://rohirikman.dev/images/avatar.png\",\"datePublished\":\"2026-02-10\",\"dateModified\":\"2026-02-10\",\"author\":{\"@type\":\"Person\",\"name\":\"Rohi Rikman\",\"url\":\"https://rohirikman.dev/about\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"https://rohirikman.dev/images/avatar.png\"}}}"}}],["$","$L3",null,{"maxWidth":"s","gap":"16","horizontal":"center","align":"center","children":[["$","$L5",null,{"href":"/blog","children":["$","span",null,{"className":"font-label font-strong font-m","style":{},"children":"Blog"}]}],["$","span",null,{"className":"font-body font-default font-xs neutral-on-background-weak mb-12","style":{},"children":"February 10, 2026"}],["$","h1",null,{"className":"font-display font-strong font-m neutral-on-background-strong","style":{"textWrap":"balance"},"children":"Endpoint Hardening as a Zero Trust Control"}],""]}],["$","$L2",null,{"marginBottom":"32","horizontal":"center","children":["$","$L2",null,{"gap":"16","vertical":"center","children":[["$","$L6",null,{"size":"s","src":"/images/avatar.png"}],["$","span",null,{"className":"font-label font-default font-m brand-on-background-weak","style":{},"children":"Rohi Rikman"}]]}]}],["$","$L7",null,{"src":"/images/avatar.png","alt":"Endpoint Hardening as a Zero Trust Control","aspectRatio":"16/9","priority":true,"sizes":"(min-width: 768px) 100vw, 768px","border":"neutral-alpha-weak","radius":"l","marginTop":"12","marginBottom":"8"}],["$","$L3",null,{"as":"article","maxWidth":"s","children":[["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":"In the last post I talked about Conditional Access requiring device compliance as a gate for accessing sensitive resources. That's a good control — but it's only as strong as what your compliance policies actually check."}],"\n",["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":"A compliance policy that requires Windows 10 or later and nothing else isn't doing much. Here's what meaningful endpoint hardening looks like and how to enforce it at scale."}],"\n",["$","$L8",null,{"marginTop":"24","marginBottom":"12","as":"h2","id":"what-you-re-actually-trying-to-prevent","children":"What you're actually trying to prevent"}],"\n",["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":"Endpoint hardening exists because endpoints are where most breaches start. Phishing drops malware on a laptop. A stolen credential gets used from an unmanaged device. A vulnerability in an unpatched browser gets exploited in a drive-by."}],"\n",["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":"The goal is: make endpoints harder to compromise, make compromise harder to escalate, and make detection faster when it happens anyway."}],"\n",["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":"In a Zero Trust model, the device posture signal feeds directly into access decisions. A device with BitLocker disabled and a 90-day-old OS patch level is a liability — and Conditional Access can refuse it access to production resources until it's fixed."}],"\n","$L9","\n","$La","\n","$Lb","\n","$Lc","\n","$Ld","\n","$Le","\n","$Lf","\n","$L10","\n","$L11","\n","$L12","\n","$L13","\n","$L14","\n","$L15","\n","$L16","\n","$L17","\n","$L18","\n","$L19","\n","$L1a","\n","$L1b","\n","$L1c","\n","$L1d","\n","$L1e","\n","$L1f","\n","$L20","\n","$L21","\n","$L22"]}],"$L23","$L24","$L25"]}]}],"$L26"]}],["$L27"],"$L28"]}],"loading":null,"isPartial":false}
+9:["$","$L8",null,{"marginTop":"24","marginBottom":"12","as":"h2","id":"the-baseline-controls","children":"The baseline controls"}]
+a:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":"These are the things I configure in every Intune environment before anything else:"}]
+b:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":[["$","strong",null,{"children":"BitLocker everywhere."}]," Full disk encryption on Windows endpoints. If a laptop is lost or stolen, the data on it is inaccessible without the PIN. Enforce BitLocker, escrow recovery keys to Entra ID, and verify via Intune compliance policy. If a device isn't encrypted, it fails compliance."]}]
+c:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":[["$","strong",null,{"children":"OS and software updates."}]," Unpatched systems are a known-risk liability. Intune's update rings for Windows let you enforce patch timelines — you can require that devices are within N days of the latest security patch before passing compliance. Combine with Windows Update for Business for ring-based deployment."]}]
+d:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":[["$","strong",null,{"children":"Defender Antivirus and real-time protection."}]," Basic but worth enforcing via compliance policy. Ensure real-time protection is on and definitions are current. If you have Defender for Endpoint licensed, that opens up device risk score integration."]}]
+e:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":[["$","strong",null,{"children":"Firewall enabled."}]," Windows Firewall should be on for all profiles (domain, private, public). This is easy to check and easy to enforce, and it closes a lot of lateral movement options."]}]
+f:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":[["$","strong",null,{"children":"Secure Boot."}]," Prevents boot-time attacks. Enforce via compliance policy — devices that can't pass Secure Boot attestation fail compliance."]}]
+10:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":[["$","strong",null,{"children":"No jailbreak / rooted status"}]," (mobile). For iOS and Android in Intune, compliance policies can check for jailbreak/root status. Jailbroken devices bypass OS security controls and shouldn't be touching corporate resources."]}]
+11:["$","$L8",null,{"marginTop":"24","marginBottom":"12","as":"h2","id":"the-deeper-controls","children":"The deeper controls"}]
+12:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":"Once the baseline is solid, the next layer:"}]
+13:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":[["$","strong",null,{"children":"Defender for Endpoint integration."}]," If you have the licensing, connect Defender for Endpoint to Intune compliance. DfE computes a machine risk score based on active threats, vulnerability exposure, and security configuration. You can require that risk score is \"low\" or \"medium\" before a device passes compliance. This gives you real-time threat signal flowing into access decisions."]}]
+14:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":[["$","strong",null,{"children":"Attack Surface Reduction rules."}]," ASR rules in Defender block specific behaviors: Office macros from spawning child processes, executable content from email attachments, credential theft from lsass.exe. Some of these are noisy in audit mode and need tuning, but they block real attack techniques."]}]
+15:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":[["$","strong",null,{"children":"Credential Guard."}]," Protects credentials in memory using virtualization-based security. Prevents pass-the-hash and pass-the-ticket attacks even on a compromised endpoint. Requires UEFI and Secure Boot, so you need hardware that supports it."]}]
+16:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":[["$","strong",null,{"children":"Local admin restrictions."}]," Standard users shouldn't be local admins on their workstations. If they need to install software, the right answer is a software catalog, not admin rights. Restricting local admin significantly limits what malware can do once it lands."]}]
+17:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":[["$","strong",null,{"children":"LAPS."}]," Local Administrator Password Solution rotates local admin passwords per device and stores them in Entra ID. This prevents credential reuse attacks — if an attacker gets the local admin password from one machine, it doesn't work on others."]}]
+18:["$","$L8",null,{"marginTop":"24","marginBottom":"12","as":"h2","id":"enforcement-reality","children":"Enforcement reality"}]
+19:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":"The gap between \"configured in Intune\" and \"actually enforced\" is real. Intune compliance policies mark devices as non-compliant, but if Conditional Access isn't actually gating on that, it's just a report."}]
+1a:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":"The rollout order I use:"}]
+1b:["$","$L29",null,{"as":"ol","children":["\n",["$","$L2a",null,{"marginTop":"4","marginBottom":"8","style":{"lineHeight":"175%"},"children":"Build the compliance policies and put everything in report-only or \"warn\" mode"}],"\n",["$","$L2a",null,{"marginTop":"4","marginBottom":"8","style":{"lineHeight":"175%"},"children":"Let it run for 2–4 weeks, review what's failing and why"}],"\n",["$","$L2a",null,{"marginTop":"4","marginBottom":"8","style":{"lineHeight":"175%"},"children":"Fix the legitimate issues (old hardware, software conflicts, provisioning gaps)"}],"\n",["$","$L2a",null,{"marginTop":"4","marginBottom":"8","style":{"lineHeight":"175%"},"children":"Enable Conditional Access enforcement for a pilot group"}],"\n",["$","$L2a",null,{"marginTop":"4","marginBottom":"8","style":{"lineHeight":"175%"},"children":"Expand to full enforcement once the pilot is clean"}],"\n"]}]
+1c:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":"Skipping step 3 means you'll lock out legitimate users when you enforce, which makes IT look like the problem rather than the solution."}]
+1d:["$","$L8",null,{"marginTop":"24","marginBottom":"12","as":"h2","id":"measuring-it","children":"Measuring it"}]
+1e:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":"The questions I use to audit whether endpoint hardening is actually working:"}]
+1f:["$","$L29",null,{"as":"ul","children":["\n",["$","$L2a",null,{"marginTop":"4","marginBottom":"8","style":{"lineHeight":"175%"},"children":"What percentage of managed endpoints pass compliance today? (Target: >95%)"}],"\n",["$","$L2a",null,{"marginTop":"4","marginBottom":"8","style":{"lineHeight":"175%"},"children":"What are the top 3 reasons devices fail compliance?"}],"\n",["$","$L2a",null,{"marginTop":"4","marginBottom":"8","style":{"lineHeight":"175%"},"children":"Are any devices passing compliance that shouldn't be (false compliant)?"}],"\n",["$","$L2a",null,{"marginTop":"4","marginBottom":"8","style":{"lineHeight":"175%"},"children":"What's the DfE machine risk distribution across the fleet?"}],"\n",["$","$L2a",null,{"marginTop":"4","marginBottom":"8","style":{"lineHeight":"175%"},"children":"When did the highest-risk device last check in?"}],"\n"]}]
+20:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":"If you can answer those from Intune and DfE dashboards in under 5 minutes, your visibility is in decent shape. If you can't, that's the first thing to fix."}]
+21:["$","$L2",null,{"fillWidth":true,"horizontal":"center","children":["$","$L2b",null,{"maxWidth":"40"}]}]
+22:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":"Next: why I built Project Aegis — an AI agent system for security operations — and how the same Zero Trust principles apply to agentic systems that have access to sensitive tools."}]
+23:["$","$L2c",null,{"title":"Endpoint Hardening as a Zero Trust Control","url":"https://rohirikman.dev/blog/endpoint-hardening-zero-trust-control"}]
+2f:Tdcb,
+I work in IT security. I've sat through a lot of vendor calls. And somewhere around the third time someone told me their network appliance was "a Zero Trust solution," I started keeping count.
+
+It's not a product. It never was. Here's what it actually is.
+
+## The original idea
+
+Zero Trust comes from a 2010 paper by John Kindervag at Forrester. The core insight was blunt: perimeter-based security is wrong. The assumption that everything inside your network is trusted and everything outside isn't — that model breaks the moment you have remote workers, cloud services, SaaS apps, contractors, or any real-world complexity.
+
+The answer wasn't a new product. It was a different assumption: **trust no one by default, verify everything explicitly, and grant access based on identity and context — not network location.**
+
+That's the model. Three sentences.
+
+## What it means operationally
+
+If you actually implement Zero Trust, it looks like this:
+
+**Identity is the perimeter.** It doesn't matter where a request comes from — your office, a coffee shop, a data center. What matters is: who is authenticating, is that identity verified, and does this specific context (device health, location, time, risk score) justify access to this specific resource?
+
+**Least privilege, always.** Users and services get exactly the access they need for the task, nothing more. Not "give the developer access to the dev environment" — give this developer, on this verified device, read access to this specific service, until the session expires.
+
+**Assume breach.** Design your controls as if attackers are already inside. Segment laterally so a compromised endpoint can't reach everything. Log everything so you can detect and respond.
+
+**Continuous verification.** Authentication isn't a one-time gate at login. The trust assessment runs continuously — if device posture changes, if the user does something anomalous, trust can be revoked mid-session.
+
+## What vendors sell
+
+What vendors sell is: their product has a "Zero Trust" feature set. Sometimes that's meaningful. Conditional Access in Entra ID genuinely enforces identity-based access with device posture signals. That's a real implementation of Zero Trust principles.
+
+But "Zero Trust firewall" is mostly marketing. Network segmentation is one piece of a Zero Trust architecture — it's not the whole model. A firewall doesn't verify identity. It filters traffic. That's useful, but it's not Zero Trust.
+
+The tell is whether the product forces you to think about identity and context, or whether it's still thinking in terms of network location. If the conversation is about IP ranges and VLANs, you're still in the perimeter model with new branding.
+
+## Why it matters
+
+The reason to care about the distinction isn't pedantry. It's that if you think Zero Trust is a product you can buy, you'll buy the product and think you're done. You won't be.
+
+The actual work is architectural: redefining trust boundaries, implementing strong identity across all users and services, getting device health signals into access decisions, segmenting your environment so lateral movement is hard, building detection and response for when (not if) something gets through.
+
+None of that is a product. All of it is work.
+
+---
+
+This is the first of a few posts I'm planning on Zero Trust — what it actually means, how I've implemented pieces of it in real environments, and where the hard parts are. Next up: Conditional Access, which is where most of the practical implementation lives.
+24:["$","$L3",null,{"fillWidth":true,"gap":"40","horizontal":"center","marginTop":"40","children":[["$","$L2b",null,{"maxWidth":"40"}],["$","h2",null,{"className":"font-heading font-strong font-xl mb-24","style":{},"id":"recent-posts","children":"Recent posts"}],["$","$L2d",null,{"columns":"2","s":{"columns":1},"fillWidth":true,"marginBottom":"40","gap":"16","children":[["$","$L2e","zero-trust-is-not-a-product",{"post":{"metadata":{"title":"Zero Trust Is Not a Product","subtitle":"","publishedAt":"2026-02-20","summary":"Every vendor sells 'Zero Trust.' Most of what they're selling is a marketing label on a firewall. Here's what the model actually means and why it matters.","image":"/images/avatar.png","images":[],"tag":"Security","team":[],"link":""},"slug":"zero-trust-is-not-a-product","content":"$2f"},"thumbnail":true,"direction":"column"}],"$L30"]}]]}]
+25:["$","$L31",null,{}]
+26:["$","$L3",null,{"maxWidth":12,"paddingLeft":"40","fitHeight":true,"position":"sticky","top":"80","gap":"16","m":{"hide":true},"children":["$","$L32",null,{"fitHeight":true}]}]
+27:["$","script","script-0",{"src":"/_next/static/chunks/9297aeb96eeb50db.js","async":true}]
+28:["$","$L33",null,{"children":["$","$34",null,{"name":"Next.MetadataOutlet","children":"$@35"}]}]
+36:T15a9,
+If you're running Microsoft 365 and you're serious about Zero Trust, Conditional Access is where most of the actual work happens. It's the enforcement layer that sits between your users and your apps — evaluating identity, device health, location, and risk signals before granting access.
+
+I've built Conditional Access policies for several client environments. Here's what I've learned.
+
+## What Conditional Access actually does
+
+Every time a user or service authenticates to an Entra ID-protected resource, a Conditional Access evaluation runs. The policy engine looks at:
+
+- **Who** is authenticating (user, group, service principal)
+- **What** they're trying to access (specific app, all apps, admin portals)
+- **What device** they're on (managed/unmanaged, compliant/non-compliant, platform)
+- **Where** they're coming from (location, named network, country)
+- **What risk signals** are active (Entra ID Protection scores for sign-in risk and user risk)
+
+Based on those signals, the policy either grants access, blocks it, or grants it conditionally — requiring MFA, a compliant device, a specific authentication strength, or a terms of use agreement.
+
+That's a powerful model. It lets you say things like: "Engineers can access production resources, but only from compliant managed devices, always with phishing-resistant MFA, and if their sign-in risk is elevated, block until IT reviews."
+
+## The baseline everyone should have
+
+Before you build anything sophisticated, you need a working baseline. Microsoft publishes reference policies — here's what I actually deploy in every environment:
+
+**Block legacy authentication.** Legacy protocols (SMTP, IMAP, POP) don't support modern authentication and can't do MFA. They're a bypass. Block them early, before anything else.
+
+**Require MFA for all users.** Not just admins. Everyone. If you have users who push back, that's a change management problem, not a reason to skip this.
+
+**Require MFA for Azure management.** Separately target the Azure portal, CLI, and PowerShell. Admin operations get their own policy with stricter requirements.
+
+**Require phishing-resistant MFA for privileged roles.** FIDO2 keys or Windows Hello for Business, not TOTP or push notifications. For Global Admins and other privileged roles, the bar should be higher.
+
+**Block access from high-risk sign-ins.** If Entra ID Protection flags a sign-in as high risk (unfamiliar location, anonymized IP, impossible travel), block it automatically. Don't wait for the help desk to notice.
+
+That's a solid baseline. Everything after that is refinement.
+
+## What I've seen go wrong
+
+**Report-only mode left on forever.** Report-only is how you test policies without enforcing them. It's useful for a rollout period. It's not a substitute for actual enforcement. I've seen environments with 50 policies in report-only that haven't been reviewed in 18 months. None of them are doing anything.
+
+**The "break glass" account problem.** Emergency access accounts need to be excluded from most Conditional Access policies so you can recover if something goes wrong. But those exclusions need to be carefully scoped and regularly audited. A break-glass account excluded from everything with a weak password is a liability.
+
+**Policy conflicts and grant vs. block precedence.** If a user matches both a grant policy and a block policy for the same resource, block wins. Always. This is correct behavior but it's surprising when you don't expect it. Test with the What If tool before deploying.
+
+**Not targeting service principals.** Conditional Access now supports workload identities — service principals and managed identities. Most environments I inherit don't have any policies targeting these. That's a gap.
+
+**Named locations that don't mean anything.** I've seen "Trusted Location" policies that include half the world's IP ranges because someone didn't want to deal with VPN. Named locations are only useful if they actually represent trusted networks.
+
+## Device compliance as a gate
+
+One of the most effective Conditional Access patterns is requiring device compliance for access to sensitive resources. If you're managing devices with Intune, you can define compliance policies (encryption enabled, OS version, no jailbreak, etc.) and then gate access on whether the device passes.
+
+This is powerful because it closes the "personal device on managed app" gap. A user can't just install Outlook on a random machine and access Exchange — they need to enroll the device and meet compliance requirements first.
+
+The rollout order matters here. If you require compliance before your device enrollment is complete, you lock people out. Usually you want:
+1. Build compliance policies
+2. Deploy to managed devices, verify they pass
+3. Enable Conditional Access requirement in report-only
+4. Review the report-only logs for unexpected blocks
+5. Switch to enforce
+
+## Monitoring
+
+Conditional Access sign-in logs are detailed and searchable. At minimum, review:
+- Failures due to non-compliant devices (often legitimate issues to fix)
+- Blocks from unfamiliar locations (often noise, occasionally real)
+- Blocks due to user risk (worth investigating each one)
+
+KQL queries against the sign-in logs in Log Analytics give you more flexibility than the portal UI. If you're in Sentinel, this is where you build your detection rules.
+
+---
+
+Next post: endpoint hardening as a Zero Trust control — because Conditional Access requiring a "compliant device" is only as good as what your compliance policies actually check.
+30:["$","$L2e","conditional-access-in-practice",{"post":{"metadata":{"title":"Conditional Access in Practice","subtitle":"","publishedAt":"2026-02-15","summary":"Conditional Access is where Zero Trust principles actually land in a Microsoft environment. Here's how to think about it, what to get right, and where I've seen it go wrong.","image":"/images/avatar.png","images":[],"tag":"Security","team":[],"link":""},"slug":"conditional-access-in-practice","content":"$36"},"thumbnail":true,"direction":"column"}]
+35:null

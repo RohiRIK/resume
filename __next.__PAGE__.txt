@@ -1,0 +1,298 @@
+1:"$Sreact.fragment"
+2:I[273323,["/_next/static/chunks/601dc1a12bda3fda.js","/_next/static/chunks/8a07e6fd7e614a7b.js","/_next/static/chunks/9988c4a59e44ac76.js","/_next/static/chunks/720d3f3cc420c663.js","/_next/static/chunks/2079049d5abbbd3d.js","/_next/static/chunks/77c1917bfce7ffb0.js"],"Column"]
+3:I[479520,["/_next/static/chunks/601dc1a12bda3fda.js","/_next/static/chunks/8a07e6fd7e614a7b.js","/_next/static/chunks/9988c4a59e44ac76.js","/_next/static/chunks/720d3f3cc420c663.js","/_next/static/chunks/2079049d5abbbd3d.js","/_next/static/chunks/77c1917bfce7ffb0.js"],""]
+4:I[621971,["/_next/static/chunks/601dc1a12bda3fda.js","/_next/static/chunks/8a07e6fd7e614a7b.js","/_next/static/chunks/9988c4a59e44ac76.js","/_next/static/chunks/720d3f3cc420c663.js","/_next/static/chunks/2079049d5abbbd3d.js","/_next/static/chunks/77c1917bfce7ffb0.js"],"RevealFx"]
+5:I[117899,["/_next/static/chunks/601dc1a12bda3fda.js","/_next/static/chunks/8a07e6fd7e614a7b.js","/_next/static/chunks/9988c4a59e44ac76.js","/_next/static/chunks/720d3f3cc420c663.js","/_next/static/chunks/2079049d5abbbd3d.js","/_next/static/chunks/77c1917bfce7ffb0.js"],"Badge"]
+6:I[778454,["/_next/static/chunks/601dc1a12bda3fda.js","/_next/static/chunks/8a07e6fd7e614a7b.js","/_next/static/chunks/9988c4a59e44ac76.js","/_next/static/chunks/720d3f3cc420c663.js","/_next/static/chunks/2079049d5abbbd3d.js","/_next/static/chunks/77c1917bfce7ffb0.js"],"Row"]
+7:I[311451,["/_next/static/chunks/601dc1a12bda3fda.js","/_next/static/chunks/8a07e6fd7e614a7b.js","/_next/static/chunks/9988c4a59e44ac76.js","/_next/static/chunks/720d3f3cc420c663.js","/_next/static/chunks/2079049d5abbbd3d.js","/_next/static/chunks/77c1917bfce7ffb0.js"],"Line"]
+8:I[691722,["/_next/static/chunks/601dc1a12bda3fda.js","/_next/static/chunks/8a07e6fd7e614a7b.js","/_next/static/chunks/9988c4a59e44ac76.js","/_next/static/chunks/720d3f3cc420c663.js","/_next/static/chunks/2079049d5abbbd3d.js","/_next/static/chunks/77c1917bfce7ffb0.js"],"Button"]
+9:I[145250,["/_next/static/chunks/601dc1a12bda3fda.js","/_next/static/chunks/8a07e6fd7e614a7b.js","/_next/static/chunks/9988c4a59e44ac76.js","/_next/static/chunks/720d3f3cc420c663.js","/_next/static/chunks/2079049d5abbbd3d.js","/_next/static/chunks/77c1917bfce7ffb0.js"],"Avatar"]
+a:I[474855,["/_next/static/chunks/601dc1a12bda3fda.js","/_next/static/chunks/8a07e6fd7e614a7b.js","/_next/static/chunks/9988c4a59e44ac76.js","/_next/static/chunks/720d3f3cc420c663.js","/_next/static/chunks/2079049d5abbbd3d.js","/_next/static/chunks/77c1917bfce7ffb0.js"],"ProjectCard"]
+11:I[89532,["/_next/static/chunks/601dc1a12bda3fda.js","/_next/static/chunks/8a07e6fd7e614a7b.js","/_next/static/chunks/9988c4a59e44ac76.js","/_next/static/chunks/720d3f3cc420c663.js","/_next/static/chunks/2079049d5abbbd3d.js","/_next/static/chunks/77c1917bfce7ffb0.js"],"Grid"]
+12:I[814360,["/_next/static/chunks/601dc1a12bda3fda.js","/_next/static/chunks/8a07e6fd7e614a7b.js","/_next/static/chunks/9988c4a59e44ac76.js","/_next/static/chunks/720d3f3cc420c663.js","/_next/static/chunks/2079049d5abbbd3d.js","/_next/static/chunks/77c1917bfce7ffb0.js"],"default"]
+19:I[303847,["/_next/static/chunks/601dc1a12bda3fda.js","/_next/static/chunks/8a07e6fd7e614a7b.js","/_next/static/chunks/9988c4a59e44ac76.js","/_next/static/chunks/720d3f3cc420c663.js","/_next/static/chunks/2079049d5abbbd3d.js","/_next/static/chunks/77c1917bfce7ffb0.js"],"Mailchimp"]
+1a:I[897367,["/_next/static/chunks/d96012bcfc98706a.js","/_next/static/chunks/73e3194f06db260e.js"],"OutletBoundary"]
+1b:"$Sreact.suspense"
+b:T10a2,
+## What it is
+
+A SOC assistant I built on my own time. The idea was simple: stop digging through documentation every time an alert fires and just ask a question in plain English.
+
+The core is a RAG pipeline — Pinecone as the vector store, LangChain managing the retrieval and chains, Gemini 1.5 Pro doing the reasoning. It ingests security documentation, playbooks, and telemetry context, and surfaces relevant answers in seconds instead of minutes of manual searching.
+
+It's not a product. It's a personal project that I run against real data and actually use.
+
+## Why I built it
+
+I work in security operations. A lot of the slow parts of alert triage aren't complex thinking — they're retrieval. Finding the right playbook, checking what a particular indicator means in this environment, confirming whether a behavior is expected for a given user. That's lookup work, and lookup work is exactly what RAG is good at.
+
+I wanted to see how much of that I could automate without the output becoming something you can't trust. That second part turned out to be the hard part.
+
+## How it works
+
+<Grid columns="2" gap="16">
+    <Card padding="16" radius="m">
+        <Icon name="search" size="s" marginBottom="8"/>
+        <Text weight="bold" marginBottom="4">Retrieval</Text>
+        <Text size="s" onBackground="neutral-medium">Security documentation and playbooks embedded into Pinecone. Queries pull the most relevant context before anything goes to the model.</Text>
+    </Card>
+    <Card padding="16" radius="m">
+        <Icon name="shield" size="s" marginBottom="8"/>
+        <Text weight="bold" marginBottom="4">Reasoning</Text>
+        <Text size="s" onBackground="neutral-medium">Gemini 1.5 Pro handles the actual analysis — big context window matters here when you're passing in multiple documents at once.</Text>
+    </Card>
+    <Card padding="16" radius="m">
+        <Icon name="terminal" size="s" marginBottom="8"/>
+        <Text weight="bold" marginBottom="4">Actions</Text>
+        <Text size="s" onBackground="neutral-medium">High-confidence responses can trigger Logic Apps integrations — account isolation, ticket creation, analyst notification.</Text>
+    </Card>
+    <Card padding="16" radius="m">
+        <Icon name="openai" size="s" marginBottom="8"/>
+        <Text weight="bold" marginBottom="4">Interface</Text>
+        <Text size="s" onBackground="neutral-medium">Plain English queries. Ask about an alert, a user, a behavior pattern — no structured query language needed.</Text>
+    </Card>
+</Grid>
+
+## Stack
+
+- **Orchestration**: LangChain — manages retrieval chains and the agentic loop
+- **Model**: Google Gemini 1.5 Pro — large context window was the deciding factor over GPT-4
+- **Vector store**: Pinecone — low-latency retrieval at scale
+- **Integrations**: Microsoft Sentinel, Defender XDR, Azure Logic Apps
+
+## What actually worked
+
+The retrieval speed was genuinely good from the start. Once the embeddings were in Pinecone, lookup latency was fast enough that the bottleneck shifted entirely to the model response time, which is what you want.
+
+The natural language interface worked better than I expected for well-defined questions — "what's the expected login behavior for this user?", "show me playbook steps for lateral movement detection" — that kind of thing.
+
+## What didn't
+
+Hallucination in forensic context is a real problem. Early versions would confidently answer questions that weren't well-represented in the retrieval results. I spent a significant amount of time tuning retrieval quality — chunk sizing, embedding strategy, score thresholds — before the answers were reliable enough to act on.
+
+I also initially tried to make it too autonomous. Fully automated playbook execution sounds useful until a false positive triggers an account lockdown at 2am. The current version flags high-confidence actions for one-click confirmation rather than running them silently.
+
+## Results (personal use)
+
+Triage time on familiar alert types dropped significantly — the lookup work that was eating 15-30 minutes now takes seconds. For novel or complex incidents I still do full manual investigation, which is the right call. The assistant is a first-pass filter, not a replacement for thinking.
+0:{"buildId":"uvqJfAvDvtV8lD0yzPRtq","rsc":["$","$1","c",{"children":[["$","$L2",null,{"maxWidth":"m","gap":"xl","paddingY":"12","horizontal":"center","children":[["$","$L3",null,{"id":"schema-webPage-/","type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"WebPage\",\"url\":\"https://rohirikman.dev/\",\"sameAs\":[],\"headline\":\"Rohi Rikman | Cloud Security Architect\",\"description\":\"Cloud Security Architect & Automation Engineer specializing in Azure, Entra ID, and AI agent systems\",\"image\":\"https://rohirikman.dev/https://rohirikman.dev/images/avatar.png\",\"author\":{\"@type\":\"Person\",\"name\":\"Rohi Rikman\",\"url\":\"https://rohirikman.dev/about\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"https://rohirikman.dev/images/avatar.png\"}}}"}}],["$","$L2",null,{"fillWidth":true,"horizontal":"center","gap":"m","children":["$","$L2",null,{"maxWidth":"s","horizontal":"center","align":"center","children":[["$","$L4",null,{"fillWidth":true,"horizontal":"center","paddingTop":"16","paddingBottom":"32","paddingLeft":"12","children":["$","$L5",null,{"background":"brand-alpha-weak","paddingX":"12","paddingY":"4","onBackground":"neutral-strong","textVariant":"label-default-s","arrow":false,"href":"/work/project-aegis","children":["$","$L6",null,{"paddingY":"2","children":["$","$L6",null,{"gap":"12","vertical":"center","children":[["$","strong",null,{"className":"ml-4","children":"Project Aegis"}]," ",["$","$L7",null,{"background":"brand-alpha-strong","vert":true,"height":"20"}],["$","span",null,{"className":"brand-on-background-medium mr-4","style":{},"children":"Featured project"}]]}]}]}]}],["$","$L4",null,{"translateY":"4","fillWidth":true,"horizontal":"center","paddingBottom":"16","children":["$","h1",null,{"className":"font-display font-strong font-l neutral-on-background-strong","style":{"textWrap":"balance"},"children":"Security that runs itself."}]}],["$","$L4",null,{"translateY":"8","delay":0.2,"fillWidth":true,"horizontal":"center","paddingBottom":"32","children":["$","span",null,{"className":"font-heading font-default font-xl neutral-on-background-weak","style":{"textWrap":"balance"},"children":"I build AI agents and automation systems that handle the repetitive, high-stakes parts of cloud security — so humans can focus on the problems that actually need them."}]}],["$","$L4",null,{"paddingTop":"12","delay":0.4,"horizontal":"center","paddingLeft":"12","children":["$","$L8",null,{"id":"about","data-border":"rounded","href":"/about","variant":"secondary","size":"m","weight":"default","arrowIcon":true,"children":["$","$L6",null,{"gap":"8","vertical":"center","paddingRight":"4","children":[["$","$L9",null,{"marginRight":"8","style":{"marginLeft":"-0.75rem"},"src":"/images/avatar.png","size":"m"}],"About – Rohi Rikman"]}]}]}]]}]}],["$","$L4",null,{"translateY":"16","delay":0.6,"children":["$","$L2",null,{"fillWidth":true,"gap":"xl","marginBottom":"40","paddingX":"l","children":[["$","$La","project-aegis",{"priority":true,"href":"/work/project-aegis","images":[],"title":"Project Aegis","description":"A personal RAG-based SOC assistant I built to answer security questions fast — powered by LangChain, Gemini, and a Pinecone vector store sitting on top of real security documentation.","content":"$b","avatars":[],"link":"https://github.com/RohiRIK/Project-Aegis"}]]}]}],"$Lc","$Ld","$Le"]}],["$Lf"],"$L10"]}],"loading":null,"isPartial":false}
+13:Tdcb,
+I work in IT security. I've sat through a lot of vendor calls. And somewhere around the third time someone told me their network appliance was "a Zero Trust solution," I started keeping count.
+
+It's not a product. It never was. Here's what it actually is.
+
+## The original idea
+
+Zero Trust comes from a 2010 paper by John Kindervag at Forrester. The core insight was blunt: perimeter-based security is wrong. The assumption that everything inside your network is trusted and everything outside isn't — that model breaks the moment you have remote workers, cloud services, SaaS apps, contractors, or any real-world complexity.
+
+The answer wasn't a new product. It was a different assumption: **trust no one by default, verify everything explicitly, and grant access based on identity and context — not network location.**
+
+That's the model. Three sentences.
+
+## What it means operationally
+
+If you actually implement Zero Trust, it looks like this:
+
+**Identity is the perimeter.** It doesn't matter where a request comes from — your office, a coffee shop, a data center. What matters is: who is authenticating, is that identity verified, and does this specific context (device health, location, time, risk score) justify access to this specific resource?
+
+**Least privilege, always.** Users and services get exactly the access they need for the task, nothing more. Not "give the developer access to the dev environment" — give this developer, on this verified device, read access to this specific service, until the session expires.
+
+**Assume breach.** Design your controls as if attackers are already inside. Segment laterally so a compromised endpoint can't reach everything. Log everything so you can detect and respond.
+
+**Continuous verification.** Authentication isn't a one-time gate at login. The trust assessment runs continuously — if device posture changes, if the user does something anomalous, trust can be revoked mid-session.
+
+## What vendors sell
+
+What vendors sell is: their product has a "Zero Trust" feature set. Sometimes that's meaningful. Conditional Access in Entra ID genuinely enforces identity-based access with device posture signals. That's a real implementation of Zero Trust principles.
+
+But "Zero Trust firewall" is mostly marketing. Network segmentation is one piece of a Zero Trust architecture — it's not the whole model. A firewall doesn't verify identity. It filters traffic. That's useful, but it's not Zero Trust.
+
+The tell is whether the product forces you to think about identity and context, or whether it's still thinking in terms of network location. If the conversation is about IP ranges and VLANs, you're still in the perimeter model with new branding.
+
+## Why it matters
+
+The reason to care about the distinction isn't pedantry. It's that if you think Zero Trust is a product you can buy, you'll buy the product and think you're done. You won't be.
+
+The actual work is architectural: redefining trust boundaries, implementing strong identity across all users and services, getting device health signals into access decisions, segmenting your environment so lateral movement is hard, building detection and response for when (not if) something gets through.
+
+None of that is a product. All of it is work.
+
+---
+
+This is the first of a few posts I'm planning on Zero Trust — what it actually means, how I've implemented pieces of it in real environments, and where the hard parts are. Next up: Conditional Access, which is where most of the practical implementation lives.
+c:["$","$L2",null,{"fillWidth":true,"gap":"24","marginBottom":"l","children":[["$","$L6",null,{"fillWidth":true,"paddingRight":"64","children":["$","$L7",null,{"maxWidth":48}]}],["$","$L6",null,{"fillWidth":true,"gap":"24","marginTop":"40","s":{"direction":"column"},"children":[["$","$L6",null,{"flex":1,"paddingLeft":"l","paddingTop":"24","children":["$","h2",null,{"className":"font-display font-strong font-xs neutral-on-background-strong","style":{"textWrap":"balance"},"children":"Latest from the blog"}]}],["$","$L6",null,{"flex":3,"paddingX":"20","children":["$","$L11",null,{"columns":"2","s":{"columns":1},"fillWidth":true,"marginBottom":"40","gap":"16","children":[["$","$L12","zero-trust-is-not-a-product",{"post":{"metadata":{"title":"Zero Trust Is Not a Product","subtitle":"","publishedAt":"2026-02-20","summary":"Every vendor sells 'Zero Trust.' Most of what they're selling is a marketing label on a firewall. Here's what the model actually means and why it matters.","image":"/images/avatar.png","images":[],"tag":"Security","team":[],"link":""},"slug":"zero-trust-is-not-a-product","content":"$13"},"thumbnail":false}],"$L14"]}]}]]}],"$L15"]}]
+16:T749,
+## What this was
+
+A client running JumpCloud for MDM wanted to consolidate onto the Microsoft stack. Everything else was already in Microsoft — identity, email, security — but the device management gap meant correlating device state with identity required jumping between platforms.
+
+## What I built
+
+The main challenge with MDM migrations is the transition gap — the window where a device is unenrolled from one MDM and not yet in another. During that time you lose policy enforcement and visibility.
+
+I wrote PowerShell scripts to handle the transition in sequence: unenroll from JumpCloud, trigger Intune enrollment, verify the device showed up in Intune before moving to the next. Ran in batches with rollback checkpoints so we could pause if something broke mid-migration.
+
+**Windows Autopilot** — registered the Windows fleet into Autopilot for zero-touch future provisioning. Extracted hardware hashes, uploaded them, configured deployment profiles per user group.
+
+**macOS via Apple Business Manager** — set up ABM integration with Intune. More involved than Windows Autopilot — had to work through the MDM profile trust chain and handle devices that had supervision issues from the JumpCloud side.
+
+**Policy parity** — translated JumpCloud's Command Library into Intune Configuration Profiles and PowerShell scripts deployed via Intune. Some mapped cleanly, some needed rethinking.
+
+## What made it hard
+
+A subset of devices had been enrolled in JumpCloud via a method that left a persistent MDM profile the script couldn't cleanly remove. Those had to be handled manually. Also found several macOS devices enrolled by users personally rather than via ABM, which broke the supervision requirement for certain policies.
+
+## Stack
+
+- Microsoft Intune
+- JumpCloud
+- Windows Autopilot
+- Apple Business Manager
+- PowerShell & Microsoft Graph API
+17:T6db,
+## What this was
+
+A client at Oncloud decided to move their entire identity and collaboration stack from Google Workspace to Microsoft 365. I was the lead engineer on the migration — responsible for technical execution from discovery through cutover.
+
+## What the work looked like
+
+**Identity migration** — mapped thousands of Google identities into a clean Entra ID tenant, standardized naming conventions, consolidated accounts that had duplicated from acquisitions. Set up SSO from scratch with Entra ID as the new IdP.
+
+**Data migration via AvePoint Fly** — handled mailbox and Google Drive to SharePoint/OneDrive transfer. The hard part wasn't the tool — it was the permission mapping. Google Drive's sharing model doesn't translate cleanly to SharePoint. Spent significant time building mapping rules to preserve access rather than just moving data and leaving people unable to open their files.
+
+**Mail cutover** — ran split-delivery during the transition so mail kept flowing to both platforms while users moved over. Managed the DNS cutover window to avoid gaps.
+
+**SSO re-mapping** — the client had 50+ SaaS applications pointed at Google as IdP. Reconfigured each for SAML/OIDC against Entra ID. Most were straightforward; a few needed custom attribute mappings.
+
+## What made it hard
+
+The data migration took longer than scoped. The client's Google Drive was far messier than discovery suggested — deeply nested shared drives with complex permission inheritance, orphaned files, and accounts that no longer existed but still owned content. We had to build a pre-migration cleanup process that wasn't in the original plan.
+
+## Stack
+
+- AvePoint Fly
+- Microsoft Entra ID
+- Google Workspace APIs
+- Microsoft Graph API
+- PowerShell
+d:["$","$L2",null,{"fillWidth":true,"gap":"xl","marginBottom":"40","paddingX":"l","children":[["$","$La","jumpcloud-to-intune-migration",{"priority":true,"href":"/work/jumpcloud-to-intune-migration","images":[],"title":"JumpCloud to Intune Migration","description":"MDM consolidation from JumpCloud to Microsoft Intune — automated unenrollment, Autopilot provisioning, and policy parity for a mixed Windows and macOS fleet.","content":"$16","avatars":[],"link":""}],["$","$La","gcp-to-entra-migration",{"priority":true,"href":"/work/gcp-to-entra-migration","images":[],"title":"GCP to Entra ID Migration","description":"Full identity and collaboration migration from Google Workspace to Microsoft 365 — mailboxes, Drive data, SSO re-mapping across 50+ apps, and tenant consolidation.","content":"$17","avatars":[],"link":""}],"$L18"]}]
+e:["$","$L19",null,{}]
+f:["$","script","script-0",{"src":"/_next/static/chunks/77c1917bfce7ffb0.js","async":true}]
+10:["$","$L1a",null,{"children":["$","$1b",null,{"name":"Next.MetadataOutlet","children":"$@1c"}]}]
+1d:T15a9,
+If you're running Microsoft 365 and you're serious about Zero Trust, Conditional Access is where most of the actual work happens. It's the enforcement layer that sits between your users and your apps — evaluating identity, device health, location, and risk signals before granting access.
+
+I've built Conditional Access policies for several client environments. Here's what I've learned.
+
+## What Conditional Access actually does
+
+Every time a user or service authenticates to an Entra ID-protected resource, a Conditional Access evaluation runs. The policy engine looks at:
+
+- **Who** is authenticating (user, group, service principal)
+- **What** they're trying to access (specific app, all apps, admin portals)
+- **What device** they're on (managed/unmanaged, compliant/non-compliant, platform)
+- **Where** they're coming from (location, named network, country)
+- **What risk signals** are active (Entra ID Protection scores for sign-in risk and user risk)
+
+Based on those signals, the policy either grants access, blocks it, or grants it conditionally — requiring MFA, a compliant device, a specific authentication strength, or a terms of use agreement.
+
+That's a powerful model. It lets you say things like: "Engineers can access production resources, but only from compliant managed devices, always with phishing-resistant MFA, and if their sign-in risk is elevated, block until IT reviews."
+
+## The baseline everyone should have
+
+Before you build anything sophisticated, you need a working baseline. Microsoft publishes reference policies — here's what I actually deploy in every environment:
+
+**Block legacy authentication.** Legacy protocols (SMTP, IMAP, POP) don't support modern authentication and can't do MFA. They're a bypass. Block them early, before anything else.
+
+**Require MFA for all users.** Not just admins. Everyone. If you have users who push back, that's a change management problem, not a reason to skip this.
+
+**Require MFA for Azure management.** Separately target the Azure portal, CLI, and PowerShell. Admin operations get their own policy with stricter requirements.
+
+**Require phishing-resistant MFA for privileged roles.** FIDO2 keys or Windows Hello for Business, not TOTP or push notifications. For Global Admins and other privileged roles, the bar should be higher.
+
+**Block access from high-risk sign-ins.** If Entra ID Protection flags a sign-in as high risk (unfamiliar location, anonymized IP, impossible travel), block it automatically. Don't wait for the help desk to notice.
+
+That's a solid baseline. Everything after that is refinement.
+
+## What I've seen go wrong
+
+**Report-only mode left on forever.** Report-only is how you test policies without enforcing them. It's useful for a rollout period. It's not a substitute for actual enforcement. I've seen environments with 50 policies in report-only that haven't been reviewed in 18 months. None of them are doing anything.
+
+**The "break glass" account problem.** Emergency access accounts need to be excluded from most Conditional Access policies so you can recover if something goes wrong. But those exclusions need to be carefully scoped and regularly audited. A break-glass account excluded from everything with a weak password is a liability.
+
+**Policy conflicts and grant vs. block precedence.** If a user matches both a grant policy and a block policy for the same resource, block wins. Always. This is correct behavior but it's surprising when you don't expect it. Test with the What If tool before deploying.
+
+**Not targeting service principals.** Conditional Access now supports workload identities — service principals and managed identities. Most environments I inherit don't have any policies targeting these. That's a gap.
+
+**Named locations that don't mean anything.** I've seen "Trusted Location" policies that include half the world's IP ranges because someone didn't want to deal with VPN. Named locations are only useful if they actually represent trusted networks.
+
+## Device compliance as a gate
+
+One of the most effective Conditional Access patterns is requiring device compliance for access to sensitive resources. If you're managing devices with Intune, you can define compliance policies (encryption enabled, OS version, no jailbreak, etc.) and then gate access on whether the device passes.
+
+This is powerful because it closes the "personal device on managed app" gap. A user can't just install Outlook on a random machine and access Exchange — they need to enroll the device and meet compliance requirements first.
+
+The rollout order matters here. If you require compliance before your device enrollment is complete, you lock people out. Usually you want:
+1. Build compliance policies
+2. Deploy to managed devices, verify they pass
+3. Enable Conditional Access requirement in report-only
+4. Review the report-only logs for unexpected blocks
+5. Switch to enforce
+
+## Monitoring
+
+Conditional Access sign-in logs are detailed and searchable. At minimum, review:
+- Failures due to non-compliant devices (often legitimate issues to fix)
+- Blocks from unfamiliar locations (often noise, occasionally real)
+- Blocks due to user risk (worth investigating each one)
+
+KQL queries against the sign-in logs in Log Analytics give you more flexibility than the portal UI. If you're in Sentinel, this is where you build your detection rules.
+
+---
+
+Next post: endpoint hardening as a Zero Trust control — because Conditional Access requiring a "compliant device" is only as good as what your compliance policies actually check.
+14:["$","$L12","conditional-access-in-practice",{"post":{"metadata":{"title":"Conditional Access in Practice","subtitle":"","publishedAt":"2026-02-15","summary":"Conditional Access is where Zero Trust principles actually land in a Microsoft environment. Here's how to think about it, what to get right, and where I've seen it go wrong.","image":"/images/avatar.png","images":[],"tag":"Security","team":[],"link":""},"slug":"conditional-access-in-practice","content":"$1d"},"thumbnail":false}]
+15:["$","$L6",null,{"fillWidth":true,"paddingLeft":"64","horizontal":"end","children":["$","$L7",null,{"maxWidth":48}]}]
+1e:T9e2,
+## What this is
+
+My personal Claude Code configuration that I've been refining since I started using it heavily for both security automation and portfolio work. The default Claude Code setup is fine. This is what happens after you use it seriously for a few months and start fixing the parts that annoy you.
+
+## The problem with default Claude Code
+
+Two things break down quickly:
+
+1. **No memory across sessions.** Every new conversation starts cold. You re-explain your stack, your preferences, your project context. It adds up.
+
+2. **No workflow enforcement.** Claude will happily skip tests, write unsafe code, or use npm instead of bun if you don't have rules that say otherwise.
+
+## What I built
+
+**Session context system** — Four files per project (`context-goals.md`, `context-decisions.md`, `context-progress.md`, `context-gotchas.md`) that persist across sessions. A PreCompact hook assembles them before context gets trimmed. A SessionStart hook injects the summary at the start of every new session. Claude picks up where it left off.
+
+**Custom hooks** — Shell commands that fire on tool use events:
+- PostToolUse runs Prettier and tsc after every file edit
+- PreToolUse blocks dev servers from running outside a tmux session
+- EvaluateSession extracts patterns at session end
+- SuggestCompact warns when approaching context limits
+
+**Agent definitions** — Specialized agents for recurring tasks: planner, tdd-guide, code-reviewer, security-reviewer, build-error-resolver. Each has a focused role and gets invoked for the right thing rather than dumping everything at the main agent.
+
+**Skills** — Reusable command prompts: `/plan`, `/verify`, `/simplify`, `/commit-push-pr`, `/learn`. The verify skill runs tsc → lint → tests → build in order and stops on first failure.
+
+**Global rules** — Coding style, git workflow, security checklist, package manager preferences (bun, not npm), test coverage minimums. Claude reads these on every session and actually follows them.
+
+## What it actually changed
+
+I stopped re-explaining my stack. I stopped getting npm in projects that use bun. Security checks happen before commits without me prompting. The context system means I can close a session mid-task and come back three days later without losing where I was.
+
+It's not magic — it's just configuration that enforces the workflow I actually want.
+
+## Stack
+
+- Claude Code hooks (bash scripts)
+- CLAUDE.md (global + per-project)
+- Session context (4 markdown files per project)
+- Custom agents + skills
+18:["$","$La","claude-code-config",{"priority":false,"href":"/work/claude-code-config","images":[],"title":"Claude Code Config","description":"My production Claude Code setup — custom hooks, agents, skills, and session context system that makes AI-assisted development actually sustainable day-to-day.","content":"$1e","avatars":[],"link":"https://github.com/RohiRIK/claude-code-config"}]
+1c:null
