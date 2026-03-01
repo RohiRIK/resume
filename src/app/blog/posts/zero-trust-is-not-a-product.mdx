@@ -1,0 +1,51 @@
+---
+title: "Zero Trust Is Not a Product"
+summary: "Every vendor sells 'Zero Trust.' Most of what they're selling is a marketing label on a firewall. Here's what the model actually means and why it matters."
+image: "/images/avatar.png"
+publishedAt: "2026-02-20"
+tag: "Security"
+---
+
+I work in IT security. I've sat through a lot of vendor calls. And somewhere around the third time someone told me their network appliance was "a Zero Trust solution," I started keeping count.
+
+It's not a product. It never was. Here's what it actually is.
+
+## The original idea
+
+Zero Trust comes from a 2010 paper by John Kindervag at Forrester. The core insight was blunt: perimeter-based security is wrong. The assumption that everything inside your network is trusted and everything outside isn't — that model breaks the moment you have remote workers, cloud services, SaaS apps, contractors, or any real-world complexity.
+
+The answer wasn't a new product. It was a different assumption: **trust no one by default, verify everything explicitly, and grant access based on identity and context — not network location.**
+
+That's the model. Three sentences.
+
+## What it means operationally
+
+If you actually implement Zero Trust, it looks like this:
+
+**Identity is the perimeter.** It doesn't matter where a request comes from — your office, a coffee shop, a data center. What matters is: who is authenticating, is that identity verified, and does this specific context (device health, location, time, risk score) justify access to this specific resource?
+
+**Least privilege, always.** Users and services get exactly the access they need for the task, nothing more. Not "give the developer access to the dev environment" — give this developer, on this verified device, read access to this specific service, until the session expires.
+
+**Assume breach.** Design your controls as if attackers are already inside. Segment laterally so a compromised endpoint can't reach everything. Log everything so you can detect and respond.
+
+**Continuous verification.** Authentication isn't a one-time gate at login. The trust assessment runs continuously — if device posture changes, if the user does something anomalous, trust can be revoked mid-session.
+
+## What vendors sell
+
+What vendors sell is: their product has a "Zero Trust" feature set. Sometimes that's meaningful. Conditional Access in Entra ID genuinely enforces identity-based access with device posture signals. That's a real implementation of Zero Trust principles.
+
+But "Zero Trust firewall" is mostly marketing. Network segmentation is one piece of a Zero Trust architecture — it's not the whole model. A firewall doesn't verify identity. It filters traffic. That's useful, but it's not Zero Trust.
+
+The tell is whether the product forces you to think about identity and context, or whether it's still thinking in terms of network location. If the conversation is about IP ranges and VLANs, you're still in the perimeter model with new branding.
+
+## Why it matters
+
+The reason to care about the distinction isn't pedantry. It's that if you think Zero Trust is a product you can buy, you'll buy the product and think you're done. You won't be.
+
+The actual work is architectural: redefining trust boundaries, implementing strong identity across all users and services, getting device health signals into access decisions, segmenting your environment so lateral movement is hard, building detection and response for when (not if) something gets through.
+
+None of that is a product. All of it is work.
+
+---
+
+This is the first of a few posts I'm planning on Zero Trust — what it actually means, how I've implemented pieces of it in real environments, and where the hard parts are. Next up: Conditional Access, which is where most of the practical implementation lives.

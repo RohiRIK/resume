@@ -1,0 +1,35 @@
+---
+title: "FleetWatch"
+summary: "A device management dashboard built for large Intune environments — fast search, real-time compliance status, and direct device actions without the native portal slowness."
+image: "/images/avatar.png"
+tag: "Tool"
+publishedAt: "2026-02-05"
+link: "https://github.com/RohiRIK/fleetwatch"
+---
+
+## What this is
+
+The Microsoft Intune portal is fine for small fleets. At 10,000+ devices it gets slow and the search is painful. FleetWatch is a dashboard I built to solve the specific problems that come up when you're managing a large fleet day-to-day.
+
+## Why I built it
+
+Working with large Intune environments at Oncloud, the native portal was consistently the bottleneck during incident response — finding a specific device took too long, compliance state was stale, and triggering actions required too many clicks. I wanted a faster tool that worked the way the job actually works.
+
+## What it does
+
+**Fast device search** — full-text search across the entire fleet using optimized PostgreSQL indexing. Find any device, user, or serial number in under a second regardless of fleet size.
+
+**Real-time compliance** — continuous sync with Microsoft Graph means compliance state is current, not cached. Useful when you need to know right now whether a device is actually compliant.
+
+**Identity correlation** — links Intune device records with Entra ID user profiles automatically, so you see the full picture without switching between portals.
+
+**Direct actions** — trigger Intune actions (sync, remote lock, restart, wipe) from the dashboard without navigating the native portal.
+
+**Compliance trends** — shows compliance over time per policy, useful for spotting drift before it becomes a problem.
+
+## Stack
+
+- Next.js 15 (App Router)
+- PostgreSQL with GIN/B-Tree indexes
+- Microsoft Graph SDK
+- Vercel

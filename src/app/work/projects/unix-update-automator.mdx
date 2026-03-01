@@ -1,0 +1,32 @@
+---
+title: "Unix Update Automator"
+summary: "A Bash automation suite for keeping Linux and macOS systems current — handles package managers, runtime updates, logging, and scheduled execution without manual intervention."
+image: "/images/avatar.png"
+tag: "Tool"
+publishedAt: "2025-12-13"
+link: "https://github.com/RohiRIK/unix-update-automator"
+---
+
+## What this is
+
+A maintenance automation tool I wrote because I got tired of running different update commands on different machines. One script that handles `apt`, `dnf`, `pacman`, `brew`, `npm`, `pip` — whatever's present on the system — with consistent logging and safe execution defaults.
+
+Runs unattended. Doesn't hang waiting for user input. Doesn't overwrite config files without asking. Keeps timestamped logs so you can see what actually happened.
+
+## Why I built it instead of using something existing
+
+Most existing solutions are either too opinionated (full configuration management like Ansible is overkill for this) or too simple (a cron job with `apt upgrade -y` has no error handling). I wanted something in between — lightweight, readable Bash that does the job reliably and can be understood and modified without reading documentation.
+
+## How it works
+
+**Core + Modules architecture** — the core script handles argument parsing, logging, environment detection, and concurrency control (lockfile to prevent simultaneous runs). Each package manager is a separate module that the core calls if that manager is present on the system.
+
+**Execution modes** — `--check-only` to see what would update without doing it, `--security-only` for security patches only, `--reboot` on Linux systems that need a restart after kernel updates.
+
+**Scheduled via native tools** — `onboard.sh` sets up a Cron job on Linux or a Launchd agent on macOS so it runs automatically on whatever schedule you want.
+
+## Stack
+
+- Bash
+- `flock`, `getopt`, `mail`
+- apt, dnf, pacman, zypper, brew, npm, pip

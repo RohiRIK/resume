@@ -1,0 +1,79 @@
+---
+title: "Conditional Access in Practice"
+summary: "Conditional Access is where Zero Trust principles actually land in a Microsoft environment. Here's how to think about it, what to get right, and where I've seen it go wrong."
+image: "/images/avatar.png"
+publishedAt: "2026-02-15"
+tag: "Security"
+---
+
+If you're running Microsoft 365 and you're serious about Zero Trust, Conditional Access is where most of the actual work happens. It's the enforcement layer that sits between your users and your apps — evaluating identity, device health, location, and risk signals before granting access.
+
+I've built Conditional Access policies for several client environments. Here's what I've learned.
+
+## What Conditional Access actually does
+
+Every time a user or service authenticates to an Entra ID-protected resource, a Conditional Access evaluation runs. The policy engine looks at:
+
+- **Who** is authenticating (user, group, service principal)
+- **What** they're trying to access (specific app, all apps, admin portals)
+- **What device** they're on (managed/unmanaged, compliant/non-compliant, platform)
+- **Where** they're coming from (location, named network, country)
+- **What risk signals** are active (Entra ID Protection scores for sign-in risk and user risk)
+
+Based on those signals, the policy either grants access, blocks it, or grants it conditionally — requiring MFA, a compliant device, a specific authentication strength, or a terms of use agreement.
+
+That's a powerful model. It lets you say things like: "Engineers can access production resources, but only from compliant managed devices, always with phishing-resistant MFA, and if their sign-in risk is elevated, block until IT reviews."
+
+## The baseline everyone should have
+
+Before you build anything sophisticated, you need a working baseline. Microsoft publishes reference policies — here's what I actually deploy in every environment:
+
+**Block legacy authentication.** Legacy protocols (SMTP, IMAP, POP) don't support modern authentication and can't do MFA. They're a bypass. Block them early, before anything else.
+
+**Require MFA for all users.** Not just admins. Everyone. If you have users who push back, that's a change management problem, not a reason to skip this.
+
+**Require MFA for Azure management.** Separately target the Azure portal, CLI, and PowerShell. Admin operations get their own policy with stricter requirements.
+
+**Require phishing-resistant MFA for privileged roles.** FIDO2 keys or Windows Hello for Business, not TOTP or push notifications. For Global Admins and other privileged roles, the bar should be higher.
+
+**Block access from high-risk sign-ins.** If Entra ID Protection flags a sign-in as high risk (unfamiliar location, anonymized IP, impossible travel), block it automatically. Don't wait for the help desk to notice.
+
+That's a solid baseline. Everything after that is refinement.
+
+## What I've seen go wrong
+
+**Report-only mode left on forever.** Report-only is how you test policies without enforcing them. It's useful for a rollout period. It's not a substitute for actual enforcement. I've seen environments with 50 policies in report-only that haven't been reviewed in 18 months. None of them are doing anything.
+
+**The "break glass" account problem.** Emergency access accounts need to be excluded from most Conditional Access policies so you can recover if something goes wrong. But those exclusions need to be carefully scoped and regularly audited. A break-glass account excluded from everything with a weak password is a liability.
+
+**Policy conflicts and grant vs. block precedence.** If a user matches both a grant policy and a block policy for the same resource, block wins. Always. This is correct behavior but it's surprising when you don't expect it. Test with the What If tool before deploying.
+
+**Not targeting service principals.** Conditional Access now supports workload identities — service principals and managed identities. Most environments I inherit don't have any policies targeting these. That's a gap.
+
+**Named locations that don't mean anything.** I've seen "Trusted Location" policies that include half the world's IP ranges because someone didn't want to deal with VPN. Named locations are only useful if they actually represent trusted networks.
+
+## Device compliance as a gate
+
+One of the most effective Conditional Access patterns is requiring device compliance for access to sensitive resources. If you're managing devices with Intune, you can define compliance policies (encryption enabled, OS version, no jailbreak, etc.) and then gate access on whether the device passes.
+
+This is powerful because it closes the "personal device on managed app" gap. A user can't just install Outlook on a random machine and access Exchange — they need to enroll the device and meet compliance requirements first.
+
+The rollout order matters here. If you require compliance before your device enrollment is complete, you lock people out. Usually you want:
+1. Build compliance policies
+2. Deploy to managed devices, verify they pass
+3. Enable Conditional Access requirement in report-only
+4. Review the report-only logs for unexpected blocks
+5. Switch to enforce
+
+## Monitoring
+
+Conditional Access sign-in logs are detailed and searchable. At minimum, review:
+- Failures due to non-compliant devices (often legitimate issues to fix)
+- Blocks from unfamiliar locations (often noise, occasionally real)
+- Blocks due to user risk (worth investigating each one)
+
+KQL queries against the sign-in logs in Log Analytics give you more flexibility than the portal UI. If you're in Sentinel, this is where you build your detection rules.
+
+---
+
+Next post: endpoint hardening as a Zero Trust control — because Conditional Access requiring a "compliant device" is only as good as what your compliance policies actually check.

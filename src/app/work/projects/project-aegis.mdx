@@ -1,0 +1,70 @@
+---
+title: "Project Aegis"
+summary: "A personal RAG-based SOC assistant I built to answer security questions fast — powered by LangChain, Gemini, and a Pinecone vector store sitting on top of real security documentation."
+image: "/images/avatar.png"
+tag: "AI / Security"
+publishedAt: "2026-02-08"
+link: "https://github.com/RohiRIK/Project-Aegis"
+---
+
+## What it is
+
+A SOC assistant I built on my own time. The idea was simple: stop digging through documentation every time an alert fires and just ask a question in plain English.
+
+The core is a RAG pipeline — Pinecone as the vector store, LangChain managing the retrieval and chains, Gemini 1.5 Pro doing the reasoning. It ingests security documentation, playbooks, and telemetry context, and surfaces relevant answers in seconds instead of minutes of manual searching.
+
+It's not a product. It's a personal project that I run against real data and actually use.
+
+## Why I built it
+
+I work in security operations. A lot of the slow parts of alert triage aren't complex thinking — they're retrieval. Finding the right playbook, checking what a particular indicator means in this environment, confirming whether a behavior is expected for a given user. That's lookup work, and lookup work is exactly what RAG is good at.
+
+I wanted to see how much of that I could automate without the output becoming something you can't trust. That second part turned out to be the hard part.
+
+## How it works
+
+<Grid columns="2" gap="16">
+    <Card padding="16" radius="m">
+        <Icon name="search" size="s" marginBottom="8"/>
+        <Text weight="bold" marginBottom="4">Retrieval</Text>
+        <Text size="s" onBackground="neutral-medium">Security documentation and playbooks embedded into Pinecone. Queries pull the most relevant context before anything goes to the model.</Text>
+    </Card>
+    <Card padding="16" radius="m">
+        <Icon name="shield" size="s" marginBottom="8"/>
+        <Text weight="bold" marginBottom="4">Reasoning</Text>
+        <Text size="s" onBackground="neutral-medium">Gemini 1.5 Pro handles the actual analysis — big context window matters here when you're passing in multiple documents at once.</Text>
+    </Card>
+    <Card padding="16" radius="m">
+        <Icon name="terminal" size="s" marginBottom="8"/>
+        <Text weight="bold" marginBottom="4">Actions</Text>
+        <Text size="s" onBackground="neutral-medium">High-confidence responses can trigger Logic Apps integrations — account isolation, ticket creation, analyst notification.</Text>
+    </Card>
+    <Card padding="16" radius="m">
+        <Icon name="openai" size="s" marginBottom="8"/>
+        <Text weight="bold" marginBottom="4">Interface</Text>
+        <Text size="s" onBackground="neutral-medium">Plain English queries. Ask about an alert, a user, a behavior pattern — no structured query language needed.</Text>
+    </Card>
+</Grid>
+
+## Stack
+
+- **Orchestration**: LangChain — manages retrieval chains and the agentic loop
+- **Model**: Google Gemini 1.5 Pro — large context window was the deciding factor over GPT-4
+- **Vector store**: Pinecone — low-latency retrieval at scale
+- **Integrations**: Microsoft Sentinel, Defender XDR, Azure Logic Apps
+
+## What actually worked
+
+The retrieval speed was genuinely good from the start. Once the embeddings were in Pinecone, lookup latency was fast enough that the bottleneck shifted entirely to the model response time, which is what you want.
+
+The natural language interface worked better than I expected for well-defined questions — "what's the expected login behavior for this user?", "show me playbook steps for lateral movement detection" — that kind of thing.
+
+## What didn't
+
+Hallucination in forensic context is a real problem. Early versions would confidently answer questions that weren't well-represented in the retrieval results. I spent a significant amount of time tuning retrieval quality — chunk sizing, embedding strategy, score thresholds — before the answers were reliable enough to act on.
+
+I also initially tried to make it too autonomous. Fully automated playbook execution sounds useful until a false positive triggers an account lockdown at 2am. The current version flags high-confidence actions for one-click confirmation rather than running them silently.
+
+## Results (personal use)
+
+Triage time on familiar alert types dropped significantly — the lookup work that was eating 15-30 minutes now takes seconds. For novel or complex incidents I still do full manual investigation, which is the right call. The assistant is a first-pass filter, not a replacement for thinking.

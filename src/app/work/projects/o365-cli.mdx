@@ -1,0 +1,38 @@
+---
+title: "o365-cli"
+summary: "A TypeScript CLI for M365 administration — bulk identity operations, policy export/import, license auditing, and audit log streaming, all from the terminal."
+image: "/images/avatar.png"
+tag: "WIP"
+link: "https://github.com/RohiRIK/o365-cli"
+---
+
+## What this is
+
+A CLI tool for Microsoft 365 administration built with Bun and TypeScript. The Microsoft Admin Center works fine for one-off tasks — it's painful for anything that needs to run across thousands of users or be scripted into a pipeline.
+
+This fills the gap: a scriptable, terminal-native interface to the Microsoft Graph API with commands designed around how M365 administration actually works day-to-day.
+
+## What it does
+
+**Bulk identity operations** — provision, deprovision, or update thousands of users with a single command. Useful for onboarding, offboarding, or making org-wide attribute changes without clicking through the portal for each one.
+
+**Policy export/import** — export Conditional Access policies and other security configurations to JSON. Treat your policies as code: version control them, diff them, apply them to other tenants.
+
+**License optimization** — identify unassigned licenses and inactive users. The kind of audit that saves money but nobody runs manually because it takes too long in the portal.
+
+**Audit log streaming** — filter and stream audit logs to the terminal in real time. Useful during incident investigation when you need to follow what's happening now.
+
+## Why Bun
+
+Startup time matters for a CLI. Bun is fast enough that the tool feels instant — no waiting for a Node.js process to boot before anything happens.
+
+## Status
+
+Work in progress. Core identity and license commands are solid. Adding modules for Intune management and deeper security auditing.
+
+## Stack
+
+- Bun
+- TypeScript
+- Commander.js
+- Microsoft Graph SDK

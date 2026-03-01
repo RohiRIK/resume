@@ -1,0 +1,35 @@
+---
+title: "Personal Coffeeshop"
+summary: "A full-stack order management system and kitchen display for home barista use — guests order via QR code, the host tracks and manages the queue in real time."
+image: "/images/avatar.png"
+tag: "Passion"
+publishedAt: "2026-02-05"
+link: "https://github.com/RohiRIK/Personal-coffeshop"
+---
+
+## What this is
+
+A passion project built because hosting friends for coffee had become genuinely chaotic. Multiple orders, specific customizations, no memory of who asked for oat milk — it was more stressful than it should be.
+
+So I built an order management system. Guests scan a QR code, see the menu, customize their order, and submit it. I get a kitchen display showing the queue with all the details. It sounds like overkill, and it is, but it works perfectly.
+
+## How it works
+
+**Guest side** — a mobile-first menu where guests choose their drink, add customizations (milk type, shots, temperature), and place the order. Loads instantly, no app install needed, works as a PWA if they want it on their home screen.
+
+**Host side (KDS)** — a kitchen display that shows the current queue. Orders appear immediately when placed, I can mark them as "preparing" or "ready", and the guest's screen updates in real time without a refresh.
+
+Firebase Firestore real-time snapshots handle the live updates — when an order status changes on the KDS, it propagates to the guest view in under a second.
+
+## What I actually learned from this
+
+Firebase Firestore's real-time subscriptions are genuinely good for this use case. The tricky part was handling the edge cases — what happens when the host closes the KDS while orders are in flight, stale order states, offline behavior. None of it was hard, but it required thinking through the state machine more carefully than the happy path suggests.
+
+Also: the first version had a bug where two guests placing orders within milliseconds of each other could get the same order number. Fixed it with a Firestore transaction. Classic concurrency problem, embarrassingly obvious in retrospect.
+
+## Stack
+
+- Next.js 15 (App Router)
+- Bun
+- Firebase Firestore (real-time)
+- PWA

@@ -1,7 +1,9 @@
 import {
   Avatar,
   Button,
+  Card,
   Column,
+  Grid,
   Heading,
   Icon,
   IconButton,
@@ -22,7 +24,7 @@ export async function generateMetadata() {
     title: about.title,
     description: about.description,
     baseURL: baseURL,
-    image: `/api/og/generate?title=${encodeURIComponent(about.title)}`,
+    image: `${baseURL}${person.avatar}`,
     path: about.path,
   });
 }
@@ -49,6 +51,11 @@ export default function About() {
       display: about.technical.display,
       items: about.technical.skills.map((skill) => skill.title),
     },
+    {
+      title: about.interests.title,
+      display: about.interests.display,
+      items: about.interests.items.map((item) => item.title),
+    },
   ];
   return (
     <Column maxWidth="m">
@@ -58,7 +65,7 @@ export default function About() {
         title={about.title}
         description={about.description}
         path={about.path}
-        image={`/api/og/generate?title=${encodeURIComponent(about.title)}`}
+        image={`${baseURL}${person.avatar}`}
         author={{
           name: person.name,
           url: `${baseURL}${about.path}`,
@@ -93,7 +100,7 @@ export default function About() {
             flex={3}
             horizontal="center"
           >
-            <Avatar src={person.avatar} size="xl" />
+            <Media className={styles.avatarImage} src={person.avatar} radius="full" aspectRatio="1/1" sizes="160px" alt={person.name} />
             <Row gap="8" vertical="center">
               <Icon onBackground="accent-weak" name="globe" />
               {person.location}
@@ -294,9 +301,12 @@ export default function About() {
               <Column fillWidth gap="l">
                 {about.technical.skills.map((skill, index) => (
                   <Column key={`${skill}-${index}`} fillWidth gap="4">
-                    <Text id={skill.title} variant="heading-strong-l">
-                      {skill.title}
-                    </Text>
+                    <Row gap="12" vertical="center">
+                      {skill.icon && <Icon name={skill.icon} size="s" onBackground="brand-weak" />}
+                      <Text id={skill.title} variant="heading-strong-l">
+                        {skill.title}
+                      </Text>
+                    </Row>
                     <Text variant="body-default-m" onBackground="neutral-weak">
                       {skill.description}
                     </Text>
@@ -330,6 +340,35 @@ export default function About() {
                         ))}
                       </Row>
                     )}
+                  </Column>
+                ))}
+              </Column>
+            </>
+          )}
+
+          {about.interests.display && (
+            <>
+              <Heading
+                as="h2"
+                id={about.interests.title}
+                variant="display-strong-s"
+                marginTop="40"
+                marginBottom="40"
+              >
+                {about.interests.title}
+              </Heading>
+              <Column fillWidth gap="l">
+                {about.interests.items.map((item, index) => (
+                  <Column key={`${item.title}-${index}`} fillWidth gap="4">
+                    <Row gap="12" vertical="center">
+                      <Icon name={item.icon} size="s" onBackground="brand-weak" />
+                      <Text id={item.title} variant="heading-strong-l">
+                        {item.title}
+                      </Text>
+                    </Row>
+                    <Text variant="body-default-m" onBackground="neutral-weak">
+                      {item.description}
+                    </Text>
                   </Column>
                 ))}
               </Column>

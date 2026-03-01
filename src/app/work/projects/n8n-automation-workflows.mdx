@@ -1,0 +1,33 @@
+---
+title: "n8n Automation Workflows"
+summary: "A library of n8n workflows built for real SecOps and IT ops use cases — alert enrichment, identity lifecycle, license auditing, and incident notification."
+image: "/images/avatar.png"
+tag: "Automation"
+publishedAt: "2026-01-01"
+---
+
+## What this is
+
+A collection of production n8n workflows I've built and iterated on for client work at Oncloud. Not a demo library — these run on actual client environments and handle real operational tasks.
+
+## What's in it
+
+**Security incident enrichment** — when a Sentinel alert fires, automatically pull context from VirusTotal, AbuseIPDB, and Entra ID risk scores. The analyst gets a pre-enriched package instead of starting from scratch on every alert. Cuts the "what is this IP?" lookup step out of triage entirely.
+
+**Identity lifecycle** — listens to HR events from HiBob (new hire, termination, role change) and triggers the corresponding Entra ID actions automatically. Provisioning, deprovisioning, group membership changes — all handled without an IT ticket.
+
+**License auditing** — scans for unassigned M365 licenses and dormant user accounts on a schedule, generates a report, and creates remediation tasks. The kind of thing that saves money but never gets done manually because it's tedious.
+
+**Incident notification routing** — routes alerts to the right channel (Teams, Slack, email, PagerDuty) based on severity and type. Sounds simple, but getting the routing logic right for different client environments required more iteration than expected.
+
+## What I learned building these
+
+n8n is genuinely good for this kind of work but error handling in production requires discipline. If a workflow fails silently at 3am because an API returned an unexpected shape, you don't find out until someone asks why something didn't happen. Every critical workflow now has explicit error branches and failure notifications.
+
+## Stack
+
+- n8n (self-hosted)
+- Azure Logic Apps (for some client environments)
+- Microsoft Graph API
+- Microsoft Sentinel
+- HiBob, VirusTotal, AbuseIPDB APIs

@@ -191,6 +191,8 @@ export interface About extends BasePageConfig {
       title: string;
       /** Skill description */
       description?: React.ReactNode;
+      /** Icon for the skill category */
+      icon?: string;
       /** Skill tags */
       tags?: Array<{
         name: string;
@@ -207,6 +209,22 @@ export interface About extends BasePageConfig {
         /** Image height ratio */
         height: number;
       }>;
+    }>;
+  };
+  /** Interests/personal section */
+  interests: {
+    /** Whether to display interests section */
+    display: boolean;
+    /** Title for the interests section */
+    title: string;
+    /** List of interests */
+    items: Array<{
+      /** Interest title */
+      title: string;
+      /** Interest description */
+      description: React.ReactNode;
+      /** Icon for the interest */
+      icon: string;
     }>;
   };
 }

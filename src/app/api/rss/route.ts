@@ -2,6 +2,8 @@ import { getPosts } from "@/utils/utils";
 import { baseURL, blog, person } from "@/resources";
 import { NextResponse } from "next/server";
 
+export const dynamic = "force-static";
+
 export async function GET() {
   const posts = getPosts(["src", "app", "blog", "posts"]);
 
@@ -23,7 +25,7 @@ export async function GET() {
     <managingEditor>${person.email || "noreply@example.com"} (${person.name})</managingEditor>
     <webMaster>${person.email || "noreply@example.com"} (${person.name})</webMaster>
     <image>
-      <url>${baseURL}${person.avatar || "/images/avatar.jpg"}</url>
+      <url>${baseURL}${person.avatar || "/images/avatar.png"}</url>
       <title>${blog.title}</title>
       <link>${baseURL}/blog</link>
     </image>

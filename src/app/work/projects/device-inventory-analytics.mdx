@@ -1,0 +1,38 @@
+---
+title: "Device Inventory Analytics"
+summary: "A high-scale device analytics platform for large Intune environments — OpenSearch-powered full-text search, compliance heatmaps, and aggregated reporting across 50,000+ assets."
+image: "/images/avatar.png"
+tag: "Tool"
+publishedAt: "2026-01-05"
+---
+
+## What this is
+
+A companion to FleetWatch, built for analytical depth rather than day-to-day fleet operations. Where FleetWatch is fast search and direct device actions, this is compliance trend analysis, cross-fleet aggregations, and audit reporting.
+
+Built for environments where the data volume makes native Intune reporting impractical.
+
+## Why OpenSearch
+
+At 50,000+ devices with hundreds of properties each, the queries that matter for security auditing — "show me all Windows 10 devices with BitLocker disabled, sorted by last sync time, filtered by region" — are aggregation queries that relational databases handle poorly at this scale. OpenSearch handles them well and the full-text search is a side benefit.
+
+## What it does
+
+**Elastic search across the fleet** — complex boolean queries on device state. Find devices by any combination of properties in milliseconds.
+
+**Compliance heatmaps** — visualize non-compliant devices by location, department, or OS version. Useful for spotting systemic issues rather than individual device problems.
+
+**Trend analysis** — compliance over time per policy. Shows whether a remediation effort actually worked, or whether drift is recurring.
+
+**Audit exports** — CSV/PDF compliance reports for regulatory requirements. The kind of thing that used to take someone a day to compile manually.
+
+## How data stays current
+
+Node.js workers run continuous sync from Microsoft Graph, pulling device state and pushing updates to OpenSearch. The data is fresh enough for security auditing purposes without hammering the Graph API rate limits.
+
+## Stack
+
+- Next.js
+- OpenSearch (AWS Managed)
+- TypeScript / Node.js
+- Microsoft Graph API

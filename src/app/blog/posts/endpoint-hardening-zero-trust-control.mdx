@@ -1,0 +1,78 @@
+---
+title: "Endpoint Hardening as a Zero Trust Control"
+summary: "A compliant device in Conditional Access is only meaningful if your compliance policies check things that actually matter. Here's what to harden and how to measure it."
+image: "/images/avatar.png"
+publishedAt: "2026-02-10"
+tag: "Security"
+---
+
+In the last post I talked about Conditional Access requiring device compliance as a gate for accessing sensitive resources. That's a good control — but it's only as strong as what your compliance policies actually check.
+
+A compliance policy that requires Windows 10 or later and nothing else isn't doing much. Here's what meaningful endpoint hardening looks like and how to enforce it at scale.
+
+## What you're actually trying to prevent
+
+Endpoint hardening exists because endpoints are where most breaches start. Phishing drops malware on a laptop. A stolen credential gets used from an unmanaged device. A vulnerability in an unpatched browser gets exploited in a drive-by.
+
+The goal is: make endpoints harder to compromise, make compromise harder to escalate, and make detection faster when it happens anyway.
+
+In a Zero Trust model, the device posture signal feeds directly into access decisions. A device with BitLocker disabled and a 90-day-old OS patch level is a liability — and Conditional Access can refuse it access to production resources until it's fixed.
+
+## The baseline controls
+
+These are the things I configure in every Intune environment before anything else:
+
+**BitLocker everywhere.** Full disk encryption on Windows endpoints. If a laptop is lost or stolen, the data on it is inaccessible without the PIN. Enforce BitLocker, escrow recovery keys to Entra ID, and verify via Intune compliance policy. If a device isn't encrypted, it fails compliance.
+
+**OS and software updates.** Unpatched systems are a known-risk liability. Intune's update rings for Windows let you enforce patch timelines — you can require that devices are within N days of the latest security patch before passing compliance. Combine with Windows Update for Business for ring-based deployment.
+
+**Defender Antivirus and real-time protection.** Basic but worth enforcing via compliance policy. Ensure real-time protection is on and definitions are current. If you have Defender for Endpoint licensed, that opens up device risk score integration.
+
+**Firewall enabled.** Windows Firewall should be on for all profiles (domain, private, public). This is easy to check and easy to enforce, and it closes a lot of lateral movement options.
+
+**Secure Boot.** Prevents boot-time attacks. Enforce via compliance policy — devices that can't pass Secure Boot attestation fail compliance.
+
+**No jailbreak / rooted status** (mobile). For iOS and Android in Intune, compliance policies can check for jailbreak/root status. Jailbroken devices bypass OS security controls and shouldn't be touching corporate resources.
+
+## The deeper controls
+
+Once the baseline is solid, the next layer:
+
+**Defender for Endpoint integration.** If you have the licensing, connect Defender for Endpoint to Intune compliance. DfE computes a machine risk score based on active threats, vulnerability exposure, and security configuration. You can require that risk score is "low" or "medium" before a device passes compliance. This gives you real-time threat signal flowing into access decisions.
+
+**Attack Surface Reduction rules.** ASR rules in Defender block specific behaviors: Office macros from spawning child processes, executable content from email attachments, credential theft from lsass.exe. Some of these are noisy in audit mode and need tuning, but they block real attack techniques.
+
+**Credential Guard.** Protects credentials in memory using virtualization-based security. Prevents pass-the-hash and pass-the-ticket attacks even on a compromised endpoint. Requires UEFI and Secure Boot, so you need hardware that supports it.
+
+**Local admin restrictions.** Standard users shouldn't be local admins on their workstations. If they need to install software, the right answer is a software catalog, not admin rights. Restricting local admin significantly limits what malware can do once it lands.
+
+**LAPS.** Local Administrator Password Solution rotates local admin passwords per device and stores them in Entra ID. This prevents credential reuse attacks — if an attacker gets the local admin password from one machine, it doesn't work on others.
+
+## Enforcement reality
+
+The gap between "configured in Intune" and "actually enforced" is real. Intune compliance policies mark devices as non-compliant, but if Conditional Access isn't actually gating on that, it's just a report.
+
+The rollout order I use:
+1. Build the compliance policies and put everything in report-only or "warn" mode
+2. Let it run for 2–4 weeks, review what's failing and why
+3. Fix the legitimate issues (old hardware, software conflicts, provisioning gaps)
+4. Enable Conditional Access enforcement for a pilot group
+5. Expand to full enforcement once the pilot is clean
+
+Skipping step 3 means you'll lock out legitimate users when you enforce, which makes IT look like the problem rather than the solution.
+
+## Measuring it
+
+The questions I use to audit whether endpoint hardening is actually working:
+
+- What percentage of managed endpoints pass compliance today? (Target: >95%)
+- What are the top 3 reasons devices fail compliance?
+- Are any devices passing compliance that shouldn't be (false compliant)?
+- What's the DfE machine risk distribution across the fleet?
+- When did the highest-risk device last check in?
+
+If you can answer those from Intune and DfE dashboards in under 5 minutes, your visibility is in decent shape. If you can't, that's the first thing to fix.
+
+---
+
+Next: why I built Project Aegis — an AI agent system for security operations — and how the same Zero Trust principles apply to agentic systems that have access to sensitive tools.

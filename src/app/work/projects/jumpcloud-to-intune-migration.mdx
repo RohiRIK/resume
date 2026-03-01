@@ -1,0 +1,35 @@
+---
+title: "JumpCloud to Intune Migration"
+summary: "MDM consolidation from JumpCloud to Microsoft Intune — automated unenrollment, Autopilot provisioning, and policy parity for a mixed Windows and macOS fleet."
+image: "/images/avatar.png"
+tag: "MDM"
+publishedAt: "2026-02-03"
+---
+
+## What this was
+
+A client running JumpCloud for MDM wanted to consolidate onto the Microsoft stack. Everything else was already in Microsoft — identity, email, security — but the device management gap meant correlating device state with identity required jumping between platforms.
+
+## What I built
+
+The main challenge with MDM migrations is the transition gap — the window where a device is unenrolled from one MDM and not yet in another. During that time you lose policy enforcement and visibility.
+
+I wrote PowerShell scripts to handle the transition in sequence: unenroll from JumpCloud, trigger Intune enrollment, verify the device showed up in Intune before moving to the next. Ran in batches with rollback checkpoints so we could pause if something broke mid-migration.
+
+**Windows Autopilot** — registered the Windows fleet into Autopilot for zero-touch future provisioning. Extracted hardware hashes, uploaded them, configured deployment profiles per user group.
+
+**macOS via Apple Business Manager** — set up ABM integration with Intune. More involved than Windows Autopilot — had to work through the MDM profile trust chain and handle devices that had supervision issues from the JumpCloud side.
+
+**Policy parity** — translated JumpCloud's Command Library into Intune Configuration Profiles and PowerShell scripts deployed via Intune. Some mapped cleanly, some needed rethinking.
+
+## What made it hard
+
+A subset of devices had been enrolled in JumpCloud via a method that left a persistent MDM profile the script couldn't cleanly remove. Those had to be handled manually. Also found several macOS devices enrolled by users personally rather than via ABM, which broke the supervision requirement for certain policies.
+
+## Stack
+
+- Microsoft Intune
+- JumpCloud
+- Windows Autopilot
+- Apple Business Manager
+- PowerShell & Microsoft Graph API

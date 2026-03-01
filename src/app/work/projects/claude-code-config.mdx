@@ -1,0 +1,49 @@
+---
+title: "Claude Code Config"
+summary: "My production Claude Code setup — custom hooks, agents, skills, and session context system that makes AI-assisted development actually sustainable day-to-day."
+image: "/images/avatar.png"
+tag: "Tool"
+publishedAt: "2026-01-20"
+link: "https://github.com/RohiRIK/claude-code-config"
+---
+
+## What this is
+
+My personal Claude Code configuration that I've been refining since I started using it heavily for both security automation and portfolio work. The default Claude Code setup is fine. This is what happens after you use it seriously for a few months and start fixing the parts that annoy you.
+
+## The problem with default Claude Code
+
+Two things break down quickly:
+
+1. **No memory across sessions.** Every new conversation starts cold. You re-explain your stack, your preferences, your project context. It adds up.
+
+2. **No workflow enforcement.** Claude will happily skip tests, write unsafe code, or use npm instead of bun if you don't have rules that say otherwise.
+
+## What I built
+
+**Session context system** — Four files per project (`context-goals.md`, `context-decisions.md`, `context-progress.md`, `context-gotchas.md`) that persist across sessions. A PreCompact hook assembles them before context gets trimmed. A SessionStart hook injects the summary at the start of every new session. Claude picks up where it left off.
+
+**Custom hooks** — Shell commands that fire on tool use events:
+- PostToolUse runs Prettier and tsc after every file edit
+- PreToolUse blocks dev servers from running outside a tmux session
+- EvaluateSession extracts patterns at session end
+- SuggestCompact warns when approaching context limits
+
+**Agent definitions** — Specialized agents for recurring tasks: planner, tdd-guide, code-reviewer, security-reviewer, build-error-resolver. Each has a focused role and gets invoked for the right thing rather than dumping everything at the main agent.
+
+**Skills** — Reusable command prompts: `/plan`, `/verify`, `/simplify`, `/commit-push-pr`, `/learn`. The verify skill runs tsc → lint → tests → build in order and stops on first failure.
+
+**Global rules** — Coding style, git workflow, security checklist, package manager preferences (bun, not npm), test coverage minimums. Claude reads these on every session and actually follows them.
+
+## What it actually changed
+
+I stopped re-explaining my stack. I stopped getting npm in projects that use bun. Security checks happen before commits without me prompting. The context system means I can close a session mid-task and come back three days later without losing where I was.
+
+It's not magic — it's just configuration that enforces the workflow I actually want.
+
+## Stack
+
+- Claude Code hooks (bash scripts)
+- CLAUDE.md (global + per-project)
+- Session context (4 markdown files per project)
+- Custom agents + skills

@@ -1,0 +1,41 @@
+---
+title: "Dotfiles"
+summary: "My dev environment as code — zsh, Zed, tmux, and tooling configuration managed in a single repo with a bootstrap script that sets up a new machine in one command."
+image: "/images/avatar.png"
+tag: "Tool"
+publishedAt: "2025-11-10"
+link: "https://github.com/RohiRIK/dotfiles"
+---
+
+## What this is
+
+My dotfiles repo. Not a flex — just a practical answer to the question "how long does it take to get a new machine to a working state?" The answer used to be a few hours of guesswork. Now it's one command and a coffee break.
+
+## What's in it
+
+**zsh config** — aliases, functions, prompt (Starship), history settings. Nothing exotic, but all the shortcuts I actually use are there rather than rebuilt from memory each time.
+
+**Zed settings** — editor config, keybindings, theme. Zed is my main editor and its settings are JSON, so they're version-controllable like anything else.
+
+**tmux config** — prefix key, pane navigation, session restore. I run everything in tmux (dev servers, long builds, Claude Code sessions) so this matters.
+
+**Homebrew bundle** — `Brewfile` with all the tools I want on a fresh macOS install. `brew bundle` installs everything in one shot.
+
+**Bootstrap script** — `install.sh` that symlinks dotfiles, installs Homebrew + packages, sets zsh as default shell, and drops everything in the right place. Idempotent — safe to run on an existing machine.
+
+## Why bother
+
+The obvious reason is new machine setup. Less obvious: dotfiles in version control means you can see when you changed something and why, revert when you break something, and share setups between machines without drift.
+
+The Brewfile is particularly useful — it's easy to forget what you've installed on a machine until something breaks because it's missing on a different one.
+
+## What it doesn't do
+
+It's not a full system configuration management setup. No Ansible, no Nix. If I need something that complex I'll reach for those tools, but for personal machines this is the right scope.
+
+## Stack
+
+- Bash (bootstrap script)
+- GNU Stow (symlink management)
+- Homebrew + Brewfile
+- Starship prompt

@@ -7,7 +7,7 @@ export async function generateMetadata() {
     title: work.title,
     description: work.description,
     baseURL: baseURL,
-    image: `/api/og/generate?title=${encodeURIComponent(work.title)}`,
+    image: `${baseURL}${person.avatar}`,
     path: work.path,
   });
 }
@@ -21,7 +21,7 @@ export default function Work() {
         path={work.path}
         title={work.title}
         description={work.description}
-        image={`/api/og/generate?title=${encodeURIComponent(work.title)}`}
+        image={`${baseURL}${person.avatar}`}
         author={{
           name: person.name,
           url: `${baseURL}${about.path}`,
@@ -31,7 +31,7 @@ export default function Work() {
       <Heading marginBottom="l" variant="heading-strong-xl" align="center">
         {work.title}
       </Heading>
-      <Projects />
+      <Projects exclude={['n8n-automation-workflows', 'doc-crawler-ai-organizer', 'device-inventory-analytics']} />
     </Column>
   );
 }

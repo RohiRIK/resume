@@ -35,7 +35,7 @@ export default function Home() {
         path={home.path}
         title={home.title}
         description={home.description}
-        image={`/api/og/generate?title=${encodeURIComponent(home.title)}`}
+        image={`${baseURL}${person.avatar}`}
         author={{
           name: person.name,
           url: `${baseURL}${about.path}`,
@@ -101,7 +101,20 @@ export default function Home() {
         </Column>
       </Column>
       <RevealFx translateY="16" delay={0.6}>
-        <Projects range={[1, 1]} />
+        <Projects
+          range={[1, 1]}
+          exclude={[
+            "fleetwatch",
+            "personal-coffeshop",
+            "air-quality-automation",
+            "unix-update-automator",
+            "homelab-swarm-stack",
+            "dev-team",
+            "n8n-automation-workflows",
+            "device-inventory-analytics",
+            "doc-crawler-ai-organizer",
+          ]}
+        />
       </RevealFx>
       {routes["/blog"] && (
         <Column fillWidth gap="24" marginBottom="l">
@@ -123,7 +136,20 @@ export default function Home() {
           </Row>
         </Column>
       )}
-      <Projects range={[2]} />
+      <Projects
+        range={[2, 4]}
+        exclude={[
+          "fleetwatch",
+          "personal-coffeshop",
+          "air-quality-automation",
+          "unix-update-automator",
+          "homelab-swarm-stack",
+          "dev-team",
+          "n8n-automation-workflows",
+          "device-inventory-analytics",
+          "doc-crawler-ai-organizer",
+        ]}
+      />
       <Mailchimp />
     </Column>
   );

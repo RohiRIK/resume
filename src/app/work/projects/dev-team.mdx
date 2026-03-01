@@ -1,0 +1,35 @@
+---
+title: "Dev Team AI"
+summary: "A multi-agent orchestration framework using MCP — 29+ specialized agents coordinated by a central orchestrator to handle complex development and security tasks autonomously."
+image: "/images/avatar.png"
+tag: "AI"
+publishedAt: "2025-10-28"
+link: "https://github.com/RohiRIK/dev-team"
+---
+
+## What this is
+
+A personal project exploring what a real multi-agent system looks like in practice. The idea: instead of one general-purpose AI assistant trying to do everything, a central orchestrator (Buddy) routes work to specialized agents — each with their own instructions, toolset, and context.
+
+29+ agents total. Things like `github-manager`, `security-scanner`, `code-reviewer`, `doc-writer`. Each is a separate configuration that Buddy loads dynamically based on what the task needs.
+
+## Why MCP
+
+Model Context Protocol gives agents a standardized way to expose tools. Instead of every agent needing custom integration code, they publish tools through MCP and any orchestrator can discover and call them. It's what makes the routing actually work — Buddy doesn't need to know the implementation details of each agent, just what tools it offers.
+
+## How it works
+
+Tasks come in to Buddy. Buddy analyzes what's needed, spawns the right agent(s), hands off context, and coordinates the results. Agents can hand off to each other — a scanner finding a vulnerability can trigger the coder agent to write a fix, which triggers the reviewer agent to validate it.
+
+State persists through a Context Hub so long-running tasks don't lose progress between sessions.
+
+## What I was actually trying to figure out
+
+Whether specialized agents produce meaningfully better results than a single agent with a long system prompt. The answer is yes, but with caveats — the routing logic matters a lot, and getting agents to hand off cleanly without losing context is harder than it sounds. Still iterating on that.
+
+## Stack
+
+- Bun (runtime)
+- Google Gemini SDK
+- Model Context Protocol (MCP)
+- TypeScript

@@ -1,0 +1,42 @@
+---
+title: "HomeLab Swarm Stack"
+summary: "My self-hosted infrastructure running on a home server — Docker Swarm, Traefik for ingress, Infisical for secrets, and a handful of services I actually use."
+image: "/images/avatar.png"
+tag: "Infrastructure"
+publishedAt: "2025-10-14"
+link: "https://github.com/RohiRIK/homelab-swarm-stack"
+---
+
+## What this is
+
+My home lab, documented and version-controlled. It runs on a dedicated server (not the Orange Pi — that's for IoT experiments), orchestrated with Docker Swarm. The goal was to build something I'd trust to run unattended and that I could actually learn from rather than just copy-paste from a tutorial.
+
+## Why Swarm over Compose or Kubernetes
+
+Kubernetes is overkill for one server. Plain Compose works but doesn't give you health-based restarts or easy service redeployment. Swarm hits the right balance — proper orchestration primitives without the operational overhead. It's been running with no manual intervention for over a year.
+
+## How it's structured
+
+Everything is network-segmented. External traffic comes in through Traefik on 80/443 — it handles Let's Encrypt SSL automatically and routes to the right service based on hostname. Backend services talk to each other over internal overlay networks and have no external exposure.
+
+Secrets are managed through Infisical, not environment variables in Compose files. Took some extra setup but means I'm not looking at plaintext secrets in a git repo.
+
+## What runs on it
+
+- **Traefik** — edge router, SSL termination, service discovery
+- **n8n** — workflow automation, connected to various APIs
+- **Infisical** — secrets management for the whole stack
+- **Portainer** — Swarm management UI
+- **Firecrawl** — documentation crawling for AI projects
+- **SearXNG** — self-hosted metasearch
+
+## What didn't go smoothly
+
+The first version had everything in one large Compose file. Adding a new service meant touching the global config and risking breaking something else. Refactored to a modular stack-per-service structure — each service lives in its own folder with its own Compose file and connects to the shared `proxy-net` for ingress. Much easier to maintain and deploy independently.
+
+## Stack
+
+- Docker Swarm
+- Traefik
+- Infisical
+- Ubuntu Server / Portainer

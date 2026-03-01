@@ -1,0 +1,45 @@
+---
+title: "Air Quality Automation"
+summary: "A Docker-based environmental monitoring system running on Orange Pi 3 LTS — BME680 sensor, dynamic air quality scoring, and structured JSON telemetry ready for any dashboard."
+image: "/images/avatar.png"
+tag: "IoT"
+publishedAt: "2025-12-15"
+link: "https://github.com/RohiRIK/Air-Quality-Orange-Pi-Automation"
+---
+
+## What this is
+
+A home lab side project. I wanted air quality monitoring in my workspace and didn't want to use a proprietary device that locks data behind an app. So I wired up a Bosch BME680 sensor to an Orange Pi 3 LTS and built the monitoring stack myself.
+
+Tracks temperature, humidity, pressure, gas resistance, dew point, and heat index. Outputs structured JSON every 2 seconds, ready to pipe into InfluxDB, an ELK stack, or just log to disk.
+
+## Why a dynamic baseline matters
+
+Raw gas resistance from the BME680 is meaningless without context — the number means different things depending on the sensor's warm-up state and ambient conditions. The system runs a 120-second warmup on startup, establishes a moving-average baseline, then calculates an air quality score (0–100) relative to that baseline. The score is actually useful rather than just a raw ohm reading.
+
+## What the output looks like
+
+```json
+{
+  "temperature_c": 31.04,
+  "humidity_rh": 68.55,
+  "gas_baseline_ohms": 42150.5,
+  "air_quality_score": 52.3,
+  "dew_point_c": 24.75,
+  "heat_index_c": 34.47,
+  "baseline_established": true
+}
+```
+
+Deployed as a Docker container with hardware access via privileged mode — whole thing starts with `docker compose up`.
+
+## One gotcha worth noting
+
+Position the BME680 away from the Orange Pi's CPU. I didn't, and the first week of temperature readings were 4–5°C too high. Moved it to a separate mount on the case and readings normalized.
+
+## Stack
+
+- Python with Adafruit CircuitPython/Blinka
+- Docker & Docker Compose
+- Orange Pi 3 LTS (ARM64)
+- Bosch BME680 via I2C

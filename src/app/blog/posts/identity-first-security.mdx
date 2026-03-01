@@ -1,0 +1,68 @@
+---
+title: "Identity-First Security"
+summary: "The network perimeter is gone. Identity is what's left. Here's what building security around identity looks like in practice and why it changes almost everything."
+image: "/images/avatar.png"
+publishedAt: "2026-01-28"
+tag: "Security"
+---
+
+There's a version of security that's built around the network. The idea is: defend the boundary, and everything inside is safe. Keep attackers out with firewalls, VPNs, intrusion detection. Trust the inside.
+
+That model has been broken for a long time. Cloud services, remote work, SaaS, third-party integrations — the "inside" isn't a coherent concept anymore. Your users are authenticating from coffee shops. Your apps are in Azure. Your data is in SharePoint and Salesforce and a dozen other places. There's no perimeter to defend.
+
+What's left is identity. And identity-first security is what it sounds like: rebuild your controls around who is authenticating, rather than where they're connecting from.
+
+## What identity-first means operationally
+
+The mental model shift is from "is this request coming from our network?" to "is this principal authorized to take this action, given what I know about them right now?"
+
+That second question is more complex, but it's the right question. It considers:
+
+**Authentication strength.** Is this a password? A TOTP code? A FIDO2 hardware key? Phishing-resistant MFA is different from SMS MFA, which is different from a password. Access to sensitive resources should require authentication strength proportional to their sensitivity.
+
+**Identity assurance.** Is this account in good standing? Has it shown anomalous behavior recently? Entra ID Protection gives you risk scores based on behavioral signals — leaked credentials, impossible travel, atypical location. A user with elevated risk should face stepped-up authentication or blocking, not the same access they'd get on a normal day.
+
+**Device context.** What device is this authentication coming from? Is it managed by your organization? Does it pass compliance checks (encryption, patch level, EDR health)? An authentication from a compliant, managed device means something different than one from an unknown personal device.
+
+**Least privilege.** Does this identity have the minimum access needed for its function? Not "does this person work here" — "does this specific person need access to this specific thing?" Role creep is a real problem: people accumulate access over time as their responsibilities change, and nobody removes what's no longer needed.
+
+## The practical implementation stack
+
+In a Microsoft environment, the identity stack looks like this:
+
+**Entra ID** as the identity provider — the central directory, authentication, and authorization source for everything. Single sign-on across apps means every authentication flows through one place you control and log.
+
+**Conditional Access** as the policy engine — evaluating every authentication against your rules before granting access. MFA requirements, device compliance checks, location restrictions, risk-based controls. This is where policy meets enforcement.
+
+**Entra ID Protection** as the risk signal — machine learning models running on authentication patterns to flag suspicious behavior. Leaked credential detection, sign-in risk scoring, user risk scoring. Feeds directly into Conditional Access policy evaluation.
+
+**Privileged Identity Management** for admin accounts — just-in-time access elevation for privileged roles. Nobody holds Global Admin permanently. You request elevation when you need it, with justification and approval, for a time-limited period. Full audit trail.
+
+**Access reviews** to fight role creep — automated campaigns that force managers to confirm whether their team members still need the access they have. If nobody confirms it, access is removed. This is how you keep least privilege from drifting over time.
+
+## The admin account problem
+
+Admin accounts are the highest-value targets in an environment. They're also often the most poorly secured.
+
+The pattern I push in every environment:
+- No permanent Global Admin assignment for any user account used for daily work
+- Separate dedicated admin accounts for privileged operations, separate from daily-use accounts
+- Phishing-resistant MFA (FIDO2 or Windows Hello for Business) required for all privileged access — no exceptions for SMS or push notifications
+- PIM for just-in-time elevation, with approval and justification
+- Break-glass accounts for emergency access, with strong credentials, excluded from most policies, and monitored for any use
+
+The break-glass accounts are important and often set up wrong. They need to exist — if your Conditional Access policies have a bug and lock everyone out, you need a way in. But they should have strong passwords (generated, not memorable), be excluded from Conditional Access in a scoped way, and any authentication from them should trigger an immediate alert.
+
+## Where this gets hard
+
+The hardest part isn't the technology. It's the change management.
+
+Users who've never needed MFA before will push back. Managers whose teams lose access to things they used to have access to will escalate. Shared accounts (the "team login" that five people use) break identity-first security entirely — you can't have individual accountability if people share credentials — and teams are often attached to them.
+
+The answer isn't to make exceptions. It's to make the security requirements understandable and to make the secure path as smooth as possible. MFA that works well is less painful than people expect. Managed devices that provision automatically don't create friction after the initial setup.
+
+The conversation shifts from "security is making our lives harder" to "we're building for a world where someone will try to get into our systems, and these controls are why they won't succeed."
+
+---
+
+Last post in this series will be practical: what a Zero Trust rollout actually looks like in a mid-size organization, what to do first, and where the first six months usually go wrong.

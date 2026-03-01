@@ -1,0 +1,31 @@
+---
+title: "HiBob Teams Sync"
+summary: "Automation tool that keeps employee profile photos in sync between HiBob (HRIS) and Microsoft Teams/Entra ID — no third-party services, runs in your own infrastructure."
+image: "/images/avatar.png"
+tag: "Automation"
+publishedAt: "2026-01-12"
+link: "https://github.com/RohiRIK/HiBob-Teams-Sync"
+---
+
+## What this is
+
+A focused automation tool built at Oncloud. The problem: organizations using HiBob as their HRIS source of truth had employee photos sitting in HiBob that weren't making it to Microsoft Teams or Entra ID profiles. IT kept getting tickets about it. The options were either do it manually or use a third-party sync service that required excessive permissions.
+
+I built a self-hosted alternative that runs entirely within the client's own infrastructure using their own App Registrations.
+
+## How it works
+
+Pulls profile images from the HiBob API, compares image hashes against what's currently set in Entra ID, and pushes updates via Microsoft Graph only when something has actually changed. Minimizes unnecessary API calls and creates a full audit log of every sync operation.
+
+Built in two runtimes — PowerShell 7+ for IT admins who want to run it manually or schedule it via Task Scheduler, and TypeScript/Bun for automated pipeline use in Azure Automation or GitHub Actions.
+
+## Why self-hosted matters here
+
+Profile photo sync sounds like a small thing, but it touches identity data for every employee. Third-party SaaS tools that offer this typically require broad Graph API permissions and store data in their own cloud. This tool uses only the permissions it needs, and nothing leaves the client's environment.
+
+## Stack
+
+- TypeScript (Bun) and PowerShell 7+
+- Microsoft Graph API
+- HiBob API
+- Compatible with Azure Automation, GitHub Actions, or local CRON

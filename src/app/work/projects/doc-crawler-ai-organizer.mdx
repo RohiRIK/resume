@@ -1,0 +1,38 @@
+---
+title: "Doc-Crawler AI"
+summary: "A documentation pipeline that crawls technical docs sites and converts them to clean, structured Markdown optimized for RAG ingestion — handles SPAs, strips noise, preserves heading hierarchy."
+image: "/images/avatar.png"
+tag: "Tool"
+publishedAt: "2025-12-16"
+---
+
+## What this is
+
+A pipeline tool I built to solve a recurring problem with RAG systems: the source data quality. Embedding documentation that still has navigation bars, cookie banners, and sidebar content mixed in produces retrieval results that are noisier than they should be.
+
+This tool crawls a documentation site and outputs clean, structured Markdown that's actually ready to embed.
+
+## The pipeline
+
+**Discover** — maps the site using sitemaps and recursive link discovery.
+
+**Crawl** — uses Firecrawl to handle JavaScript-heavy documentation sites (SPAs that don't render content without JS execution are a common problem for simple scrapers).
+
+**Clean** — strips navigation, footers, sidebars, and other non-content elements. Preserves code blocks, heading hierarchy, and inline formatting.
+
+**Export** — outputs Markdown with YAML frontmatter including source URL, crawl timestamp, and category tags.
+
+## Why heading hierarchy matters
+
+RAG systems chunk documents before embedding. If a chunk loses its heading context — if you can't tell what section a paragraph belongs to — retrieval becomes less accurate because the chunk looks the same whether it's a warning note or a main concept. Preserving the heading structure makes chunking strategies more effective.
+
+## What I use it for
+
+Keeping RAG datasets current for Project Aegis. Documentation changes — API references especially — and stale embeddings quietly degrade retrieval quality. Scheduled re-crawls keep the vector store up to date without manual intervention.
+
+## Stack
+
+- TypeScript and Bash
+- Firecrawl (headless browser crawling)
+- Markdown with YAML frontmatter
+- Compatible with LangChain and LlamaIndex pipelines
