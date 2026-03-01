@@ -35,7 +35,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# blog images (generated locally, not committed)
-/public/images/blog/*.png
-/public/images/blog/*.webp
-/public/images/blog/*.jpg
+# blog image generation docs (not needed in repo)
+/public/images/blog/GENERATE.md
+/public/images/blog/PROMPTS.md
