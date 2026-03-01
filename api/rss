@@ -2,66 +2,66 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Writing about automation and security...</title>
-    <link>https://rohirikman.dev/blog</link>
+    <link>https://rohirik.github.io/resume/blog</link>
     <description>Read what Rohi Rikman has been up to recently</description>
     <language>en</language>
-    <lastBuildDate>Sun, 01 Mar 2026 12:54:48 GMT</lastBuildDate>
-    <atom:link href="https://rohirikman.dev/api/rss" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 01 Mar 2026 13:02:20 GMT</lastBuildDate>
+    <atom:link href="https://rohirik.github.io/resume/api/rss" rel="self" type="application/rss+xml" />
     <managingEditor>rohi@rohirikman.dev (Rohi Rikman)</managingEditor>
     <webMaster>rohi@rohirikman.dev (Rohi Rikman)</webMaster>
     <image>
-      <url>https://rohirikman.dev/images/avatar.png</url>
+      <url>https://rohirik.github.io/resume/images/avatar.png</url>
       <title>Writing about automation and security...</title>
-      <link>https://rohirikman.dev/blog</link>
+      <link>https://rohirik.github.io/resume/blog</link>
     </image>
     
     <item>
       <title>Zero Trust Is Not a Product</title>
-      <link>https://rohirikman.dev/blog/zero-trust-is-not-a-product</link>
-      <guid>https://rohirikman.dev/blog/zero-trust-is-not-a-product</guid>
+      <link>https://rohirik.github.io/resume/blog/zero-trust-is-not-a-product</link>
+      <guid>https://rohirik.github.io/resume/blog/zero-trust-is-not-a-product</guid>
       <pubDate>Fri, 20 Feb 2026 00:00:00 GMT</pubDate>
       <description><![CDATA[Every vendor sells 'Zero Trust.' Most of what they're selling is a marketing label on a firewall. Here's what the model actually means and why it matters.]]></description>
-      <enclosure url="https://rohirikman.dev/images/avatar.png" type="image/jpeg" />
+      <enclosure url="https://rohirik.github.io/resume/images/avatar.png" type="image/jpeg" />
       <category>Security</category>
       <author>rohi@rohirikman.dev (Rohi Rikman)</author>
     </item>
     <item>
       <title>Conditional Access in Practice</title>
-      <link>https://rohirikman.dev/blog/conditional-access-in-practice</link>
-      <guid>https://rohirikman.dev/blog/conditional-access-in-practice</guid>
+      <link>https://rohirik.github.io/resume/blog/conditional-access-in-practice</link>
+      <guid>https://rohirik.github.io/resume/blog/conditional-access-in-practice</guid>
       <pubDate>Sun, 15 Feb 2026 00:00:00 GMT</pubDate>
       <description><![CDATA[Conditional Access is where Zero Trust principles actually land in a Microsoft environment. Here's how to think about it, what to get right, and where I've seen it go wrong.]]></description>
-      <enclosure url="https://rohirikman.dev/images/avatar.png" type="image/jpeg" />
+      <enclosure url="https://rohirik.github.io/resume/images/avatar.png" type="image/jpeg" />
       <category>Security</category>
       <author>rohi@rohirikman.dev (Rohi Rikman)</author>
     </item>
     <item>
       <title>Endpoint Hardening as a Zero Trust Control</title>
-      <link>https://rohirikman.dev/blog/endpoint-hardening-zero-trust-control</link>
-      <guid>https://rohirikman.dev/blog/endpoint-hardening-zero-trust-control</guid>
+      <link>https://rohirik.github.io/resume/blog/endpoint-hardening-zero-trust-control</link>
+      <guid>https://rohirik.github.io/resume/blog/endpoint-hardening-zero-trust-control</guid>
       <pubDate>Tue, 10 Feb 2026 00:00:00 GMT</pubDate>
       <description><![CDATA[A compliant device in Conditional Access is only meaningful if your compliance policies check things that actually matter. Here's what to harden and how to measure it.]]></description>
-      <enclosure url="https://rohirikman.dev/images/avatar.png" type="image/jpeg" />
+      <enclosure url="https://rohirik.github.io/resume/images/avatar.png" type="image/jpeg" />
       <category>Security</category>
       <author>rohi@rohirikman.dev (Rohi Rikman)</author>
     </item>
     <item>
       <title>Zero Trust for AI Agents</title>
-      <link>https://rohirikman.dev/blog/zero-trust-for-ai-agents</link>
-      <guid>https://rohirikman.dev/blog/zero-trust-for-ai-agents</guid>
+      <link>https://rohirik.github.io/resume/blog/zero-trust-for-ai-agents</link>
+      <guid>https://rohirik.github.io/resume/blog/zero-trust-for-ai-agents</guid>
       <pubDate>Thu, 05 Feb 2026 00:00:00 GMT</pubDate>
       <description><![CDATA[AI agents have access to real tools — APIs, databases, shell execution. The same principles that apply to human users apply here, and most agentic systems ignore them.]]></description>
-      <enclosure url="https://rohirikman.dev/images/avatar.png" type="image/jpeg" />
+      <enclosure url="https://rohirik.github.io/resume/images/avatar.png" type="image/jpeg" />
       <category>Security</category>
       <author>rohi@rohirikman.dev (Rohi Rikman)</author>
     </item>
     <item>
       <title>Identity-First Security</title>
-      <link>https://rohirikman.dev/blog/identity-first-security</link>
-      <guid>https://rohirikman.dev/blog/identity-first-security</guid>
+      <link>https://rohirik.github.io/resume/blog/identity-first-security</link>
+      <guid>https://rohirik.github.io/resume/blog/identity-first-security</guid>
       <pubDate>Wed, 28 Jan 2026 00:00:00 GMT</pubDate>
       <description><![CDATA[The network perimeter is gone. Identity is what's left. Here's what building security around identity looks like in practice and why it changes almost everything.]]></description>
-      <enclosure url="https://rohirikman.dev/images/avatar.png" type="image/jpeg" />
+      <enclosure url="https://rohirik.github.io/resume/images/avatar.png" type="image/jpeg" />
       <category>Security</category>
       <author>rohi@rohirikman.dev (Rohi Rikman)</author>
     </item>
