@@ -1,0 +1,89 @@
+---
+title: "What I Actually Learned from Vibe Coding with Claude Code"
+summary: "A year of building projects with AI: what the workflow looks like, how I keep context alive across sessions, which safety patterns actually work, and what breaks if you skip them."
+image: "/images/blog/vibe-coding-ai-workflows.png"
+publishedAt: "2026-03-02"
+tag: "Engineering"
+---
+
+I've been building most of my personal projects with Claude Code for the past year. The tool works, but not in the way most people describe it. The narrative is usually "just describe what you want and it builds it." That's not wrong, but it's missing the part where a bad description causes you to spend two hours steering the model away from the wrong implementation.
+
+The shift that changed everything was treating AI as an analyst team, not a code generator.
+
+## The planning problem
+
+Early on, I'd describe a feature and let Claude start coding immediately. Sometimes it went well. More often, I'd get 200 lines of code that solved the wrong problem — technically correct but not what I needed. Worse, fixing the direction mid-implementation is expensive. You've already loaded context, written partial code, maybe created files. Undoing that costs more than starting right.
+
+The pattern I settled on: spend more time on the plan, less time on implementation. A well-scoped plan with clear constraints means near-zero steering during implementation. The model isn't smarter with a good plan, it's just pointed at the right target.
+
+My workflow now: `/plan` → review and modify until it's right → auto-accept mode for implementation → `/simplify` → `/verify` → commit. The planning phase takes as long as it takes. Everything after it is fast.
+
+## The context problem
+
+The second thing that broke early: context windows. You hit the limit mid-session, the model compacts, and suddenly it's lost track of decisions you made an hour ago. It suggests approaches you already ruled out. You repeat yourself. Progress slows.
+
+I solved this with a 3-layer memory model.
+
+**Layer 1: Real-time context management.** A context-mode MCP server runs commands in isolated subprocesses and returns only summaries to the main context window. Running `bun test` without this floods the window with output you don't need. With it, you get a two-line summary. This alone extended how long a focused session could run before things got noisy.
+
+**Layer 2: Per-session state.** Four markdown files per project, stored at `~/.claude/projects/<name>/`:
+- `context-goals.md` — what I'm working on right now (max 5 lines, rewritten when goals change)
+- `context-decisions.md` — architectural choices and why (permanent, never deleted)
+- `context-progress.md` — completed tasks and what's in flight (auto-trimmed to last 20)
+- `context-gotchas.md` — warnings, blockers, lessons (permanent, never deleted)
+
+A pre-compaction hook assembles these into a summary that gets injected at the next session start. When I come back after a break, I'm not starting from scratch — the model knows where we left off, what decisions are locked in, and what to avoid.
+
+**Layer 3: Cross-session learning.** At the end of each session, an EvaluateSession hook extracts patterns from the transcript and writes them to `skills/Learned/`. These are ephemeral and eventually trimmed. But if a lesson is important enough to keep — a bug pattern that bit me twice, a library quirk — I promote it manually to `context-gotchas.md`. Gotchas never get trimmed.
+
+## The analyst team model
+
+The thing I've found most useful is treating Claude not as one model but as a team with different roles. I have 11 specialized agents configured, each scoped to a specific kind of work:
+
+- **Planner** — scopes features, identifies dependencies, flags risks before any code is written
+- **Code reviewer** — severity-based feedback: critical issues block commit, high issues get fixed, medium are noted
+- **Security reviewer** — OWASP Top 10, secrets detection, dependency auditing
+- **TDD guide** — enforces write-tests-first; if I try to implement before writing a test, it stops me
+- **Build error resolver** — when the build breaks, this agent diagnoses and fixes without touching anything else
+- **Architect** — for decisions that affect project structure, not just implementation
+- **E2E runner** — Playwright tests for critical user flows
+
+These aren't just named system prompts. They run as separate agents with access to the codebase but scoped to their role. The code reviewer doesn't have permission to edit files. The build error resolver doesn't refactor — it makes the minimum change to get green. Scope matters for agents the same way it matters for service accounts.
+
+## SOC workflow integration
+
+My Project Aegis work — the AI agent system for security operations — introduced a different set of constraints. When an agent can interact with a SIEM, create tickets, or trigger containment actions, "let the model decide" isn't good enough.
+
+The patterns that held up:
+
+**Confidence thresholds.** Every agent action has a confidence score. Below a threshold, the action pauses and creates a human review task instead of executing. The threshold is higher for destructive actions. Isolating a device requires higher confidence than creating an alert ticket.
+
+**Read-before-write confirmation.** Before any write action, the agent confirms its understanding of the current state. This catches prompt injection — where adversarial content in ingested data tries to redirect the agent — before damage is done. If the agent's understanding of state doesn't match reality, it stops.
+
+**Rate limiting on destructive operations.** An agent that can create tickets is capped at N per hour. An agent that can isolate devices has a hard limit per day. If the cap is hit, it alerts a human rather than continuing. This catches runaway behavior from bugs or injection before it becomes a real incident.
+
+**Separate identities per agent.** Each agent in Aegis has its own service principal with scoped permissions. The threat intel ingestion agent can't touch the ticketing system. The triage agent can't run containment actions. When agents hand off work, they pass context — not credentials. The receiving agent authenticates with its own identity.
+
+This isn't theoretical. I caught two cases during development where prompt injection in test threat feeds would have caused the agent to try accessing out-of-scope resources. The read-before-write check stopped both.
+
+## The non-negotiables
+
+After a year of this, some things have survived every project. They're in my global Claude Code config and get applied automatically:
+
+**Immutability.** Spread operators, never mutate. Every time I've allowed mutation "just for simplicity," I've spent more time debugging state issues than the mutation saved.
+
+**80% test coverage minimum.** Not a target, a floor. The TDD agent enforces this. Tests go in first; if they don't, the agent pauses and redirects. I've shipped features with 95% coverage. I've never shipped with less than 80% and had it go cleanly.
+
+**Conventional commits.** `feat|fix|refactor|docs|chore: description`. The commit-push-pr command precomputes git context and generates these automatically. Having a consistent format means the git history is readable and PRs are easy to summarize.
+
+**Bun, not npm.** Faster, built-in TypeScript support, consistent. I stopped arguing about this.
+
+**No `console.log` in committed code.** A PostToolUse hook flags it on every edit. It sounds minor. It's not — debugging production logs that are half `console.log("here")` is miserable.
+
+## What actually breaks if you skip the planning
+
+I've run the experiment. Skipping `/plan` and going straight to implementation feels faster at the start. By the middle of implementation, you're steering. By the end, you're either accepting something that doesn't quite fit or throwing away the implementation and starting over.
+
+The planning phase doesn't write code, so it feels unproductive. It's the opposite. A 20-minute planning session that surfaces a wrong assumption saves two hours of implementation. Every time.
+
+The model isn't the bottleneck. The bottleneck is clarity about what you're building.

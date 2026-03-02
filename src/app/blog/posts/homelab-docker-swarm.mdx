@@ -1,0 +1,102 @@
+---
+title: "My Homelab on Docker Swarm: What Runs, How It's Wired, What Broke"
+summary: "A tour of my self-hosted infrastructure — Docker Swarm for orchestration, Traefik for ingress, Infisical for secrets, and the modular design that replaced the monolith I should never have written."
+image: "/images/blog/homelab-docker-swarm.png"
+publishedAt: "2026-03-02"
+tag: "Infrastructure"
+---
+
+My homelab runs on a dedicated server, not a cloud VPS. Everything is version-controlled, documented, and designed to run without me touching it. It's been doing that for over a year.
+
+This is what's running, how it's wired together, and what went wrong the first time.
+
+## Why Swarm and not the alternatives
+
+The choice comes up every time I mention this setup: why not Kubernetes, why not plain Compose?
+
+Kubernetes is genuinely overkill for a single server. The operational overhead — etcd, control plane components, kubeconfig management, networking plugins — is real work for infrastructure that only needs to orchestrate maybe 10 services. The value of Kubernetes is horizontal scaling and high availability across nodes. I have one node.
+
+Plain Compose works and is simple to reason about, but it doesn't give you health-based restarts, rolling updates, or service redeployment without downtime. When a container crashes, Compose doesn't automatically reschedule it. Swarm does.
+
+Swarm hits the right point in the tradeoff: orchestration primitives (services, secrets, overlay networks, health checks, update policies) without the operational overhead of a full cluster. It's been running with no manual intervention since I set it up.
+
+## Network architecture
+
+All external traffic enters through Traefik on ports 80 and 443. Traefik handles Let's Encrypt SSL automatically — certificates are provisioned on first request and renewed without manual intervention. It routes to the right service based on hostname labels on each container.
+
+Backend services communicate over internal overlay networks and have no ports exposed to the outside. The pattern is: Traefik is the only service on `proxy-net` that faces the internet. Everything else is on service-specific overlay networks and only joins `proxy-net` if it needs to be externally reachable. Services that don't need external exposure — databases, internal APIs — are never on `proxy-net` at all.
+
+This is the same segmentation principle as network microsegmentation: services can't reach each other unless there's an explicit path. If Firecrawl gets compromised, it can't directly reach n8n or the secrets store. They're on different networks.
+
+## Secrets management
+
+The first version of this setup used environment variables in Compose files. This is the common approach and also the wrong one: environment variables end up in Compose files, Compose files end up in git, and suddenly you're sanitizing git history.
+
+I replaced all of that with Infisical, which I self-host on the same server. Agents and services fetch credentials at runtime through the Infisical SDK or CLI. Nothing sensitive is in the Compose files. If I need to rotate a credential, I update it in Infisical and restart the affected service — no code changes, no Compose file edits.
+
+Infisical also gives me an audit trail: which service fetched which secret, when. For a homelab, this might sound excessive. It's not — knowing that a service fetched a credential at an unexpected time is useful signal.
+
+Docker Swarm also has native secrets (`docker secret`), which I use for a few things that Infisical can't easily inject (init scripts, bootstrap credentials for Infisical itself). Both live alongside each other without conflict.
+
+## What runs on it
+
+**Traefik** — Edge router and SSL termination. Service discovery is automatic via container labels. I define routes in each service's Compose file rather than in a central Traefik config, which means adding a new service doesn't require touching the router config.
+
+**Portainer** — Swarm management UI. Most things I do via CLI, but Portainer is useful for visualizing the current state of the stack, looking at service logs without SSHing in, and managing one-off tasks. It connects to the Docker socket and has full visibility into the Swarm.
+
+**Infisical** — Secrets store. Self-hosted with its own database. Services fetch credentials from Infisical at startup; nothing sensitive lives anywhere else in the stack.
+
+**n8n** — Workflow automation. This is the busiest service in the stack — it's connected to a handful of external APIs and runs scheduled and event-triggered automations. It persists state to a volume on the host. The workflow definitions are exported and version-controlled separately.
+
+**Firecrawl** — Documentation crawling for AI projects. I run this alongside Project Aegis and other AI tools that need to index documentation from web sources. Self-hosting it means I control the crawl rate and the data stays local.
+
+**SearXNG** — Self-hosted metasearch. Routes queries to multiple search engines without sending identifying information to any of them. Useful when Claude Code or local agents need to search the web without leaking query patterns.
+
+## The modular stack structure
+
+The first version of this setup was a single large Compose file. Everything was defined in one place, which felt clean until the stack had eight services and adding a ninth meant scrolling through 400 lines of YAML and hoping you didn't break something in the middle.
+
+More importantly: redeploying one service meant bringing the entire stack down or doing careful surgery on a monolithic file. It didn't scale.
+
+The current structure is one directory per service, each with its own Compose file:
+
+```
+homelab-swarm-stack/
+  traefik/
+    docker-compose.yml
+  portainer/
+    docker-compose.yml
+  infisical/
+    docker-compose.yml
+  n8n/
+    docker-compose.yml
+  ...
+```
+
+Each service connects to the shared `proxy-net` network for ingress (if it needs external exposure) and to service-specific networks for internal communication. The `proxy-net` network is created once and referenced as external in each Compose file.
+
+Deploying a new service: create its directory, write its Compose file, deploy with `docker stack deploy`. No other service is touched. Removing a service: `docker stack rm <service>`. The rest of the stack is unaffected.
+
+This is the same principle as microservices architecture applied to infrastructure config: each unit is independently deployable and changes to one don't risk breaking others.
+
+## What's required to maintain it
+
+The honest answer: almost nothing. Traefik renews certs automatically. Services restart on failure via Swarm health checks. I don't do manual updates — I have a process for pulling new images and redeploying, but it's not automated (I want to be intentional about when things update).
+
+What does require occasional attention:
+
+**Storage.** Volumes accumulate data. n8n's database grows. I check disk usage monthly and prune what's not needed.
+
+**Infisical.** The self-hosted version needs occasional updates. These are the updates I'm most careful about — Infisical holds credentials for everything else, so a botched update has cascading effects. I test updates on a snapshot before applying to the live instance.
+
+**Network connectivity.** Occasionally a service loses connectivity to `proxy-net` after a server restart. The fix is always `docker network connect proxy-net <container>` — it takes 10 seconds, but it's annoying enough that I documented it in the project's gotchas file.
+
+**Swarm state.** Single-node Swarm doesn't have the HA guarantees of a multi-node cluster. If the server loses power without a clean shutdown, Swarm state can get inconsistent. I keep a current export of all stack definitions so recovery is redeploy-from-scratch rather than debugging corrupted state.
+
+## What I'd do differently
+
+The secrets management was the biggest early mistake. Environment variables in Compose files feel convenient until they're not. Infisical from the start would have saved the work of migrating everything over.
+
+The second thing: start modular. A monolithic Compose file is tempting for the first three services because it's less overhead. By service six, you're paying for it. The directory-per-service structure takes five minutes to set up and saves hours later.
+
+Everything else, including the Swarm choice over Kubernetes, I'd make the same way.
