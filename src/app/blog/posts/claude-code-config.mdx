@@ -1,0 +1,113 @@
+---
+title: "How I Configured Claude Code to Actually Remember Things"
+summary: "The default Claude Code setup loses context on every session. Here's the hook system, skill commands, agent definitions, and memory architecture I built to fix that."
+image: "/images/blog/claude-code-config.png"
+publishedAt: "2026-03-02"
+tag: "Engineering"
+---
+
+The default Claude Code installation does one thing poorly: it forgets everything. Every new session, you re-explain your stack, your preferences, the decisions you made last week. It compounds quickly on any project you're in for more than a few days.
+
+I spent a few months building a configuration layer on top of Claude Code that solves this. Here's what it does and how it works.
+
+## The memory problem
+
+Claude Code has no persistence by default. The context window holds your current session. When it compacts or you start a new one, that state is gone. You're not losing information in a database — you're losing it from the model's working memory.
+
+The fix isn't clever prompting. It's an explicit memory system with structured files and hooks that write to and read from those files automatically.
+
+## The 4-file context system
+
+Each project gets a directory at `~/.claude/projects/<name>/` with four files:
+
+**`context-goals.md`** — what I'm working on right now. Max 5 lines. Rewritten when the goal changes. Keeps the model from drifting into solving adjacent problems.
+
+**`context-decisions.md`** — architectural choices and why. Permanent, never deleted. If I decided to use Infisical instead of environment variables, that's in here with the reason. The model doesn't suggest what I've already ruled out.
+
+**`context-progress.md`** — completed tasks and what's in flight. Auto-trimmed to the last 20 items. Serves as a working log without growing unbounded.
+
+**`context-gotchas.md`** — warnings, blockers, and lessons. Also permanent. If something bit me once — a library quirk, an environment constraint, a mistake pattern — it lives here forever. The model reads it at session start and doesn't repeat the same mistakes.
+
+These files are plain markdown. They're updated manually after significant tasks, and automatically by hooks at session end.
+
+## The hooks
+
+Hooks are shell scripts or TypeScript files that Claude Code runs in response to lifecycle events. I have six:
+
+**SessionStart** — runs when a new session opens. Reads the project's context files and injects a summary (max 60 lines) as a system message. The model immediately knows what project it's in, what the current goal is, what decisions are locked, and what to avoid. No re-explaining needed.
+
+**PreCompact** — runs before Claude Code compacts the context window. Assembles all four context files into `context-summary.md` — a structured 60-line snapshot. This becomes what SessionStart injects next time. Without this, compaction destroys context. With it, compaction is just a checkpoint.
+
+**EvaluateSession** — runs when the session ends. Reads the transcript, extracts patterns — recurring mistakes, useful techniques, things that worked — and writes them to `~/.claude/skills/Learned/`. These are ephemeral: they roll off after a few sessions. For anything important enough to keep permanently, I promote it manually to `context-gotchas.md`.
+
+**SuggestCompact** — tracks a running count of tool calls per session. At 50, it suggests running `/compact`. This isn't mandatory, but the reminder is useful — context windows that run too long start producing lower-quality output.
+
+**UpdateContext** — PostToolUse hook that fires after Write, Edit, or MultiEdit operations. Logs modified files to context-progress and runs Prettier and tsc on changed files immediately. Type errors and formatting issues surface at edit time, not at build time.
+
+**Cleanup** — periodic maintenance. Trims context-progress.md to the last 20 items. Removes context directories for projects that haven't been touched in 30 days.
+
+## Skills and commands
+
+Skills are reusable prompts that expand into full instructions when invoked. I have these:
+
+**`/plan`** — invokes the planner agent before any implementation. Restates the requirement, breaks it into phases, identifies dependencies, flags risks. Produces a plan for review before any code is touched. I don't write code without running this first for anything non-trivial.
+
+**`/verify`** — runs a self-check loop: tsc → lint → tests → build, in order, stopping on first failure. The skill knows to skip steps that aren't configured for the project. Run before every commit.
+
+**`/simplify`** — post-implementation review. Looks at recently modified code for unnecessary abstraction, duplicated logic, or complexity that crept in during implementation. Runs after verify.
+
+**`/commit-push-pr`** — precomputes git context (status, diff, log, branch), generates a conventional commit message, stages relevant files, commits, and pushes. Skips the tedium of assembling git commands manually.
+
+**`/learn`** — manual trigger for pattern extraction. Same process as EvaluateSession but runs on demand mid-session when I want to capture something specific.
+
+**`/update-context`** — reads the current session and updates all four context files. Useful after completing a significant task when I want to flush progress immediately rather than waiting for the end-of-session hook.
+
+**`/tdd`** — enforces test-first workflow. Scaffolds the interface, writes the test, makes it fail, then implements the minimum code to pass. Blocks implementation until the test exists.
+
+**`/code-review`** — runs the code-reviewer agent on recently modified files. Returns severity-rated feedback: critical issues stop work, high issues get fixed, medium issues are noted.
+
+## Agents
+
+Agents are specialized sub-models with scoped roles. They run separately from the main session and have access to the codebase but only for their designated purpose.
+
+**planner** — for implementation planning. Doesn't write code. Only produces plans with phases, dependencies, and risk flags.
+
+**code-reviewer** — reviews code after it's written. Severity-based feedback. The reviewer doesn't have write access — it can't change files, only report.
+
+**security-reviewer** — OWASP Top 10 checks, secret detection, dependency auditing. Runs before commits on anything that touches auth, input handling, or external integrations.
+
+**tdd-guide** — enforces test-first. If I start implementing without a failing test, it redirects. Tracks coverage and flags when it drops below 80%.
+
+**architect** — for decisions that affect project structure. Invoked when I'm choosing between approaches that have lasting consequences, not for individual implementation decisions.
+
+**build-error-resolver** — when the build breaks, this agent diagnoses and makes the minimum change to get it green. Doesn't refactor, doesn't improve — just fixes the build.
+
+**refactor-cleaner** — dead code removal and consolidation. Runs tools like `knip` to find unused exports, then removes them. Used for maintenance, not mid-feature.
+
+The separation is intentional. A code reviewer that can also edit files is dangerous — it starts making "improvements" that weren't asked for. Each agent does one thing.
+
+## Global rules
+
+Rules are markdown files in `~/.claude/rules/` that load into every session. They cover:
+
+- **Coding style**: immutability-first (spread operators, never mutate), no `any` types, explicit return types on exports, functions under 50 lines
+- **Package manager**: bun not npm, uv not pip — enforced globally so I never get npm in a bun project
+- **Git workflow**: conventional commits (`feat|fix|refactor|docs|chore:`), no `Co-Authored-By` footers, PR descriptions that cover the full diff not just the latest commit
+- **Testing**: 80% minimum coverage, TDD workflow required for new features
+- **Security**: no hardcoded secrets, input validation at system boundaries only, rate limiting on all endpoints
+
+The model reads these rules at every session start. They're not suggestions — they're constraints that get checked during code review and verify.
+
+## What this actually changes day-to-day
+
+The memory system means I can leave a project for a week and come back without a re-orientation session. The model knows where I left off, what I decided, and what's broken.
+
+The hooks mean formatting and type errors surface immediately. I don't batch-discover problems at commit time.
+
+The agents mean review happens as a matter of course. I'm not remembering to run security checks — they're part of the workflow for anything touching auth or external data.
+
+The skills mean the repetitive parts (planning, verifying, committing) have consistent execution. I don't skip `/verify` because it's convenient — the skill is right there and running it takes two seconds.
+
+None of this is magic. It's structured configuration that enforces a workflow I decided I wanted. The alternative is relying on memory and discipline to apply that workflow manually every time. That doesn't scale.
+
+The config is version-controlled at [github.com/RohiRIK/claude-code-config](https://github.com/RohiRIK/claude-code-config).
