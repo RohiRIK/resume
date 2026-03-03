@@ -13,6 +13,7 @@
 - [X] 5. identity-first-security.png
 - [x] 6. vibe-coding-ai-workflows.png
 - [x] 7. homelab-docker-swarm.png
+- [ ] 8. claude-code-config.png
 
 ---
 
@@ -261,3 +262,53 @@ making the segmentation explicit and intentional.
 Color palette: near-black background, gateway in electric blue, service nodes
 in varied neon (purple/amber/green/cyan/magenta), secrets vault in deep amber,
 divider lines in cool white, network lines in dim cyan. Subjects fill full frame.
+
+---
+
+## 8. claude-code-config.png
+
+**Concept:** PERSISTENCE / MEMORY problem type.
+The default tool forgets everything. This config adds structured memory —
+files that persist across sessions, hooks that write and read automatically,
+a system that picks up where it left off. The image should feel quiet and
+precise, not flashy. Memory as infrastructure, not magic.
+
+**Style:** NOT Nano Banana. Use a cold monochrome technical aesthetic —
+dark background, off-white and pale gray tones, single muted accent color
+(cool slate blue). No neon. No vibrant color. Think: terminal screenshot,
+technical schematic, blueprint. Minimal. Slightly clinical.
+
+**Prompt:**
+
+Monochrome technical illustration. Cold blueprint aesthetic. Very dark
+background (#0A0E14 — near black with a blue tint). Off-white and pale
+gray elements only. Single muted accent: slate blue (#4A6FA5). No neon.
+No gradients. No text. Hard edges. Precise geometry.
+
+Center composition: a vertical column of four rectangular file cards,
+stacked with slight spacing — representing the four context files. Each
+card is a thin flat rectangle in dim gray, slightly raised off the
+background. Each has a small geometric icon inside:
+- Top card: bullseye/target (goals)
+- Second: branch fork (decisions)
+- Third: checkbox tick (progress)
+- Bottom: warning triangle (gotchas)
+
+Icons are rendered in pale off-white, crisp and minimal.
+
+On the left: a small clock/session icon in muted slate blue — representing
+the start of a session. A thin dotted line flows from it rightward into the
+top of the card stack — the injection of context at session start.
+
+On the right: a small hook/arrow icon in slate blue — representing the hook
+that writes back. A thin dotted line flows from the bottom of the card stack
+rightward into it — the automatic update at session end. The two lines (left
+input, right output) form a quiet loop around the card stack.
+
+The overall feeling is: a small, reliable system doing its job quietly.
+No drama. No color. Just structure.
+
+Color palette: near-black blue-tinted background, file cards in dim gray,
+icons in pale off-white, accent lines and hook/clock icons in muted slate
+blue. Nothing bright. Nothing loud. Subjects centered, plenty of negative
+space.

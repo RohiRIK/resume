@@ -13,7 +13,7 @@ d:I[168027,[],"default"]
 :HL["/resume/_next/static/chunks/b3a7f4834154c9dc.css","style"]
 :HL["/resume/_next/static/media/797e433ab948586e-s.p.dbea232f.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/resume/_next/static/media/caa3a2e1cccd8315-s.p.853070df.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-0:{"P":null,"b":"qdrbgpgunk3Cy1dQtgZ-t","c":["","blog","endpoint-hardening-zero-trust-control"],"q":"","i":false,"f":[[["",{"children":["blog",{"children":[["slug","endpoint-hardening-zero-trust-control","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/resume/_next/static/chunks/93ac2d54f71ec8d4.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/resume/_next/static/chunks/d20e0f0702cef329.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","2",{"rel":"stylesheet","href":"/resume/_next/static/chunks/3a1b43107ae24619.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","3",{"rel":"stylesheet","href":"/resume/_next/static/chunks/eef662fdc50843a7.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","4",{"rel":"stylesheet","href":"/resume/_next/static/chunks/b3a7f4834154c9dc.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/resume/_next/static/chunks/601dc1a12bda3fda.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/resume/_next/static/chunks/8a07e6fd7e614a7b.js","async":true,"nonce":"$undefined"}],["$","script","script-2",{"src":"/resume/_next/static/chunks/9988c4a59e44ac76.js","async":true,"nonce":"$undefined"}],["$","script","script-3",{"src":"/resume/_next/static/chunks/05424c1bbd401aee.js","async":true,"nonce":"$undefined"}],["$","script","script-4",{"src":"/resume/_next/static/chunks/2079049d5abbbd3d.js","async":true,"nonce":"$undefined"}]],"$L2"]}],{"children":[["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L5",[["$","script","script-0",{"src":"/resume/_next/static/chunks/b4d60b79b2dcf7b3.js","async":true,"nonce":"$undefined"}]],["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],{},null,false,false]},null,false,false]},null,false,false]},null,false,false],["$","$1","h",{"children":[null,["$","$L9",null,{"children":"$La"}],["$","div",null,{"hidden":true,"children":["$","$Lb",null,{"children":["$","$7",null,{"name":"Next.Metadata","children":"$Lc"}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],false]],"m":"$undefined","G":["$d",[]],"S":true}
+0:{"P":null,"b":"0SMGKohWtotHwKxXRifra","c":["","blog","endpoint-hardening-zero-trust-control"],"q":"","i":false,"f":[[["",{"children":["blog",{"children":[["slug","endpoint-hardening-zero-trust-control","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/resume/_next/static/chunks/93ac2d54f71ec8d4.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/resume/_next/static/chunks/d20e0f0702cef329.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","2",{"rel":"stylesheet","href":"/resume/_next/static/chunks/3a1b43107ae24619.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","3",{"rel":"stylesheet","href":"/resume/_next/static/chunks/eef662fdc50843a7.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","4",{"rel":"stylesheet","href":"/resume/_next/static/chunks/b3a7f4834154c9dc.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/resume/_next/static/chunks/601dc1a12bda3fda.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/resume/_next/static/chunks/8a07e6fd7e614a7b.js","async":true,"nonce":"$undefined"}],["$","script","script-2",{"src":"/resume/_next/static/chunks/9988c4a59e44ac76.js","async":true,"nonce":"$undefined"}],["$","script","script-3",{"src":"/resume/_next/static/chunks/05424c1bbd401aee.js","async":true,"nonce":"$undefined"}],["$","script","script-4",{"src":"/resume/_next/static/chunks/2079049d5abbbd3d.js","async":true,"nonce":"$undefined"}]],"$L2"]}],{"children":[["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L5",[["$","script","script-0",{"src":"/resume/_next/static/chunks/b4d60b79b2dcf7b3.js","async":true,"nonce":"$undefined"}]],["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],{},null,false,false]},null,false,false]},null,false,false]},null,false,false],["$","$1","h",{"children":[null,["$","$L9",null,{"children":"$La"}],["$","div",null,{"hidden":true,"children":["$","$Lb",null,{"children":["$","$7",null,{"name":"Next.Metadata","children":"$Lc"}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],false]],"m":"$undefined","G":["$d",[]],"S":true}
 f:I[530824,["/resume/_next/static/chunks/601dc1a12bda3fda.js","/resume/_next/static/chunks/8a07e6fd7e614a7b.js","/resume/_next/static/chunks/9988c4a59e44ac76.js","/resume/_next/static/chunks/05424c1bbd401aee.js","/resume/_next/static/chunks/2079049d5abbbd3d.js","/resume/_next/static/chunks/b4d60b79b2dcf7b3.js"],"Providers"]
 10:I[273323,["/resume/_next/static/chunks/601dc1a12bda3fda.js","/resume/_next/static/chunks/8a07e6fd7e614a7b.js","/resume/_next/static/chunks/9988c4a59e44ac76.js","/resume/_next/static/chunks/05424c1bbd401aee.js","/resume/_next/static/chunks/2079049d5abbbd3d.js","/resume/_next/static/chunks/b4d60b79b2dcf7b3.js"],"Column"]
 11:I[621971,["/resume/_next/static/chunks/601dc1a12bda3fda.js","/resume/_next/static/chunks/8a07e6fd7e614a7b.js","/resume/_next/static/chunks/9988c4a59e44ac76.js","/resume/_next/static/chunks/05424c1bbd401aee.js","/resume/_next/static/chunks/2079049d5abbbd3d.js","/resume/_next/static/chunks/b4d60b79b2dcf7b3.js"],"RevealFx"]
@@ -74,7 +74,116 @@ e:T771,
 22:I[814360,["/resume/_next/static/chunks/601dc1a12bda3fda.js","/resume/_next/static/chunks/8a07e6fd7e614a7b.js","/resume/_next/static/chunks/9988c4a59e44ac76.js","/resume/_next/static/chunks/05424c1bbd401aee.js","/resume/_next/static/chunks/2079049d5abbbd3d.js","/resume/_next/static/chunks/b4d60b79b2dcf7b3.js"],"default"]
 16:["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","$L10",null,{"as":"section","fill":true,"center":true,"paddingBottom":"160","children":[["$","span",null,{"className":"font-display font-strong font-xl mb-s","style":{"textAlign":"$undefined","textWrap":"$undefined"},"children":"404"}],["$","h1",null,{"className":"font-display font-default font-xs neutral-on-background-strong mb-l","style":{"textAlign":"$undefined","textWrap":"balance"},"children":"Page Not Found"}],["$","span",null,{"className":"neutral-on-background-weak","style":{"textAlign":"$undefined","textWrap":"$undefined"},"children":"The page you are looking for does not exist."}]]}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]
 17:["$","$L18",null,{"as":"footer","fillWidth":true,"padding":"8","horizontal":"center","s":{"direction":"column"},"children":[["$","$L18",null,{"className":"Footer-module-scss-module__DkSkqG__mobile","maxWidth":"m","paddingY":"8","paddingX":"16","gap":"16","horizontal":"between","vertical":"center","s":{"direction":"column","horizontal":"center","align":"center"},"children":[["$","span",null,{"className":"font-body font-default font-s neutral-on-background-strong","style":{"textAlign":"$undefined","textWrap":"$undefined"},"children":[["$","span",null,{"className":"neutral-on-background-weak","style":{"textAlign":"$undefined","textWrap":"$undefined"},"children":["© ",2026," /"]}],["$","span",null,{"className":"px-4","style":{"textAlign":"$undefined","textWrap":"$undefined"},"children":"Rohi Rikman"}],["$","span",null,{"className":"neutral-on-background-weak","style":{"textAlign":"$undefined","textWrap":"$undefined"},"children":"/ Powered by caffeine and questionable life choices"}]]}],["$","$L18",null,{"gap":"16","children":[["$","$L19","GitHub",{"href":"https://github.com/RohiRIK","icon":"github","tooltip":"GitHub","size":"s","variant":"ghost"}],["$","$L19","LinkedIn",{"href":"https://www.linkedin.com/in/rohi-rikman-48831b239/","icon":"linkedin","tooltip":"LinkedIn","size":"s","variant":"ghost"}],["$","$L19","Email",{"href":"mailto:rohi@rohirikman.dev","icon":"email","tooltip":"Email","size":"s","variant":"ghost"}]]}]]}],["$","$L18",null,{"height":"80","hide":true,"s":{"hide":false}}]]}]
-23:T1f79,
+23:T2296,
+The default Claude Code installation does one thing poorly: it forgets everything. Every new session, you re-explain your stack, your preferences, the decisions you made last week. It compounds quickly on any project you're in for more than a few days.
+
+I spent a few months building a configuration layer on top of Claude Code that solves this. Here's what it does and how it works.
+
+## The memory problem
+
+Claude Code has no persistence by default. The context window holds your current session. When it compacts or you start a new one, that state is gone. You're not losing information in a database — you're losing it from the model's working memory.
+
+The fix isn't clever prompting. It's an explicit memory system with structured files and hooks that write to and read from those files automatically.
+
+## The 4-file context system
+
+Each project gets a directory at `~/.claude/projects/<name>/` with four files:
+
+**`context-goals.md`** — what I'm working on right now. Max 5 lines. Rewritten when the goal changes. Keeps the model from drifting into solving adjacent problems.
+
+**`context-decisions.md`** — architectural choices and why. Permanent, never deleted. If I decided to use Infisical instead of environment variables, that's in here with the reason. The model doesn't suggest what I've already ruled out.
+
+**`context-progress.md`** — completed tasks and what's in flight. Auto-trimmed to the last 20 items. Serves as a working log without growing unbounded.
+
+**`context-gotchas.md`** — warnings, blockers, and lessons. Also permanent. If something bit me once — a library quirk, an environment constraint, a mistake pattern — it lives here forever. The model reads it at session start and doesn't repeat the same mistakes.
+
+These files are plain markdown. They're updated manually after significant tasks, and automatically by hooks at session end.
+
+## The hooks
+
+Hooks are shell scripts or TypeScript files that Claude Code runs in response to lifecycle events. I have six:
+
+**SessionStart** — runs when a new session opens. Reads the project's context files and injects a summary (max 60 lines) as a system message. The model immediately knows what project it's in, what the current goal is, what decisions are locked, and what to avoid. No re-explaining needed.
+
+**PreCompact** — runs before Claude Code compacts the context window. Assembles all four context files into `context-summary.md` — a structured 60-line snapshot. This becomes what SessionStart injects next time. Without this, compaction destroys context. With it, compaction is just a checkpoint.
+
+**EvaluateSession** — runs when the session ends. Reads the transcript, extracts patterns — recurring mistakes, useful techniques, things that worked — and writes them to `~/.claude/skills/Learned/`. These are ephemeral: they roll off after a few sessions. For anything important enough to keep permanently, I promote it manually to `context-gotchas.md`.
+
+**SuggestCompact** — tracks a running count of tool calls per session. At 50, it suggests running `/compact`. This isn't mandatory, but the reminder is useful — context windows that run too long start producing lower-quality output.
+
+**UpdateContext** — PostToolUse hook that fires after Write, Edit, or MultiEdit operations. Logs modified files to context-progress and runs Prettier and tsc on changed files immediately. Type errors and formatting issues surface at edit time, not at build time.
+
+**Cleanup** — periodic maintenance. Trims context-progress.md to the last 20 items. Removes context directories for projects that haven't been touched in 30 days.
+
+## Skills and commands
+
+Skills are reusable prompts that expand into full instructions when invoked. I have these:
+
+**`/plan`** — invokes the planner agent before any implementation. Restates the requirement, breaks it into phases, identifies dependencies, flags risks. Produces a plan for review before any code is touched. I don't write code without running this first for anything non-trivial.
+
+**`/verify`** — runs a self-check loop: tsc → lint → tests → build, in order, stopping on first failure. The skill knows to skip steps that aren't configured for the project. Run before every commit.
+
+**`/simplify`** — post-implementation review. Looks at recently modified code for unnecessary abstraction, duplicated logic, or complexity that crept in during implementation. Runs after verify.
+
+**`/commit-push-pr`** — precomputes git context (status, diff, log, branch), generates a conventional commit message, stages relevant files, commits, and pushes. Skips the tedium of assembling git commands manually.
+
+**`/learn`** — manual trigger for pattern extraction. Same process as EvaluateSession but runs on demand mid-session when I want to capture something specific.
+
+**`/update-context`** — reads the current session and updates all four context files. Useful after completing a significant task when I want to flush progress immediately rather than waiting for the end-of-session hook.
+
+**`/tdd`** — enforces test-first workflow. Scaffolds the interface, writes the test, makes it fail, then implements the minimum code to pass. Blocks implementation until the test exists.
+
+**`/code-review`** — runs the code-reviewer agent on recently modified files. Returns severity-rated feedback: critical issues stop work, high issues get fixed, medium issues are noted.
+
+## Agents
+
+Agents are specialized sub-models with scoped roles. They run separately from the main session and have access to the codebase but only for their designated purpose.
+
+**planner** — for implementation planning. Doesn't write code. Only produces plans with phases, dependencies, and risk flags.
+
+**code-reviewer** — reviews code after it's written. Severity-based feedback. The reviewer doesn't have write access — it can't change files, only report.
+
+**security-reviewer** — OWASP Top 10 checks, secret detection, dependency auditing. Runs before commits on anything that touches auth, input handling, or external integrations.
+
+**tdd-guide** — enforces test-first. If I start implementing without a failing test, it redirects. Tracks coverage and flags when it drops below 80%.
+
+**architect** — for decisions that affect project structure. Invoked when I'm choosing between approaches that have lasting consequences, not for individual implementation decisions.
+
+**build-error-resolver** — when the build breaks, this agent diagnoses and makes the minimum change to get it green. Doesn't refactor, doesn't improve — just fixes the build.
+
+**refactor-cleaner** — dead code removal and consolidation. Runs tools like `knip` to find unused exports, then removes them. Used for maintenance, not mid-feature.
+
+The separation is intentional. A code reviewer that can also edit files is dangerous — it starts making "improvements" that weren't asked for. Each agent does one thing.
+
+## Global rules
+
+Rules are markdown files in `~/.claude/rules/` that load into every session. They cover:
+
+- **Coding style**: immutability-first (spread operators, never mutate), no `any` types, explicit return types on exports, functions under 50 lines
+- **Package manager**: bun not npm, uv not pip — enforced globally so I never get npm in a bun project
+- **Git workflow**: conventional commits (`feat|fix|refactor|docs|chore:`), no `Co-Authored-By` footers, PR descriptions that cover the full diff not just the latest commit
+- **Testing**: 80% minimum coverage, TDD workflow required for new features
+- **Security**: no hardcoded secrets, input validation at system boundaries only, rate limiting on all endpoints
+
+The model reads these rules at every session start. They're not suggestions — they're constraints that get checked during code review and verify.
+
+## What this actually changes day-to-day
+
+The memory system means I can leave a project for a week and come back without a re-orientation session. The model knows where I left off, what I decided, and what's broken.
+
+The hooks mean formatting and type errors surface immediately. I don't batch-discover problems at commit time.
+
+The agents mean review happens as a matter of course. I'm not remembering to run security checks — they're part of the workflow for anything touching auth or external data.
+
+The skills mean the repetitive parts (planning, verifying, committing) have consistent execution. I don't skip `/verify` because it's convenient — the skill is right there and running it takes two seconds.
+
+None of this is magic. It's structured configuration that enforces a workflow I decided I wanted. The alternative is relying on memory and discipline to apply that workflow manually every time. That doesn't scale.
+
+The config is version-controlled at [github.com/RohiRIK/claude-code-config](https://github.com/RohiRIK/claude-code-config).
+5:["$","$L18",null,{"fillWidth":true,"children":[["$","$L18",null,{"maxWidth":12,"m":{"hide":true}}],["$","$L18",null,{"fillWidth":true,"horizontal":"center","children":["$","$L10",null,{"as":"section","maxWidth":"m","horizontal":"center","gap":"l","paddingTop":"24","children":[["$","$L1a",null,{"id":"schema-blogPosting-/blog/endpoint-hardening-zero-trust-control","type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"BlogPosting\",\"url\":\"https://rohirik.github.io/resume/blog/endpoint-hardening-zero-trust-control\",\"sameAs\":[],\"headline\":\"Endpoint Hardening as a Zero Trust Control\",\"description\":\"A compliant device in Conditional Access is only meaningful if your compliance policies check things that actually matter. Here's what to harden and how to measure it.\",\"image\":\"https://rohirik.github.io/resume/images/blog/endpoint-hardening-zero-trust-control.png\",\"datePublished\":\"2026-02-10\",\"dateModified\":\"2026-02-10\",\"author\":{\"@type\":\"Person\",\"name\":\"Rohi Rikman\",\"url\":\"https://rohirik.github.io/resume/about\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"https://rohirik.github.io/resume/images/avatar.png\"}}}"}}],["$","$L10",null,{"maxWidth":"s","gap":"16","horizontal":"center","align":"center","children":[["$","$L1b",null,{"href":"/blog","children":["$","span",null,{"className":"font-label font-strong font-m","style":{"textAlign":"$undefined","textWrap":"$undefined"},"children":"Blog"}]}],["$","span",null,{"className":"font-body font-default font-xs neutral-on-background-weak mb-12","style":{"textAlign":"$undefined","textWrap":"$undefined"},"children":"February 10, 2026"}],["$","h1",null,{"className":"font-display font-strong font-m neutral-on-background-strong","style":{"textAlign":"$undefined","textWrap":"balance"},"children":"Endpoint Hardening as a Zero Trust Control"}],""]}],["$","$L18",null,{"marginBottom":"32","horizontal":"center","children":["$","$L18",null,{"gap":"16","vertical":"center","children":[["$","$L1c",null,{"size":"s","src":"/resume/images/avatar.png"}],["$","span",null,{"className":"font-label font-default font-m brand-on-background-weak","style":{"textAlign":"$undefined","textWrap":"$undefined"},"children":"Rohi Rikman"}]]}]}],["$","$L1d",null,{"src":"/resume/images/blog/endpoint-hardening-zero-trust-control.png","alt":"Endpoint Hardening as a Zero Trust Control","aspectRatio":"16/9","priority":true,"sizes":"(min-width: 768px) 100vw, 768px","border":"neutral-alpha-weak","radius":"l","marginTop":"12","marginBottom":"8"}],["$","$L10",null,{"as":"article","maxWidth":"s","children":"$L1e"}],["$","$L1f",null,{"title":"Endpoint Hardening as a Zero Trust Control","url":"https://rohirik.github.io/resume/blog/endpoint-hardening-zero-trust-control"}],["$","$L10",null,{"fillWidth":true,"gap":"40","horizontal":"center","marginTop":"40","children":[["$","$L20",null,{"maxWidth":"40"}],["$","h2",null,{"className":"font-heading font-strong font-xl mb-24","style":{"textAlign":"$undefined","textWrap":"$undefined"},"id":"recent-posts","children":"Recent posts"}],["$","$L21",null,{"columns":"2","s":{"columns":1},"fillWidth":true,"marginBottom":"40","gap":"16","children":[["$","$L22","claude-code-config",{"post":{"metadata":{"title":"How I Configured Claude Code to Actually Remember Things","subtitle":"","publishedAt":"2026-03-02","summary":"The default Claude Code setup loses context on every session. Here's the hook system, skill commands, agent definitions, and memory architecture I built to fix that.","image":"/images/blog/claude-code-config.png","images":[],"tag":"Engineering","team":[],"link":""},"slug":"claude-code-config","content":"$23"},"thumbnail":true,"direction":"column"}],"$L24"]}]]}],"$L25"]}]}],"$L26"]}]
+28:I[988654,["/resume/_next/static/chunks/601dc1a12bda3fda.js","/resume/_next/static/chunks/8a07e6fd7e614a7b.js","/resume/_next/static/chunks/9988c4a59e44ac76.js","/resume/_next/static/chunks/05424c1bbd401aee.js","/resume/_next/static/chunks/2079049d5abbbd3d.js","/resume/_next/static/chunks/b4d60b79b2dcf7b3.js"],"ScrollToHash"]
+29:I[605649,["/resume/_next/static/chunks/601dc1a12bda3fda.js","/resume/_next/static/chunks/8a07e6fd7e614a7b.js","/resume/_next/static/chunks/9988c4a59e44ac76.js","/resume/_next/static/chunks/05424c1bbd401aee.js","/resume/_next/static/chunks/2079049d5abbbd3d.js","/resume/_next/static/chunks/b4d60b79b2dcf7b3.js"],"HeadingNav"]
+27:T1f79,
 My homelab runs on a dedicated server, not a cloud VPS. Everything is version-controlled, documented, and designed to run without me touching it. It's been doing that for over a year.
 
 This is what's running, how it's wired together, and what went wrong the first time.
@@ -169,92 +278,7 @@ The secrets management was the biggest early mistake. Environment variables in C
 The second thing: start modular. A monolithic Compose file is tempting for the first three services because it's less overhead. By service six, you're paying for it. The directory-per-service structure takes five minutes to set up and saves hours later.
 
 Everything else, including the Swarm choice over Kubernetes, I'd make the same way.
-5:["$","$L18",null,{"fillWidth":true,"children":[["$","$L18",null,{"maxWidth":12,"m":{"hide":true}}],["$","$L18",null,{"fillWidth":true,"horizontal":"center","children":["$","$L10",null,{"as":"section","maxWidth":"m","horizontal":"center","gap":"l","paddingTop":"24","children":[["$","$L1a",null,{"id":"schema-blogPosting-/blog/endpoint-hardening-zero-trust-control","type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"BlogPosting\",\"url\":\"https://rohirik.github.io/resume/blog/endpoint-hardening-zero-trust-control\",\"sameAs\":[],\"headline\":\"Endpoint Hardening as a Zero Trust Control\",\"description\":\"A compliant device in Conditional Access is only meaningful if your compliance policies check things that actually matter. Here's what to harden and how to measure it.\",\"image\":\"https://rohirik.github.io/resume/images/blog/endpoint-hardening-zero-trust-control.png\",\"datePublished\":\"2026-02-10\",\"dateModified\":\"2026-02-10\",\"author\":{\"@type\":\"Person\",\"name\":\"Rohi Rikman\",\"url\":\"https://rohirik.github.io/resume/about\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"https://rohirik.github.io/resume/images/avatar.png\"}}}"}}],["$","$L10",null,{"maxWidth":"s","gap":"16","horizontal":"center","align":"center","children":[["$","$L1b",null,{"href":"/blog","children":["$","span",null,{"className":"font-label font-strong font-m","style":{"textAlign":"$undefined","textWrap":"$undefined"},"children":"Blog"}]}],["$","span",null,{"className":"font-body font-default font-xs neutral-on-background-weak mb-12","style":{"textAlign":"$undefined","textWrap":"$undefined"},"children":"February 10, 2026"}],["$","h1",null,{"className":"font-display font-strong font-m neutral-on-background-strong","style":{"textAlign":"$undefined","textWrap":"balance"},"children":"Endpoint Hardening as a Zero Trust Control"}],""]}],["$","$L18",null,{"marginBottom":"32","horizontal":"center","children":["$","$L18",null,{"gap":"16","vertical":"center","children":[["$","$L1c",null,{"size":"s","src":"/resume/images/avatar.png"}],["$","span",null,{"className":"font-label font-default font-m brand-on-background-weak","style":{"textAlign":"$undefined","textWrap":"$undefined"},"children":"Rohi Rikman"}]]}]}],["$","$L1d",null,{"src":"/resume/images/blog/endpoint-hardening-zero-trust-control.png","alt":"Endpoint Hardening as a Zero Trust Control","aspectRatio":"16/9","priority":true,"sizes":"(min-width: 768px) 100vw, 768px","border":"neutral-alpha-weak","radius":"l","marginTop":"12","marginBottom":"8"}],["$","$L10",null,{"as":"article","maxWidth":"s","children":"$L1e"}],["$","$L1f",null,{"title":"Endpoint Hardening as a Zero Trust Control","url":"https://rohirik.github.io/resume/blog/endpoint-hardening-zero-trust-control"}],["$","$L10",null,{"fillWidth":true,"gap":"40","horizontal":"center","marginTop":"40","children":[["$","$L20",null,{"maxWidth":"40"}],["$","h2",null,{"className":"font-heading font-strong font-xl mb-24","style":{"textAlign":"$undefined","textWrap":"$undefined"},"id":"recent-posts","children":"Recent posts"}],["$","$L21",null,{"columns":"2","s":{"columns":1},"fillWidth":true,"marginBottom":"40","gap":"16","children":[["$","$L22","homelab-docker-swarm",{"post":{"metadata":{"title":"My Homelab on Docker Swarm: What Runs, How It's Wired, What Broke","subtitle":"","publishedAt":"2026-03-02","summary":"A tour of my self-hosted infrastructure — Docker Swarm for orchestration, Traefik for ingress, Infisical for secrets, and the modular design that replaced the monolith I should never have written.","image":"/images/blog/homelab-docker-swarm.png","images":[],"tag":"Infrastructure","team":[],"link":""},"slug":"homelab-docker-swarm","content":"$23"},"thumbnail":true,"direction":"column"}],"$L24"]}]]}],"$L25"]}]}],"$L26"]}]
-28:I[988654,["/resume/_next/static/chunks/601dc1a12bda3fda.js","/resume/_next/static/chunks/8a07e6fd7e614a7b.js","/resume/_next/static/chunks/9988c4a59e44ac76.js","/resume/_next/static/chunks/05424c1bbd401aee.js","/resume/_next/static/chunks/2079049d5abbbd3d.js","/resume/_next/static/chunks/b4d60b79b2dcf7b3.js"],"ScrollToHash"]
-29:I[605649,["/resume/_next/static/chunks/601dc1a12bda3fda.js","/resume/_next/static/chunks/8a07e6fd7e614a7b.js","/resume/_next/static/chunks/9988c4a59e44ac76.js","/resume/_next/static/chunks/05424c1bbd401aee.js","/resume/_next/static/chunks/2079049d5abbbd3d.js","/resume/_next/static/chunks/b4d60b79b2dcf7b3.js"],"HeadingNav"]
-27:T1eda,
-I've been building most of my personal projects with Claude Code for the past year. The tool works, but not in the way most people describe it. The narrative is usually "just describe what you want and it builds it." That's not wrong, but it's missing the part where a bad description causes you to spend two hours steering the model away from the wrong implementation.
-
-The shift that changed everything was treating AI as an analyst team, not a code generator.
-
-## The planning problem
-
-Early on, I'd describe a feature and let Claude start coding immediately. Sometimes it went well. More often, I'd get 200 lines of code that solved the wrong problem — technically correct but not what I needed. Worse, fixing the direction mid-implementation is expensive. You've already loaded context, written partial code, maybe created files. Undoing that costs more than starting right.
-
-The pattern I settled on: spend more time on the plan, less time on implementation. A well-scoped plan with clear constraints means near-zero steering during implementation. The model isn't smarter with a good plan, it's just pointed at the right target.
-
-My workflow now: `/plan` → review and modify until it's right → auto-accept mode for implementation → `/simplify` → `/verify` → commit. The planning phase takes as long as it takes. Everything after it is fast.
-
-## The context problem
-
-The second thing that broke early: context windows. You hit the limit mid-session, the model compacts, and suddenly it's lost track of decisions you made an hour ago. It suggests approaches you already ruled out. You repeat yourself. Progress slows.
-
-I solved this with a 3-layer memory model.
-
-**Layer 1: Real-time context management.** A context-mode MCP server runs commands in isolated subprocesses and returns only summaries to the main context window. Running `bun test` without this floods the window with output you don't need. With it, you get a two-line summary. This alone extended how long a focused session could run before things got noisy.
-
-**Layer 2: Per-session state.** Four markdown files per project, stored at `~/.claude/projects/<name>/`:
-- `context-goals.md` — what I'm working on right now (max 5 lines, rewritten when goals change)
-- `context-decisions.md` — architectural choices and why (permanent, never deleted)
-- `context-progress.md` — completed tasks and what's in flight (auto-trimmed to last 20)
-- `context-gotchas.md` — warnings, blockers, lessons (permanent, never deleted)
-
-A pre-compaction hook assembles these into a summary that gets injected at the next session start. When I come back after a break, I'm not starting from scratch — the model knows where we left off, what decisions are locked in, and what to avoid.
-
-**Layer 3: Cross-session learning.** At the end of each session, an EvaluateSession hook extracts patterns from the transcript and writes them to `skills/Learned/`. These are ephemeral and eventually trimmed. But if a lesson is important enough to keep — a bug pattern that bit me twice, a library quirk — I promote it manually to `context-gotchas.md`. Gotchas never get trimmed.
-
-## The analyst team model
-
-The thing I've found most useful is treating Claude not as one model but as a team with different roles. I have 11 specialized agents configured, each scoped to a specific kind of work:
-
-- **Planner** — scopes features, identifies dependencies, flags risks before any code is written
-- **Code reviewer** — severity-based feedback: critical issues block commit, high issues get fixed, medium are noted
-- **Security reviewer** — OWASP Top 10, secrets detection, dependency auditing
-- **TDD guide** — enforces write-tests-first; if I try to implement before writing a test, it stops me
-- **Build error resolver** — when the build breaks, this agent diagnoses and fixes without touching anything else
-- **Architect** — for decisions that affect project structure, not just implementation
-- **E2E runner** — Playwright tests for critical user flows
-
-These aren't just named system prompts. They run as separate agents with access to the codebase but scoped to their role. The code reviewer doesn't have permission to edit files. The build error resolver doesn't refactor — it makes the minimum change to get green. Scope matters for agents the same way it matters for service accounts.
-
-## SOC workflow integration
-
-My Project Aegis work — the AI agent system for security operations — introduced a different set of constraints. When an agent can interact with a SIEM, create tickets, or trigger containment actions, "let the model decide" isn't good enough.
-
-The patterns that held up:
-
-**Confidence thresholds.** Every agent action has a confidence score. Below a threshold, the action pauses and creates a human review task instead of executing. The threshold is higher for destructive actions. Isolating a device requires higher confidence than creating an alert ticket.
-
-**Read-before-write confirmation.** Before any write action, the agent confirms its understanding of the current state. This catches prompt injection — where adversarial content in ingested data tries to redirect the agent — before damage is done. If the agent's understanding of state doesn't match reality, it stops.
-
-**Rate limiting on destructive operations.** An agent that can create tickets is capped at N per hour. An agent that can isolate devices has a hard limit per day. If the cap is hit, it alerts a human rather than continuing. This catches runaway behavior from bugs or injection before it becomes a real incident.
-
-**Separate identities per agent.** Each agent in Aegis has its own service principal with scoped permissions. The threat intel ingestion agent can't touch the ticketing system. The triage agent can't run containment actions. When agents hand off work, they pass context — not credentials. The receiving agent authenticates with its own identity.
-
-This isn't theoretical. I caught two cases during development where prompt injection in test threat feeds would have caused the agent to try accessing out-of-scope resources. The read-before-write check stopped both.
-
-## The non-negotiables
-
-After a year of this, some things have survived every project. They're in my global Claude Code config and get applied automatically:
-
-**Immutability.** Spread operators, never mutate. Every time I've allowed mutation "just for simplicity," I've spent more time debugging state issues than the mutation saved.
-
-**80% test coverage minimum.** Not a target, a floor. The TDD agent enforces this. Tests go in first; if they don't, the agent pauses and redirects. I've shipped features with 95% coverage. I've never shipped with less than 80% and had it go cleanly.
-
-**Conventional commits.** `feat|fix|refactor|docs|chore: description`. The commit-push-pr command precomputes git context and generates these automatically. Having a consistent format means the git history is readable and PRs are easy to summarize.
-
-**Bun, not npm.** Faster, built-in TypeScript support, consistent. I stopped arguing about this.
-
-**No `console.log` in committed code.** A PostToolUse hook flags it on every edit. It sounds minor. It's not — debugging production logs that are half `console.log("here")` is miserable.
-
-## What actually breaks if you skip the planning
-
-I've run the experiment. Skipping `/plan` and going straight to implementation feels faster at the start. By the middle of implementation, you're steering. By the end, you're either accepting something that doesn't quite fit or throwing away the implementation and starting over.
-
-The planning phase doesn't write code, so it feels unproductive. It's the opposite. A 20-minute planning session that surfaces a wrong assumption saves two hours of implementation. Every time.
-
-The model isn't the bottleneck. The bottleneck is clarity about what you're building.
-24:["$","$L22","vibe-coding-ai-workflows",{"post":{"metadata":{"title":"What I Actually Learned from Vibe Coding with Claude Code","subtitle":"","publishedAt":"2026-03-02","summary":"A year of building projects with AI: what the workflow looks like, how I keep context alive across sessions, which safety patterns actually work, and what breaks if you skip them.","image":"/images/blog/vibe-coding-ai-workflows.png","images":[],"tag":"Engineering","team":[],"link":""},"slug":"vibe-coding-ai-workflows","content":"$27"},"thumbnail":true,"direction":"column"}]
+24:["$","$L22","homelab-docker-swarm",{"post":{"metadata":{"title":"My Homelab on Docker Swarm: What Runs, How It's Wired, What Broke","subtitle":"","publishedAt":"2026-03-02","summary":"A tour of my self-hosted infrastructure — Docker Swarm for orchestration, Traefik for ingress, Infisical for secrets, and the modular design that replaced the monolith I should never have written.","image":"/images/blog/homelab-docker-swarm.png","images":[],"tag":"Infrastructure","team":[],"link":""},"slug":"homelab-docker-swarm","content":"$27"},"thumbnail":true,"direction":"column"}]
 25:["$","$L28",null,{}]
 26:["$","$L10",null,{"maxWidth":12,"paddingLeft":"40","fitHeight":true,"position":"sticky","top":"80","gap":"16","m":{"hide":true},"children":["$","$L29",null,{"fitHeight":true}]}]
 2a:I[811052,["/resume/_next/static/chunks/601dc1a12bda3fda.js","/resume/_next/static/chunks/8a07e6fd7e614a7b.js","/resume/_next/static/chunks/9988c4a59e44ac76.js","/resume/_next/static/chunks/05424c1bbd401aee.js","/resume/_next/static/chunks/2079049d5abbbd3d.js","/resume/_next/static/chunks/b4d60b79b2dcf7b3.js"],"HeadingLink"]

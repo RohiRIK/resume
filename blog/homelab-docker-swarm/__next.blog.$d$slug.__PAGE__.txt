@@ -15,7 +15,7 @@
 3c:I[605649,["/resume/_next/static/chunks/601dc1a12bda3fda.js","/resume/_next/static/chunks/8a07e6fd7e614a7b.js","/resume/_next/static/chunks/9988c4a59e44ac76.js","/resume/_next/static/chunks/05424c1bbd401aee.js","/resume/_next/static/chunks/2079049d5abbbd3d.js","/resume/_next/static/chunks/b4d60b79b2dcf7b3.js"],"HeadingNav"]
 3d:I[897367,["/resume/_next/static/chunks/d96012bcfc98706a.js","/resume/_next/static/chunks/73e3194f06db260e.js"],"OutletBoundary"]
 3e:"$Sreact.suspense"
-0:{"buildId":"qdrbgpgunk3Cy1dQtgZ-t","rsc":["$","$1","c",{"children":[["$","$L2",null,{"fillWidth":true,"children":[["$","$L2",null,{"maxWidth":12,"m":{"hide":true}}],["$","$L2",null,{"fillWidth":true,"horizontal":"center","children":["$","$L3",null,{"as":"section","maxWidth":"m","horizontal":"center","gap":"l","paddingTop":"24","children":[["$","$L4",null,{"id":"schema-blogPosting-/blog/homelab-docker-swarm","type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"BlogPosting\",\"url\":\"https://rohirik.github.io/resume/blog/homelab-docker-swarm\",\"sameAs\":[],\"headline\":\"My Homelab on Docker Swarm: What Runs, How It's Wired, What Broke\",\"description\":\"A tour of my self-hosted infrastructure — Docker Swarm for orchestration, Traefik for ingress, Infisical for secrets, and the modular design that replaced the monolith I should never have written.\",\"image\":\"https://rohirik.github.io/resume/images/blog/homelab-docker-swarm.png\",\"datePublished\":\"2026-03-02\",\"dateModified\":\"2026-03-02\",\"author\":{\"@type\":\"Person\",\"name\":\"Rohi Rikman\",\"url\":\"https://rohirik.github.io/resume/about\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"https://rohirik.github.io/resume/images/avatar.png\"}}}"}}],["$","$L3",null,{"maxWidth":"s","gap":"16","horizontal":"center","align":"center","children":[["$","$L5",null,{"href":"/blog","children":["$","span",null,{"className":"font-label font-strong font-m","style":{},"children":"Blog"}]}],["$","span",null,{"className":"font-body font-default font-xs neutral-on-background-weak mb-12","style":{},"children":"March 2, 2026"}],["$","h1",null,{"className":"font-display font-strong font-m neutral-on-background-strong","style":{"textWrap":"balance"},"children":"My Homelab on Docker Swarm: What Runs, How It's Wired, What Broke"}],""]}],["$","$L2",null,{"marginBottom":"32","horizontal":"center","children":["$","$L2",null,{"gap":"16","vertical":"center","children":[["$","$L6",null,{"size":"s","src":"/resume/images/avatar.png"}],["$","span",null,{"className":"font-label font-default font-m brand-on-background-weak","style":{},"children":"Rohi Rikman"}]]}]}],["$","$L7",null,{"src":"/resume/images/blog/homelab-docker-swarm.png","alt":"My Homelab on Docker Swarm: What Runs, How It's Wired, What Broke","aspectRatio":"16/9","priority":true,"sizes":"(min-width: 768px) 100vw, 768px","border":"neutral-alpha-weak","radius":"l","marginTop":"12","marginBottom":"8"}],["$","$L3",null,{"as":"article","maxWidth":"s","children":[["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":"My homelab runs on a dedicated server, not a cloud VPS. Everything is version-controlled, documented, and designed to run without me touching it. It's been doing that for over a year."}],"\n",["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":"This is what's running, how it's wired together, and what went wrong the first time."}],"\n",["$","$L8",null,{"marginTop":"24","marginBottom":"12","as":"h2","id":"why-swarm-and-not-the-alternatives","children":"Why Swarm and not the alternatives"}],"\n",["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":"The choice comes up every time I mention this setup: why not Kubernetes, why not plain Compose?"}],"\n",["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":"Kubernetes is genuinely overkill for a single server. The operational overhead — etcd, control plane components, kubeconfig management, networking plugins — is real work for infrastructure that only needs to orchestrate maybe 10 services. The value of Kubernetes is horizontal scaling and high availability across nodes. I have one node."}],"\n","$L9","\n","$La","\n","$Lb","\n","$Lc","\n","$Ld","\n","$Le","\n","$Lf","\n","$L10","\n","$L11","\n","$L12","\n","$L13","\n","$L14","\n","$L15","\n","$L16","\n","$L17","\n","$L18","\n","$L19","\n","$L1a","\n","$L1b","\n","$L1c","\n","$L1d","\n","$L1e","\n","$L1f","\n","$L20","\n","$L21","\n","$L22","\n","$L23","\n","$L24","\n","$L25","\n","$L26","\n","$L27","\n","$L28","\n","$L29","\n","$L2a","\n","$L2b","\n","$L2c","\n","$L2d"]}],"$L2e","$L2f","$L30"]}]}],"$L31"]}],["$L32"],"$L33"]}],"loading":null,"isPartial":false}
+0:{"buildId":"0SMGKohWtotHwKxXRifra","rsc":["$","$1","c",{"children":[["$","$L2",null,{"fillWidth":true,"children":[["$","$L2",null,{"maxWidth":12,"m":{"hide":true}}],["$","$L2",null,{"fillWidth":true,"horizontal":"center","children":["$","$L3",null,{"as":"section","maxWidth":"m","horizontal":"center","gap":"l","paddingTop":"24","children":[["$","$L4",null,{"id":"schema-blogPosting-/blog/homelab-docker-swarm","type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"BlogPosting\",\"url\":\"https://rohirik.github.io/resume/blog/homelab-docker-swarm\",\"sameAs\":[],\"headline\":\"My Homelab on Docker Swarm: What Runs, How It's Wired, What Broke\",\"description\":\"A tour of my self-hosted infrastructure — Docker Swarm for orchestration, Traefik for ingress, Infisical for secrets, and the modular design that replaced the monolith I should never have written.\",\"image\":\"https://rohirik.github.io/resume/images/blog/homelab-docker-swarm.png\",\"datePublished\":\"2026-03-02\",\"dateModified\":\"2026-03-02\",\"author\":{\"@type\":\"Person\",\"name\":\"Rohi Rikman\",\"url\":\"https://rohirik.github.io/resume/about\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"https://rohirik.github.io/resume/images/avatar.png\"}}}"}}],["$","$L3",null,{"maxWidth":"s","gap":"16","horizontal":"center","align":"center","children":[["$","$L5",null,{"href":"/blog","children":["$","span",null,{"className":"font-label font-strong font-m","style":{},"children":"Blog"}]}],["$","span",null,{"className":"font-body font-default font-xs neutral-on-background-weak mb-12","style":{},"children":"March 2, 2026"}],["$","h1",null,{"className":"font-display font-strong font-m neutral-on-background-strong","style":{"textWrap":"balance"},"children":"My Homelab on Docker Swarm: What Runs, How It's Wired, What Broke"}],""]}],["$","$L2",null,{"marginBottom":"32","horizontal":"center","children":["$","$L2",null,{"gap":"16","vertical":"center","children":[["$","$L6",null,{"size":"s","src":"/resume/images/avatar.png"}],["$","span",null,{"className":"font-label font-default font-m brand-on-background-weak","style":{},"children":"Rohi Rikman"}]]}]}],["$","$L7",null,{"src":"/resume/images/blog/homelab-docker-swarm.png","alt":"My Homelab on Docker Swarm: What Runs, How It's Wired, What Broke","aspectRatio":"16/9","priority":true,"sizes":"(min-width: 768px) 100vw, 768px","border":"neutral-alpha-weak","radius":"l","marginTop":"12","marginBottom":"8"}],["$","$L3",null,{"as":"article","maxWidth":"s","children":[["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":"My homelab runs on a dedicated server, not a cloud VPS. Everything is version-controlled, documented, and designed to run without me touching it. It's been doing that for over a year."}],"\n",["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":"This is what's running, how it's wired together, and what went wrong the first time."}],"\n",["$","$L8",null,{"marginTop":"24","marginBottom":"12","as":"h2","id":"why-swarm-and-not-the-alternatives","children":"Why Swarm and not the alternatives"}],"\n",["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":"The choice comes up every time I mention this setup: why not Kubernetes, why not plain Compose?"}],"\n",["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":"Kubernetes is genuinely overkill for a single server. The operational overhead — etcd, control plane components, kubeconfig management, networking plugins — is real work for infrastructure that only needs to orchestrate maybe 10 services. The value of Kubernetes is horizontal scaling and high availability across nodes. I have one node."}],"\n","$L9","\n","$La","\n","$Lb","\n","$Lc","\n","$Ld","\n","$Le","\n","$Lf","\n","$L10","\n","$L11","\n","$L12","\n","$L13","\n","$L14","\n","$L15","\n","$L16","\n","$L17","\n","$L18","\n","$L19","\n","$L1a","\n","$L1b","\n","$L1c","\n","$L1d","\n","$L1e","\n","$L1f","\n","$L20","\n","$L21","\n","$L22","\n","$L23","\n","$L24","\n","$L25","\n","$L26","\n","$L27","\n","$L28","\n","$L29","\n","$L2a","\n","$L2b","\n","$L2c","\n","$L2d"]}],"$L2e","$L2f","$L30"]}]}],"$L31"]}],["$L32"],"$L33"]}],"loading":null,"isPartial":false}
 9:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":"Plain Compose works and is simple to reason about, but it doesn't give you health-based restarts, rolling updates, or service redeployment without downtime. When a container crashes, Compose doesn't automatically reschedule it. Swarm does."}]
 a:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":"Swarm hits the right point in the tradeoff: orchestration primitives (services, secrets, overlay networks, health checks, update policies) without the operational overhead of a full cluster. It's been running with no manual intervention since I set it up."}]
 b:["$","$L8",null,{"marginTop":"24","marginBottom":"12","as":"h2","id":"network-architecture","children":"Network architecture"}]
@@ -54,7 +54,118 @@ f:["$","$L8",null,{"marginTop":"24","marginBottom":"12","as":"h2","id":"secrets-
 2c:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":"The second thing: start modular. A monolithic Compose file is tempting for the first three services because it's less overhead. By service six, you're paying for it. The directory-per-service structure takes five minutes to set up and saves hours later."}]
 2d:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":"Everything else, including the Swarm choice over Kubernetes, I'd make the same way."}]
 2e:["$","$L35",null,{"title":"My Homelab on Docker Swarm: What Runs, How It's Wired, What Broke","url":"https://rohirik.github.io/resume/blog/homelab-docker-swarm"}]
-39:T1eda,
+39:T2296,
+The default Claude Code installation does one thing poorly: it forgets everything. Every new session, you re-explain your stack, your preferences, the decisions you made last week. It compounds quickly on any project you're in for more than a few days.
+
+I spent a few months building a configuration layer on top of Claude Code that solves this. Here's what it does and how it works.
+
+## The memory problem
+
+Claude Code has no persistence by default. The context window holds your current session. When it compacts or you start a new one, that state is gone. You're not losing information in a database — you're losing it from the model's working memory.
+
+The fix isn't clever prompting. It's an explicit memory system with structured files and hooks that write to and read from those files automatically.
+
+## The 4-file context system
+
+Each project gets a directory at `~/.claude/projects/<name>/` with four files:
+
+**`context-goals.md`** — what I'm working on right now. Max 5 lines. Rewritten when the goal changes. Keeps the model from drifting into solving adjacent problems.
+
+**`context-decisions.md`** — architectural choices and why. Permanent, never deleted. If I decided to use Infisical instead of environment variables, that's in here with the reason. The model doesn't suggest what I've already ruled out.
+
+**`context-progress.md`** — completed tasks and what's in flight. Auto-trimmed to the last 20 items. Serves as a working log without growing unbounded.
+
+**`context-gotchas.md`** — warnings, blockers, and lessons. Also permanent. If something bit me once — a library quirk, an environment constraint, a mistake pattern — it lives here forever. The model reads it at session start and doesn't repeat the same mistakes.
+
+These files are plain markdown. They're updated manually after significant tasks, and automatically by hooks at session end.
+
+## The hooks
+
+Hooks are shell scripts or TypeScript files that Claude Code runs in response to lifecycle events. I have six:
+
+**SessionStart** — runs when a new session opens. Reads the project's context files and injects a summary (max 60 lines) as a system message. The model immediately knows what project it's in, what the current goal is, what decisions are locked, and what to avoid. No re-explaining needed.
+
+**PreCompact** — runs before Claude Code compacts the context window. Assembles all four context files into `context-summary.md` — a structured 60-line snapshot. This becomes what SessionStart injects next time. Without this, compaction destroys context. With it, compaction is just a checkpoint.
+
+**EvaluateSession** — runs when the session ends. Reads the transcript, extracts patterns — recurring mistakes, useful techniques, things that worked — and writes them to `~/.claude/skills/Learned/`. These are ephemeral: they roll off after a few sessions. For anything important enough to keep permanently, I promote it manually to `context-gotchas.md`.
+
+**SuggestCompact** — tracks a running count of tool calls per session. At 50, it suggests running `/compact`. This isn't mandatory, but the reminder is useful — context windows that run too long start producing lower-quality output.
+
+**UpdateContext** — PostToolUse hook that fires after Write, Edit, or MultiEdit operations. Logs modified files to context-progress and runs Prettier and tsc on changed files immediately. Type errors and formatting issues surface at edit time, not at build time.
+
+**Cleanup** — periodic maintenance. Trims context-progress.md to the last 20 items. Removes context directories for projects that haven't been touched in 30 days.
+
+## Skills and commands
+
+Skills are reusable prompts that expand into full instructions when invoked. I have these:
+
+**`/plan`** — invokes the planner agent before any implementation. Restates the requirement, breaks it into phases, identifies dependencies, flags risks. Produces a plan for review before any code is touched. I don't write code without running this first for anything non-trivial.
+
+**`/verify`** — runs a self-check loop: tsc → lint → tests → build, in order, stopping on first failure. The skill knows to skip steps that aren't configured for the project. Run before every commit.
+
+**`/simplify`** — post-implementation review. Looks at recently modified code for unnecessary abstraction, duplicated logic, or complexity that crept in during implementation. Runs after verify.
+
+**`/commit-push-pr`** — precomputes git context (status, diff, log, branch), generates a conventional commit message, stages relevant files, commits, and pushes. Skips the tedium of assembling git commands manually.
+
+**`/learn`** — manual trigger for pattern extraction. Same process as EvaluateSession but runs on demand mid-session when I want to capture something specific.
+
+**`/update-context`** — reads the current session and updates all four context files. Useful after completing a significant task when I want to flush progress immediately rather than waiting for the end-of-session hook.
+
+**`/tdd`** — enforces test-first workflow. Scaffolds the interface, writes the test, makes it fail, then implements the minimum code to pass. Blocks implementation until the test exists.
+
+**`/code-review`** — runs the code-reviewer agent on recently modified files. Returns severity-rated feedback: critical issues stop work, high issues get fixed, medium issues are noted.
+
+## Agents
+
+Agents are specialized sub-models with scoped roles. They run separately from the main session and have access to the codebase but only for their designated purpose.
+
+**planner** — for implementation planning. Doesn't write code. Only produces plans with phases, dependencies, and risk flags.
+
+**code-reviewer** — reviews code after it's written. Severity-based feedback. The reviewer doesn't have write access — it can't change files, only report.
+
+**security-reviewer** — OWASP Top 10 checks, secret detection, dependency auditing. Runs before commits on anything that touches auth, input handling, or external integrations.
+
+**tdd-guide** — enforces test-first. If I start implementing without a failing test, it redirects. Tracks coverage and flags when it drops below 80%.
+
+**architect** — for decisions that affect project structure. Invoked when I'm choosing between approaches that have lasting consequences, not for individual implementation decisions.
+
+**build-error-resolver** — when the build breaks, this agent diagnoses and makes the minimum change to get it green. Doesn't refactor, doesn't improve — just fixes the build.
+
+**refactor-cleaner** — dead code removal and consolidation. Runs tools like `knip` to find unused exports, then removes them. Used for maintenance, not mid-feature.
+
+The separation is intentional. A code reviewer that can also edit files is dangerous — it starts making "improvements" that weren't asked for. Each agent does one thing.
+
+## Global rules
+
+Rules are markdown files in `~/.claude/rules/` that load into every session. They cover:
+
+- **Coding style**: immutability-first (spread operators, never mutate), no `any` types, explicit return types on exports, functions under 50 lines
+- **Package manager**: bun not npm, uv not pip — enforced globally so I never get npm in a bun project
+- **Git workflow**: conventional commits (`feat|fix|refactor|docs|chore:`), no `Co-Authored-By` footers, PR descriptions that cover the full diff not just the latest commit
+- **Testing**: 80% minimum coverage, TDD workflow required for new features
+- **Security**: no hardcoded secrets, input validation at system boundaries only, rate limiting on all endpoints
+
+The model reads these rules at every session start. They're not suggestions — they're constraints that get checked during code review and verify.
+
+## What this actually changes day-to-day
+
+The memory system means I can leave a project for a week and come back without a re-orientation session. The model knows where I left off, what I decided, and what's broken.
+
+The hooks mean formatting and type errors surface immediately. I don't batch-discover problems at commit time.
+
+The agents mean review happens as a matter of course. I'm not remembering to run security checks — they're part of the workflow for anything touching auth or external data.
+
+The skills mean the repetitive parts (planning, verifying, committing) have consistent execution. I don't skip `/verify` because it's convenient — the skill is right there and running it takes two seconds.
+
+None of this is magic. It's structured configuration that enforces a workflow I decided I wanted. The alternative is relying on memory and discipline to apply that workflow manually every time. That doesn't scale.
+
+The config is version-controlled at [github.com/RohiRIK/claude-code-config](https://github.com/RohiRIK/claude-code-config).
+2f:["$","$L3",null,{"fillWidth":true,"gap":"40","horizontal":"center","marginTop":"40","children":[["$","$L36",null,{"maxWidth":"40"}],["$","h2",null,{"className":"font-heading font-strong font-xl mb-24","style":{},"id":"recent-posts","children":"Recent posts"}],["$","$L37",null,{"columns":"2","s":{"columns":1},"fillWidth":true,"marginBottom":"40","gap":"16","children":[["$","$L38","claude-code-config",{"post":{"metadata":{"title":"How I Configured Claude Code to Actually Remember Things","subtitle":"","publishedAt":"2026-03-02","summary":"The default Claude Code setup loses context on every session. Here's the hook system, skill commands, agent definitions, and memory architecture I built to fix that.","image":"/images/blog/claude-code-config.png","images":[],"tag":"Engineering","team":[],"link":""},"slug":"claude-code-config","content":"$39"},"thumbnail":true,"direction":"column"}],"$L3a"]}]]}]
+30:["$","$L3b",null,{}]
+31:["$","$L3",null,{"maxWidth":12,"paddingLeft":"40","fitHeight":true,"position":"sticky","top":"80","gap":"16","m":{"hide":true},"children":["$","$L3c",null,{"fitHeight":true}]}]
+32:["$","script","script-0",{"src":"/resume/_next/static/chunks/b4d60b79b2dcf7b3.js","async":true}]
+33:["$","$L3d",null,{"children":["$","$3e",null,{"name":"Next.MetadataOutlet","children":"$@3f"}]}]
+40:T1eda,
 I've been building most of my personal projects with Claude Code for the past year. The tool works, but not in the way most people describe it. The narrative is usually "just describe what you want and it builds it." That's not wrong, but it's missing the part where a bad description causes you to spend two hours steering the model away from the wrong implementation.
 
 The shift that changed everything was treating AI as an analyst team, not a code generator.
@@ -136,54 +247,5 @@ I've run the experiment. Skipping `/plan` and going straight to implementation f
 The planning phase doesn't write code, so it feels unproductive. It's the opposite. A 20-minute planning session that surfaces a wrong assumption saves two hours of implementation. Every time.
 
 The model isn't the bottleneck. The bottleneck is clarity about what you're building.
-2f:["$","$L3",null,{"fillWidth":true,"gap":"40","horizontal":"center","marginTop":"40","children":[["$","$L36",null,{"maxWidth":"40"}],["$","h2",null,{"className":"font-heading font-strong font-xl mb-24","style":{},"id":"recent-posts","children":"Recent posts"}],["$","$L37",null,{"columns":"2","s":{"columns":1},"fillWidth":true,"marginBottom":"40","gap":"16","children":[["$","$L38","vibe-coding-ai-workflows",{"post":{"metadata":{"title":"What I Actually Learned from Vibe Coding with Claude Code","subtitle":"","publishedAt":"2026-03-02","summary":"A year of building projects with AI: what the workflow looks like, how I keep context alive across sessions, which safety patterns actually work, and what breaks if you skip them.","image":"/images/blog/vibe-coding-ai-workflows.png","images":[],"tag":"Engineering","team":[],"link":""},"slug":"vibe-coding-ai-workflows","content":"$39"},"thumbnail":true,"direction":"column"}],"$L3a"]}]]}]
-30:["$","$L3b",null,{}]
-31:["$","$L3",null,{"maxWidth":12,"paddingLeft":"40","fitHeight":true,"position":"sticky","top":"80","gap":"16","m":{"hide":true},"children":["$","$L3c",null,{"fitHeight":true}]}]
-32:["$","script","script-0",{"src":"/resume/_next/static/chunks/b4d60b79b2dcf7b3.js","async":true}]
-33:["$","$L3d",null,{"children":["$","$3e",null,{"name":"Next.MetadataOutlet","children":"$@3f"}]}]
-40:Tdcb,
-I work in IT security. I've sat through a lot of vendor calls. And somewhere around the third time someone told me their network appliance was "a Zero Trust solution," I started keeping count.
-
-It's not a product. It never was. Here's what it actually is.
-
-## The original idea
-
-Zero Trust comes from a 2010 paper by John Kindervag at Forrester. The core insight was blunt: perimeter-based security is wrong. The assumption that everything inside your network is trusted and everything outside isn't — that model breaks the moment you have remote workers, cloud services, SaaS apps, contractors, or any real-world complexity.
-
-The answer wasn't a new product. It was a different assumption: **trust no one by default, verify everything explicitly, and grant access based on identity and context — not network location.**
-
-That's the model. Three sentences.
-
-## What it means operationally
-
-If you actually implement Zero Trust, it looks like this:
-
-**Identity is the perimeter.** It doesn't matter where a request comes from — your office, a coffee shop, a data center. What matters is: who is authenticating, is that identity verified, and does this specific context (device health, location, time, risk score) justify access to this specific resource?
-
-**Least privilege, always.** Users and services get exactly the access they need for the task, nothing more. Not "give the developer access to the dev environment" — give this developer, on this verified device, read access to this specific service, until the session expires.
-
-**Assume breach.** Design your controls as if attackers are already inside. Segment laterally so a compromised endpoint can't reach everything. Log everything so you can detect and respond.
-
-**Continuous verification.** Authentication isn't a one-time gate at login. The trust assessment runs continuously — if device posture changes, if the user does something anomalous, trust can be revoked mid-session.
-
-## What vendors sell
-
-What vendors sell is: their product has a "Zero Trust" feature set. Sometimes that's meaningful. Conditional Access in Entra ID genuinely enforces identity-based access with device posture signals. That's a real implementation of Zero Trust principles.
-
-But "Zero Trust firewall" is mostly marketing. Network segmentation is one piece of a Zero Trust architecture — it's not the whole model. A firewall doesn't verify identity. It filters traffic. That's useful, but it's not Zero Trust.
-
-The tell is whether the product forces you to think about identity and context, or whether it's still thinking in terms of network location. If the conversation is about IP ranges and VLANs, you're still in the perimeter model with new branding.
-
-## Why it matters
-
-The reason to care about the distinction isn't pedantry. It's that if you think Zero Trust is a product you can buy, you'll buy the product and think you're done. You won't be.
-
-The actual work is architectural: redefining trust boundaries, implementing strong identity across all users and services, getting device health signals into access decisions, segmenting your environment so lateral movement is hard, building detection and response for when (not if) something gets through.
-
-None of that is a product. All of it is work.
-
----
-
-This is the first of a few posts I'm planning on Zero Trust — what it actually means, how I've implemented pieces of it in real environments, and where the hard parts are. Next up: Conditional Access, which is where most of the practical implementation lives.
-3a:["$","$L38","zero-trust-is-not-a-product",{"post":{"metadata":{"title":"Zero Trust Is Not a Product","subtitle":"","publishedAt":"2026-02-20","summary":"Every vendor sells 'Zero Trust.' Most of what they're selling is a marketing label on a firewall. Here's what the model actually means and why it matters.","image":"/images/blog/zero-trust-is-not-a-product.png","images":[],"tag":"Security","team":[],"link":""},"slug":"zero-trust-is-not-a-product","content":"$40"},"thumbnail":true,"direction":"column"}]
+3a:["$","$L38","vibe-coding-ai-workflows",{"post":{"metadata":{"title":"What I Actually Learned from Vibe Coding with Claude Code","subtitle":"","publishedAt":"2026-03-02","summary":"A year of building projects with AI: what the workflow looks like, how I keep context alive across sessions, which safety patterns actually work, and what breaks if you skip them.","image":"/images/blog/vibe-coding-ai-workflows.png","images":[],"tag":"Engineering","team":[],"link":""},"slug":"vibe-coding-ai-workflows","content":"$40"},"thumbnail":true,"direction":"column"}]
 3f:null
