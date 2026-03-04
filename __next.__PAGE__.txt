@@ -75,8 +75,152 @@ I also initially tried to make it too autonomous. Fully automated playbook execu
 ## Results (personal use)
 
 Triage time on familiar alert types dropped significantly — the lookup work that was eating 15-30 minutes now takes seconds. For novel or complex incidents I still do full manual investigation, which is the right call. The assistant is a first-pass filter, not a replacement for thinking.
-0:{"buildId":"0IaqGA2hHiw_I2eFWqxTM","rsc":["$","$1","c",{"children":[["$","$L2",null,{"maxWidth":"m","gap":"xl","paddingY":"12","horizontal":"center","children":[["$","$L3",null,{"id":"schema-webPage-/","type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"WebPage\",\"url\":\"https://rohirik.github.io/resume/\",\"sameAs\":[],\"headline\":\"Rohi Rikman | Cloud Security Architect\",\"description\":\"Cloud Security Architect & Automation Engineer specializing in Azure, Entra ID, and AI agent systems\",\"image\":\"https://rohirik.github.io/resume/https://rohirik.github.io/resume/images/avatar.png\",\"author\":{\"@type\":\"Person\",\"name\":\"Rohi Rikman\",\"url\":\"https://rohirik.github.io/resume/about\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"https://rohirik.github.io/resume/images/avatar.png\"}}}"}}],["$","$L2",null,{"fillWidth":true,"horizontal":"center","gap":"m","children":["$","$L2",null,{"maxWidth":"s","horizontal":"center","align":"center","children":[["$","$L4",null,{"fillWidth":true,"horizontal":"center","paddingTop":"16","paddingBottom":"32","paddingLeft":"12","children":["$","$L5",null,{"background":"brand-alpha-weak","paddingX":"12","paddingY":"4","onBackground":"neutral-strong","textVariant":"label-default-s","arrow":false,"href":"/work/project-aegis","children":["$","$L6",null,{"paddingY":"2","children":["$","$L6",null,{"gap":"12","vertical":"center","children":[["$","strong",null,{"className":"ml-4","children":"Project Aegis"}]," ",["$","$L7",null,{"background":"brand-alpha-strong","vert":true,"height":"20"}],["$","span",null,{"className":"brand-on-background-medium mr-4","style":{},"children":"Featured project"}]]}]}]}]}],["$","$L4",null,{"translateY":"4","fillWidth":true,"horizontal":"center","paddingBottom":"16","children":["$","h1",null,{"className":"font-display font-strong font-l neutral-on-background-strong","style":{"textWrap":"balance"},"children":"Security that runs itself."}]}],["$","$L4",null,{"translateY":"8","delay":0.2,"fillWidth":true,"horizontal":"center","paddingBottom":"32","children":["$","span",null,{"className":"font-heading font-default font-xl neutral-on-background-weak","style":{"textWrap":"balance"},"children":"I build AI agents and automation systems that handle the repetitive, high-stakes parts of cloud security — so humans can focus on the problems that actually need them."}]}],["$","$L4",null,{"paddingTop":"12","delay":0.4,"horizontal":"center","paddingLeft":"12","children":["$","$L8",null,{"id":"about","data-border":"rounded","href":"/about","variant":"secondary","size":"m","weight":"default","arrowIcon":true,"children":["$","$L6",null,{"gap":"8","vertical":"center","paddingRight":"4","children":[["$","$L9",null,{"marginRight":"8","style":{"marginLeft":"-0.75rem"},"src":"/resume/images/avatar.png","size":"m"}],"About – Rohi Rikman"]}]}]}]]}]}],["$","$L4",null,{"translateY":"16","delay":0.6,"children":["$","$L2",null,{"fillWidth":true,"gap":"xl","marginBottom":"40","paddingX":"l","children":[["$","$La","project-aegis",{"priority":true,"href":"/work/project-aegis","images":[],"title":"Project Aegis","description":"A personal RAG-based SOC assistant I built to answer security questions fast — powered by LangChain, Gemini, and a Pinecone vector store sitting on top of real security documentation.","content":"$b","avatars":[],"link":"https://github.com/RohiRIK/Project-Aegis"}]]}]}],"$Lc","$Ld","$Le"]}],["$Lf"],"$L10"]}],"loading":null,"isPartial":false}
-13:T19b0,
+0:{"buildId":"jYEfQBknTEvWryZZWNfz4","rsc":["$","$1","c",{"children":[["$","$L2",null,{"maxWidth":"m","gap":"xl","paddingY":"12","horizontal":"center","children":[["$","$L3",null,{"id":"schema-webPage-/","type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"WebPage\",\"url\":\"https://rohirik.github.io/resume/\",\"sameAs\":[],\"headline\":\"Rohi Rikman | Cloud Security Architect\",\"description\":\"Cloud Security Architect & Automation Engineer specializing in Azure, Entra ID, and AI agent systems\",\"image\":\"https://rohirik.github.io/resume/https://rohirik.github.io/resume/images/avatar.png\",\"author\":{\"@type\":\"Person\",\"name\":\"Rohi Rikman\",\"url\":\"https://rohirik.github.io/resume/about\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"https://rohirik.github.io/resume/images/avatar.png\"}}}"}}],["$","$L2",null,{"fillWidth":true,"horizontal":"center","gap":"m","children":["$","$L2",null,{"maxWidth":"s","horizontal":"center","align":"center","children":[["$","$L4",null,{"fillWidth":true,"horizontal":"center","paddingTop":"16","paddingBottom":"32","paddingLeft":"12","children":["$","$L5",null,{"background":"brand-alpha-weak","paddingX":"12","paddingY":"4","onBackground":"neutral-strong","textVariant":"label-default-s","arrow":false,"href":"/work/project-aegis","children":["$","$L6",null,{"paddingY":"2","children":["$","$L6",null,{"gap":"12","vertical":"center","children":[["$","strong",null,{"className":"ml-4","children":"Project Aegis"}]," ",["$","$L7",null,{"background":"brand-alpha-strong","vert":true,"height":"20"}],["$","span",null,{"className":"brand-on-background-medium mr-4","style":{},"children":"Featured project"}]]}]}]}]}],["$","$L4",null,{"translateY":"4","fillWidth":true,"horizontal":"center","paddingBottom":"16","children":["$","h1",null,{"className":"font-display font-strong font-l neutral-on-background-strong","style":{"textWrap":"balance"},"children":"Security that runs itself."}]}],["$","$L4",null,{"translateY":"8","delay":0.2,"fillWidth":true,"horizontal":"center","paddingBottom":"32","children":["$","span",null,{"className":"font-heading font-default font-xl neutral-on-background-weak","style":{"textWrap":"balance"},"children":"I build AI agents and automation systems that handle the repetitive, high-stakes parts of cloud security — so humans can focus on the problems that actually need them."}]}],["$","$L4",null,{"paddingTop":"12","delay":0.4,"horizontal":"center","paddingLeft":"12","children":["$","$L8",null,{"id":"about","data-border":"rounded","href":"/about","variant":"secondary","size":"m","weight":"default","arrowIcon":true,"children":["$","$L6",null,{"gap":"8","vertical":"center","paddingRight":"4","children":[["$","$L9",null,{"marginRight":"8","style":{"marginLeft":"-0.75rem"},"src":"/resume/images/avatar.png","size":"m"}],"About – Rohi Rikman"]}]}]}]]}]}],["$","$L4",null,{"translateY":"16","delay":0.6,"children":["$","$L2",null,{"fillWidth":true,"gap":"xl","marginBottom":"40","paddingX":"l","children":[["$","$La","project-aegis",{"priority":true,"href":"/work/project-aegis","images":[],"title":"Project Aegis","description":"A personal RAG-based SOC assistant I built to answer security questions fast — powered by LangChain, Gemini, and a Pinecone vector store sitting on top of real security documentation.","content":"$b","avatars":[],"link":"https://github.com/RohiRIK/Project-Aegis"}]]}]}],"$Lc","$Ld","$Le"]}],["$Lf"],"$L10"]}],"loading":null,"isPartial":false}
+13:T1f74,
+The brief arrived in a Teams message. The IT team was managing hundreds of Windows devices through Microsoft Intune and they had no good way to answer a simple question: what's actually out there, and what state is it in?
+
+Their proposed solution: a PowerShell script triggered by Jenkins, pulling device data from the Intune API and writing it to SharePoint lists. Power BI would sit on top and refresh on a schedule. Dashboards, filters, the works.
+
+It's a reasonable ask. It's how a lot of IT shops solve this problem. They've got the pieces — Intune, SharePoint, Power BI — and they want to wire them together. The request made sense for where they were.
+
+I said I'd get back to them with a proposal.
+
+## The Ceiling
+
+I spent a day mapping out the pipeline they'd asked for. And the more I built it in my head, the more I saw where it would break.
+
+**SharePoint as a database** is the first problem. SharePoint lists have a 5,000-item view threshold — not a hard limit, but enough to start causing issues at scale. There's no real schema enforcement, no foreign keys, no joins. You end up denormalizing everything and hoping the refresh writes are idempotent. When they're not, you get stale rows and duplicate entries that Power BI dutifully surfaces as real data.
+
+**Jenkins as a scheduler** is infra for infra's sake. You're running a CI/CD system to run a cron job. That means maintaining an agent, managing credentials, monitoring for failed runs, building retry logic from scratch. When the sync breaks at 2am, nobody knows until someone notices the dashboards haven't updated.
+
+**Power BI on a schedule** means the data is stale by definition. If your refresh runs every four hours and a device falls out of compliance at 9am, your dashboard won't show it until 1pm. For a compliance and security use case, that gap matters.
+
+And there was no RBAC anywhere in this design. Anyone with SharePoint access could see everything — all devices, all users, all compliance states. Helpdesk techs, managers, contractors. No audit trail of who looked at what.
+
+But the deepest problem wasn't architectural. The client didn't actually want a pipeline. They wanted **device visibility**. They wanted to know what was out there and whether it was healthy. The pipeline was just the closest solution shape they knew how to ask for.
+
+## The Pitch
+
+I came back with a counter-proposal.
+
+Instead of a pipeline, I pitched a purpose-built web app: FleetWatch. The sell was simple — you'll stop asking "is this data current?" because it always will be.
+
+Specifically:
+- Real-time sync via Microsoft Graph API delta queries, pulling only changed devices instead of exporting everything on a schedule
+- Postgres as the data store — real schema, real queries, real relational data
+- RBAC built in from day one: admins see everything, helpdesk sees their assigned devices
+- Full audit logs of who accessed what and when
+- A proper UI instead of a Power BI dashboard that takes 30 seconds to load and can't drill into a single device
+
+The client said yes. Partly because the technical argument was sound, and partly because I had mocked up what the device detail page would look like. It's easier to approve something you can see.
+
+## The Architecture
+
+The core of FleetWatch is the Microsoft Graph API integration.
+
+Authentication uses a Service Principal with Client Certificate auth — no client secrets that expire. The key endpoint is `/deviceManagement/managedDevices/delta`, which supports delta queries: on first run you get all devices, on subsequent runs you only get devices that changed since your last sync token. Instead of exporting 800 devices every four hours, you're processing 12 changed devices every 30 minutes.
+
+The sync runs on Vercel Cron jobs. No Jenkins, no agents, no infra to maintain. The cron endpoint is protected with a shared secret header — simple, effective. Failed syncs surface in application logs, not in a Jenkins console that nobody checks.
+
+The data layer is Postgres on Vercel with Drizzle ORM. The schema models the actual domain: a `devices` table, a `users` table, `compliance_policies`, `app_inventory`, `security_hardware`. When you need to answer "which devices have BitLocker disabled and are assigned to users in the Finance department," that's a join, not a SharePoint list crawl.
+
+The frontend is Next.js 15 with the App Router. Server Components handle the heavy lifting — device lists, compliance views, filtered queries all render server-side. The device detail page has six tabs: Overview, Compliance, Configuration, Security, Hardware, and Network. Each tab queries only the data it needs.
+
+```
+Before (proposed):
+Jenkins → PowerShell → SharePoint Lists → Power BI (scheduled refresh)
+
+After (FleetWatch):
+Vercel Cron → Microsoft Graph API → Postgres → Next.js (real-time)
+```
+
+Auth is NextAuth with role-based access enforced at the API layer. The middleware checks roles before any data query runs — not just in the UI, where it's trivial to bypass. Admin and read-only roles are stored per-user in the database, not inferred from SharePoint group membership.
+
+Monitoring is a `/api/health` endpoint that checks database connectivity and last successful sync time, plus a `/api/metrics` endpoint for the operational stats I actually care about: sync duration, devices processed, error rate. Redis is wired in as an optional cache layer for the dashboard aggregate queries.
+
+## What It Enables
+
+The gap between the pipeline and the app isn't cosmetic — it's functional.
+
+Search and filter across all 800 devices returns results in under 100ms. You can filter by compliance state, OS version, last sync time, assigned user, or any combination. In Power BI with a scheduled refresh, you're waiting for a report to load and hoping it reflects reality.
+
+The device detail page shows everything in one place: BitLocker status, TPM chip version, Secure Boot state, assigned compliance policies, installed applications, network adapters. That level of detail doesn't exist in the SharePoint list model — you'd need separate lists for each entity and a Power BI data model to join them, which you'd then need to maintain.
+
+RBAC means helpdesk techs can look up devices without needing SharePoint permissions across the entire tenant. No permissions sprawl, no "just give them read access to the list." You grant a role in FleetWatch and that's it.
+
+The export function lets you pull filtered device lists to CSV — useful for compliance reporting, vendor audits, or just sending a list of non-compliant devices to the right team. It works on whatever filter you've currently applied, so you're exporting exactly what you're looking at.
+
+Compliance trend graphs show state over time from the sync history, not from a Power BI snapshot that was current when the report was built. When a device falls out of compliance and comes back, you can see when both events happened.
+
+## The Lesson
+
+Scripts are the right first tool when scope is unclear. If the client had wanted a one-time export to audit their device inventory, the PowerShell approach would have been exactly right. Fast to build, no ongoing maintenance, done.
+
+But when the real problem is ongoing visibility — and when the solution needs RBAC, audit logs, freshness guarantees, and drill-down — the pipeline approach has a ceiling. It would have worked for three months. Then the IT team would have been back asking for user lookup, filtered exports, freshness indicators, device-level detail. The pipeline would have been extended with more scripts, more SharePoint lists, more Power BI datasets. Each addition would have made the system more fragile and harder to reason about.
+
+Building FleetWatch upfront was a harder conversation to have, but it was the right one. The client got a system that solves the problem they actually had — not the problem they knew how to articulate.
+
+The source is on GitHub at [RohiRIK/FleetWatch](https://github.com/RohiRIK/FleetWatch) if you want to see how it's put together.
+c:["$","$L2",null,{"fillWidth":true,"gap":"24","marginBottom":"l","children":[["$","$L6",null,{"fillWidth":true,"paddingRight":"64","children":["$","$L7",null,{"maxWidth":48}]}],["$","$L6",null,{"fillWidth":true,"gap":"24","marginTop":"40","s":{"direction":"column"},"children":[["$","$L6",null,{"flex":1,"paddingLeft":"l","paddingTop":"24","children":["$","h2",null,{"className":"font-display font-strong font-xs neutral-on-background-strong","style":{"textWrap":"balance"},"children":"Latest from the blog"}]}],["$","$L6",null,{"flex":3,"paddingX":"20","children":["$","$L11",null,{"columns":"2","s":{"columns":1},"fillWidth":true,"marginBottom":"40","gap":"16","children":[["$","$L12","fleetwatch-from-script-to-system",{"post":{"metadata":{"title":"From Script to System: How I Turned a Jenkins Pipeline into FleetWatch","subtitle":"","publishedAt":"2026-03-04","summary":"My client wanted PowerShell scripts dumping Intune data into SharePoint for Power BI. I built a web app instead. Here's why — and how.","image":"/images/blog/fleetwatch-from-script-to-system.png","images":[],"tag":"Engineering","team":[],"link":""},"slug":"fleetwatch-from-script-to-system","content":"$13"},"thumbnail":false}],"$L14"]}]}]]}],"$L15"]}]
+16:T749,
+## What this was
+
+A client running JumpCloud for MDM wanted to consolidate onto the Microsoft stack. Everything else was already in Microsoft — identity, email, security — but the device management gap meant correlating device state with identity required jumping between platforms.
+
+## What I built
+
+The main challenge with MDM migrations is the transition gap — the window where a device is unenrolled from one MDM and not yet in another. During that time you lose policy enforcement and visibility.
+
+I wrote PowerShell scripts to handle the transition in sequence: unenroll from JumpCloud, trigger Intune enrollment, verify the device showed up in Intune before moving to the next. Ran in batches with rollback checkpoints so we could pause if something broke mid-migration.
+
+**Windows Autopilot** — registered the Windows fleet into Autopilot for zero-touch future provisioning. Extracted hardware hashes, uploaded them, configured deployment profiles per user group.
+
+**macOS via Apple Business Manager** — set up ABM integration with Intune. More involved than Windows Autopilot — had to work through the MDM profile trust chain and handle devices that had supervision issues from the JumpCloud side.
+
+**Policy parity** — translated JumpCloud's Command Library into Intune Configuration Profiles and PowerShell scripts deployed via Intune. Some mapped cleanly, some needed rethinking.
+
+## What made it hard
+
+A subset of devices had been enrolled in JumpCloud via a method that left a persistent MDM profile the script couldn't cleanly remove. Those had to be handled manually. Also found several macOS devices enrolled by users personally rather than via ABM, which broke the supervision requirement for certain policies.
+
+## Stack
+
+- Microsoft Intune
+- JumpCloud
+- Windows Autopilot
+- Apple Business Manager
+- PowerShell & Microsoft Graph API
+17:T6db,
+## What this was
+
+A client at Oncloud decided to move their entire identity and collaboration stack from Google Workspace to Microsoft 365. I was the lead engineer on the migration — responsible for technical execution from discovery through cutover.
+
+## What the work looked like
+
+**Identity migration** — mapped thousands of Google identities into a clean Entra ID tenant, standardized naming conventions, consolidated accounts that had duplicated from acquisitions. Set up SSO from scratch with Entra ID as the new IdP.
+
+**Data migration via AvePoint Fly** — handled mailbox and Google Drive to SharePoint/OneDrive transfer. The hard part wasn't the tool — it was the permission mapping. Google Drive's sharing model doesn't translate cleanly to SharePoint. Spent significant time building mapping rules to preserve access rather than just moving data and leaving people unable to open their files.
+
+**Mail cutover** — ran split-delivery during the transition so mail kept flowing to both platforms while users moved over. Managed the DNS cutover window to avoid gaps.
+
+**SSO re-mapping** — the client had 50+ SaaS applications pointed at Google as IdP. Reconfigured each for SAML/OIDC against Entra ID. Most were straightforward; a few needed custom attribute mappings.
+
+## What made it hard
+
+The data migration took longer than scoped. The client's Google Drive was far messier than discovery suggested — deeply nested shared drives with complex permission inheritance, orphaned files, and accounts that no longer existed but still owned content. We had to build a pre-migration cleanup process that wasn't in the original plan.
+
+## Stack
+
+- AvePoint Fly
+- Microsoft Entra ID
+- Google Workspace APIs
+- Microsoft Graph API
+- PowerShell
+d:["$","$L2",null,{"fillWidth":true,"gap":"xl","marginBottom":"40","paddingX":"l","children":[["$","$La","jumpcloud-to-intune-migration",{"priority":true,"href":"/work/jumpcloud-to-intune-migration","images":[],"title":"JumpCloud to Intune Migration","description":"MDM consolidation from JumpCloud to Microsoft Intune — automated unenrollment, Autopilot provisioning, and policy parity for a mixed Windows and macOS fleet.","content":"$16","avatars":[],"link":""}],["$","$La","gcp-to-entra-migration",{"priority":true,"href":"/work/gcp-to-entra-migration","images":[],"title":"GCP to Entra ID Migration","description":"Full identity and collaboration migration from Google Workspace to Microsoft 365 — mailboxes, Drive data, SSO re-mapping across 50+ apps, and tenant consolidation.","content":"$17","avatars":[],"link":""}],"$L18"]}]
+e:["$","$L19",null,{}]
+f:["$","script","script-0",{"src":"/resume/_next/static/chunks/1639f11c1a7acc88.js","async":true}]
+10:["$","$L1a",null,{"children":["$","$1b",null,{"name":"Next.MetadataOutlet","children":"$@1c"}]}]
+1d:T19b0,
 If you're preparing to migrate to Entra ID and a penetration test just flagged "Netlogon not requiring RPC Sealing" — this is how you close it properly.
 
 This isn't a theoretical hardening checklist. It's the actual playbook I follow: four phases, a hard go/no-go gate between discovery and enforcement, and a PowerShell script to do the discovery work for you.
@@ -226,172 +370,7 @@ It also puts you in a much cleaner position for Entra ID migration — because t
 ---
 
 The script above is what I run before any enforcement conversation. If you're seeing 5838s you didn't expect, start there — the CSV usually tells you exactly what needs attention.
-c:["$","$L2",null,{"fillWidth":true,"gap":"24","marginBottom":"l","children":[["$","$L6",null,{"fillWidth":true,"paddingRight":"64","children":["$","$L7",null,{"maxWidth":48}]}],["$","$L6",null,{"fillWidth":true,"gap":"24","marginTop":"40","s":{"direction":"column"},"children":[["$","$L6",null,{"flex":1,"paddingLeft":"l","paddingTop":"24","children":["$","h2",null,{"className":"font-display font-strong font-xs neutral-on-background-strong","style":{"textWrap":"balance"},"children":"Latest from the blog"}]}],["$","$L6",null,{"flex":3,"paddingX":"20","children":["$","$L11",null,{"columns":"2","s":{"columns":1},"fillWidth":true,"marginBottom":"40","gap":"16","children":[["$","$L12","netlogon-rpc-sealing-playbook",{"post":{"metadata":{"title":"Netlogon RPC Sealing: The Full Hardening Playbook","subtitle":"","publishedAt":"2026-03-03","summary":"A complete 4-phase execution guide for enforcing Netlogon RPC Sealing and SMB/NTLM hardening before migrating to Entra ID — including the PowerShell discovery script I use to find vulnerable traffic across all DCs.","image":"/images/blog/netlogon-rpc-sealing-playbook.png","images":[],"tag":"Security","team":[],"link":""},"slug":"netlogon-rpc-sealing-playbook","content":"$13"},"thumbnail":false}],"$L14"]}]}]]}],"$L15"]}]
-16:T749,
-## What this was
-
-A client running JumpCloud for MDM wanted to consolidate onto the Microsoft stack. Everything else was already in Microsoft — identity, email, security — but the device management gap meant correlating device state with identity required jumping between platforms.
-
-## What I built
-
-The main challenge with MDM migrations is the transition gap — the window where a device is unenrolled from one MDM and not yet in another. During that time you lose policy enforcement and visibility.
-
-I wrote PowerShell scripts to handle the transition in sequence: unenroll from JumpCloud, trigger Intune enrollment, verify the device showed up in Intune before moving to the next. Ran in batches with rollback checkpoints so we could pause if something broke mid-migration.
-
-**Windows Autopilot** — registered the Windows fleet into Autopilot for zero-touch future provisioning. Extracted hardware hashes, uploaded them, configured deployment profiles per user group.
-
-**macOS via Apple Business Manager** — set up ABM integration with Intune. More involved than Windows Autopilot — had to work through the MDM profile trust chain and handle devices that had supervision issues from the JumpCloud side.
-
-**Policy parity** — translated JumpCloud's Command Library into Intune Configuration Profiles and PowerShell scripts deployed via Intune. Some mapped cleanly, some needed rethinking.
-
-## What made it hard
-
-A subset of devices had been enrolled in JumpCloud via a method that left a persistent MDM profile the script couldn't cleanly remove. Those had to be handled manually. Also found several macOS devices enrolled by users personally rather than via ABM, which broke the supervision requirement for certain policies.
-
-## Stack
-
-- Microsoft Intune
-- JumpCloud
-- Windows Autopilot
-- Apple Business Manager
-- PowerShell & Microsoft Graph API
-17:T6db,
-## What this was
-
-A client at Oncloud decided to move their entire identity and collaboration stack from Google Workspace to Microsoft 365. I was the lead engineer on the migration — responsible for technical execution from discovery through cutover.
-
-## What the work looked like
-
-**Identity migration** — mapped thousands of Google identities into a clean Entra ID tenant, standardized naming conventions, consolidated accounts that had duplicated from acquisitions. Set up SSO from scratch with Entra ID as the new IdP.
-
-**Data migration via AvePoint Fly** — handled mailbox and Google Drive to SharePoint/OneDrive transfer. The hard part wasn't the tool — it was the permission mapping. Google Drive's sharing model doesn't translate cleanly to SharePoint. Spent significant time building mapping rules to preserve access rather than just moving data and leaving people unable to open their files.
-
-**Mail cutover** — ran split-delivery during the transition so mail kept flowing to both platforms while users moved over. Managed the DNS cutover window to avoid gaps.
-
-**SSO re-mapping** — the client had 50+ SaaS applications pointed at Google as IdP. Reconfigured each for SAML/OIDC against Entra ID. Most were straightforward; a few needed custom attribute mappings.
-
-## What made it hard
-
-The data migration took longer than scoped. The client's Google Drive was far messier than discovery suggested — deeply nested shared drives with complex permission inheritance, orphaned files, and accounts that no longer existed but still owned content. We had to build a pre-migration cleanup process that wasn't in the original plan.
-
-## Stack
-
-- AvePoint Fly
-- Microsoft Entra ID
-- Google Workspace APIs
-- Microsoft Graph API
-- PowerShell
-d:["$","$L2",null,{"fillWidth":true,"gap":"xl","marginBottom":"40","paddingX":"l","children":[["$","$La","jumpcloud-to-intune-migration",{"priority":true,"href":"/work/jumpcloud-to-intune-migration","images":[],"title":"JumpCloud to Intune Migration","description":"MDM consolidation from JumpCloud to Microsoft Intune — automated unenrollment, Autopilot provisioning, and policy parity for a mixed Windows and macOS fleet.","content":"$16","avatars":[],"link":""}],["$","$La","gcp-to-entra-migration",{"priority":true,"href":"/work/gcp-to-entra-migration","images":[],"title":"GCP to Entra ID Migration","description":"Full identity and collaboration migration from Google Workspace to Microsoft 365 — mailboxes, Drive data, SSO re-mapping across 50+ apps, and tenant consolidation.","content":"$17","avatars":[],"link":""}],"$L18"]}]
-e:["$","$L19",null,{}]
-f:["$","script","script-0",{"src":"/resume/_next/static/chunks/1639f11c1a7acc88.js","async":true}]
-10:["$","$L1a",null,{"children":["$","$1b",null,{"name":"Next.MetadataOutlet","children":"$@1c"}]}]
-1d:T2296,
-The default Claude Code installation does one thing poorly: it forgets everything. Every new session, you re-explain your stack, your preferences, the decisions you made last week. It compounds quickly on any project you're in for more than a few days.
-
-I spent a few months building a configuration layer on top of Claude Code that solves this. Here's what it does and how it works.
-
-## The memory problem
-
-Claude Code has no persistence by default. The context window holds your current session. When it compacts or you start a new one, that state is gone. You're not losing information in a database — you're losing it from the model's working memory.
-
-The fix isn't clever prompting. It's an explicit memory system with structured files and hooks that write to and read from those files automatically.
-
-## The 4-file context system
-
-Each project gets a directory at `~/.claude/projects/<name>/` with four files:
-
-**`context-goals.md`** — what I'm working on right now. Max 5 lines. Rewritten when the goal changes. Keeps the model from drifting into solving adjacent problems.
-
-**`context-decisions.md`** — architectural choices and why. Permanent, never deleted. If I decided to use Infisical instead of environment variables, that's in here with the reason. The model doesn't suggest what I've already ruled out.
-
-**`context-progress.md`** — completed tasks and what's in flight. Auto-trimmed to the last 20 items. Serves as a working log without growing unbounded.
-
-**`context-gotchas.md`** — warnings, blockers, and lessons. Also permanent. If something bit me once — a library quirk, an environment constraint, a mistake pattern — it lives here forever. The model reads it at session start and doesn't repeat the same mistakes.
-
-These files are plain markdown. They're updated manually after significant tasks, and automatically by hooks at session end.
-
-## The hooks
-
-Hooks are shell scripts or TypeScript files that Claude Code runs in response to lifecycle events. I have six:
-
-**SessionStart** — runs when a new session opens. Reads the project's context files and injects a summary (max 60 lines) as a system message. The model immediately knows what project it's in, what the current goal is, what decisions are locked, and what to avoid. No re-explaining needed.
-
-**PreCompact** — runs before Claude Code compacts the context window. Assembles all four context files into `context-summary.md` — a structured 60-line snapshot. This becomes what SessionStart injects next time. Without this, compaction destroys context. With it, compaction is just a checkpoint.
-
-**EvaluateSession** — runs when the session ends. Reads the transcript, extracts patterns — recurring mistakes, useful techniques, things that worked — and writes them to `~/.claude/skills/Learned/`. These are ephemeral: they roll off after a few sessions. For anything important enough to keep permanently, I promote it manually to `context-gotchas.md`.
-
-**SuggestCompact** — tracks a running count of tool calls per session. At 50, it suggests running `/compact`. This isn't mandatory, but the reminder is useful — context windows that run too long start producing lower-quality output.
-
-**UpdateContext** — PostToolUse hook that fires after Write, Edit, or MultiEdit operations. Logs modified files to context-progress and runs Prettier and tsc on changed files immediately. Type errors and formatting issues surface at edit time, not at build time.
-
-**Cleanup** — periodic maintenance. Trims context-progress.md to the last 20 items. Removes context directories for projects that haven't been touched in 30 days.
-
-## Skills and commands
-
-Skills are reusable prompts that expand into full instructions when invoked. I have these:
-
-**`/plan`** — invokes the planner agent before any implementation. Restates the requirement, breaks it into phases, identifies dependencies, flags risks. Produces a plan for review before any code is touched. I don't write code without running this first for anything non-trivial.
-
-**`/verify`** — runs a self-check loop: tsc → lint → tests → build, in order, stopping on first failure. The skill knows to skip steps that aren't configured for the project. Run before every commit.
-
-**`/simplify`** — post-implementation review. Looks at recently modified code for unnecessary abstraction, duplicated logic, or complexity that crept in during implementation. Runs after verify.
-
-**`/commit-push-pr`** — precomputes git context (status, diff, log, branch), generates a conventional commit message, stages relevant files, commits, and pushes. Skips the tedium of assembling git commands manually.
-
-**`/learn`** — manual trigger for pattern extraction. Same process as EvaluateSession but runs on demand mid-session when I want to capture something specific.
-
-**`/update-context`** — reads the current session and updates all four context files. Useful after completing a significant task when I want to flush progress immediately rather than waiting for the end-of-session hook.
-
-**`/tdd`** — enforces test-first workflow. Scaffolds the interface, writes the test, makes it fail, then implements the minimum code to pass. Blocks implementation until the test exists.
-
-**`/code-review`** — runs the code-reviewer agent on recently modified files. Returns severity-rated feedback: critical issues stop work, high issues get fixed, medium issues are noted.
-
-## Agents
-
-Agents are specialized sub-models with scoped roles. They run separately from the main session and have access to the codebase but only for their designated purpose.
-
-**planner** — for implementation planning. Doesn't write code. Only produces plans with phases, dependencies, and risk flags.
-
-**code-reviewer** — reviews code after it's written. Severity-based feedback. The reviewer doesn't have write access — it can't change files, only report.
-
-**security-reviewer** — OWASP Top 10 checks, secret detection, dependency auditing. Runs before commits on anything that touches auth, input handling, or external integrations.
-
-**tdd-guide** — enforces test-first. If I start implementing without a failing test, it redirects. Tracks coverage and flags when it drops below 80%.
-
-**architect** — for decisions that affect project structure. Invoked when I'm choosing between approaches that have lasting consequences, not for individual implementation decisions.
-
-**build-error-resolver** — when the build breaks, this agent diagnoses and makes the minimum change to get it green. Doesn't refactor, doesn't improve — just fixes the build.
-
-**refactor-cleaner** — dead code removal and consolidation. Runs tools like `knip` to find unused exports, then removes them. Used for maintenance, not mid-feature.
-
-The separation is intentional. A code reviewer that can also edit files is dangerous — it starts making "improvements" that weren't asked for. Each agent does one thing.
-
-## Global rules
-
-Rules are markdown files in `~/.claude/rules/` that load into every session. They cover:
-
-- **Coding style**: immutability-first (spread operators, never mutate), no `any` types, explicit return types on exports, functions under 50 lines
-- **Package manager**: bun not npm, uv not pip — enforced globally so I never get npm in a bun project
-- **Git workflow**: conventional commits (`feat|fix|refactor|docs|chore:`), no `Co-Authored-By` footers, PR descriptions that cover the full diff not just the latest commit
-- **Testing**: 80% minimum coverage, TDD workflow required for new features
-- **Security**: no hardcoded secrets, input validation at system boundaries only, rate limiting on all endpoints
-
-The model reads these rules at every session start. They're not suggestions — they're constraints that get checked during code review and verify.
-
-## What this actually changes day-to-day
-
-The memory system means I can leave a project for a week and come back without a re-orientation session. The model knows where I left off, what I decided, and what's broken.
-
-The hooks mean formatting and type errors surface immediately. I don't batch-discover problems at commit time.
-
-The agents mean review happens as a matter of course. I'm not remembering to run security checks — they're part of the workflow for anything touching auth or external data.
-
-The skills mean the repetitive parts (planning, verifying, committing) have consistent execution. I don't skip `/verify` because it's convenient — the skill is right there and running it takes two seconds.
-
-None of this is magic. It's structured configuration that enforces a workflow I decided I wanted. The alternative is relying on memory and discipline to apply that workflow manually every time. That doesn't scale.
-
-The config is version-controlled at [github.com/RohiRIK/claude-code-config](https://github.com/RohiRIK/claude-code-config).
-14:["$","$L12","claude-code-config",{"post":{"metadata":{"title":"How I Configured Claude Code to Actually Remember Things","subtitle":"","publishedAt":"2026-03-02","summary":"The default Claude Code setup loses context on every session. Here's the hook system, skill commands, agent definitions, and memory architecture I built to fix that.","image":"/images/blog/claude-code-config.png","images":[],"tag":"Engineering","team":[],"link":""},"slug":"claude-code-config","content":"$1d"},"thumbnail":false}]
+14:["$","$L12","netlogon-rpc-sealing-playbook",{"post":{"metadata":{"title":"Netlogon RPC Sealing: The Full Hardening Playbook","subtitle":"","publishedAt":"2026-03-03","summary":"A complete 4-phase execution guide for enforcing Netlogon RPC Sealing and SMB/NTLM hardening before migrating to Entra ID — including the PowerShell discovery script I use to find vulnerable traffic across all DCs.","image":"/images/blog/netlogon-rpc-sealing-playbook.png","images":[],"tag":"Security","team":[],"link":""},"slug":"netlogon-rpc-sealing-playbook","content":"$1d"},"thumbnail":false}]
 15:["$","$L6",null,{"fillWidth":true,"paddingLeft":"64","horizontal":"end","children":["$","$L7",null,{"maxWidth":48}]}]
 1e:T9e2,
 ## What this is

@@ -5,7 +5,7 @@
     <link>https://rohirik.github.io/resume/blog</link>
     <description>Read what Rohi Rikman has been up to recently</description>
     <language>en</language>
-    <lastBuildDate>Tue, 03 Mar 2026 13:20:48 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 04 Mar 2026 10:00:47 GMT</lastBuildDate>
     <atom:link href="https://rohirik.github.io/resume/api/rss" rel="self" type="application/rss+xml" />
     <managingEditor>rohi@rohirikman.dev (Rohi Rikman)</managingEditor>
     <webMaster>rohi@rohirikman.dev (Rohi Rikman)</webMaster>
@@ -15,6 +15,16 @@
       <link>https://rohirik.github.io/resume/blog</link>
     </image>
     
+    <item>
+      <title>From Script to System: How I Turned a Jenkins Pipeline into FleetWatch</title>
+      <link>https://rohirik.github.io/resume/blog/fleetwatch-from-script-to-system</link>
+      <guid>https://rohirik.github.io/resume/blog/fleetwatch-from-script-to-system</guid>
+      <pubDate>Wed, 04 Mar 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[My client wanted PowerShell scripts dumping Intune data into SharePoint for Power BI. I built a web app instead. Here's why — and how.]]></description>
+      <enclosure url="https://rohirik.github.io/resume/images/blog/fleetwatch-from-script-to-system.png" type="image/jpeg" />
+      <category>Engineering</category>
+      <author>rohi@rohirikman.dev (Rohi Rikman)</author>
+    </item>
     <item>
       <title>Netlogon RPC Sealing: The Full Hardening Playbook</title>
       <link>https://rohirik.github.io/resume/blog/netlogon-rpc-sealing-playbook</link>

@@ -1,0 +1,375 @@
+1:"$Sreact.fragment"
+3:I[339756,["/resume/_next/static/chunks/d96012bcfc98706a.js","/resume/_next/static/chunks/73e3194f06db260e.js"],"default"]
+4:I[837457,["/resume/_next/static/chunks/d96012bcfc98706a.js","/resume/_next/static/chunks/73e3194f06db260e.js"],"default"]
+6:I[897367,["/resume/_next/static/chunks/d96012bcfc98706a.js","/resume/_next/static/chunks/73e3194f06db260e.js"],"OutletBoundary"]
+7:"$Sreact.suspense"
+9:I[897367,["/resume/_next/static/chunks/d96012bcfc98706a.js","/resume/_next/static/chunks/73e3194f06db260e.js"],"ViewportBoundary"]
+b:I[897367,["/resume/_next/static/chunks/d96012bcfc98706a.js","/resume/_next/static/chunks/73e3194f06db260e.js"],"MetadataBoundary"]
+d:I[168027,[],"default"]
+:HL["/resume/_next/static/chunks/93ac2d54f71ec8d4.css","style"]
+:HL["/resume/_next/static/chunks/d20e0f0702cef329.css","style"]
+:HL["/resume/_next/static/chunks/3a1b43107ae24619.css","style"]
+:HL["/resume/_next/static/chunks/eef662fdc50843a7.css","style"]
+:HL["/resume/_next/static/chunks/b3a7f4834154c9dc.css","style"]
+:HL["/resume/_next/static/media/797e433ab948586e-s.p.dbea232f.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/resume/_next/static/media/caa3a2e1cccd8315-s.p.853070df.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+0:{"P":null,"b":"jYEfQBknTEvWryZZWNfz4","c":["","blog","fleetwatch-from-script-to-system"],"q":"","i":false,"f":[[["",{"children":["blog",{"children":[["slug","fleetwatch-from-script-to-system","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/resume/_next/static/chunks/93ac2d54f71ec8d4.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/resume/_next/static/chunks/d20e0f0702cef329.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","2",{"rel":"stylesheet","href":"/resume/_next/static/chunks/3a1b43107ae24619.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","3",{"rel":"stylesheet","href":"/resume/_next/static/chunks/eef662fdc50843a7.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","4",{"rel":"stylesheet","href":"/resume/_next/static/chunks/b3a7f4834154c9dc.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/resume/_next/static/chunks/601dc1a12bda3fda.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/resume/_next/static/chunks/8a07e6fd7e614a7b.js","async":true,"nonce":"$undefined"}],["$","script","script-2",{"src":"/resume/_next/static/chunks/9988c4a59e44ac76.js","async":true,"nonce":"$undefined"}],["$","script","script-3",{"src":"/resume/_next/static/chunks/05424c1bbd401aee.js","async":true,"nonce":"$undefined"}],["$","script","script-4",{"src":"/resume/_next/static/chunks/2079049d5abbbd3d.js","async":true,"nonce":"$undefined"}]],"$L2"]}],{"children":[["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L5",[["$","script","script-0",{"src":"/resume/_next/static/chunks/b4d60b79b2dcf7b3.js","async":true,"nonce":"$undefined"}]],["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],{},null,false,false]},null,false,false]},null,false,false]},null,false,false],["$","$1","h",{"children":[null,["$","$L9",null,{"children":"$La"}],["$","div",null,{"hidden":true,"children":["$","$Lb",null,{"children":["$","$7",null,{"name":"Next.Metadata","children":"$Lc"}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],false]],"m":"$undefined","G":["$d",[]],"S":true}
+f:I[530824,["/resume/_next/static/chunks/601dc1a12bda3fda.js","/resume/_next/static/chunks/8a07e6fd7e614a7b.js","/resume/_next/static/chunks/9988c4a59e44ac76.js","/resume/_next/static/chunks/05424c1bbd401aee.js","/resume/_next/static/chunks/2079049d5abbbd3d.js","/resume/_next/static/chunks/b4d60b79b2dcf7b3.js"],"Providers"]
+10:I[273323,["/resume/_next/static/chunks/601dc1a12bda3fda.js","/resume/_next/static/chunks/8a07e6fd7e614a7b.js","/resume/_next/static/chunks/9988c4a59e44ac76.js","/resume/_next/static/chunks/05424c1bbd401aee.js","/resume/_next/static/chunks/2079049d5abbbd3d.js","/resume/_next/static/chunks/b4d60b79b2dcf7b3.js"],"Column"]
+11:I[621971,["/resume/_next/static/chunks/601dc1a12bda3fda.js","/resume/_next/static/chunks/8a07e6fd7e614a7b.js","/resume/_next/static/chunks/9988c4a59e44ac76.js","/resume/_next/static/chunks/05424c1bbd401aee.js","/resume/_next/static/chunks/2079049d5abbbd3d.js","/resume/_next/static/chunks/b4d60b79b2dcf7b3.js"],"RevealFx"]
+12:I[394412,["/resume/_next/static/chunks/601dc1a12bda3fda.js","/resume/_next/static/chunks/8a07e6fd7e614a7b.js","/resume/_next/static/chunks/9988c4a59e44ac76.js","/resume/_next/static/chunks/05424c1bbd401aee.js","/resume/_next/static/chunks/2079049d5abbbd3d.js","/resume/_next/static/chunks/b4d60b79b2dcf7b3.js"],"Background"]
+13:I[521247,["/resume/_next/static/chunks/601dc1a12bda3fda.js","/resume/_next/static/chunks/8a07e6fd7e614a7b.js","/resume/_next/static/chunks/9988c4a59e44ac76.js","/resume/_next/static/chunks/05424c1bbd401aee.js","/resume/_next/static/chunks/2079049d5abbbd3d.js","/resume/_next/static/chunks/b4d60b79b2dcf7b3.js"],"ClientFlex"]
+14:I[402971,["/resume/_next/static/chunks/601dc1a12bda3fda.js","/resume/_next/static/chunks/8a07e6fd7e614a7b.js","/resume/_next/static/chunks/9988c4a59e44ac76.js","/resume/_next/static/chunks/05424c1bbd401aee.js","/resume/_next/static/chunks/2079049d5abbbd3d.js","/resume/_next/static/chunks/b4d60b79b2dcf7b3.js"],"Header"]
+15:I[1166,["/resume/_next/static/chunks/601dc1a12bda3fda.js","/resume/_next/static/chunks/8a07e6fd7e614a7b.js","/resume/_next/static/chunks/9988c4a59e44ac76.js","/resume/_next/static/chunks/05424c1bbd401aee.js","/resume/_next/static/chunks/2079049d5abbbd3d.js","/resume/_next/static/chunks/b4d60b79b2dcf7b3.js"],"RouteGuard"]
+e:T771,
+              (function() {
+                try {
+                  const root = document.documentElement;
+                  const defaultTheme = 'system';
+                  
+                  // Set defaults from config
+                  const config = {"brand":"violet","accent":"emerald","neutral":"gray","solid":"contrast","solid-style":"flat","border":"playful","surface":"translucent","transition":"all","scaling":"100","viz-style":"gradient"};
+                  
+                  // Apply default values
+                  Object.entries(config).forEach(([key, value]) => {
+                    root.setAttribute('data-' + key, value);
+                  });
+                  
+                  // Resolve theme
+                  const resolveTheme = (themeValue) => {
+                    if (!themeValue || themeValue === 'system') {
+                      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                    }
+                    return themeValue;
+                  };
+                  
+                  // Apply saved theme
+                  const savedTheme = localStorage.getItem('data-theme');
+                  const resolvedTheme = resolveTheme(savedTheme);
+                  root.setAttribute('data-theme', resolvedTheme);
+                  
+                  // Apply any saved style overrides
+                  const styleKeys = Object.keys(config);
+                  styleKeys.forEach(key => {
+                    const value = localStorage.getItem('data-' + key);
+                    if (value) {
+                      root.setAttribute('data-' + key, value);
+                    }
+                  });
+                } catch (e) {
+                  console.error('Failed to initialize theme:', e);
+                  document.documentElement.setAttribute('data-theme', 'dark');
+                }
+              })();
+            2:["$","html",null,{"ref":"$undefined","className":"display-flex position-relative min-width-0 fill-width geist_d82bf9db-module__Ifi_Dq__variable geist_250f8b91-module__B2UTAq__variable geist_4edd9b70-module__GC7HaW__variable geist_mono_90672d7c-module__qcY_rq__variable ","style":{"maxWidth":"$undefined","minWidth":"$undefined","minHeight":"$undefined","maxHeight":"$undefined","width":"$undefined","height":"$undefined","aspectRatio":"$undefined","textAlign":"$undefined","cursor":"$undefined"},"suppressHydrationWarning":true,"lang":"en","children":[["$","head",null,{"children":["$","script",null,{"id":"theme-init","dangerouslySetInnerHTML":{"__html":"$e"}}]}],["$","$Lf",null,{"children":["$","$L10",null,{"as":"body","background":"page","fillWidth":true,"style":{"minHeight":"100vh"},"margin":"0","padding":"0","horizontal":"center","children":[["$","$L11",null,{"fill":true,"position":"absolute","children":["$","$L12",null,{"mask":{"x":50,"y":0,"radius":100,"cursor":false},"gradient":{"display":false,"opacity":100,"x":50,"y":60,"width":100,"height":50,"tilt":0,"colorStart":"accent-background-strong","colorEnd":"page-background"},"dots":{"display":true,"opacity":40,"size":"2","color":"brand-background-strong"},"grid":{"display":false,"opacity":100,"color":"neutral-alpha-medium","width":"0.25rem","height":"0.25rem"},"lines":{"display":false,"opacity":100,"size":"16","thickness":1,"angle":45,"color":"neutral-alpha-weak"}}]}],["$","$L13",null,{"ref":"$undefined","cursor":"$undefined","xl":"$undefined","l":"$undefined","m":"$undefined","s":{"hide":true},"xs":"$undefined","style":"$undefined","hide":"$undefined","fillWidth":true,"minHeight":"16"}],["$","$L14",null,{}],["$","div",null,{"ref":"$undefined","className":"display-flex position-relative p-l flex-1 justify-center min-width-0 fill-width ","style":{"maxWidth":"$undefined","minWidth":"$undefined","minHeight":"$undefined","maxHeight":"$undefined","width":"$undefined","height":"$undefined","aspectRatio":"$undefined","textAlign":"$undefined","cursor":"$undefined"},"children":["$","div",null,{"ref":"$undefined","className":"display-flex position-relative justify-center min-width-0 fill-width ","style":{"maxWidth":"$undefined","minWidth":"$undefined","minHeight":"var(--static-space-0)","maxHeight":"$undefined","width":"$undefined","height":"$undefined","aspectRatio":"$undefined","textAlign":"$undefined","cursor":"$undefined"},"children":["$","$L15",null,{"children":"$L16"}]}]}],"$L17"]}]}]]}]
+18:I[778454,["/resume/_next/static/chunks/601dc1a12bda3fda.js","/resume/_next/static/chunks/8a07e6fd7e614a7b.js","/resume/_next/static/chunks/9988c4a59e44ac76.js","/resume/_next/static/chunks/05424c1bbd401aee.js","/resume/_next/static/chunks/2079049d5abbbd3d.js","/resume/_next/static/chunks/b4d60b79b2dcf7b3.js"],"Row"]
+19:I[298229,["/resume/_next/static/chunks/601dc1a12bda3fda.js","/resume/_next/static/chunks/8a07e6fd7e614a7b.js","/resume/_next/static/chunks/9988c4a59e44ac76.js","/resume/_next/static/chunks/05424c1bbd401aee.js","/resume/_next/static/chunks/2079049d5abbbd3d.js","/resume/_next/static/chunks/b4d60b79b2dcf7b3.js"],"IconButton"]
+1a:I[479520,["/resume/_next/static/chunks/601dc1a12bda3fda.js","/resume/_next/static/chunks/8a07e6fd7e614a7b.js","/resume/_next/static/chunks/9988c4a59e44ac76.js","/resume/_next/static/chunks/05424c1bbd401aee.js","/resume/_next/static/chunks/2079049d5abbbd3d.js","/resume/_next/static/chunks/b4d60b79b2dcf7b3.js"],""]
+1b:I[624379,["/resume/_next/static/chunks/601dc1a12bda3fda.js","/resume/_next/static/chunks/8a07e6fd7e614a7b.js","/resume/_next/static/chunks/9988c4a59e44ac76.js","/resume/_next/static/chunks/05424c1bbd401aee.js","/resume/_next/static/chunks/2079049d5abbbd3d.js","/resume/_next/static/chunks/b4d60b79b2dcf7b3.js"],"SmartLink"]
+1c:I[145250,["/resume/_next/static/chunks/601dc1a12bda3fda.js","/resume/_next/static/chunks/8a07e6fd7e614a7b.js","/resume/_next/static/chunks/9988c4a59e44ac76.js","/resume/_next/static/chunks/05424c1bbd401aee.js","/resume/_next/static/chunks/2079049d5abbbd3d.js","/resume/_next/static/chunks/b4d60b79b2dcf7b3.js"],"Avatar"]
+1d:I[398382,["/resume/_next/static/chunks/601dc1a12bda3fda.js","/resume/_next/static/chunks/8a07e6fd7e614a7b.js","/resume/_next/static/chunks/9988c4a59e44ac76.js","/resume/_next/static/chunks/05424c1bbd401aee.js","/resume/_next/static/chunks/2079049d5abbbd3d.js","/resume/_next/static/chunks/b4d60b79b2dcf7b3.js"],"Media"]
+1f:I[448588,["/resume/_next/static/chunks/601dc1a12bda3fda.js","/resume/_next/static/chunks/8a07e6fd7e614a7b.js","/resume/_next/static/chunks/9988c4a59e44ac76.js","/resume/_next/static/chunks/05424c1bbd401aee.js","/resume/_next/static/chunks/2079049d5abbbd3d.js","/resume/_next/static/chunks/b4d60b79b2dcf7b3.js"],"ShareSection"]
+20:I[311451,["/resume/_next/static/chunks/601dc1a12bda3fda.js","/resume/_next/static/chunks/8a07e6fd7e614a7b.js","/resume/_next/static/chunks/9988c4a59e44ac76.js","/resume/_next/static/chunks/05424c1bbd401aee.js","/resume/_next/static/chunks/2079049d5abbbd3d.js","/resume/_next/static/chunks/b4d60b79b2dcf7b3.js"],"Line"]
+21:I[89532,["/resume/_next/static/chunks/601dc1a12bda3fda.js","/resume/_next/static/chunks/8a07e6fd7e614a7b.js","/resume/_next/static/chunks/9988c4a59e44ac76.js","/resume/_next/static/chunks/05424c1bbd401aee.js","/resume/_next/static/chunks/2079049d5abbbd3d.js","/resume/_next/static/chunks/b4d60b79b2dcf7b3.js"],"Grid"]
+22:I[814360,["/resume/_next/static/chunks/601dc1a12bda3fda.js","/resume/_next/static/chunks/8a07e6fd7e614a7b.js","/resume/_next/static/chunks/9988c4a59e44ac76.js","/resume/_next/static/chunks/05424c1bbd401aee.js","/resume/_next/static/chunks/2079049d5abbbd3d.js","/resume/_next/static/chunks/b4d60b79b2dcf7b3.js"],"default"]
+16:["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","$L10",null,{"as":"section","fill":true,"center":true,"paddingBottom":"160","children":[["$","span",null,{"className":"font-display font-strong font-xl mb-s","style":{"textAlign":"$undefined","textWrap":"$undefined"},"children":"404"}],["$","h1",null,{"className":"font-display font-default font-xs neutral-on-background-strong mb-l","style":{"textAlign":"$undefined","textWrap":"balance"},"children":"Page Not Found"}],["$","span",null,{"className":"neutral-on-background-weak","style":{"textAlign":"$undefined","textWrap":"$undefined"},"children":"The page you are looking for does not exist."}]]}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]
+17:["$","$L18",null,{"as":"footer","fillWidth":true,"padding":"8","horizontal":"center","s":{"direction":"column"},"children":[["$","$L18",null,{"className":"Footer-module-scss-module__DkSkqG__mobile","maxWidth":"m","paddingY":"8","paddingX":"16","gap":"16","horizontal":"between","vertical":"center","s":{"direction":"column","horizontal":"center","align":"center"},"children":[["$","span",null,{"className":"font-body font-default font-s neutral-on-background-strong","style":{"textAlign":"$undefined","textWrap":"$undefined"},"children":[["$","span",null,{"className":"neutral-on-background-weak","style":{"textAlign":"$undefined","textWrap":"$undefined"},"children":["© ",2026," /"]}],["$","span",null,{"className":"px-4","style":{"textAlign":"$undefined","textWrap":"$undefined"},"children":"Rohi Rikman"}],["$","span",null,{"className":"neutral-on-background-weak","style":{"textAlign":"$undefined","textWrap":"$undefined"},"children":"/ Powered by caffeine and questionable life choices"}]]}],["$","$L18",null,{"gap":"16","children":[["$","$L19","GitHub",{"href":"https://github.com/RohiRIK","icon":"github","tooltip":"GitHub","size":"s","variant":"ghost"}],["$","$L19","LinkedIn",{"href":"https://www.linkedin.com/in/rohi-rikman-48831b239/","icon":"linkedin","tooltip":"LinkedIn","size":"s","variant":"ghost"}],["$","$L19","Email",{"href":"mailto:rohi@rohirikman.dev","icon":"email","tooltip":"Email","size":"s","variant":"ghost"}]]}]]}],["$","$L18",null,{"height":"80","hide":true,"s":{"hide":false}}]]}]
+23:T19b0,
+If you're preparing to migrate to Entra ID and a penetration test just flagged "Netlogon not requiring RPC Sealing" — this is how you close it properly.
+
+This isn't a theoretical hardening checklist. It's the actual playbook I follow: four phases, a hard go/no-go gate between discovery and enforcement, and a PowerShell script to do the discovery work for you.
+
+## Why this matters
+
+Netlogon is the protocol domain-joined machines use to authenticate against Domain Controllers. Without RPC Sealing, that channel is unencrypted — a classic man-in-the-middle opportunity. Microsoft patched this with the Netlogon secure channel update (CVE-2020-1472 / Zerologon era), but enforcement is still opt-in. A lot of environments are patched but not enforced.
+
+Before you flip enforcement on, you need to know what's still sending unencrypted traffic. That's the whole point of phases 1–3.
+
+---
+
+## Phase 1: Infrastructure Preparation
+
+**Target:** All servers and endpoints — DCs, member servers, and clients.
+
+Before any enforcement, the OS must actually support the RPC Sealing protocol. If you patch only your DCs and leave member servers behind, those servers will fail to authenticate once you enforce.
+
+**Action:** Deploy the latest Cumulative Updates. Specifically confirm KB5062600 / KB5021130 are installed. Reboot everything. Check that OS builds are current across the board.
+
+This phase is boring. Do it anyway.
+
+---
+
+## Phase 2: Discovery (The Listening Phase)
+
+**Target:** Domain Controllers only.
+
+At this stage, DCs are capable of RPC Sealing but won't block anything yet. They will, however, log every non-compliant connection. That's exactly what you want.
+
+### Step 1 — MDI Reports
+
+Open Microsoft Defender for Identity. Pull the **"Weak Ciphers"** and **"NTLM Authentication"** reports. These give you a fast visual map of legacy devices: old NAS boxes, third-party applications, Linux/Samba servers, network appliances that predate NTLMv2.
+
+### Step 2 — PowerShell Event Log Query
+
+Event ID `5838` = connection attempted without sealing. Event ID `5840` = connection using weak cryptography. You want to find every machine generating these events across all your DCs.
+
+```powershell
+# Create a temp folder for the report
+$Path = "C:\temp"
+If (!(Test-Path $Path)) { New-Item -ItemType Directory -Force -Path $Path }
+
+# Get all Domain Controllers in the domain
+$DCs = Get-ADDomainController -Filter * | Select-Object -ExpandProperty Hostname
+
+$EventIDs = @(5838, 5840)
+$AllEvents = @()
+
+foreach ($DC in $DCs) {
+    Write-Host "Querying logs on DC: $DC..." -ForegroundColor Cyan
+    try {
+        $Events = Get-WinEvent -ComputerName $DC -FilterHashtable @{LogName='System'; ID=$EventIDs} -ErrorAction Stop
+
+        foreach ($Event in $Events) {
+            $AllEvents += [PSCustomObject]@{
+                DomainController = $DC
+                TimeCreated      = $Event.TimeCreated
+                EventID          = $Event.Id
+                Message          = $Event.Message.Split("`n")[0]
+            }
+        }
+    } catch {
+        Write-Warning "No matching events found on $DC, or access was denied."
+    }
+}
+
+# Export results
+if ($AllEvents.Count -gt 0) {
+    $ExportPath = "$Path\Netlogon_Vulnerable_Traffic.csv"
+    $AllEvents | Export-Csv -Path $ExportPath -NoTypeInformation -Encoding UTF8
+    Write-Host "Done! Found vulnerable traffic. Report saved to: $ExportPath" -ForegroundColor Yellow
+} else {
+    Write-Host "Excellent! No vulnerable Netlogon traffic detected across any DCs." -ForegroundColor Green
+}
+```
+
+Run this against all DCs. You'll get a CSV with timestamps, the DC that logged each event, and the message. That CSV is your remediation backlog.
+
+---
+
+## Phase 3: Remediation (The Go/No-Go Gate)
+
+**Target:** Specific assets identified in Phase 2.
+
+This is where most projects stall. The CSV output usually surfaces a few categories:
+
+- **Legacy printers and scanners** — firmware update or replace
+- **Third-party applications** — vendor update or configuration change
+- **Linux/Samba servers** — update Samba and configure `client use spnego = yes`, `ntlm auth = no`
+- **Network appliances** — firmware update; sometimes the only option is replacement
+
+Work through each one. If something genuinely cannot be updated, you document why and decide whether a temporary exception is acceptable. In my experience, "we can't update it" is usually "we haven't tried hard enough yet."
+
+**The gate condition:** Run the discovery script again after remediation. You must see **zero new 5838 or 5840 events across all DCs for at least a few days** before moving to Phase 4. Not fewer events — zero.
+
+---
+
+## Phase 4: Enforcement & Hardening
+
+**Target:** DCs for Netlogon; all servers and clients for SMB/NTLM.
+
+Only run this phase when Phase 3 is clean.
+
+### Step 4.1 — Enforce RPC Sealing on DCs
+
+Deploy via GPO targeting the Domain Controllers OU, or set the registry key directly via PowerShell:
+
+```
+Path:  HKLM\System\CurrentControlSet\Services\Netlogon\Parameters
+Key:   RequireSeal
+Type:  DWORD
+Value: 2
+```
+
+Once `RequireSeal = 2`, any device that fails to use RPC sealing is blocked immediately. Blocked connections generate Event ID `5839` — monitor for these after enforcement so you can catch anything you missed in Phase 3.
+
+### Step 4.2 — SMB Signing and NTLM Hardening
+
+Roll these GPOs out in rings. Don't push to all clients simultaneously.
+
+- **Ring 1:** IT / test machines
+- **Ring 2:** Member servers
+- **Ring 3:** All clients
+
+GPO settings to enforce:
+
+**`Microsoft network server: Digitally sign communications (always)`** → Enabled
+
+**`Network security: LAN Manager authentication level`** → Send NTLMv2 response only. Refuse LM & NTLM
+
+The LAN Manager setting is the one that surprises people. Anything still using plain NTLM or LM will break when you enforce this. That's why the discovery phase exists.
+
+---
+
+## What this closes
+
+Done correctly, this playbook addresses:
+
+- Unencrypted Netlogon channel (pen test finding)
+- Zerologon attack surface (CVE-2020-1472 enforcement)
+- NTLM downgrade attack vectors
+- SMB relay opportunities on the internal network
+
+It also puts you in a much cleaner position for Entra ID migration — because the same legacy devices causing problems here will cause problems during hybrid join and Conditional Access rollout. You're finding them now instead of later.
+
+---
+
+The script above is what I run before any enforcement conversation. If you're seeing 5838s you didn't expect, start there — the CSV usually tells you exactly what needs attention.
+5:["$","$L18",null,{"fillWidth":true,"children":[["$","$L18",null,{"maxWidth":12,"m":{"hide":true}}],["$","$L18",null,{"fillWidth":true,"horizontal":"center","children":["$","$L10",null,{"as":"section","maxWidth":"m","horizontal":"center","gap":"l","paddingTop":"24","children":[["$","$L1a",null,{"id":"schema-blogPosting-/blog/fleetwatch-from-script-to-system","type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"BlogPosting\",\"url\":\"https://rohirik.github.io/resume/blog/fleetwatch-from-script-to-system\",\"sameAs\":[],\"headline\":\"From Script to System: How I Turned a Jenkins Pipeline into FleetWatch\",\"description\":\"My client wanted PowerShell scripts dumping Intune data into SharePoint for Power BI. I built a web app instead. Here's why — and how.\",\"image\":\"https://rohirik.github.io/resume/images/blog/fleetwatch-from-script-to-system.png\",\"datePublished\":\"2026-03-04\",\"dateModified\":\"2026-03-04\",\"author\":{\"@type\":\"Person\",\"name\":\"Rohi Rikman\",\"url\":\"https://rohirik.github.io/resume/about\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"https://rohirik.github.io/resume/images/avatar.png\"}}}"}}],["$","$L10",null,{"maxWidth":"s","gap":"16","horizontal":"center","align":"center","children":[["$","$L1b",null,{"href":"/blog","children":["$","span",null,{"className":"font-label font-strong font-m","style":{"textAlign":"$undefined","textWrap":"$undefined"},"children":"Blog"}]}],["$","span",null,{"className":"font-body font-default font-xs neutral-on-background-weak mb-12","style":{"textAlign":"$undefined","textWrap":"$undefined"},"children":"March 4, 2026"}],["$","h1",null,{"className":"font-display font-strong font-m neutral-on-background-strong","style":{"textAlign":"$undefined","textWrap":"balance"},"children":"From Script to System: How I Turned a Jenkins Pipeline into FleetWatch"}],""]}],["$","$L18",null,{"marginBottom":"32","horizontal":"center","children":["$","$L18",null,{"gap":"16","vertical":"center","children":[["$","$L1c",null,{"size":"s","src":"/resume/images/avatar.png"}],["$","span",null,{"className":"font-label font-default font-m brand-on-background-weak","style":{"textAlign":"$undefined","textWrap":"$undefined"},"children":"Rohi Rikman"}]]}]}],["$","$L1d",null,{"src":"/resume/images/blog/fleetwatch-from-script-to-system.png","alt":"From Script to System: How I Turned a Jenkins Pipeline into FleetWatch","aspectRatio":"16/9","priority":true,"sizes":"(min-width: 768px) 100vw, 768px","border":"neutral-alpha-weak","radius":"l","marginTop":"12","marginBottom":"8"}],["$","$L10",null,{"as":"article","maxWidth":"s","children":"$L1e"}],["$","$L1f",null,{"title":"From Script to System: How I Turned a Jenkins Pipeline into FleetWatch","url":"https://rohirik.github.io/resume/blog/fleetwatch-from-script-to-system"}],["$","$L10",null,{"fillWidth":true,"gap":"40","horizontal":"center","marginTop":"40","children":[["$","$L20",null,{"maxWidth":"40"}],["$","h2",null,{"className":"font-heading font-strong font-xl mb-24","style":{"textAlign":"$undefined","textWrap":"$undefined"},"id":"recent-posts","children":"Recent posts"}],["$","$L21",null,{"columns":"2","s":{"columns":1},"fillWidth":true,"marginBottom":"40","gap":"16","children":[["$","$L22","netlogon-rpc-sealing-playbook",{"post":{"metadata":{"title":"Netlogon RPC Sealing: The Full Hardening Playbook","subtitle":"","publishedAt":"2026-03-03","summary":"A complete 4-phase execution guide for enforcing Netlogon RPC Sealing and SMB/NTLM hardening before migrating to Entra ID — including the PowerShell discovery script I use to find vulnerable traffic across all DCs.","image":"/images/blog/netlogon-rpc-sealing-playbook.png","images":[],"tag":"Security","team":[],"link":""},"slug":"netlogon-rpc-sealing-playbook","content":"$23"},"thumbnail":true,"direction":"column"}],"$L24"]}]]}],"$L25"]}]}],"$L26"]}]
+28:I[988654,["/resume/_next/static/chunks/601dc1a12bda3fda.js","/resume/_next/static/chunks/8a07e6fd7e614a7b.js","/resume/_next/static/chunks/9988c4a59e44ac76.js","/resume/_next/static/chunks/05424c1bbd401aee.js","/resume/_next/static/chunks/2079049d5abbbd3d.js","/resume/_next/static/chunks/b4d60b79b2dcf7b3.js"],"ScrollToHash"]
+29:I[605649,["/resume/_next/static/chunks/601dc1a12bda3fda.js","/resume/_next/static/chunks/8a07e6fd7e614a7b.js","/resume/_next/static/chunks/9988c4a59e44ac76.js","/resume/_next/static/chunks/05424c1bbd401aee.js","/resume/_next/static/chunks/2079049d5abbbd3d.js","/resume/_next/static/chunks/b4d60b79b2dcf7b3.js"],"HeadingNav"]
+27:T2296,
+The default Claude Code installation does one thing poorly: it forgets everything. Every new session, you re-explain your stack, your preferences, the decisions you made last week. It compounds quickly on any project you're in for more than a few days.
+
+I spent a few months building a configuration layer on top of Claude Code that solves this. Here's what it does and how it works.
+
+## The memory problem
+
+Claude Code has no persistence by default. The context window holds your current session. When it compacts or you start a new one, that state is gone. You're not losing information in a database — you're losing it from the model's working memory.
+
+The fix isn't clever prompting. It's an explicit memory system with structured files and hooks that write to and read from those files automatically.
+
+## The 4-file context system
+
+Each project gets a directory at `~/.claude/projects/<name>/` with four files:
+
+**`context-goals.md`** — what I'm working on right now. Max 5 lines. Rewritten when the goal changes. Keeps the model from drifting into solving adjacent problems.
+
+**`context-decisions.md`** — architectural choices and why. Permanent, never deleted. If I decided to use Infisical instead of environment variables, that's in here with the reason. The model doesn't suggest what I've already ruled out.
+
+**`context-progress.md`** — completed tasks and what's in flight. Auto-trimmed to the last 20 items. Serves as a working log without growing unbounded.
+
+**`context-gotchas.md`** — warnings, blockers, and lessons. Also permanent. If something bit me once — a library quirk, an environment constraint, a mistake pattern — it lives here forever. The model reads it at session start and doesn't repeat the same mistakes.
+
+These files are plain markdown. They're updated manually after significant tasks, and automatically by hooks at session end.
+
+## The hooks
+
+Hooks are shell scripts or TypeScript files that Claude Code runs in response to lifecycle events. I have six:
+
+**SessionStart** — runs when a new session opens. Reads the project's context files and injects a summary (max 60 lines) as a system message. The model immediately knows what project it's in, what the current goal is, what decisions are locked, and what to avoid. No re-explaining needed.
+
+**PreCompact** — runs before Claude Code compacts the context window. Assembles all four context files into `context-summary.md` — a structured 60-line snapshot. This becomes what SessionStart injects next time. Without this, compaction destroys context. With it, compaction is just a checkpoint.
+
+**EvaluateSession** — runs when the session ends. Reads the transcript, extracts patterns — recurring mistakes, useful techniques, things that worked — and writes them to `~/.claude/skills/Learned/`. These are ephemeral: they roll off after a few sessions. For anything important enough to keep permanently, I promote it manually to `context-gotchas.md`.
+
+**SuggestCompact** — tracks a running count of tool calls per session. At 50, it suggests running `/compact`. This isn't mandatory, but the reminder is useful — context windows that run too long start producing lower-quality output.
+
+**UpdateContext** — PostToolUse hook that fires after Write, Edit, or MultiEdit operations. Logs modified files to context-progress and runs Prettier and tsc on changed files immediately. Type errors and formatting issues surface at edit time, not at build time.
+
+**Cleanup** — periodic maintenance. Trims context-progress.md to the last 20 items. Removes context directories for projects that haven't been touched in 30 days.
+
+## Skills and commands
+
+Skills are reusable prompts that expand into full instructions when invoked. I have these:
+
+**`/plan`** — invokes the planner agent before any implementation. Restates the requirement, breaks it into phases, identifies dependencies, flags risks. Produces a plan for review before any code is touched. I don't write code without running this first for anything non-trivial.
+
+**`/verify`** — runs a self-check loop: tsc → lint → tests → build, in order, stopping on first failure. The skill knows to skip steps that aren't configured for the project. Run before every commit.
+
+**`/simplify`** — post-implementation review. Looks at recently modified code for unnecessary abstraction, duplicated logic, or complexity that crept in during implementation. Runs after verify.
+
+**`/commit-push-pr`** — precomputes git context (status, diff, log, branch), generates a conventional commit message, stages relevant files, commits, and pushes. Skips the tedium of assembling git commands manually.
+
+**`/learn`** — manual trigger for pattern extraction. Same process as EvaluateSession but runs on demand mid-session when I want to capture something specific.
+
+**`/update-context`** — reads the current session and updates all four context files. Useful after completing a significant task when I want to flush progress immediately rather than waiting for the end-of-session hook.
+
+**`/tdd`** — enforces test-first workflow. Scaffolds the interface, writes the test, makes it fail, then implements the minimum code to pass. Blocks implementation until the test exists.
+
+**`/code-review`** — runs the code-reviewer agent on recently modified files. Returns severity-rated feedback: critical issues stop work, high issues get fixed, medium issues are noted.
+
+## Agents
+
+Agents are specialized sub-models with scoped roles. They run separately from the main session and have access to the codebase but only for their designated purpose.
+
+**planner** — for implementation planning. Doesn't write code. Only produces plans with phases, dependencies, and risk flags.
+
+**code-reviewer** — reviews code after it's written. Severity-based feedback. The reviewer doesn't have write access — it can't change files, only report.
+
+**security-reviewer** — OWASP Top 10 checks, secret detection, dependency auditing. Runs before commits on anything that touches auth, input handling, or external integrations.
+
+**tdd-guide** — enforces test-first. If I start implementing without a failing test, it redirects. Tracks coverage and flags when it drops below 80%.
+
+**architect** — for decisions that affect project structure. Invoked when I'm choosing between approaches that have lasting consequences, not for individual implementation decisions.
+
+**build-error-resolver** — when the build breaks, this agent diagnoses and makes the minimum change to get it green. Doesn't refactor, doesn't improve — just fixes the build.
+
+**refactor-cleaner** — dead code removal and consolidation. Runs tools like `knip` to find unused exports, then removes them. Used for maintenance, not mid-feature.
+
+The separation is intentional. A code reviewer that can also edit files is dangerous — it starts making "improvements" that weren't asked for. Each agent does one thing.
+
+## Global rules
+
+Rules are markdown files in `~/.claude/rules/` that load into every session. They cover:
+
+- **Coding style**: immutability-first (spread operators, never mutate), no `any` types, explicit return types on exports, functions under 50 lines
+- **Package manager**: bun not npm, uv not pip — enforced globally so I never get npm in a bun project
+- **Git workflow**: conventional commits (`feat|fix|refactor|docs|chore:`), no `Co-Authored-By` footers, PR descriptions that cover the full diff not just the latest commit
+- **Testing**: 80% minimum coverage, TDD workflow required for new features
+- **Security**: no hardcoded secrets, input validation at system boundaries only, rate limiting on all endpoints
+
+The model reads these rules at every session start. They're not suggestions — they're constraints that get checked during code review and verify.
+
+## What this actually changes day-to-day
+
+The memory system means I can leave a project for a week and come back without a re-orientation session. The model knows where I left off, what I decided, and what's broken.
+
+The hooks mean formatting and type errors surface immediately. I don't batch-discover problems at commit time.
+
+The agents mean review happens as a matter of course. I'm not remembering to run security checks — they're part of the workflow for anything touching auth or external data.
+
+The skills mean the repetitive parts (planning, verifying, committing) have consistent execution. I don't skip `/verify` because it's convenient — the skill is right there and running it takes two seconds.
+
+None of this is magic. It's structured configuration that enforces a workflow I decided I wanted. The alternative is relying on memory and discipline to apply that workflow manually every time. That doesn't scale.
+
+The config is version-controlled at [github.com/RohiRIK/claude-code-config](https://github.com/RohiRIK/claude-code-config).
+24:["$","$L22","claude-code-config",{"post":{"metadata":{"title":"How I Configured Claude Code to Actually Remember Things","subtitle":"","publishedAt":"2026-03-02","summary":"The default Claude Code setup loses context on every session. Here's the hook system, skill commands, agent definitions, and memory architecture I built to fix that.","image":"/images/blog/claude-code-config.png","images":[],"tag":"Engineering","team":[],"link":""},"slug":"claude-code-config","content":"$27"},"thumbnail":true,"direction":"column"}]
+25:["$","$L28",null,{}]
+26:["$","$L10",null,{"maxWidth":12,"paddingLeft":"40","fitHeight":true,"position":"sticky","top":"80","gap":"16","m":{"hide":true},"children":["$","$L29",null,{"fitHeight":true}]}]
+2a:I[811052,["/resume/_next/static/chunks/601dc1a12bda3fda.js","/resume/_next/static/chunks/8a07e6fd7e614a7b.js","/resume/_next/static/chunks/9988c4a59e44ac76.js","/resume/_next/static/chunks/05424c1bbd401aee.js","/resume/_next/static/chunks/2079049d5abbbd3d.js","/resume/_next/static/chunks/b4d60b79b2dcf7b3.js"],"HeadingLink"]
+1e:[["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"textAlign":"$undefined","textWrap":"$undefined","lineHeight":"175%"},"children":"The brief arrived in a Teams message. The IT team was managing hundreds of Windows devices through Microsoft Intune and they had no good way to answer a simple question: what's actually out there, and what state is it in?"}],"\n",["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"textAlign":"$undefined","textWrap":"$undefined","lineHeight":"175%"},"children":"Their proposed solution: a PowerShell script triggered by Jenkins, pulling device data from the Intune API and writing it to SharePoint lists. Power BI would sit on top and refresh on a schedule. Dashboards, filters, the works."}],"\n",["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"textAlign":"$undefined","textWrap":"$undefined","lineHeight":"175%"},"children":"It's a reasonable ask. It's how a lot of IT shops solve this problem. They've got the pieces — Intune, SharePoint, Power BI — and they want to wire them together. The request made sense for where they were."}],"\n",["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"textAlign":"$undefined","textWrap":"$undefined","lineHeight":"175%"},"children":"I said I'd get back to them with a proposal."}],"\n",["$","$L2a",null,{"marginTop":"24","marginBottom":"12","as":"h2","id":"the-ceiling","children":"The Ceiling"}],"\n",["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"textAlign":"$undefined","textWrap":"$undefined","lineHeight":"175%"},"children":"I spent a day mapping out the pipeline they'd asked for. And the more I built it in my head, the more I saw where it would break."}],"\n",["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"textAlign":"$undefined","textWrap":"$undefined","lineHeight":"175%"},"children":[["$","strong",null,{"children":"SharePoint as a database"}]," is the first problem. SharePoint lists have a 5,000-item view threshold — not a hard limit, but enough to start causing issues at scale. There's no real schema enforcement, no foreign keys, no joins. You end up denormalizing everything and hoping the refresh writes are idempotent. When they're not, you get stale rows and duplicate entries that Power BI dutifully surfaces as real data."]}],"\n",["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"textAlign":"$undefined","textWrap":"$undefined","lineHeight":"175%"},"children":[["$","strong",null,{"children":"Jenkins as a scheduler"}]," is infra for infra's sake. You're running a CI/CD system to run a cron job. That means maintaining an agent, managing credentials, monitoring for failed runs, building retry logic from scratch. When the sync breaks at 2am, nobody knows until someone notices the dashboards haven't updated."]}],"\n",["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"textAlign":"$undefined","textWrap":"$undefined","lineHeight":"175%"},"children":[["$","strong",null,{"children":"Power BI on a schedule"}]," means the data is stale by definition. If your refresh runs every four hours and a device falls out of compliance at 9am, your dashboard won't show it until 1pm. For a compliance and security use case, that gap matters."]}],"\n",["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"textAlign":"$undefined","textWrap":"$undefined","lineHeight":"175%"},"children":"And there was no RBAC anywhere in this design. Anyone with SharePoint access could see everything — all devices, all users, all compliance states. Helpdesk techs, managers, contractors. No audit trail of who looked at what."}],"\n","$L2b","\n","$L2c","\n","$L2d","\n","$L2e","\n","$L2f","\n","$L30","\n","$L31","\n","$L32","\n","$L33","\n","$L34","\n","$L35","\n","$L36","\n","$L37","\n","$L38","\n","$L39","\n","$L3a","\n","$L3b","\n","$L3c","\n","$L3d","\n","$L3e","\n","$L3f","\n","$L40","\n","$L41","\n","$L42","\n","$L43","\n","$L44","\n","$L45","\n","$L46"]
+47:I[436122,["/resume/_next/static/chunks/601dc1a12bda3fda.js","/resume/_next/static/chunks/8a07e6fd7e614a7b.js","/resume/_next/static/chunks/9988c4a59e44ac76.js","/resume/_next/static/chunks/05424c1bbd401aee.js","/resume/_next/static/chunks/2079049d5abbbd3d.js","/resume/_next/static/chunks/b4d60b79b2dcf7b3.js"],"List"]
+48:I[626935,["/resume/_next/static/chunks/601dc1a12bda3fda.js","/resume/_next/static/chunks/8a07e6fd7e614a7b.js","/resume/_next/static/chunks/9988c4a59e44ac76.js","/resume/_next/static/chunks/05424c1bbd401aee.js","/resume/_next/static/chunks/2079049d5abbbd3d.js","/resume/_next/static/chunks/b4d60b79b2dcf7b3.js"],"ListItem"]
+49:I[362844,["/resume/_next/static/chunks/601dc1a12bda3fda.js","/resume/_next/static/chunks/8a07e6fd7e614a7b.js","/resume/_next/static/chunks/9988c4a59e44ac76.js","/resume/_next/static/chunks/05424c1bbd401aee.js","/resume/_next/static/chunks/2079049d5abbbd3d.js","/resume/_next/static/chunks/b4d60b79b2dcf7b3.js"],"InlineCode"]
+2b:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"textAlign":"$undefined","textWrap":"$undefined","lineHeight":"175%"},"children":["But the deepest problem wasn't architectural. The client didn't actually want a pipeline. They wanted ",["$","strong",null,{"children":"device visibility"}],". They wanted to know what was out there and whether it was healthy. The pipeline was just the closest solution shape they knew how to ask for."]}]
+2c:["$","$L2a",null,{"marginTop":"24","marginBottom":"12","as":"h2","id":"the-pitch","children":"The Pitch"}]
+2d:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"textAlign":"$undefined","textWrap":"$undefined","lineHeight":"175%"},"children":"I came back with a counter-proposal."}]
+2e:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"textAlign":"$undefined","textWrap":"$undefined","lineHeight":"175%"},"children":"Instead of a pipeline, I pitched a purpose-built web app: FleetWatch. The sell was simple — you'll stop asking \"is this data current?\" because it always will be."}]
+2f:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"textAlign":"$undefined","textWrap":"$undefined","lineHeight":"175%"},"children":"Specifically:"}]
+30:["$","$L47",null,{"as":"ul","children":["\n",["$","$L48",null,{"marginTop":"4","marginBottom":"8","style":{"lineHeight":"175%"},"children":"Real-time sync via Microsoft Graph API delta queries, pulling only changed devices instead of exporting everything on a schedule"}],"\n",["$","$L48",null,{"marginTop":"4","marginBottom":"8","style":{"lineHeight":"175%"},"children":"Postgres as the data store — real schema, real queries, real relational data"}],"\n",["$","$L48",null,{"marginTop":"4","marginBottom":"8","style":{"lineHeight":"175%"},"children":"RBAC built in from day one: admins see everything, helpdesk sees their assigned devices"}],"\n",["$","$L48",null,{"marginTop":"4","marginBottom":"8","style":{"lineHeight":"175%"},"children":"Full audit logs of who accessed what and when"}],"\n",["$","$L48",null,{"marginTop":"4","marginBottom":"8","style":{"lineHeight":"175%"},"children":"A proper UI instead of a Power BI dashboard that takes 30 seconds to load and can't drill into a single device"}],"\n"]}]
+31:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"textAlign":"$undefined","textWrap":"$undefined","lineHeight":"175%"},"children":"The client said yes. Partly because the technical argument was sound, and partly because I had mocked up what the device detail page would look like. It's easier to approve something you can see."}]
+32:["$","$L2a",null,{"marginTop":"24","marginBottom":"12","as":"h2","id":"the-architecture","children":"The Architecture"}]
+33:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"textAlign":"$undefined","textWrap":"$undefined","lineHeight":"175%"},"children":"The core of FleetWatch is the Microsoft Graph API integration."}]
+34:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"textAlign":"$undefined","textWrap":"$undefined","lineHeight":"175%"},"children":["Authentication uses a Service Principal with Client Certificate auth — no client secrets that expire. The key endpoint is ",["$","$L49",null,{"children":"/deviceManagement/managedDevices/delta"}],", which supports delta queries: on first run you get all devices, on subsequent runs you only get devices that changed since your last sync token. Instead of exporting 800 devices every four hours, you're processing 12 changed devices every 30 minutes."]}]
+35:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"textAlign":"$undefined","textWrap":"$undefined","lineHeight":"175%"},"children":"The sync runs on Vercel Cron jobs. No Jenkins, no agents, no infra to maintain. The cron endpoint is protected with a shared secret header — simple, effective. Failed syncs surface in application logs, not in a Jenkins console that nobody checks."}]
+36:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"textAlign":"$undefined","textWrap":"$undefined","lineHeight":"175%"},"children":["The data layer is Postgres on Vercel with Drizzle ORM. The schema models the actual domain: a ",["$","$L49",null,{"children":"devices"}]," table, a ",["$","$L49",null,{"children":"users"}]," table, ",["$","$L49",null,{"children":"compliance_policies"}],", ",["$","$L49",null,{"children":"app_inventory"}],", ",["$","$L49",null,{"children":"security_hardware"}],". When you need to answer \"which devices have BitLocker disabled and are assigned to users in the Finance department,\" that's a join, not a SharePoint list crawl."]}]
+37:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"textAlign":"$undefined","textWrap":"$undefined","lineHeight":"175%"},"children":"The frontend is Next.js 15 with the App Router. Server Components handle the heavy lifting — device lists, compliance views, filtered queries all render server-side. The device detail page has six tabs: Overview, Compliance, Configuration, Security, Hardware, and Network. Each tab queries only the data it needs."}]
+38:["$","pre",null,{"children":["$","$L49",null,{"children":"Before (proposed):\nJenkins → PowerShell → SharePoint Lists → Power BI (scheduled refresh)\n\nAfter (FleetWatch):\nVercel Cron → Microsoft Graph API → Postgres → Next.js (real-time)\n"}]}]
+39:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"textAlign":"$undefined","textWrap":"$undefined","lineHeight":"175%"},"children":"Auth is NextAuth with role-based access enforced at the API layer. The middleware checks roles before any data query runs — not just in the UI, where it's trivial to bypass. Admin and read-only roles are stored per-user in the database, not inferred from SharePoint group membership."}]
+3a:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"textAlign":"$undefined","textWrap":"$undefined","lineHeight":"175%"},"children":["Monitoring is a ",["$","$L49",null,{"children":"/api/health"}]," endpoint that checks database connectivity and last successful sync time, plus a ",["$","$L49",null,{"children":"/api/metrics"}]," endpoint for the operational stats I actually care about: sync duration, devices processed, error rate. Redis is wired in as an optional cache layer for the dashboard aggregate queries."]}]
+3b:["$","$L2a",null,{"marginTop":"24","marginBottom":"12","as":"h2","id":"what-it-enables","children":"What It Enables"}]
+3c:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"textAlign":"$undefined","textWrap":"$undefined","lineHeight":"175%"},"children":"The gap between the pipeline and the app isn't cosmetic — it's functional."}]
+3d:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"textAlign":"$undefined","textWrap":"$undefined","lineHeight":"175%"},"children":"Search and filter across all 800 devices returns results in under 100ms. You can filter by compliance state, OS version, last sync time, assigned user, or any combination. In Power BI with a scheduled refresh, you're waiting for a report to load and hoping it reflects reality."}]
+3e:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"textAlign":"$undefined","textWrap":"$undefined","lineHeight":"175%"},"children":"The device detail page shows everything in one place: BitLocker status, TPM chip version, Secure Boot state, assigned compliance policies, installed applications, network adapters. That level of detail doesn't exist in the SharePoint list model — you'd need separate lists for each entity and a Power BI data model to join them, which you'd then need to maintain."}]
+3f:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"textAlign":"$undefined","textWrap":"$undefined","lineHeight":"175%"},"children":"RBAC means helpdesk techs can look up devices without needing SharePoint permissions across the entire tenant. No permissions sprawl, no \"just give them read access to the list.\" You grant a role in FleetWatch and that's it."}]
+40:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"textAlign":"$undefined","textWrap":"$undefined","lineHeight":"175%"},"children":"The export function lets you pull filtered device lists to CSV — useful for compliance reporting, vendor audits, or just sending a list of non-compliant devices to the right team. It works on whatever filter you've currently applied, so you're exporting exactly what you're looking at."}]
+41:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"textAlign":"$undefined","textWrap":"$undefined","lineHeight":"175%"},"children":"Compliance trend graphs show state over time from the sync history, not from a Power BI snapshot that was current when the report was built. When a device falls out of compliance and comes back, you can see when both events happened."}]
+42:["$","$L2a",null,{"marginTop":"24","marginBottom":"12","as":"h2","id":"the-lesson","children":"The Lesson"}]
+43:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"textAlign":"$undefined","textWrap":"$undefined","lineHeight":"175%"},"children":"Scripts are the right first tool when scope is unclear. If the client had wanted a one-time export to audit their device inventory, the PowerShell approach would have been exactly right. Fast to build, no ongoing maintenance, done."}]
+44:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"textAlign":"$undefined","textWrap":"$undefined","lineHeight":"175%"},"children":"But when the real problem is ongoing visibility — and when the solution needs RBAC, audit logs, freshness guarantees, and drill-down — the pipeline approach has a ceiling. It would have worked for three months. Then the IT team would have been back asking for user lookup, filtered exports, freshness indicators, device-level detail. The pipeline would have been extended with more scripts, more SharePoint lists, more Power BI datasets. Each addition would have made the system more fragile and harder to reason about."}]
+45:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"textAlign":"$undefined","textWrap":"$undefined","lineHeight":"175%"},"children":"Building FleetWatch upfront was a harder conversation to have, but it was the right one. The client got a system that solves the problem they actually had — not the problem they knew how to articulate."}]
+46:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"textAlign":"$undefined","textWrap":"$undefined","lineHeight":"175%"},"children":["The source is on GitHub at ",["$","a",null,{"href":"https://github.com/RohiRIK/FleetWatch","target":"_blank","rel":"noopener noreferrer","children":"RohiRIK/FleetWatch"}]," if you want to see how it's put together."]}]
+a:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+4a:I[27201,["/resume/_next/static/chunks/d96012bcfc98706a.js","/resume/_next/static/chunks/73e3194f06db260e.js"],"IconMark"]
+8:null
+c:[["$","title","0",{"children":"From Script to System: How I Turned a Jenkins Pipeline into FleetWatch"}],["$","meta","1",{"name":"description","content":"My client wanted PowerShell scripts dumping Intune data into SharePoint for Power BI. I built a web app instead. Here's why — and how."}],["$","meta","2",{"property":"og:title","content":"From Script to System: How I Turned a Jenkins Pipeline into FleetWatch"}],["$","meta","3",{"property":"og:description","content":"My client wanted PowerShell scripts dumping Intune data into SharePoint for Power BI. I built a web app instead. Here's why — and how."}],["$","meta","4",{"property":"og:url","content":"https://rohirik.github.io/resume/blog/fleetwatch-from-script-to-system"}],["$","meta","5",{"property":"og:image","content":"https://rohirik.github.io/resume/images/blog/fleetwatch-from-script-to-system.png"}],["$","meta","6",{"property":"og:image:alt","content":"From Script to System: How I Turned a Jenkins Pipeline into FleetWatch"}],["$","meta","7",{"property":"og:type","content":"website"}],["$","meta","8",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","9",{"name":"twitter:title","content":"From Script to System: How I Turned a Jenkins Pipeline into FleetWatch"}],["$","meta","10",{"name":"twitter:description","content":"My client wanted PowerShell scripts dumping Intune data into SharePoint for Power BI. I built a web app instead. Here's why — and how."}],["$","meta","11",{"name":"twitter:image","content":"https://rohirik.github.io/resume/images/blog/fleetwatch-from-script-to-system.png"}],["$","link","12",{"rel":"icon","href":"/resume/icon.png?icon.4f0888a0.png","sizes":"1532x1858","type":"image/png"}],["$","$L4a","13",{}]]

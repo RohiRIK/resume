@@ -2,19 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://rohirik.github.io/resume</loc>
-<lastmod>2026-03-03</lastmod>
+<lastmod>2026-03-04</lastmod>
 </url>
 <url>
 <loc>https://rohirik.github.io/resume/about</loc>
-<lastmod>2026-03-03</lastmod>
+<lastmod>2026-03-04</lastmod>
 </url>
 <url>
 <loc>https://rohirik.github.io/resume/work</loc>
-<lastmod>2026-03-03</lastmod>
+<lastmod>2026-03-04</lastmod>
 </url>
 <url>
 <loc>https://rohirik.github.io/resume/blog</loc>
-<lastmod>2026-03-03</lastmod>
+<lastmod>2026-03-04</lastmod>
 </url>
 <url>
 <loc>https://rohirik.github.io/resume/blog/claude-code-config</loc>
@@ -27,6 +27,10 @@
 <url>
 <loc>https://rohirik.github.io/resume/blog/endpoint-hardening-zero-trust-control</loc>
 <lastmod>2026-02-10</lastmod>
+</url>
+<url>
+<loc>https://rohirik.github.io/resume/blog/fleetwatch-from-script-to-system</loc>
+<lastmod>2026-03-04</lastmod>
 </url>
 <url>
 <loc>https://rohirik.github.io/resume/blog/homelab-docker-swarm</loc>
