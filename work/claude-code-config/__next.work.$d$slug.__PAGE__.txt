@@ -1,30 +1,32 @@
 1:"$Sreact.fragment"
-2:I[273323,["/resume/_next/static/chunks/4229be1c600ccf6d.js","/resume/_next/static/chunks/8a07e6fd7e614a7b.js","/resume/_next/static/chunks/9988c4a59e44ac76.js","/resume/_next/static/chunks/05424c1bbd401aee.js","/resume/_next/static/chunks/2079049d5abbbd3d.js"],"Column"]
-3:I[479520,["/resume/_next/static/chunks/4229be1c600ccf6d.js","/resume/_next/static/chunks/8a07e6fd7e614a7b.js","/resume/_next/static/chunks/9988c4a59e44ac76.js","/resume/_next/static/chunks/05424c1bbd401aee.js","/resume/_next/static/chunks/2079049d5abbbd3d.js"],""]
-4:I[624379,["/resume/_next/static/chunks/4229be1c600ccf6d.js","/resume/_next/static/chunks/8a07e6fd7e614a7b.js","/resume/_next/static/chunks/9988c4a59e44ac76.js","/resume/_next/static/chunks/05424c1bbd401aee.js","/resume/_next/static/chunks/2079049d5abbbd3d.js"],"SmartLink"]
-5:I[778454,["/resume/_next/static/chunks/4229be1c600ccf6d.js","/resume/_next/static/chunks/8a07e6fd7e614a7b.js","/resume/_next/static/chunks/9988c4a59e44ac76.js","/resume/_next/static/chunks/05424c1bbd401aee.js","/resume/_next/static/chunks/2079049d5abbbd3d.js"],"Row"]
-6:I[571045,["/resume/_next/static/chunks/4229be1c600ccf6d.js","/resume/_next/static/chunks/8a07e6fd7e614a7b.js","/resume/_next/static/chunks/9988c4a59e44ac76.js","/resume/_next/static/chunks/05424c1bbd401aee.js","/resume/_next/static/chunks/2079049d5abbbd3d.js"],"AvatarGroup"]
-7:I[811052,["/resume/_next/static/chunks/4229be1c600ccf6d.js","/resume/_next/static/chunks/8a07e6fd7e614a7b.js","/resume/_next/static/chunks/9988c4a59e44ac76.js","/resume/_next/static/chunks/05424c1bbd401aee.js","/resume/_next/static/chunks/2079049d5abbbd3d.js"],"HeadingLink"]
-8:I[436122,["/resume/_next/static/chunks/4229be1c600ccf6d.js","/resume/_next/static/chunks/8a07e6fd7e614a7b.js","/resume/_next/static/chunks/9988c4a59e44ac76.js","/resume/_next/static/chunks/05424c1bbd401aee.js","/resume/_next/static/chunks/2079049d5abbbd3d.js"],"List"]
-9:I[626935,["/resume/_next/static/chunks/4229be1c600ccf6d.js","/resume/_next/static/chunks/8a07e6fd7e614a7b.js","/resume/_next/static/chunks/9988c4a59e44ac76.js","/resume/_next/static/chunks/05424c1bbd401aee.js","/resume/_next/static/chunks/2079049d5abbbd3d.js"],"ListItem"]
-a:I[362844,["/resume/_next/static/chunks/4229be1c600ccf6d.js","/resume/_next/static/chunks/8a07e6fd7e614a7b.js","/resume/_next/static/chunks/9988c4a59e44ac76.js","/resume/_next/static/chunks/05424c1bbd401aee.js","/resume/_next/static/chunks/2079049d5abbbd3d.js"],"InlineCode"]
-18:I[311451,["/resume/_next/static/chunks/4229be1c600ccf6d.js","/resume/_next/static/chunks/8a07e6fd7e614a7b.js","/resume/_next/static/chunks/9988c4a59e44ac76.js","/resume/_next/static/chunks/05424c1bbd401aee.js","/resume/_next/static/chunks/2079049d5abbbd3d.js"],"Line"]
-19:I[474855,["/resume/_next/static/chunks/4229be1c600ccf6d.js","/resume/_next/static/chunks/8a07e6fd7e614a7b.js","/resume/_next/static/chunks/9988c4a59e44ac76.js","/resume/_next/static/chunks/05424c1bbd401aee.js","/resume/_next/static/chunks/2079049d5abbbd3d.js"],"ProjectCard"]
-29:I[988654,["/resume/_next/static/chunks/4229be1c600ccf6d.js","/resume/_next/static/chunks/8a07e6fd7e614a7b.js","/resume/_next/static/chunks/9988c4a59e44ac76.js","/resume/_next/static/chunks/05424c1bbd401aee.js","/resume/_next/static/chunks/2079049d5abbbd3d.js"],"ScrollToHash"]
-2a:I[897367,["/resume/_next/static/chunks/d96012bcfc98706a.js","/resume/_next/static/chunks/73e3194f06db260e.js"],"OutletBoundary"]
-2b:"$Sreact.suspense"
-0:{"buildId":"475rs20Wnzzf6iXhaZRwU","rsc":["$","$1","c",{"children":[["$","$L2",null,{"as":"section","maxWidth":"m","horizontal":"center","gap":"l","children":[["$","$L3",null,{"id":"schema-blogPosting-/work/claude-code-config","type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"BlogPosting\",\"url\":\"https://rohi-lab.org/work/claude-code-config\",\"sameAs\":[],\"headline\":\"Claude Code Config\",\"description\":\"My production Claude Code setup — custom hooks, agents, skills, and session context system that makes AI-assisted development actually sustainable day-to-day.\",\"image\":\"https://rohi-lab.org/images/avatar.png\",\"datePublished\":\"2026-01-20\",\"dateModified\":\"2026-01-20\",\"author\":{\"@type\":\"Person\",\"name\":\"Rohi Rikman\",\"url\":\"https://rohi-lab.org/about\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"https://rohi-lab.org/images/avatar.png\"}}}"}}],["$","$L2",null,{"maxWidth":"s","gap":"16","horizontal":"center","align":"center","children":[["$","$L4",null,{"href":"/work","children":["$","span",null,{"className":"font-label font-strong font-m","style":{},"children":"Projects"}]}],["$","span",null,{"className":"font-body font-default font-xs neutral-on-background-weak mb-12","style":{},"children":"January 20, 2026"}],["$","h1",null,{"className":"font-display font-strong font-m neutral-on-background-strong","style":{"textWrap":"balance"},"children":"Claude Code Config"}]]}],["$","$L5",null,{"marginBottom":"32","horizontal":"center","children":["$","$L5",null,{"gap":"16","vertical":"center","children":[["$","$L6",null,{"reverse":true,"avatars":[],"size":"s"}],["$","span",null,{"className":"font-label font-default font-m brand-on-background-weak","style":{},"children":[]}]]}]}],false,["$","$L2",null,{"style":{"margin":"auto"},"as":"article","maxWidth":"xs","children":[["$","$L7",null,{"marginTop":"24","marginBottom":"12","as":"h2","id":"what-this-is","children":"What this is"}],"\n",["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":"My personal Claude Code configuration that I've been refining since I started using it heavily for both security automation and portfolio work. The default Claude Code setup is fine. This is what happens after you use it seriously for a few months and start fixing the parts that annoy you."}],"\n",["$","$L7",null,{"marginTop":"24","marginBottom":"12","as":"h2","id":"the-problem-with-default-claude-code","children":"The problem with default Claude Code"}],"\n",["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":"Two things break down quickly:"}],"\n",["$","$L8",null,{"as":"ol","children":["\n",["$","$L9",null,{"marginTop":"4","marginBottom":"8","style":{"lineHeight":"175%"},"children":["\n",["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":[["$","strong",null,{"children":"No memory across sessions."}]," Every new conversation starts cold. You re-explain your stack, your preferences, your project context. It adds up."]}],"\n"]}],"\n",["$","$L9",null,{"marginTop":"4","marginBottom":"8","style":{"lineHeight":"175%"},"children":["\n",["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":[["$","strong",null,{"children":"No workflow enforcement."}]," Claude will happily skip tests, write unsafe code, or use npm instead of bun if you don't have rules that say otherwise."]}],"\n"]}],"\n"]}],"\n",["$","$L7",null,{"marginTop":"24","marginBottom":"12","as":"h2","id":"what-i-built","children":"What I built"}],"\n",["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":[["$","strong",null,{"children":"Session context system"}]," — Four files per project (",["$","$La",null,{"children":"context-goals.md"}],", ",["$","$La",null,{"children":"context-decisions.md"}],", ",["$","$La",null,{"children":"context-progress.md"}],", ",["$","$La",null,{"children":"context-gotchas.md"}],") that persist across sessions. A PreCompact hook assembles them before context gets trimmed. A SessionStart hook injects the summary at the start of every new session. Claude picks up where it left off."]}],"\n","$Lb","\n","$Lc","\n","$Ld","\n","$Le","\n","$Lf","\n","$L10","\n","$L11","\n","$L12","\n","$L13","\n","$L14"]}],"$L15","$L16"]}],null,"$L17"]}],"loading":null,"isPartial":false}
-b:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":[["$","strong",null,{"children":"Custom hooks"}]," — Shell commands that fire on tool use events:"]}]
-c:["$","$L8",null,{"as":"ul","children":["\n",["$","$L9",null,{"marginTop":"4","marginBottom":"8","style":{"lineHeight":"175%"},"children":"PostToolUse runs Prettier and tsc after every file edit"}],"\n",["$","$L9",null,{"marginTop":"4","marginBottom":"8","style":{"lineHeight":"175%"},"children":"PreToolUse blocks dev servers from running outside a tmux session"}],"\n",["$","$L9",null,{"marginTop":"4","marginBottom":"8","style":{"lineHeight":"175%"},"children":"EvaluateSession extracts patterns at session end"}],"\n",["$","$L9",null,{"marginTop":"4","marginBottom":"8","style":{"lineHeight":"175%"},"children":"SuggestCompact warns when approaching context limits"}],"\n"]}]
-d:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":[["$","strong",null,{"children":"Agent definitions"}]," — Specialized agents for recurring tasks: planner, tdd-guide, code-reviewer, security-reviewer, build-error-resolver. Each has a focused role and gets invoked for the right thing rather than dumping everything at the main agent."]}]
-e:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":[["$","strong",null,{"children":"Skills"}]," — Reusable command prompts: ",["$","$La",null,{"children":"/plan"}],", ",["$","$La",null,{"children":"/verify"}],", ",["$","$La",null,{"children":"/simplify"}],", ",["$","$La",null,{"children":"/commit-push-pr"}],", ",["$","$La",null,{"children":"/learn"}],". The verify skill runs tsc → lint → tests → build in order and stops on first failure."]}]
-f:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":[["$","strong",null,{"children":"Global rules"}]," — Coding style, git workflow, security checklist, package manager preferences (bun, not npm), test coverage minimums. Claude reads these on every session and actually follows them."]}]
-10:["$","$L7",null,{"marginTop":"24","marginBottom":"12","as":"h2","id":"what-it-actually-changed","children":"What it actually changed"}]
-11:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":"I stopped re-explaining my stack. I stopped getting npm in projects that use bun. Security checks happen before commits without me prompting. The context system means I can close a session mid-task and come back three days later without losing where I was."}]
-12:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":"It's not magic — it's just configuration that enforces the workflow I actually want."}]
-13:["$","$L7",null,{"marginTop":"24","marginBottom":"12","as":"h2","id":"stack","children":"Stack"}]
-14:["$","$L8",null,{"as":"ul","children":["\n",["$","$L9",null,{"marginTop":"4","marginBottom":"8","style":{"lineHeight":"175%"},"children":"Claude Code hooks (bash scripts)"}],"\n",["$","$L9",null,{"marginTop":"4","marginBottom":"8","style":{"lineHeight":"175%"},"children":"CLAUDE.md (global + per-project)"}],"\n",["$","$L9",null,{"marginTop":"4","marginBottom":"8","style":{"lineHeight":"175%"},"children":"Session context (4 markdown files per project)"}],"\n",["$","$L9",null,{"marginTop":"4","marginBottom":"8","style":{"lineHeight":"175%"},"children":"Custom agents + skills"}],"\n"]}]
-1a:T5f0,
+2:I[273323,["/_next/static/chunks/4229be1c600ccf6d.js","/_next/static/chunks/8a07e6fd7e614a7b.js","/_next/static/chunks/9988c4a59e44ac76.js","/_next/static/chunks/720d3f3cc420c663.js","/_next/static/chunks/2079049d5abbbd3d.js"],"Column"]
+3:I[479520,["/_next/static/chunks/4229be1c600ccf6d.js","/_next/static/chunks/8a07e6fd7e614a7b.js","/_next/static/chunks/9988c4a59e44ac76.js","/_next/static/chunks/720d3f3cc420c663.js","/_next/static/chunks/2079049d5abbbd3d.js"],""]
+4:I[624379,["/_next/static/chunks/4229be1c600ccf6d.js","/_next/static/chunks/8a07e6fd7e614a7b.js","/_next/static/chunks/9988c4a59e44ac76.js","/_next/static/chunks/720d3f3cc420c663.js","/_next/static/chunks/2079049d5abbbd3d.js"],"SmartLink"]
+5:I[778454,["/_next/static/chunks/4229be1c600ccf6d.js","/_next/static/chunks/8a07e6fd7e614a7b.js","/_next/static/chunks/9988c4a59e44ac76.js","/_next/static/chunks/720d3f3cc420c663.js","/_next/static/chunks/2079049d5abbbd3d.js"],"Row"]
+6:I[571045,["/_next/static/chunks/4229be1c600ccf6d.js","/_next/static/chunks/8a07e6fd7e614a7b.js","/_next/static/chunks/9988c4a59e44ac76.js","/_next/static/chunks/720d3f3cc420c663.js","/_next/static/chunks/2079049d5abbbd3d.js"],"AvatarGroup"]
+7:I[811052,["/_next/static/chunks/4229be1c600ccf6d.js","/_next/static/chunks/8a07e6fd7e614a7b.js","/_next/static/chunks/9988c4a59e44ac76.js","/_next/static/chunks/720d3f3cc420c663.js","/_next/static/chunks/2079049d5abbbd3d.js"],"HeadingLink"]
+8:I[436122,["/_next/static/chunks/4229be1c600ccf6d.js","/_next/static/chunks/8a07e6fd7e614a7b.js","/_next/static/chunks/9988c4a59e44ac76.js","/_next/static/chunks/720d3f3cc420c663.js","/_next/static/chunks/2079049d5abbbd3d.js"],"List"]
+9:I[626935,["/_next/static/chunks/4229be1c600ccf6d.js","/_next/static/chunks/8a07e6fd7e614a7b.js","/_next/static/chunks/9988c4a59e44ac76.js","/_next/static/chunks/720d3f3cc420c663.js","/_next/static/chunks/2079049d5abbbd3d.js"],"ListItem"]
+a:I[362844,["/_next/static/chunks/4229be1c600ccf6d.js","/_next/static/chunks/8a07e6fd7e614a7b.js","/_next/static/chunks/9988c4a59e44ac76.js","/_next/static/chunks/720d3f3cc420c663.js","/_next/static/chunks/2079049d5abbbd3d.js"],"InlineCode"]
+1a:I[311451,["/_next/static/chunks/4229be1c600ccf6d.js","/_next/static/chunks/8a07e6fd7e614a7b.js","/_next/static/chunks/9988c4a59e44ac76.js","/_next/static/chunks/720d3f3cc420c663.js","/_next/static/chunks/2079049d5abbbd3d.js"],"Line"]
+1b:I[474855,["/_next/static/chunks/4229be1c600ccf6d.js","/_next/static/chunks/8a07e6fd7e614a7b.js","/_next/static/chunks/9988c4a59e44ac76.js","/_next/static/chunks/720d3f3cc420c663.js","/_next/static/chunks/2079049d5abbbd3d.js"],"ProjectCard"]
+2b:I[988654,["/_next/static/chunks/4229be1c600ccf6d.js","/_next/static/chunks/8a07e6fd7e614a7b.js","/_next/static/chunks/9988c4a59e44ac76.js","/_next/static/chunks/720d3f3cc420c663.js","/_next/static/chunks/2079049d5abbbd3d.js"],"ScrollToHash"]
+2c:I[897367,["/_next/static/chunks/d96012bcfc98706a.js","/_next/static/chunks/73e3194f06db260e.js"],"OutletBoundary"]
+2d:"$Sreact.suspense"
+0:{"buildId":"kz1E_KK_k4zlU9y2C2_31","rsc":["$","$1","c",{"children":[["$","$L2",null,{"as":"section","maxWidth":"m","horizontal":"center","gap":"l","children":[["$","$L3",null,{"id":"schema-blogPosting-/work/claude-code-config","type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"BlogPosting\",\"url\":\"https://CloudJourneyBlog.rohi-lab.org/work/claude-code-config\",\"sameAs\":[],\"headline\":\"Claude Code Config\",\"description\":\"My production Claude Code setup — custom hooks, agents, skills, and session context system that makes AI-assisted development actually sustainable day-to-day.\",\"image\":\"https://CloudJourneyBlog.rohi-lab.org/images/avatar.png\",\"datePublished\":\"2026-01-20\",\"dateModified\":\"2026-01-20\",\"author\":{\"@type\":\"Person\",\"name\":\"Rohi Rikman\",\"url\":\"https://CloudJourneyBlog.rohi-lab.org/about\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"https://CloudJourneyBlog.rohi-lab.org/images/avatar.png\"}}}"}}],["$","$L2",null,{"maxWidth":"s","gap":"16","horizontal":"center","align":"center","children":[["$","$L4",null,{"href":"/work","children":["$","span",null,{"className":"font-label font-strong font-m","style":{},"children":"Projects"}]}],["$","span",null,{"className":"font-body font-default font-xs neutral-on-background-weak mb-12","style":{},"children":"January 20, 2026"}],["$","h1",null,{"className":"font-display font-strong font-m neutral-on-background-strong","style":{"textWrap":"balance"},"children":"Claude Code Config"}]]}],["$","$L5",null,{"marginBottom":"32","horizontal":"center","children":["$","$L5",null,{"gap":"16","vertical":"center","children":[["$","$L6",null,{"reverse":true,"avatars":[],"size":"s"}],["$","span",null,{"className":"font-label font-default font-m brand-on-background-weak","style":{},"children":[]}]]}]}],false,["$","$L2",null,{"style":{"margin":"auto"},"as":"article","maxWidth":"xs","children":[["$","$L7",null,{"marginTop":"24","marginBottom":"12","as":"h2","id":"what-this-is","children":"What this is"}],"\n",["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":"My personal Claude Code configuration that I've been refining since I started using it heavily for both security automation and portfolio work. The default Claude Code setup is fine. This is what happens after you use it seriously for a few months and start fixing the parts that annoy you."}],"\n",["$","$L7",null,{"marginTop":"24","marginBottom":"12","as":"h2","id":"the-problem-with-default-claude-code","children":"The problem with default Claude Code"}],"\n",["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":"Two things break down quickly:"}],"\n",["$","$L8",null,{"as":"ol","children":["\n",["$","$L9",null,{"marginTop":"4","marginBottom":"8","style":{"lineHeight":"175%"},"children":["\n",["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":[["$","strong",null,{"children":"No memory across sessions."}]," Every new conversation starts cold. You re-explain your stack, your preferences, your project context. It adds up."]}],"\n"]}],"\n",["$","$L9",null,{"marginTop":"4","marginBottom":"8","style":{"lineHeight":"175%"},"children":["\n",["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":[["$","strong",null,{"children":"No workflow enforcement."}]," Claude will happily skip tests, write unsafe code, or use npm instead of bun if you don't have rules that say otherwise."]}],"\n"]}],"\n"]}],"\n",["$","$L7",null,{"marginTop":"24","marginBottom":"12","as":"h2","id":"what-i-built","children":"What I built"}],"\n",["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":[["$","strong",null,{"children":"Session context system"}]," — Four files per project (",["$","$La",null,{"children":"context-goals.md"}],", ",["$","$La",null,{"children":"context-decisions.md"}],", ","$Lb",", ","$Lc",") that persist across sessions. A PreCompact hook assembles them before context gets trimmed. A SessionStart hook injects the summary at the start of every new session. Claude picks up where it left off."]}],"\n","$Ld","\n","$Le","\n","$Lf","\n","$L10","\n","$L11","\n","$L12","\n","$L13","\n","$L14","\n","$L15","\n","$L16"]}],"$L17","$L18"]}],null,"$L19"]}],"loading":null,"isPartial":false}
+b:["$","$La",null,{"children":"context-progress.md"}]
+c:["$","$La",null,{"children":"context-gotchas.md"}]
+d:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":[["$","strong",null,{"children":"Custom hooks"}]," — Shell commands that fire on tool use events:"]}]
+e:["$","$L8",null,{"as":"ul","children":["\n",["$","$L9",null,{"marginTop":"4","marginBottom":"8","style":{"lineHeight":"175%"},"children":"PostToolUse runs Prettier and tsc after every file edit"}],"\n",["$","$L9",null,{"marginTop":"4","marginBottom":"8","style":{"lineHeight":"175%"},"children":"PreToolUse blocks dev servers from running outside a tmux session"}],"\n",["$","$L9",null,{"marginTop":"4","marginBottom":"8","style":{"lineHeight":"175%"},"children":"EvaluateSession extracts patterns at session end"}],"\n",["$","$L9",null,{"marginTop":"4","marginBottom":"8","style":{"lineHeight":"175%"},"children":"SuggestCompact warns when approaching context limits"}],"\n"]}]
+f:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":[["$","strong",null,{"children":"Agent definitions"}]," — Specialized agents for recurring tasks: planner, tdd-guide, code-reviewer, security-reviewer, build-error-resolver. Each has a focused role and gets invoked for the right thing rather than dumping everything at the main agent."]}]
+10:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":[["$","strong",null,{"children":"Skills"}]," — Reusable command prompts: ",["$","$La",null,{"children":"/plan"}],", ",["$","$La",null,{"children":"/verify"}],", ",["$","$La",null,{"children":"/simplify"}],", ",["$","$La",null,{"children":"/commit-push-pr"}],", ",["$","$La",null,{"children":"/learn"}],". The verify skill runs tsc → lint → tests → build in order and stops on first failure."]}]
+11:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":[["$","strong",null,{"children":"Global rules"}]," — Coding style, git workflow, security checklist, package manager preferences (bun, not npm), test coverage minimums. Claude reads these on every session and actually follows them."]}]
+12:["$","$L7",null,{"marginTop":"24","marginBottom":"12","as":"h2","id":"what-it-actually-changed","children":"What it actually changed"}]
+13:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":"I stopped re-explaining my stack. I stopped getting npm in projects that use bun. Security checks happen before commits without me prompting. The context system means I can close a session mid-task and come back three days later without losing where I was."}]
+14:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":"It's not magic — it's just configuration that enforces the workflow I actually want."}]
+15:["$","$L7",null,{"marginTop":"24","marginBottom":"12","as":"h2","id":"stack","children":"Stack"}]
+16:["$","$L8",null,{"as":"ul","children":["\n",["$","$L9",null,{"marginTop":"4","marginBottom":"8","style":{"lineHeight":"175%"},"children":"Claude Code hooks (bash scripts)"}],"\n",["$","$L9",null,{"marginTop":"4","marginBottom":"8","style":{"lineHeight":"175%"},"children":"CLAUDE.md (global + per-project)"}],"\n",["$","$L9",null,{"marginTop":"4","marginBottom":"8","style":{"lineHeight":"175%"},"children":"Session context (4 markdown files per project)"}],"\n",["$","$L9",null,{"marginTop":"4","marginBottom":"8","style":{"lineHeight":"175%"},"children":"Custom agents + skills"}],"\n"]}]
+1c:T5f0,
 ## What this is
 
 The Microsoft Intune portal is fine for small fleets. At 10,000+ devices it gets slow and the search is painful. FleetWatch is a dashboard I built to solve the specific problems that come up when you're managing a large fleet day-to-day.
@@ -51,7 +53,7 @@ Working with large Intune environments at Oncloud, the native portal was consist
 - PostgreSQL with GIN/B-Tree indexes
 - Microsoft Graph SDK
 - Vercel
-1b:T71c,
+1d:T71c,
 ## What this is
 
 A passion project built because hosting friends for coffee had become genuinely chaotic. Multiple orders, specific customizations, no memory of who asked for oat milk — it was more stressful than it should be.
@@ -78,10 +80,10 @@ Also: the first version had a bug where two guests placing orders within millise
 - Bun
 - Firebase Firestore (real-time)
 - PWA
-15:["$","$L2",null,{"fillWidth":true,"gap":"40","horizontal":"center","marginTop":"40","children":[["$","$L18",null,{"maxWidth":"40"}],["$","h2",null,{"className":"font-heading font-strong font-xl neutral-on-background-strong mb-24","style":{"textWrap":"balance"},"children":"Related projects"}],["$","$L2",null,{"fillWidth":true,"gap":"xl","marginBottom":"40","paddingX":"l","children":[["$","$L19","fleetwatch",{"priority":true,"href":"/work/fleetwatch","images":[],"title":"FleetWatch","description":"A device management dashboard built for large Intune environments — fast search, real-time compliance status, and direct device actions without the native portal slowness.","content":"$1a","avatars":[],"link":"https://github.com/RohiRIK/fleetwatch"}],["$","$L19","personal-coffeshop",{"priority":true,"href":"/work/personal-coffeshop","images":[],"title":"Personal Coffeeshop","description":"A full-stack order management system and kitchen display for home barista use — guests order via QR code, the host tracks and manages the queue in real time.","content":"$1b","avatars":[],"link":"https://github.com/RohiRIK/Personal-coffeshop"}],"$L1c","$L1d","$L1e","$L1f","$L20","$L21","$L22","$L23","$L24","$L25","$L26","$L27","$L28"]}]]}]
-16:["$","$L29",null,{}]
-17:["$","$L2a",null,{"children":["$","$2b",null,{"name":"Next.MetadataOutlet","children":"$@2c"}]}]
-2d:T749,
+17:["$","$L2",null,{"fillWidth":true,"gap":"40","horizontal":"center","marginTop":"40","children":[["$","$L1a",null,{"maxWidth":"40"}],["$","h2",null,{"className":"font-heading font-strong font-xl neutral-on-background-strong mb-24","style":{"textWrap":"balance"},"children":"Related projects"}],["$","$L2",null,{"fillWidth":true,"gap":"xl","marginBottom":"40","paddingX":"l","children":[["$","$L1b","fleetwatch",{"priority":true,"href":"/work/fleetwatch","images":[],"title":"FleetWatch","description":"A device management dashboard built for large Intune environments — fast search, real-time compliance status, and direct device actions without the native portal slowness.","content":"$1c","avatars":[],"link":"https://github.com/RohiRIK/fleetwatch"}],["$","$L1b","personal-coffeshop",{"priority":true,"href":"/work/personal-coffeshop","images":[],"title":"Personal Coffeeshop","description":"A full-stack order management system and kitchen display for home barista use — guests order via QR code, the host tracks and manages the queue in real time.","content":"$1d","avatars":[],"link":"https://github.com/RohiRIK/Personal-coffeshop"}],"$L1e","$L1f","$L20","$L21","$L22","$L23","$L24","$L25","$L26","$L27","$L28","$L29","$L2a"]}]]}]
+18:["$","$L2b",null,{}]
+19:["$","$L2c",null,{"children":["$","$2d",null,{"name":"Next.MetadataOutlet","children":"$@2e"}]}]
+2f:T749,
 ## What this was
 
 A client running JumpCloud for MDM wanted to consolidate onto the Microsoft stack. Everything else was already in Microsoft — identity, email, security — but the device management gap meant correlating device state with identity required jumping between platforms.
@@ -109,8 +111,8 @@ A subset of devices had been enrolled in JumpCloud via a method that left a pers
 - Windows Autopilot
 - Apple Business Manager
 - PowerShell & Microsoft Graph API
-1c:["$","$L19","jumpcloud-to-intune-migration",{"priority":false,"href":"/work/jumpcloud-to-intune-migration","images":[],"title":"JumpCloud to Intune Migration","description":"MDM consolidation from JumpCloud to Microsoft Intune — automated unenrollment, Autopilot provisioning, and policy parity for a mixed Windows and macOS fleet.","content":"$2d","avatars":[],"link":""}]
-2e:T6db,
+1e:["$","$L1b","jumpcloud-to-intune-migration",{"priority":false,"href":"/work/jumpcloud-to-intune-migration","images":[],"title":"JumpCloud to Intune Migration","description":"MDM consolidation from JumpCloud to Microsoft Intune — automated unenrollment, Autopilot provisioning, and policy parity for a mixed Windows and macOS fleet.","content":"$2f","avatars":[],"link":""}]
+30:T6db,
 ## What this was
 
 A client at Oncloud decided to move their entire identity and collaboration stack from Google Workspace to Microsoft 365. I was the lead engineer on the migration — responsible for technical execution from discovery through cutover.
@@ -136,8 +138,8 @@ The data migration took longer than scoped. The client's Google Drive was far me
 - Google Workspace APIs
 - Microsoft Graph API
 - PowerShell
-1d:["$","$L19","gcp-to-entra-migration",{"priority":false,"href":"/work/gcp-to-entra-migration","images":[],"title":"GCP to Entra ID Migration","description":"Full identity and collaboration migration from Google Workspace to Microsoft 365 — mailboxes, Drive data, SSO re-mapping across 50+ apps, and tenant consolidation.","content":"$2e","avatars":[],"link":""}]
-2f:T748,
+1f:["$","$L1b","gcp-to-entra-migration",{"priority":false,"href":"/work/gcp-to-entra-migration","images":[],"title":"GCP to Entra ID Migration","description":"Full identity and collaboration migration from Google Workspace to Microsoft 365 — mailboxes, Drive data, SSO re-mapping across 50+ apps, and tenant consolidation.","content":"$30","avatars":[],"link":""}]
+31:T748,
 ## What this was
 
 A client engagement at Oncloud. The organization was running a perimeter-based model that hadn't kept up with their shift to remote work — unmanaged personal devices accessing corporate data, weak auth, no consistent security baseline across Windows, macOS, and mobile.
@@ -166,8 +168,8 @@ Conditional Access is easy to get wrong in both directions. The first FIDO2 roll
 - Microsoft Entra ID
 - Defender for Endpoint (XDR)
 - PowerShell & Microsoft Graph API
-1e:["$","$L19","zero-trust-endpoint-hardening",{"priority":false,"href":"/work/zero-trust-endpoint-hardening","images":[],"title":"Zero-Trust Endpoint Hardening","description":"End-to-end Zero-Trust rollout for a client fleet — Intune security baselines, Conditional Access redesign, EDR onboarding, and hardware attestation for 10k+ endpoints.","content":"$2f","avatars":[],"link":""}]
-30:T5cd,
+20:["$","$L1b","zero-trust-endpoint-hardening",{"priority":false,"href":"/work/zero-trust-endpoint-hardening","images":[],"title":"Zero-Trust Endpoint Hardening","description":"End-to-end Zero-Trust rollout for a client fleet — Intune security baselines, Conditional Access redesign, EDR onboarding, and hardware attestation for 10k+ endpoints.","content":"$31","avatars":[],"link":""}]
+32:T5cd,
 ## What this is
 
 A focused automation tool built at Oncloud. The problem: organizations using HiBob as their HRIS source of truth had employee photos sitting in HiBob that weren't making it to Microsoft Teams or Entra ID profiles. IT kept getting tickets about it. The options were either do it manually or use a third-party sync service that required excessive permissions.
@@ -190,8 +192,8 @@ Profile photo sync sounds like a small thing, but it touches identity data for e
 - Microsoft Graph API
 - HiBob API
 - Compatible with Azure Automation, GitHub Actions, or local CRON
-1f:["$","$L19","hibob-teams-sync",{"priority":false,"href":"/work/hibob-teams-sync","images":[],"title":"HiBob Teams Sync","description":"Automation tool that keeps employee profile photos in sync between HiBob (HRIS) and Microsoft Teams/Entra ID — no third-party services, runs in your own infrastructure.","content":"$30","avatars":[],"link":"https://github.com/RohiRIK/HiBob-Teams-Sync"}]
-31:T69a,
+21:["$","$L1b","hibob-teams-sync",{"priority":false,"href":"/work/hibob-teams-sync","images":[],"title":"HiBob Teams Sync","description":"Automation tool that keeps employee profile photos in sync between HiBob (HRIS) and Microsoft Teams/Entra ID — no third-party services, runs in your own infrastructure.","content":"$32","avatars":[],"link":"https://github.com/RohiRIK/HiBob-Teams-Sync"}]
+33:T69a,
 ## What this is
 
 A companion to FleetWatch, built for analytical depth rather than day-to-day fleet operations. Where FleetWatch is fast search and direct device actions, this is compliance trend analysis, cross-fleet aggregations, and audit reporting.
@@ -222,8 +224,8 @@ Node.js workers run continuous sync from Microsoft Graph, pulling device state a
 - OpenSearch (AWS Managed)
 - TypeScript / Node.js
 - Microsoft Graph API
-20:["$","$L19","device-inventory-analytics",{"priority":false,"href":"/work/device-inventory-analytics","images":[],"title":"Device Inventory Analytics","description":"A high-scale device analytics platform for large Intune environments — OpenSearch-powered full-text search, compliance heatmaps, and aggregated reporting across 50,000+ assets.","content":"$31","avatars":[],"link":""}]
-32:T70d,
+22:["$","$L1b","device-inventory-analytics",{"priority":false,"href":"/work/device-inventory-analytics","images":[],"title":"Device Inventory Analytics","description":"A high-scale device analytics platform for large Intune environments — OpenSearch-powered full-text search, compliance heatmaps, and aggregated reporting across 50,000+ assets.","content":"$33","avatars":[],"link":""}]
+34:T70d,
 ## What this is
 
 A collection of production n8n workflows I've built and iterated on for client work at Oncloud. Not a demo library — these run on actual client environments and handle real operational tasks.
@@ -249,8 +251,8 @@ n8n is genuinely good for this kind of work but error handling in production req
 - Microsoft Graph API
 - Microsoft Sentinel
 - HiBob, VirusTotal, AbuseIPDB APIs
-21:["$","$L19","n8n-automation-workflows",{"priority":false,"href":"/work/n8n-automation-workflows","images":[],"title":"n8n Automation Workflows","description":"A library of n8n workflows built for real SecOps and IT ops use cases — alert enrichment, identity lifecycle, license auditing, and incident notification.","content":"$32","avatars":[],"link":""}]
-33:T6af,
+23:["$","$L1b","n8n-automation-workflows",{"priority":false,"href":"/work/n8n-automation-workflows","images":[],"title":"n8n Automation Workflows","description":"A library of n8n workflows built for real SecOps and IT ops use cases — alert enrichment, identity lifecycle, license auditing, and incident notification.","content":"$34","avatars":[],"link":""}]
+35:T6af,
 ## What this is
 
 A pipeline tool I built to solve a recurring problem with RAG systems: the source data quality. Embedding documentation that still has navigation bars, cookie banners, and sidebar content mixed in produces retrieval results that are noisier than they should be.
@@ -281,8 +283,8 @@ Keeping RAG datasets current for Project Aegis. Documentation changes — API re
 - Firecrawl (headless browser crawling)
 - Markdown with YAML frontmatter
 - Compatible with LangChain and LlamaIndex pipelines
-22:["$","$L19","doc-crawler-ai-organizer",{"priority":false,"href":"/work/doc-crawler-ai-organizer","images":[],"title":"Doc-Crawler AI","description":"A documentation pipeline that crawls technical docs sites and converts them to clean, structured Markdown optimized for RAG ingestion — handles SPAs, strips noise, preserves heading hierarchy.","content":"$33","avatars":[],"link":""}]
-34:T63c,
+24:["$","$L1b","doc-crawler-ai-organizer",{"priority":false,"href":"/work/doc-crawler-ai-organizer","images":[],"title":"Doc-Crawler AI","description":"A documentation pipeline that crawls technical docs sites and converts them to clean, structured Markdown optimized for RAG ingestion — handles SPAs, strips noise, preserves heading hierarchy.","content":"$35","avatars":[],"link":""}]
+36:T63c,
 ## What this is
 
 A home lab side project. I wanted air quality monitoring in my workspace and didn't want to use a proprietary device that locks data behind an app. So I wired up a Bosch BME680 sensor to an Orange Pi 3 LTS and built the monitoring stack myself.
@@ -319,8 +321,8 @@ Position the BME680 away from the Orange Pi's CPU. I didn't, and the first week 
 - Docker & Docker Compose
 - Orange Pi 3 LTS (ARM64)
 - Bosch BME680 via I2C
-23:["$","$L19","air-quality-automation",{"priority":false,"href":"/work/air-quality-automation","images":[],"title":"Air Quality Automation","description":"A Docker-based environmental monitoring system running on Orange Pi 3 LTS — BME680 sensor, dynamic air quality scoring, and structured JSON telemetry ready for any dashboard.","content":"$34","avatars":[],"link":"https://github.com/RohiRIK/Air-Quality-Orange-Pi-Automation"}]
-35:T647,
+25:["$","$L1b","air-quality-automation",{"priority":false,"href":"/work/air-quality-automation","images":[],"title":"Air Quality Automation","description":"A Docker-based environmental monitoring system running on Orange Pi 3 LTS — BME680 sensor, dynamic air quality scoring, and structured JSON telemetry ready for any dashboard.","content":"$36","avatars":[],"link":"https://github.com/RohiRIK/Air-Quality-Orange-Pi-Automation"}]
+37:T647,
 ## What this is
 
 A maintenance automation tool I wrote because I got tired of running different update commands on different machines. One script that handles `apt`, `dnf`, `pacman`, `brew`, `npm`, `pip` — whatever's present on the system — with consistent logging and safe execution defaults.
@@ -344,8 +346,8 @@ Most existing solutions are either too opinionated (full configuration managemen
 - Bash
 - `flock`, `getopt`, `mail`
 - apt, dnf, pacman, zypper, brew, npm, pip
-24:["$","$L19","unix-update-automator",{"priority":false,"href":"/work/unix-update-automator","images":[],"title":"Unix Update Automator","description":"A Bash automation suite for keeping Linux and macOS systems current — handles package managers, runtime updates, logging, and scheduled execution without manual intervention.","content":"$35","avatars":[],"link":"https://github.com/RohiRIK/unix-update-automator"}]
-36:T71f,
+26:["$","$L1b","unix-update-automator",{"priority":false,"href":"/work/unix-update-automator","images":[],"title":"Unix Update Automator","description":"A Bash automation suite for keeping Linux and macOS systems current — handles package managers, runtime updates, logging, and scheduled execution without manual intervention.","content":"$37","avatars":[],"link":"https://github.com/RohiRIK/unix-update-automator"}]
+38:T71f,
 ## What this is
 
 My dotfiles repo. Not a flex — just a practical answer to the question "how long does it take to get a new machine to a working state?" The answer used to be a few hours of guesswork. Now it's one command and a coffee break.
@@ -378,8 +380,8 @@ It's not a full system configuration management setup. No Ansible, no Nix. If I 
 - GNU Stow (symlink management)
 - Homebrew + Brewfile
 - Starship prompt
-25:["$","$L19","dotfiles",{"priority":false,"href":"/work/dotfiles","images":[],"title":"Dotfiles","description":"My dev environment as code — zsh, Zed, tmux, and tooling configuration managed in a single repo with a bootstrap script that sets up a new machine in one command.","content":"$36","avatars":[],"link":"https://github.com/RohiRIK/dotfiles"}]
-37:T6a9,
+27:["$","$L1b","dotfiles",{"priority":false,"href":"/work/dotfiles","images":[],"title":"Dotfiles","description":"My dev environment as code — zsh, Zed, tmux, and tooling configuration managed in a single repo with a bootstrap script that sets up a new machine in one command.","content":"$38","avatars":[],"link":"https://github.com/RohiRIK/dotfiles"}]
+39:T6a9,
 ## What this is
 
 A personal project exploring what a real multi-agent system looks like in practice. The idea: instead of one general-purpose AI assistant trying to do everything, a central orchestrator (Buddy) routes work to specialized agents — each with their own instructions, toolset, and context.
@@ -406,8 +408,8 @@ Whether specialized agents produce meaningfully better results than a single age
 - Google Gemini SDK
 - Model Context Protocol (MCP)
 - TypeScript
-26:["$","$L19","dev-team",{"priority":false,"href":"/work/dev-team","images":[],"title":"Dev Team AI","description":"A multi-agent orchestration framework using MCP — 29+ specialized agents coordinated by a central orchestrator to handle complex development and security tasks autonomously.","content":"$37","avatars":[],"link":"https://github.com/RohiRIK/dev-team"}]
-38:T7a4,
+28:["$","$L1b","dev-team",{"priority":false,"href":"/work/dev-team","images":[],"title":"Dev Team AI","description":"A multi-agent orchestration framework using MCP — 29+ specialized agents coordinated by a central orchestrator to handle complex development and security tasks autonomously.","content":"$39","avatars":[],"link":"https://github.com/RohiRIK/dev-team"}]
+3a:T7a4,
 ## What this is
 
 My home lab, documented and version-controlled. It runs on a dedicated server (not the Orange Pi — that's for IoT experiments), orchestrated with Docker Swarm. The goal was to build something I'd trust to run unattended and that I could actually learn from rather than just copy-paste from a tutorial.
@@ -441,8 +443,8 @@ The first version had everything in one large Compose file. Adding a new service
 - Traefik
 - Infisical
 - Ubuntu Server / Portainer
-27:["$","$L19","homelab-swarm-stack",{"priority":false,"href":"/work/homelab-swarm-stack","images":[],"title":"HomeLab Swarm Stack","description":"My self-hosted infrastructure running on a home server — Docker Swarm, Traefik for ingress, Infisical for secrets, and a handful of services I actually use.","content":"$38","avatars":[],"link":"https://github.com/RohiRIK/homelab-swarm-stack"}]
-39:T63c,
+29:["$","$L1b","homelab-swarm-stack",{"priority":false,"href":"/work/homelab-swarm-stack","images":[],"title":"HomeLab Swarm Stack","description":"My self-hosted infrastructure running on a home server — Docker Swarm, Traefik for ingress, Infisical for secrets, and a handful of services I actually use.","content":"$3a","avatars":[],"link":"https://github.com/RohiRIK/homelab-swarm-stack"}]
+3b:T63c,
 ## What this is
 
 A CLI tool for Microsoft 365 administration built with Bun and TypeScript. The Microsoft Admin Center works fine for one-off tasks — it's painful for anything that needs to run across thousands of users or be scripted into a pipeline.
@@ -473,5 +475,5 @@ Work in progress. Core identity and license commands are solid. Adding modules f
 - TypeScript
 - Commander.js
 - Microsoft Graph SDK
-28:["$","$L19","o365-cli",{"priority":false,"href":"/work/o365-cli","images":[],"title":"o365-cli","description":"A TypeScript CLI for M365 administration — bulk identity operations, policy export/import, license auditing, and audit log streaming, all from the terminal.","content":"$39","avatars":[],"link":"https://github.com/RohiRIK/o365-cli"}]
-2c:null
+2a:["$","$L1b","o365-cli",{"priority":false,"href":"/work/o365-cli","images":[],"title":"o365-cli","description":"A TypeScript CLI for M365 administration — bulk identity operations, policy export/import, license auditing, and audit log streaming, all from the terminal.","content":"$3b","avatars":[],"link":"https://github.com/RohiRIK/o365-cli"}]
+2e:null

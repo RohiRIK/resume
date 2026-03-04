@@ -1,3 +1,3 @@
 User-Agent: *
 
-Sitemap: https://rohi-lab.org/sitemap.xml
+Sitemap: https://CloudJourneyBlog.rohi-lab.org/sitemap.xml
