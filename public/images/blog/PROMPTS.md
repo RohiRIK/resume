@@ -15,6 +15,7 @@
 - [x] 7. homelab-docker-swarm.png
 - [x] 8. claude-code-config.png
 - [x] 9. netlogon-rpc-sealing-playbook.png
+- [ ] 10. fleetwatch-from-script-to-system.png
 
 ---
 
@@ -362,3 +363,48 @@ white-silver (#C8D0D8), amber indicator lights (#B8860B), conduit in
 cool gray (#7A8A96), seal ring mechanics in cool cyan (#00BCD4) with bright
 white highlights at contact points. Minimal. Precise. Gallery-worthy
 technical art. Small signature bottom right.
+
+---
+
+## 10. fleetwatch-from-script-to-system.png
+
+**Concept:** TRANSFORMATION / ARCHITECTURE UPGRADE problem type.
+A brittle pipeline of scripts and scheduled exports replaced by a real system:
+Graph API delta sync, real database, real UI. The image should capture the
+before/after — chaos of duct-taped tools versus clean purposeful architecture.
+
+**Prompt:**
+
+Nano Banana style digital illustration. Cyberpunk retrofuturism. Near-black
+background. Bold flat geometry, neon accents, minimal surreal. No text.
+
+Split horizontal composition — left half and right half, separated by a
+thin vertical neon-white dividing line at center.
+
+LEFT HALF (the before — dim, fragile):
+A vertical chain of four mismatched geometric nodes connected by thin,
+slightly crooked lines — suggesting improvised connections, not design.
+Top node (dim gray): a gear icon (Jenkins scheduler). Second node (dim blue):
+a script/document icon (PowerShell export). Third node (dim teal): a grid
+icon (SharePoint list — rows, no schema). Bottom node (dim purple): a chart
+icon (Power BI — frozen snapshot). Connecting lines are dashed, uneven,
+slightly jagged. Small warning triangles (red-orange) float near the
+connection lines — sync failures, stale data. The whole assembly feels
+precarious. Colors muted, slightly desaturated.
+
+RIGHT HALF (the after — clean, intentional):
+Four geometric nodes arranged in a clean square formation, connected by
+solid crisp neon lines forming a circuit. Top-left (electric blue): a clock
+with a delta symbol — Vercel Cron delta sync. Top-right (cyan): a branching
+API tree icon — Microsoft Graph. Bottom-left (amber): a solid database
+cylinder — Postgres, real schema. Bottom-right (warm gold): a clean browser
+window geometry — the Next.js web app. All connections are solid, direct,
+neon-bright. No warnings. The composition radiates confidence.
+
+The dividing line at center is vertical, thin, bright white — a clean break
+between the two architectures.
+
+Color palette: near-black background, left side in dim muted gray/blue/teal
+with red-orange warning accents, right side in electric blue/cyan/amber/gold
+neon, center divider in bright white. Left feels improvised; right feels
+built. Subjects fill the full frame.
