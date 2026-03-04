@@ -1,117 +1,117 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Writing about automation and security...</title>
-    <link>https://rohirik.github.io/resume/blog</link>
-    <description>Read what Rohi Rikman has been up to recently</description>
+    <title>Writing on security, automation, and infrastructure</title>
+    <link>https://rohi-lab.org/blog</link>
+    <description>Practical writing on cloud security, AI agents, and the systems that make them work — by Rohi Rikman</description>
     <language>en</language>
-    <lastBuildDate>Wed, 04 Mar 2026 10:04:38 GMT</lastBuildDate>
-    <atom:link href="https://rohirik.github.io/resume/api/rss" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 04 Mar 2026 14:30:25 GMT</lastBuildDate>
+    <atom:link href="https://rohi-lab.org/api/rss" rel="self" type="application/rss+xml" />
     <managingEditor>rohi@rohirikman.dev (Rohi Rikman)</managingEditor>
     <webMaster>rohi@rohirikman.dev (Rohi Rikman)</webMaster>
     <image>
-      <url>https://rohirik.github.io/resume/images/avatar.png</url>
-      <title>Writing about automation and security...</title>
-      <link>https://rohirik.github.io/resume/blog</link>
+      <url>https://rohi-lab.org/images/avatar.png</url>
+      <title>Writing on security, automation, and infrastructure</title>
+      <link>https://rohi-lab.org/blog</link>
     </image>
     
     <item>
       <title>From Script to System: How I Turned a Jenkins Pipeline into FleetWatch</title>
-      <link>https://rohirik.github.io/resume/blog/fleetwatch-from-script-to-system</link>
-      <guid>https://rohirik.github.io/resume/blog/fleetwatch-from-script-to-system</guid>
+      <link>https://rohi-lab.org/blog/fleetwatch-from-script-to-system</link>
+      <guid>https://rohi-lab.org/blog/fleetwatch-from-script-to-system</guid>
       <pubDate>Wed, 04 Mar 2026 00:00:00 GMT</pubDate>
       <description><![CDATA[My client wanted PowerShell scripts dumping Intune data into SharePoint for Power BI. I built a web app instead. Here's why — and how.]]></description>
-      <enclosure url="https://rohirik.github.io/resume/images/blog/fleetwatch-from-script-to-system.png" type="image/jpeg" />
+      <enclosure url="https://rohi-lab.org/images/blog/fleetwatch-from-script-to-system.png" type="image/jpeg" />
       <category>Engineering</category>
       <author>rohi@rohirikman.dev (Rohi Rikman)</author>
     </item>
     <item>
       <title>Netlogon RPC Sealing: The Full Hardening Playbook</title>
-      <link>https://rohirik.github.io/resume/blog/netlogon-rpc-sealing-playbook</link>
-      <guid>https://rohirik.github.io/resume/blog/netlogon-rpc-sealing-playbook</guid>
+      <link>https://rohi-lab.org/blog/netlogon-rpc-sealing-playbook</link>
+      <guid>https://rohi-lab.org/blog/netlogon-rpc-sealing-playbook</guid>
       <pubDate>Tue, 03 Mar 2026 00:00:00 GMT</pubDate>
       <description><![CDATA[A complete 4-phase execution guide for enforcing Netlogon RPC Sealing and SMB/NTLM hardening before migrating to Entra ID — including the PowerShell discovery script I use to find vulnerable traffic across all DCs.]]></description>
-      <enclosure url="https://rohirik.github.io/resume/images/blog/netlogon-rpc-sealing-playbook.png" type="image/jpeg" />
+      <enclosure url="https://rohi-lab.org/images/blog/netlogon-rpc-sealing-playbook.png" type="image/jpeg" />
       <category>Security</category>
       <author>rohi@rohirikman.dev (Rohi Rikman)</author>
     </item>
     <item>
       <title>How I Configured Claude Code to Actually Remember Things</title>
-      <link>https://rohirik.github.io/resume/blog/claude-code-config</link>
-      <guid>https://rohirik.github.io/resume/blog/claude-code-config</guid>
+      <link>https://rohi-lab.org/blog/claude-code-config</link>
+      <guid>https://rohi-lab.org/blog/claude-code-config</guid>
       <pubDate>Mon, 02 Mar 2026 00:00:00 GMT</pubDate>
       <description><![CDATA[The default Claude Code setup loses context on every session. Here's the hook system, skill commands, agent definitions, and memory architecture I built to fix that.]]></description>
-      <enclosure url="https://rohirik.github.io/resume/images/blog/claude-code-config.png" type="image/jpeg" />
+      <enclosure url="https://rohi-lab.org/images/blog/claude-code-config.png" type="image/jpeg" />
       <category>Engineering</category>
       <author>rohi@rohirikman.dev (Rohi Rikman)</author>
     </item>
     <item>
       <title>My Homelab on Docker Swarm: What Runs, How It's Wired, What Broke</title>
-      <link>https://rohirik.github.io/resume/blog/homelab-docker-swarm</link>
-      <guid>https://rohirik.github.io/resume/blog/homelab-docker-swarm</guid>
+      <link>https://rohi-lab.org/blog/homelab-docker-swarm</link>
+      <guid>https://rohi-lab.org/blog/homelab-docker-swarm</guid>
       <pubDate>Mon, 02 Mar 2026 00:00:00 GMT</pubDate>
       <description><![CDATA[A tour of my self-hosted infrastructure — Docker Swarm for orchestration, Traefik for ingress, Infisical for secrets, and the modular design that replaced the monolith I should never have written.]]></description>
-      <enclosure url="https://rohirik.github.io/resume/images/blog/homelab-docker-swarm.png" type="image/jpeg" />
+      <enclosure url="https://rohi-lab.org/images/blog/homelab-docker-swarm.png" type="image/jpeg" />
       <category>Infrastructure</category>
       <author>rohi@rohirikman.dev (Rohi Rikman)</author>
     </item>
     <item>
       <title>What I Actually Learned from Vibe Coding with Claude Code</title>
-      <link>https://rohirik.github.io/resume/blog/vibe-coding-ai-workflows</link>
-      <guid>https://rohirik.github.io/resume/blog/vibe-coding-ai-workflows</guid>
+      <link>https://rohi-lab.org/blog/vibe-coding-ai-workflows</link>
+      <guid>https://rohi-lab.org/blog/vibe-coding-ai-workflows</guid>
       <pubDate>Mon, 02 Mar 2026 00:00:00 GMT</pubDate>
       <description><![CDATA[A year of building projects with AI: what the workflow looks like, how I keep context alive across sessions, which safety patterns actually work, and what breaks if you skip them.]]></description>
-      <enclosure url="https://rohirik.github.io/resume/images/blog/vibe-coding-ai-workflows.png" type="image/jpeg" />
+      <enclosure url="https://rohi-lab.org/images/blog/vibe-coding-ai-workflows.png" type="image/jpeg" />
       <category>Engineering</category>
       <author>rohi@rohirikman.dev (Rohi Rikman)</author>
     </item>
     <item>
       <title>Zero Trust Is Not a Product</title>
-      <link>https://rohirik.github.io/resume/blog/zero-trust-is-not-a-product</link>
-      <guid>https://rohirik.github.io/resume/blog/zero-trust-is-not-a-product</guid>
+      <link>https://rohi-lab.org/blog/zero-trust-is-not-a-product</link>
+      <guid>https://rohi-lab.org/blog/zero-trust-is-not-a-product</guid>
       <pubDate>Fri, 20 Feb 2026 00:00:00 GMT</pubDate>
       <description><![CDATA[Every vendor sells 'Zero Trust.' Most of what they're selling is a marketing label on a firewall. Here's what the model actually means and why it matters.]]></description>
-      <enclosure url="https://rohirik.github.io/resume/images/blog/zero-trust-is-not-a-product.png" type="image/jpeg" />
+      <enclosure url="https://rohi-lab.org/images/blog/zero-trust-is-not-a-product.png" type="image/jpeg" />
       <category>Security</category>
       <author>rohi@rohirikman.dev (Rohi Rikman)</author>
     </item>
     <item>
       <title>Conditional Access in Practice</title>
-      <link>https://rohirik.github.io/resume/blog/conditional-access-in-practice</link>
-      <guid>https://rohirik.github.io/resume/blog/conditional-access-in-practice</guid>
+      <link>https://rohi-lab.org/blog/conditional-access-in-practice</link>
+      <guid>https://rohi-lab.org/blog/conditional-access-in-practice</guid>
       <pubDate>Sun, 15 Feb 2026 00:00:00 GMT</pubDate>
       <description><![CDATA[Conditional Access is where Zero Trust principles actually land in a Microsoft environment. Here's how to think about it, what to get right, and where I've seen it go wrong.]]></description>
-      <enclosure url="https://rohirik.github.io/resume/images/blog/conditional-access-in-practice.png" type="image/jpeg" />
+      <enclosure url="https://rohi-lab.org/images/blog/conditional-access-in-practice.png" type="image/jpeg" />
       <category>Security</category>
       <author>rohi@rohirikman.dev (Rohi Rikman)</author>
     </item>
     <item>
       <title>Endpoint Hardening as a Zero Trust Control</title>
-      <link>https://rohirik.github.io/resume/blog/endpoint-hardening-zero-trust-control</link>
-      <guid>https://rohirik.github.io/resume/blog/endpoint-hardening-zero-trust-control</guid>
+      <link>https://rohi-lab.org/blog/endpoint-hardening-zero-trust-control</link>
+      <guid>https://rohi-lab.org/blog/endpoint-hardening-zero-trust-control</guid>
       <pubDate>Tue, 10 Feb 2026 00:00:00 GMT</pubDate>
       <description><![CDATA[A compliant device in Conditional Access is only meaningful if your compliance policies check things that actually matter. Here's what to harden and how to measure it.]]></description>
-      <enclosure url="https://rohirik.github.io/resume/images/blog/endpoint-hardening-zero-trust-control.png" type="image/jpeg" />
+      <enclosure url="https://rohi-lab.org/images/blog/endpoint-hardening-zero-trust-control.png" type="image/jpeg" />
       <category>Security</category>
       <author>rohi@rohirikman.dev (Rohi Rikman)</author>
     </item>
     <item>
       <title>Zero Trust for AI Agents</title>
-      <link>https://rohirik.github.io/resume/blog/zero-trust-for-ai-agents</link>
-      <guid>https://rohirik.github.io/resume/blog/zero-trust-for-ai-agents</guid>
+      <link>https://rohi-lab.org/blog/zero-trust-for-ai-agents</link>
+      <guid>https://rohi-lab.org/blog/zero-trust-for-ai-agents</guid>
       <pubDate>Thu, 05 Feb 2026 00:00:00 GMT</pubDate>
       <description><![CDATA[AI agents have access to real tools — APIs, databases, shell execution. The same principles that apply to human users apply here, and most agentic systems ignore them.]]></description>
-      <enclosure url="https://rohirik.github.io/resume/images/blog/zero-trust-for-ai-agents.png" type="image/jpeg" />
+      <enclosure url="https://rohi-lab.org/images/blog/zero-trust-for-ai-agents.png" type="image/jpeg" />
       <category>Security</category>
       <author>rohi@rohirikman.dev (Rohi Rikman)</author>
     </item>
     <item>
       <title>Identity-First Security</title>
-      <link>https://rohirik.github.io/resume/blog/identity-first-security</link>
-      <guid>https://rohirik.github.io/resume/blog/identity-first-security</guid>
+      <link>https://rohi-lab.org/blog/identity-first-security</link>
+      <guid>https://rohi-lab.org/blog/identity-first-security</guid>
       <pubDate>Wed, 28 Jan 2026 00:00:00 GMT</pubDate>
       <description><![CDATA[The network perimeter is gone. Identity is what's left. Here's what building security around identity looks like in practice and why it changes almost everything.]]></description>
-      <enclosure url="https://rohirik.github.io/resume/images/blog/identity-first-security.png" type="image/jpeg" />
+      <enclosure url="https://rohi-lab.org/images/blog/identity-first-security.png" type="image/jpeg" />
       <category>Security</category>
       <author>rohi@rohirikman.dev (Rohi Rikman)</author>
     </item>
