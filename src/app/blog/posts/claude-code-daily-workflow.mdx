@@ -1,0 +1,100 @@
+---
+title: "The Claude Code Workflow That Actually Stuck"
+summary: "I started with a simple 4-step loop and got the best results I'd ever seen from an AI tool. Then I extended it. Here's what changed, what didn't, and why starting with structure beats starting from scratch."
+publishedAt: "2026-03-18"
+tag: "Engineering"
+---
+
+Most people use Claude Code like a fancy autocomplete. Type a request, read the output, copy-paste, repeat. That works. But it leaves a lot on the table.
+
+When I started seriously using Claude Code, I didn't invent my own system. I borrowed one — specifically, the pattern that Boris Cherny (one of Claude Code's creators) uses himself:
+
+```
+/plan → implement → /simplify → /verify → /commit-push-pr
+```
+
+Four steps. No magic. But the discipline of following them consistently changed how I work.
+
+## Why structure matters more than prompts
+
+The common advice for AI tools is "better prompts = better results." That's not wrong, but it's incomplete. The real lever is *process*, not prompts.
+
+Without a process, you're improvising every session. You start coding before the plan is solid, then steer Claude mid-implementation when it drifts. You skip the cleanup because you're tired. You commit without reviewing the diff because it *probably* looks fine. Each shortcut is small. Over time, they compound.
+
+A structured loop closes those gaps. Not because it makes Claude smarter — it doesn't. It makes *you* more consistent.
+
+## The starting loop
+
+Here's what the Boris Cherny pattern looks like in practice:
+
+**`/plan`** — Before writing a single line of code, enter Plan Mode (Shift+Tab twice). Describe the task. Refine the plan until it's specific enough that you'd feel confident handing it to a junior engineer. Then say yes.
+
+The rule I follow: if I'm still steering Claude during implementation, the plan wasn't good enough. A solid plan means near-zero mid-session corrections.
+
+**`implement`** — Switch to auto-accept and let it run. Hooks fire on every edit: Prettier auto-formats, tsc checks TypeScript after every `.ts` change, a guard warns if console.log sneaks in. The machine runs itself. You watch.
+
+**`/simplify`** — After implementation, before touching git. This step reviews the changed code for unnecessary abstraction, deep nesting, premature generalization. It finds the things you stopped noticing because you were heads-down building. It removes them.
+
+This is the step most people skip. It's also the step that keeps codebases readable three months later.
+
+**`/verify`** — The gate before committing. Runs tsc → lint → tests → build → security check → git diff review. If something breaks here, it's cheap to fix. If it breaks after the PR merges, it's expensive.
+
+**`/commit-push-pr`** — Pre-computes the full git context, writes a conventional commit message, pushes, opens a PR with a summary and test plan. Not a one-liner. A real commit with context.
+
+That's the base loop. I ran it for a few months and got the best results I'd had from any AI coding tool.
+
+## What I added — and why
+
+The Boris Cherny loop is complete for *execution*. What it doesn't cover is *memory*.
+
+After a week of sessions, I noticed something: Claude was re-learning the same things. Decisions I'd made three sessions ago. Patterns that kept coming up. Architecture choices I'd explained twice already. Every new session started cold.
+
+The fix was one new step between `implement` and `/simplify`:
+
+```
+/plan → implement → /capture → /simplify → /verify → /commit-push-pr
+```
+
+**`/capture`** runs after implementation. It snapshots what just happened — saves context and fires `/learn` in one shot. Progress gets logged to SQLite. Non-obvious patterns get stored as memories. Decisions get written down before they evaporate.
+
+The practical effect: next session, Claude already knows what was decided and why. You spend zero time re-explaining context you've already explained. The work builds forward instead of resetting.
+
+## The rule that made it work
+
+The temptation when you have a system is to optimize it too early. Add more steps. Build more hooks. Make it more sophisticated.
+
+I resisted that. For the first few months, I ran the simple 4-step loop exactly as described. I didn't modify it until I hit a real problem — the memory gap — and the fix was minimal: one command, one specific purpose.
+
+That's the principle behind both loops: **start with structure, extend based on what actually breaks**.
+
+Not what might break. Not what you imagine could be better. What concretely broke in real sessions.
+
+The Boris Cherny pattern is a good starting point because it covers the core failure modes: no plan, no cleanup, no verification, no context on the commit. Once those are handled, you'll discover your own gaps. The `/capture` step solved mine. Yours might be different.
+
+## What this looks like day to day
+
+Most sessions: `/plan`, implement, `/capture`, `/simplify`, `/verify`, `/commit-push-pr`. About 20-30 minutes per feature or fix, depending on complexity. The loop doesn't take longer — it replaces the time I used to spend cleaning up mistakes and re-explaining context.
+
+The hooks handle the mechanical parts. Auto-formatting, type checking, console.log warnings — none of that requires my attention. I review the diff at `/verify` and almost always find it clean.
+
+The commit at the end has a real message. The PR has context. Future-me can read the history and understand what happened.
+
+## Where to start
+
+If you're new to Claude Code: run the 4-step loop for a month before changing anything.
+
+```
+/plan → implement → /simplify → /verify → /commit-push-pr
+```
+
+Don't add `/capture` yet. Don't set up hooks. Don't configure anything. Just follow the loop. Get consistent with it. Learn where it helps and where it doesn't.
+
+Then extend — only where the base loop actually falls short.
+
+That's how you build a workflow that sticks instead of one you abandon after two weeks because it got too complicated.
+
+---
+
+The full command reference and hook setup is in my [Claude Code config repo](https://github.com/RohiRIK/claude-code-config/blob/main/docs/workflow-daily.md) if you want to dig deeper.
+
+What does your Claude Code workflow look like? I'm curious whether others have hit the same memory gap or found different failure modes. Let me know.
