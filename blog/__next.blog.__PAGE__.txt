@@ -3,9 +3,600 @@
 3:I[479520,["/_next/static/chunks/6633d7a0fde019af.js","/_next/static/chunks/8a07e6fd7e614a7b.js","/_next/static/chunks/21f080b07a2c63d8.js","/_next/static/chunks/0e235429b8fbdec6.js","/_next/static/chunks/2079049d5abbbd3d.js","/_next/static/chunks/8ac4e8555f09f41a.js"],""]
 4:I[89532,["/_next/static/chunks/6633d7a0fde019af.js","/_next/static/chunks/8a07e6fd7e614a7b.js","/_next/static/chunks/21f080b07a2c63d8.js","/_next/static/chunks/0e235429b8fbdec6.js","/_next/static/chunks/2079049d5abbbd3d.js","/_next/static/chunks/8ac4e8555f09f41a.js"],"Grid"]
 5:I[814360,["/_next/static/chunks/6633d7a0fde019af.js","/_next/static/chunks/8a07e6fd7e614a7b.js","/_next/static/chunks/21f080b07a2c63d8.js","/_next/static/chunks/0e235429b8fbdec6.js","/_next/static/chunks/2079049d5abbbd3d.js","/_next/static/chunks/8ac4e8555f09f41a.js"],"default"]
-17:I[897367,["/_next/static/chunks/d96012bcfc98706a.js","/_next/static/chunks/73e3194f06db260e.js"],"OutletBoundary"]
-18:"$Sreact.suspense"
-6:T179d,
+1d:I[897367,["/_next/static/chunks/d96012bcfc98706a.js","/_next/static/chunks/73e3194f06db260e.js"],"OutletBoundary"]
+1e:"$Sreact.suspense"
+6:T20fe,
+The previous version of my Claude Code config introduced structured context files — goals, decisions, progress, gotchas — persisted as markdown and injected at session start. That worked. But markdown has limits: no querying, no deduplication, no concept of importance or decay, no semantic search, and no way to surface related memories across projects.
+
+This version replaces the markdown context files with a SQLite-backed long-term memory system, a dedicated MCP server that exposes LTM primitives to Claude directly, semantic recall with embedding fallback, a graph reasoning layer, and an EvaluateSession hook that extracts decisions and patterns automatically at session end.
+
+Here's what changed and why.
+
+## From markdown files to SQLite
+
+The old system: four `.md` files per project (`context-goals.md`, `context-decisions.md`, `context-progress.md`, `context-gotchas.md`). Hooks read and wrote them. They worked until they didn't — duplicates accumulated, stale entries couldn't be cleaned up automatically, and there was no way to query across them.
+
+The new system: a single SQLite database at `~/.claude/memory/ltm.db`. Two main tables:
+
+- `memories` — long-term insights, patterns, and decisions. Each row has content, category (`preference | architecture | gotcha | pattern | workflow | constraint`), importance score (1–5), project scope (nullable for globals), tags, and a decay counter.
+- `context_items` — short-term session context. Goals, decisions, progress, and gotchas per project. These expire if a project is inactive for 14 days.
+
+The schema separation is deliberate. `context_items` are the working memory for an active project — things you need right now. `memories` are the durable knowledge base — things you want to remember across all future sessions.
+
+## The LTM MCP server
+
+The previous config had Claude calling shell scripts to read and write memory. That worked but was brittle and required careful prompt engineering to get Claude to use it consistently.
+
+The new approach: a dedicated MCP server (`ltm` server in `settings.json`) that exposes LTM as first-class MCP tools. Claude has native access to:
+
+- `ltm_recall` — FTS5 full-text search across memories with semantic fallback
+- `ltm_learn` — store a new memory or reinforce an existing one
+- `ltm_relate` — create typed relationships between memories
+- `ltm_forget` — delete a memory by ID
+- `ltm_context` — get merged context (globals + project-scoped memories)
+- `ltm_graph` — traverse the memory graph from seed nodes
+- `ltm_context_items` — get context items (goals, decisions, progress, gotchas) for a project
+
+With the MCP server active, Claude uses these tools directly without me having to orchestrate shell calls. The pattern in `CLAUDE.md` is now explicit: call `mcp__ltm__ltm_recall` before any non-trivial task, call `mcp__ltm__ltm_learn` after discovering a non-obvious pattern.
+
+## Semantic recall with embedding fallback
+
+`ltm_recall` does FTS5 full-text search first. If the FTS5 results are below a threshold, it triggers a semantic fallback: it calls an embedding API, generates a vector for the query, and does cosine similarity search against stored embeddings.
+
+The implementation in `memory/db.ts`:
+
+```typescript
+export async function recall(query: string, limit = 10): Promise<Memory[]> {
+  const ftsResults = searchFts(query, limit);
+  if (ftsResults.length >= limit * 0.6) return ftsResults;
+
+  // Semantic fallback
+  if (config.ltm.semanticFallback) {
+    const similar = await getSimilarMemories(query, limit);
+    return deduplicateMerge(ftsResults, similar);
+  }
+  return ftsResults;
+}
+```
+
+The graceful degradation is important: if the embedding API fails, the FTS5 results are still returned. Semantic search is an enhancement, not a dependency.
+
+## Graph-based reasoning
+
+Memories can have typed relationships: `supports`, `contradicts`, `refines`, `depends_on`, `related_to`, `supersedes`. These are stored in a `memory_relations` table.
+
+The `ltm_graph` tool does BFS traversal from seed nodes up to a configurable depth. The `getContextMergeWithGraph` function in `db.ts` uses this to build a richer context injection at session start — rather than just listing top memories, it traverses the graph from the most important ones and includes related memories that would otherwise rank below the injection cutoff.
+
+In practice this surfaces things like: "This pattern (memory 88) supports this architectural decision (memory 44) which was made in the context of this constraint (memory 31)." The chain gives Claude more context than any individual memory provides alone.
+
+Graph reasoning is gated behind `config.ltm.graphReasoning = true` — it's off by default because it increases session start time and token usage.
+
+## The EvaluateSession hook
+
+The most significant behavioral change: a `SessionEnd` / `EvaluateSession` hook that runs an LLM call at session end to extract decisions, patterns, and gotchas from the session transcript and write them to LTM automatically.
+
+Previously, learning required a manual `/learn` call. Most things worth remembering never got learned because they were discovered mid-task and I didn't stop to capture them.
+
+The EvaluateSession hook:
+1. Gets a compressed summary of the session (the existing PreCompact summary if available, or a fresh one)
+2. Sends it to Claude with a structured extraction prompt asking for: decisions made, patterns discovered, gotchas encountered, progress achieved
+3. Writes each extracted item to `ltm_learn` with appropriate category and importance
+4. Also updates `context_items` for the project with any progress or decisions
+
+The hook is gated behind `config.ltm.evaluateSessionLlm = true`. When enabled, every session that produces non-trivial work automatically contributes to the knowledge base.
+
+## Memory decay and the Janitor
+
+Memories have an importance score (1–5). Memories at importance 5 never decay — these are the global rules and constraints that must always be in context. Lower-importance memories decay over time if not accessed or reinforced.
+
+A Janitor agent runs periodically to:
+- Decay memories that haven't been accessed recently
+- Identify near-duplicate memories (via embedding similarity) and merge them
+- Flag memories that haven't been accessed in 90+ days for review
+- Prune memories that have decayed below a minimum threshold
+
+The Janitor runs as a standalone script (`memory/janitor.ts`) triggered by a cron-like scheduler in the background. It's not a hook — it runs independently of sessions.
+
+The D3 graph visualization app (from the previous post) makes this visible: strong memories glow, decaying ones dim, and the Janitor's merge/prune operations leave a visible trail.
+
+## What the config looks like now
+
+The `CLAUDE.md` instruction for LTM is explicit:
+
+> Before any non-trivial task: call `mcp__ltm__ltm_recall` with the topic as query.
+> After discovering a non-obvious pattern or gotcha: call `mcp__ltm__ltm_learn`.
+> When making an architectural decision: call `mcp__ltm__ltm_learn` with `category=architecture`.
+
+The hooks (`SessionStart`, `EvaluateSession`, `PreCompact`) do the background work. The MCP tools give Claude direct access. The decay and Janitor processes keep the database clean without manual curation.
+
+## What's still rough
+
+The semantic fallback adds latency to recall — a few hundred milliseconds on a fast connection, more if the embedding API is cold. FTS5 is fast enough that most recalls don't trigger it, but it's noticeable when it does.
+
+The EvaluateSession extraction isn't perfect. The LLM sometimes over-extracts (trivial things get stored as memories) and occasionally misses important architectural decisions. The category classification is roughly right but imprecise. These are prompt engineering problems that improve over time as the extraction prompt gets tuned.
+
+The Janitor's duplicate detection via embedding similarity occasionally merges things that shouldn't be merged. Conservative threshold is better — set the similarity cutoff high enough that only near-identical memories get merged.
+
+---
+
+The overall shift is from "context files I remember to maintain" to "a knowledge base that maintains itself." Sessions contribute to it automatically, the Janitor keeps it clean, and recall surfaces relevant history before I start any significant work. The manual hygiene work that v1 and v2 required is mostly gone.
+0:{"buildId":"U5Fk4vgi9NB7WdTw3XXws","rsc":["$","$1","c",{"children":[["$","$L2",null,{"maxWidth":"m","paddingTop":"24","children":[["$","$L3",null,{"id":"schema-blogPosting-/blog","type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"BlogPosting\",\"url\":\"https://CloudJourneyBlog.rohi-lab.org/blog\",\"sameAs\":[],\"headline\":\"Writing on security, automation, and infrastructure\",\"description\":\"Practical writing on cloud security, AI agents, and the systems that make them work — by Rohi Rikman\",\"image\":\"https://CloudJourneyBlog.rohi-lab.org/https://CloudJourneyBlog.rohi-lab.org/images/avatar.png\",\"author\":{\"@type\":\"Person\",\"name\":\"Rohi Rikman\",\"url\":\"https://CloudJourneyBlog.rohi-lab.org/blog\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"https://CloudJourneyBlog.rohi-lab.org/images/avatar.png\"}}}"}}],["$","h1",null,{"className":"font-heading font-strong font-xl neutral-on-background-strong ml-24 mb-l","style":{"textWrap":"balance"},"children":"Writing on security, automation, and infrastructure"}],["$","$L2",null,{"fillWidth":true,"flex":1,"gap":"40","children":[["$","$L4",null,{"columns":"1","s":{"columns":1},"fillWidth":true,"marginBottom":"40","gap":"16","children":[["$","$L5","claude-code-config-v3",{"post":{"metadata":{"title":"Claude Code Config v3: LTM as Infrastructure","subtitle":"","publishedAt":"2026-03-20","summary":"The config got a significant overhaul: SQLite-backed long-term memory, a dedicated MCP server exposing LTM primitives, semantic recall with embedding fallback, graph-based reasoning, and an EvaluateSession hook that extracts decisions automatically.","image":"/images/blog/claude-code-config-v3.png","images":[],"tag":"Dev Tools","team":[],"link":""},"slug":"claude-code-config-v3","content":"$6"},"thumbnail":true}]]}],"$L7","$L8","$L9"]}]]}],["$La"],"$Lb"]}],"loading":null,"isPartial":false}
+c:T17c7,
+Every IT team has some version of the same problem: the MDM says one thing, Active Directory says another, and the spreadsheet someone maintains manually is a third opinion. Nobody knows the real device count. Nobody knows which machines are stale. Asset reviews are a manual reconciliation exercise that takes days and is wrong before it's finished.
+
+For a FinTech client, I built a pipeline that pulls from every authoritative source — AD, Intune, Azure, MDE — and produces a single unified inventory that's always current. Here's the architecture.
+
+## The data problem
+
+The client had devices across three categories:
+- **Windows workstations**: domain-joined, Intune-enrolled, some hybrid Entra joined
+- **Azure VMs**: not domain-joined, sometimes Intune-enrolled, MDE-onboarded
+- **Legacy machines**: domain-joined only, no Intune, no MDE
+
+No single system had the full picture. Intune knew about enrolled devices but didn't know about the legacy machines. AD knew about everything domain-joined but didn't know about Azure VMs or compliance state. MDE knew about onboarded endpoints but didn't map cleanly to AD objects.
+
+The goal: a unified record per device with attributes from all sources — last seen, OS version, compliance state, MDE sensor status, assigned user, department, location.
+
+## The architecture
+
+Four components:
+
+**1. Jenkins** — scheduler and orchestrator. A pipeline job runs nightly and on-demand. It calls the PowerShell scripts in sequence, handles retries, and sends a completion notification.
+
+**2. PowerShell scripts** — data collection and normalization. One script per source, plus a merge script. Each script outputs structured JSON to a staging directory on the Jenkins agent.
+
+**3. SharePoint List** — the inventory store and intermediate layer. PowerShell writes the merged records to a SharePoint list via the SharePoint REST API or PnP PowerShell. The list is the single source of truth that other systems can query.
+
+**4. Power BI** — visualization layer. A Power BI report connects directly to the SharePoint list and refreshes on a schedule. This is the dashboard the IT team and management use.
+
+## The data collection scripts
+
+**AD collector**: Uses `Get-ADComputer` with `-Properties *` to pull all computer objects. Captures name, distinguished name, last logon timestamp, OS version, description, and organizational unit. Filters out disabled objects and objects not seen in 90 days.
+
+```powershell
+Get-ADComputer -Filter * -Properties LastLogonDate, OperatingSystem, Description |
+  Where-Object { $_.LastLogonDate -gt (Get-Date).AddDays(-90) } |
+  Select-Object Name, DistinguishedName, LastLogonDate, OperatingSystem, Description |
+  ConvertTo-Json | Out-File "$stagingPath\ad-devices.json"
+```
+
+**Intune collector**: Uses the Microsoft Graph PowerShell SDK. Calls `Get-MgDeviceManagementManagedDevice` to get all enrolled devices with compliance state, last sync time, enrolled user, and device category.
+
+**MDE collector**: Uses the Defender for Endpoint API (via a service principal with `Machine.Read.All`). Gets onboarding status, sensor health, last seen timestamp, and risk level for every endpoint.
+
+**Azure VM collector**: Uses `Get-AzVM` across all subscriptions the service principal has access to. Gets VM name, resource group, location, OS, running state, and any tags with owner/department information.
+
+## The merge script
+
+The merge script is where the real work happens. It loads all four JSON files and joins them on device name. The join logic:
+
+1. AD is the primary key source — every AD computer object gets a record
+2. Intune records are matched to AD by device name (normalized to uppercase)
+3. MDE records are matched by hostname
+4. Azure VMs get their own records (no AD object)
+
+For each merged record, the script calculates derived fields:
+- `managementState`: `fully-managed` (Intune + MDE), `partially-managed` (Intune only or MDE only), `unmanaged` (AD only)
+- `staleness`: days since last seen across all sources
+- `complianceGap`: boolean — in Intune but not compliant
+
+The merged output is an array of device objects written to `merged-inventory.json`.
+
+## Writing to SharePoint
+
+PnP PowerShell handles the SharePoint write. The script compares the merged inventory against the current SharePoint list state (pulled at the start of the run) and does a delta update: new devices are added, existing devices are updated, devices not seen in 90 days are flagged as stale.
+
+Doing a delta update rather than a full replace matters for performance (the list had 2,000+ items) and for preserving any manual annotations added by the IT team directly in the list.
+
+## Power BI on top
+
+The Power BI report connects to the SharePoint list as a data source and refreshes daily. Key views:
+
+- **Management coverage**: pie/bar showing how many devices are fully managed vs. partially managed vs. unmanaged
+- **Stale devices**: list of devices not seen in 30+ days, sorted by staleness
+- **Compliance gaps**: devices enrolled in Intune but not passing compliance policy
+- **MDE coverage**: which devices have an active sensor vs. not
+
+The report is embedded in a Teams tab so the IT team has it in their daily context without going to Power BI directly.
+
+## What it replaced
+
+Before this pipeline: a manually-maintained Excel spreadsheet updated every quarter. It was always wrong. MDE coverage reports were run manually when someone asked. Compliance gaps were invisible until a CA policy blocked a user.
+
+After: a nightly automated run, a SharePoint list the IT team trusts, and a Power BI dashboard the security team uses in their weekly review.
+
+The pipeline has run without manual intervention for over a year. When a new device shows up as unmanaged, the report flags it. When a compliance gap appears, the security team sees it the next morning.
+
+---
+
+The architecture is not complicated. Jenkins, PowerShell, SharePoint, Power BI are tools every Microsoft-focused IT team already has. The value is in putting them together deliberately and removing the manual reconciliation step entirely.
+7:["$","$L4",null,{"columns":"2","s":{"columns":1},"fillWidth":true,"marginBottom":"40","gap":"16","children":[["$","$L5","device-inventory-pipeline",{"post":{"metadata":{"title":"Building a Device Inventory Pipeline","subtitle":"","publishedAt":"2026-03-20","summary":"When your MDM doesn't tell the full story, build the pipeline yourself. Here's the Jenkins → PowerShell → SharePoint → Power BI architecture I built to unify device data across AD and Intune for a FinTech client.","image":"/images/blog/device-inventory-pipeline.png","images":[],"tag":"Automation","team":[],"link":""},"slug":"device-inventory-pipeline","content":"$c"},"thumbnail":true,"direction":"column"}],"$Ld"]}]
+8:["$","h2",null,{"className":"font-heading font-strong font-xl neutral-on-background-strong ml-l","style":{"textWrap":"balance"},"children":"Earlier posts"}]
+e:T1cbd,
+JumpCloud is a reasonable MDM choice for early-stage companies. It's cross-platform, handles basic device management, and works without a Microsoft stack. But at some point, most orgs that run on Microsoft 365 hit the ceiling: JumpCloud doesn't integrate cleanly with Conditional Access, Defender for Endpoint, Microsoft Purview, or Entra ID — and you end up managing two parallel identity and device stacks that are increasingly hard to reconcile.
+
+For a Trading Platform client, that moment came when they needed to enforce Conditional Access requiring Intune-compliant devices and couldn't do it cleanly while still running JumpCloud as the MDM authority. The decision was to exit JumpCloud fully and migrate to the Microsoft stack: Intune + Entra ID + MDE. 200+ devices, Windows and macOS, in active use.
+
+Here's what the migration actually looked like.
+
+## Pre-migration: mapping what you have
+
+Before touching a single device, you need a complete inventory. JumpCloud has an API and an export — use it. Every device, every user assignment, every policy.
+
+The questions that matter:
+- Which devices are corporate-owned vs. BYOD?
+- Which are Entra ID joined, hybrid joined, or just AD domain-joined?
+- What JumpCloud policies are active and what do they enforce?
+- What software is deployed via JumpCloud?
+- Are there any devices running macOS versions below your Intune minimum?
+
+This mapping takes time and it's worth it. Every surprise you find now is one you don't hit mid-migration with a user locked out.
+
+## The enrollment approach: hybrid vs. clean
+
+The most important decision before you start: do you migrate devices in-place (install Intune agent while JumpCloud is still running) or do you wipe and re-enroll?
+
+For most Windows devices at this client, we did in-place migration:
+1. Deploy the Intune management extension via a JumpCloud script
+2. Complete Entra ID registration (Hybrid Join or Entra Join depending on whether AD was still in scope)
+3. Verify Intune enrollment and compliance
+4. Remove JumpCloud agent
+
+For macOS, in-place MDM migration is not reliably supported. The MDM profile can only be removed and replaced cleanly if the device is wiped or if the user is an admin. For corporate macOS machines, we did wipe-and-enroll through Autopilot for Windows equivalents, and ADE (Apple Device Enrollment) for macOS via Apple Business Manager.
+
+A small number of edge-case machines — old hardware, non-standard configurations, machines where the JumpCloud agent was broken — got clean wipes.
+
+## Windows: the Hybrid Join question
+
+Most of the Windows devices were domain-joined (on-prem AD) and JumpCloud-managed. For Intune, you need devices to be at minimum Entra ID registered, and ideally Hybrid Entra Joined (domain-joined + Entra ID joined) or pure Entra Joined.
+
+Hybrid Join was the right call here because the client still had on-prem AD in active use. We configured the Hybrid Join process via Entra Connect and deployed the Intune enrollment policy to the domain via GPO.
+
+The sequence per device:
+1. Entra Connect syncs the computer object
+2. Device completes Hybrid Join (takes up to a sync cycle — 30 minutes typically)
+3. Intune auto-enrollment triggers via GPO
+4. MDE onboarding completes
+5. Compliance policy evaluates — device either passes or gets a grace period
+
+The most common failure mode: time sync issues preventing the device from completing Kerberos-based Hybrid Join. Fix NTP before you start.
+
+## macOS: Apple Business Manager and ADE
+
+For macOS, we onboarded the org to Apple Business Manager, linked ABM to Intune, and created an ADE enrollment profile. This gives you MDM-supervised devices with the highest management capability — no user-removable MDM profile, full app management, FileVault key escrow.
+
+The catch: ADE applies to new-to-Intune devices. Devices already in ABM from a previous enrollment can be reassigned. Devices that were never in ABM can't be retrofitted into supervised ADE without a wipe and re-enrollment through Apple Configurator.
+
+For the macOS fleet at this client, about 40% were already in ABM from prior management. Those were reassigned to the Intune enrollment profile. The rest were wiped and re-enrolled, with users scheduled for migration days with IT on-site.
+
+## Compliance: don't enforce before enrollment is complete
+
+Conditional Access requiring Intune compliance was the end goal, but it cannot be the starting state. If you enable the CA policy before your devices are enrolled and passing compliance, you lock out every user on a device that hasn't completed migration.
+
+The rollout order:
+1. Build compliance policies (OS version, encryption, MDE sensor active, no jailbreak/rooted)
+2. Deploy compliance policies to devices as they enroll — in report-only initially
+3. Set a grace period (we used 7 days) during which non-compliant devices get access with a compliance notification
+4. Once >90% of devices are enrolled and compliant, enable the CA policy in report-only
+5. Review report-only logs for unexpected blocks
+6. Enable enforcement
+
+The 7-day grace period is important. It means a device that's being migrated this week doesn't block the user today.
+
+## Decommissioning JumpCloud
+
+Once all devices were verified enrolled in Intune and passing compliance, we removed the JumpCloud agent. The sequence:
+1. Verify Intune enrollment and compliance status for the device
+2. Confirm all software previously deployed via JumpCloud is now deployed via Intune (app deployments migrated to Intune Win32 apps and Managed App Store apps)
+3. Uninstall JumpCloud agent via Intune script
+4. Remove device from JumpCloud console
+5. Cancel JumpCloud license
+
+The license cancellation was the milestone. At that point, Intune was the single MDM authority.
+
+## What broke
+
+A few things caught us mid-migration:
+
+**JumpCloud FileVault keys.** JumpCloud escrows FileVault recovery keys separately. Once JumpCloud was removed from macOS, those keys were gone. We rotated FileVault before removing JumpCloud, escrowing the new key to Intune. Any device where we missed this step required on-site recovery.
+
+**App deployments tied to JumpCloud.** Several internal tools were deployed and configured via JumpCloud scripts. We had to rebuild those as Intune Win32 app packages before migrating those devices. The inventory step at the start should catch these — ours caught most but not all.
+
+**Devices in shared-use scenarios.** Shared lab workstations with multiple user accounts needed special handling for Intune enrollment since enrollment ties to a primary user in Intune's model.
+
+## The result
+
+80+ tasks over about four months. At the end: 200+ devices enrolled in Intune, MDE sensors active on all of them, Conditional Access enforcing compliance as a gate, and JumpCloud fully off the books.
+
+The bigger win was architectural: one identity stack (Entra ID), one MDM authority (Intune), one endpoint security platform (MDE), all integrated. Conditional Access can now see device compliance state and make real-time access decisions — something that wasn't possible while JumpCloud was in the picture.
+
+---
+
+If you're planning a JumpCloud exit, the pre-migration inventory and the compliance grace period are the two things that will determine whether the migration is smooth. Get the inventory right, and don't enforce before you enroll.
+9:["$","$L4",null,{"columns":"2","s":{"columns":1},"fillWidth":true,"marginBottom":"40","gap":"16","children":[["$","$L5","jumpcloud-to-intune-migration",{"post":{"metadata":{"title":"The JumpCloud Exit Playbook","subtitle":"","publishedAt":"2026-03-20","summary":"Migrating 200+ Windows and macOS devices from JumpCloud to Microsoft Intune without breaking MDM coverage, compliance posture, or user productivity.","image":"/images/blog/jumpcloud-to-intune-migration.png","images":[],"tag":"Security","team":[],"link":""},"slug":"jumpcloud-to-intune-migration","content":"$e"},"thumbnail":true,"direction":"column"}],"$Lf","$L10","$L11","$L12","$L13","$L14","$L15","$L16","$L17","$L18","$L19","$L1a","$L1b","$L1c"]}]
+a:["$","script","script-0",{"src":"/_next/static/chunks/8ac4e8555f09f41a.js","async":true}]
+b:["$","$L1d",null,{"children":["$","$1e",null,{"name":"Next.MetadataOutlet","children":"$@1f"}]}]
+20:T1a2f,
+Most identity platforms are configured once and then drift. The IdP has the org chart from six months ago. The HR system has been updated 50 times since then — new hires, promotions, reorgs, contractor conversions — and none of it flowed downstream.
+
+The result: Active Directory has the wrong department for half the engineering team, Entra ID shows reporting lines from two restructures ago, and the extension attributes that should drive Conditional Access logic are either empty or stale. The HR system has clean data. The IdP does not.
+
+For an OT Security client, I built a sync between HiBob (their HRIS) and Entra ID / on-premises AD that runs on a schedule and keeps 18 attributes current. Here's how it works.
+
+## What HiBob knows that Entra doesn't
+
+HiBob is the HR system of record. It owns:
+- Department and sub-department
+- Job title and job level
+- Manager (reporting line)
+- Employment type (full-time, part-time, contractor)
+- Start date and tenure
+- Site/office location
+- Cost center
+- Custom fields: clearance level, team function, contractor company
+
+Entra ID has fields that map to most of these — `department`, `jobTitle`, `manager`, `employeeType`, `extensionAttribute1–15` — but they're only as current as the last time someone manually updated them. At most clients, that's "not recently."
+
+## The architecture
+
+Three components:
+
+**HiBob API** — the source. HiBob has a REST API with token-based auth. The key endpoints are `/v1/people` (list all employees) and `/v1/people/{id}` (get individual profile). The API returns rich profile data including all custom fields.
+
+**Azure Automation Runbook** — the sync engine. A PowerShell runbook runs on a schedule (nightly + on-demand for urgent updates). It calls the HiBob API, normalizes the data, and writes changes to Entra ID via Microsoft Graph and to on-premises AD via the AD module.
+
+**Entra ID + on-premises AD** — the targets. The runbook writes to both. For most attributes, Entra ID is updated via Graph API and the change propagates to AD via Entra Connect sync. For attributes that only exist on-prem (like certain extension attributes not synced to Entra), the runbook writes directly to AD.
+
+## The sync logic
+
+The runbook follows a compare-then-write pattern to avoid unnecessary writes:
+
+1. Pull all active employee records from HiBob API
+2. For each employee, look up the corresponding Entra ID user (matched by email or employee ID stored in `employeeId` attribute)
+3. Compare the HiBob values against current Entra ID attribute values
+4. If any value differs, write the update via Graph API
+5. Log every change with before/after values to a Log Analytics workspace
+
+This means the runbook only writes when there's an actual difference — not on every run, not for every user. This keeps the audit log clean (changes are meaningful) and avoids triggering unnecessary sync cycles in Entra Connect.
+
+## What gets synced
+
+The 18 attributes synced in this implementation:
+
+| HiBob Field | Entra ID Attribute |
+|---|---|
+| Department | `department` |
+| Job Title | `jobTitle` |
+| Manager | `manager` (reference) |
+| Employment Type | `employeeType` |
+| Office Location | `officeLocation` |
+| Cost Center | `extension_attribute_1` |
+| Contractor Flag | `extension_attribute_2` |
+| Clearance Level | `extension_attribute_3` |
+| Team Function | `extension_attribute_4` |
+| Contractor Company | `extension_attribute_5` |
+| Start Date | `employeeHireDate` |
+| Display Name | `displayName` |
+| Preferred Name | (custom) |
+| Site | `usageLocation` |
+| Employee ID | `employeeId` |
+| Sub-Department | `extension_attribute_6` |
+| Job Level | `extension_attribute_7` |
+| Profile Picture | (via separate process) |
+
+The manager sync is the most complex. HiBob stores the manager as an employee ID reference. The runbook resolves this to an Entra ID object ID and sets the `manager` attribute as a directory reference — not just a display name string.
+
+## Profile picture sync
+
+Profile pictures are handled separately. HiBob stores profile photos accessible via the API. The runbook downloads the photo, resizes it to the Microsoft 365 preferred size (648×648), and uploads it via the Graph API (`/users/{id}/photo/$value`). This keeps profile pictures in M365, Teams, and Outlook current — which matters more than it sounds for a distributed team.
+
+## Contractor detection and Conditional Access
+
+One of the higher-value outcomes of this sync is accurate contractor flagging. HiBob has an employment type field that distinguishes full-time employees from contractors. The runbook sets `extension_attribute_2` to `contractor` or `employee` accordingly.
+
+This attribute drives Conditional Access policies. Contractors get a stricter policy set: phishing-resistant MFA required for all apps, no persistent browser sessions, stricter sign-in frequency. Full-time employees get the standard policy set with SSO and longer session lifetimes.
+
+Without the sync, this distinction was manually maintained and frequently wrong — contractors who converted to FTE still had contractor-tier policies, and new contractors started with FTE-tier access until someone noticed.
+
+## What breaks
+
+**Employee ID mismatches.** If HiBob and Entra ID have inconsistent employee IDs (which happens during migrations, acquisitions, or manual ID assignment), the sync can't match records. We built a reconciliation report that flags unmatched HiBob employees weekly so the IT team can fix the mapping manually.
+
+**Manager chains with circular references.** A misconfigured org chart in HiBob can create circular manager references that break the Graph API call. The runbook catches these and logs them rather than failing.
+
+**API rate limits.** HiBob's API has rate limits. For orgs with 500+ employees, a naive implementation that calls `/v1/people/{id}` for every employee will hit them. Use `/v1/people` with field expansion to pull all employees in one call.
+
+## 1.5 years of runtime
+
+This runbook has been running for over 18 months at this client. It has processed thousands of attribute updates — reorgs, promotions, contractor conversions, new hires, terminations (though terminations have their own dedicated workflow). The Entra ID directory now reflects HiBob accurately. Conditional Access policies that depend on employment type work correctly. The IT team no longer gets support tickets about wrong department values.
+
+---
+
+The pattern generalises to any HRIS. Workday, BambooHR, Personio — if it has an API and you have Entra ID, you can build this sync. The core principle is the same: the HR system is the source of truth for people data. The IdP should be downstream of it, not a separate silo that drifts.
+d:["$","$L5","hibob-hr-automation",{"post":{"metadata":{"title":"When HiBob Is Your Source of Truth","subtitle":"","publishedAt":"2026-03-20","summary":"Your HR system knows the org better than your IdP does. Here's how I built a bi-directional HiBob ↔ Entra ID sync that keeps departments, titles, managers, and 15 other attributes in sync — automatically.","image":"/images/blog/hibob-hr-automation.png","images":[],"tag":"Automation","team":[],"link":""},"slug":"hibob-hr-automation","content":"$20"},"thumbnail":true,"direction":"column"}]
+21:T28a7,
+Most Microsoft 365 environments have MFA. Most of them are still vulnerable to phishing.
+
+The gap is the method. Push notifications can be MFA-fatigue'd. TOTP codes can be intercepted mid-session. SMS is trivially bypassed. None of these protect against an adversary-in-the-middle proxy sitting between your user and your identity provider — and those attacks are increasingly automated, accessible, and effective.
+
+Phishing-resistant MFA changes the equation. FIDO2 hardware keys and Windows Hello for Business bind the authentication ceremony to the legitimate origin, so there's nothing to intercept. The credential never leaves the device in a form that can be replayed.
+
+Here's how I rolled it out for a security-conscious OT Security client, without locking anyone out.
+
+## Why standard MFA isn't enough anymore
+
+The Microsoft Authenticator push approval flow is convenient, but it's also the attack surface. Evilginx and similar tools run transparent proxies that present a legitimate-looking login page, relay credentials upstream, capture the session token, and forward the real Microsoft 2FA challenge to the user. The user approves what looks like a normal push notification. The attacker gets a valid session.
+
+Number matching and additional context in Authenticator reduce the friction for this attack, but they don't eliminate it. Phishing-resistant methods do — because authentication is cryptographically tied to the relying party's domain. A FIDO2 credential issued for `login.microsoftonline.com` cannot be used against `evil-proxy.attackerinfra.com`.
+
+## The client context
+
+The OT Security client already had standard MFA enforced across the tenant and a working Conditional Access baseline. The ask was to harden further — specifically to require phishing-resistant MFA for privileged access, key applications, and high-value users, without a hard cutover that disrupted operations.
+
+The environment was mostly managed Windows devices (Intune-joined), a mix of FIDO2 keys already in use by IT, and a broader user population comfortable with Authenticator but unfamiliar with passkeys.
+
+## Authentication strengths: the mechanism
+
+Entra ID has a concept called Authentication Strengths — a named set of allowed authentication method combinations that can be referenced directly in Conditional Access grant controls. Instead of a binary "require MFA" control, you specify a strength: built-in options like MFA, Passwordless MFA, and Phishing-Resistant MFA, or custom combinations you define.
+
+Phishing-Resistant MFA maps to FIDO2 security keys, Windows Hello for Business, and certificate-based authentication. Nothing else.
+
+This is the right abstraction for a gradual rollout. You can apply the phishing-resistant strength to specific user groups, specific apps, or specific roles — without changing your existing baseline policies for everyone else.
+
+## The rollout policy design
+
+We structured the rollout in three phases, each building on the last.
+
+**Phase 1 — Privileged roles.**
+Start with Global Admins, Privileged Role Administrators, Exchange Admins, and Security Admins. These accounts are high-value targets and should have been using phishing-resistant methods already. The blast radius of a compromised admin account justifies the friction.
+
+Policy target: all users assigned Entra ID privileged directory roles. Grant: require authentication strength — Phishing-Resistant MFA. Enforced immediately.
+
+**Phase 2 — Sensitive applications.**
+Extend to the apps with the most exposure: Azure portal, Intune admin center, Exchange admin, and any internal apps handling sensitive OT asset data. This catches users who aren't admins but have elevated access to critical systems.
+
+Policy target: specific cloud apps (Azure Management, Microsoft Intune, plus named enterprise apps). Grant: require authentication strength — Phishing-Resistant MFA. Deployed in report-only for two weeks, then enforced.
+
+**Phase 3 — Broad user population (graduated).**
+For the general user base, we didn't mandate immediate hardware key adoption. Instead, we:
+
+1. Created a named group: `sg-phishing-resistant-mfa-enrolled`
+2. Deployed a policy requiring phishing-resistant MFA for all apps — scoped to that group only
+3. Enrolled users in batches: IT first, then team leads, then department by department
+4. As each batch completed enrollment, they were added to the group and the policy applied
+
+This gave us a controlled rollout with a clear enrolment signal, clean audit logs, and a path to full enforcement without a big-bang cutover.
+
+## Hardware keys vs. Windows Hello for Business
+
+For most users, Windows Hello for Business is the easier path. It's already provisioned on compliant Intune-managed devices, uses biometric or PIN, and requires no additional hardware. The onboarding experience is familiar — users who already log into Windows that way don't notice a difference.
+
+FIDO2 hardware keys are better for shared workstations, kiosk scenarios, privileged users who operate from multiple devices, and anyone without a dedicated Windows endpoint. We issued YubiKey 5 series keys to the IT team and specific high-privilege users. For everyone else, Windows Hello for Business was the default.
+
+One thing to verify before enforcing: Windows Hello for Business requires devices to be Hybrid Entra Joined or Entra Joined and the Hello provisioning policy to be deployed in Intune. Devices that are only domain-joined with no Entra ID registration can't use WHfB and will be blocked if you enforce phishing-resistant before resolving this.
+
+## Platform SSO: extending phishing resistance beyond Windows
+
+Windows Hello for Business solves the problem neatly on Windows, but most environments aren't Windows-only. macOS users, Linux workstations, and iOS/Android devices all need a path to phishing-resistant authentication.
+
+Platform SSO is Microsoft's answer for macOS. It's a native macOS extension (deployed via Intune as an MDM profile) that integrates Entra ID authentication directly into the macOS login experience. Instead of the browser-based SSO flow that Authenticator handles today, Platform SSO uses a system-level credential that participates in the OS authentication ceremony — the same model as Windows Hello for Business on Windows.
+
+From an Authentication Strengths perspective, Platform SSO using the hardware-bound key method qualifies as phishing-resistant. The key is generated in the macOS Secure Enclave, bound to the device, and used for WebAuthn assertions against Entra ID. It satisfies the same Conditional Access grant as a FIDO2 hardware key or Windows Hello for Business credential.
+
+The setup requires:
+
+1. **Deploy the Microsoft Enterprise SSO plug-in** via Intune — this is the MDM profile that registers the extension with macOS.
+2. **Configure Platform SSO settings** in the profile: set `AuthenticationMethod` to `UserSecureEnclaveKey` for the hardware-bound phishing-resistant variant, or `Password` if you only want SSO without the phishing-resistant step-up.
+3. **Users register on first login** — after the profile deploys, the next macOS login prompts the user to register the Platform SSO credential with Entra ID. This is the enrolment step. It requires a valid MFA method to bootstrap.
+4. **Verify the token type** in sign-in logs — once registered, sign-ins through Platform SSO show `deviceId` in the token claims and a `hwk` (hardware key) credential type. This is what Entra ID uses to classify the authentication as phishing-resistant.
+
+The Platform SSO credential also enables Single Sign-On to all Entra ID-protected apps from macOS without re-authenticating. Once the credential is registered, Safari, Chrome, and native apps that use the SSO extension get tokens silently. This is a meaningful UX improvement over the current model where every app triggers a browser redirect.
+
+One gotcha: Platform SSO on macOS requires Intune MDM enrollment and macOS 13 (Ventura) or later. Devices on older macOS versions fall back to the standard Authenticator flow. If you're enforcing phishing-resistant for a group that includes Mac users, verify macOS version compliance before adding them to the enforcement group.
+
+## Report-only first — always
+
+Every policy went through report-only before enforcement. The sign-in logs under report-only show exactly who would have been blocked, which authentication method they used, and whether the policy would have applied. Filter on "Report-only: Would have failed" and work through the results before switching to enforce.
+
+The most common surprise at this client: service accounts with interactive sign-ins that looked like users. They would have been blocked. We excluded the relevant service account identities explicitly and flagged them for certificate-based auth migration.
+
+## What we didn't do
+
+We didn't create a single policy requiring phishing-resistant MFA for all users from day one. That's the right eventual state but the wrong rollout order. Enrolment has to come before enforcement. Users need time to register a FIDO2 key or confirm WHfB is working before the policy applies to them — otherwise you're locking out the people you need to help most.
+
+We also didn't deprecate the existing MFA policies. They stayed in place. Phishing-resistant policies add stricter requirements on top; they don't replace the baseline. Belt and suspenders — the existing policies catch anything the new ones don't target yet.
+
+## The end state
+
+At full rollout, every privileged role assignment and every access attempt to a sensitive application requires a method that can't be phished. The broader user base is being enrolled in batches with a clear target of full coverage inside six months.
+
+The Conditional Access policy count went from 12 to 19 during this engagement. Each new policy has a clear owner, a documented scope, and a known enforcement date. That's the other half of making this sustainable — the policies themselves are managed as configuration, not improvised after the fact.
+
+---
+
+Phishing-resistant MFA isn't difficult to deploy in a Microsoft environment. The Authentication Strengths model makes it composable with your existing CA policies. The hard part is the change management and the enrolment order — getting users registered before the policy enforces, and not treating "our users have MFA" as meaning "our users are protected."
+f:["$","$L5","phishing-resistant-mfa-rollout",{"post":{"metadata":{"title":"Phishing-Resistant MFA Rollout","subtitle":"","publishedAt":"2026-03-20","summary":"Standard MFA is no longer enough. Here's how we designed a gradual Conditional Access rollout to enforce FIDO2, Windows Hello for Business, and Platform SSO across a security-conscious OT environment.","image":"/images/blog/phishing-resistant-mfa-rollout.png","images":[],"tag":"Security","team":[],"link":""},"slug":"phishing-resistant-mfa-rollout","content":"$21"},"thumbnail":true,"direction":"column"}]
+22:T17c2,
+Manual offboarding is a security incident waiting to happen. The typical process: HR tells IT someone is leaving, IT opens a ticket, someone works through a checklist over the next few hours or days. During that window, the departing employee still has active sessions, valid credentials, and potentially a company device with full access to everything they could reach before they left.
+
+I've seen this gap exploited — not always maliciously, but the risk is real. I've also seen the fix: full automation triggered the moment HR closes the case.
+
+Here's the architecture I built for an Energy Sector client, automating a 15-step offboarding workflow with no manual steps after the trigger.
+
+## The trigger: HR webhook
+
+The workflow starts in the HR system. When a manager marks a termination as processed, the HR platform fires a webhook containing the employee's user ID, termination type (voluntary/involuntary), and effective date.
+
+The webhook hits an Azure Logic App HTTP trigger endpoint. That's the starting gun.
+
+Using the HR system as the trigger source is deliberate. IT doesn't have to remember to act — the process starts automatically. The HR system is also the authoritative record for who is employed, so tying automation to its state means the offboarding reflects reality.
+
+## The 15-step workflow
+
+The Logic App orchestrates the full sequence. Each step is either a direct Logic App action or a call out to an Azure Automation Runbook for anything requiring PowerShell.
+
+**Step 1 — Revoke all active sessions.**
+The first action, always. Before anything else, invalidate all tokens and force re-authentication. This is a single Graph API call: `POST /users/{id}/revokeSignInSessions`. Done in the Logic App directly, no Runbook needed. The employee is signed out of everything immediately.
+
+**Step 2 — Disable the Entra ID account.**
+Set `accountEnabled: false` via Graph API. Prevents new sign-ins. Happens within seconds of the trigger.
+
+**Step 3 — Reset the account password.**
+Generate a random 32-character password and set it. This prevents any cached credential from being useful and ensures nobody can re-enable the account without a deliberate reset.
+
+**Step 4 — Remove from all groups and dynamic membership.**
+Strip group memberships that grant access to resources — removing SharePoint sites, Teams, distribution lists, and any app role assignments tied to group membership. Dynamic groups update automatically once Entra ID reflects the account state, but explicit memberships are removed here.
+
+**Step 5 — Revoke all active MFA methods.**
+Delete registered authentication methods. This prevents the account being recovered via MFA registration if somehow re-enabled.
+
+**Step 6 — Wipe the managed device (MDE).**
+If the employee has a managed device enrolled in Microsoft Defender for Endpoint, trigger a remote wipe via the MDE API. For corporate-owned devices: full wipe. For BYOD: selective wipe of corporate data only.
+
+**Step 7 — Remove licenses.**
+Strip all Microsoft 365 license assignments. This releases the license back to the pool and closes access to any service that gates on license assignment (Exchange, Teams, SharePoint, etc.).
+
+**Step 8 — Offboard from Intune.**
+Retire the device from Intune management. This removes the management profile, company portal, and any app-based conditional access certificates.
+
+**Step 9 — Remove from Entra ID.**
+After all access is revoked, delete or disable the Entra ID object depending on policy. Some clients soft-delete (disable + move to disabled OU) for 30 days before permanent deletion to support HR investigations.
+
+**Step 10 — Disable the on-premises AD account.**
+For hybrid environments: disable the AD object. This propagates to Entra ID via sync, but we act on both sides simultaneously rather than waiting for the sync cycle.
+
+**Step 11 — Move the AD object to a disabled OU.**
+Organizational policy: disabled accounts move to a dedicated OU that is excluded from GPO application and group policy inheritance.
+
+**Step 12 — Archive the mailbox.**
+Place the mailbox on litigation hold, convert to shared, and assign delegate access to the manager for 30 days. This preserves business continuity without maintaining an active licensed mailbox.
+
+**Step 13 — Transfer OneDrive.**
+Grant the manager access to the departing employee's OneDrive for 30 days. Microsoft's data retention policy handles deletion after that window.
+
+**Step 14 — Notify IT and HR.**
+Send a completion notification to the IT helpdesk and HR via Teams/email with a summary of all actions taken and their status. If any step failed, the notification flags it for manual review.
+
+**Step 15 — Write the audit trail.**
+Log the full workflow execution — user ID, timestamp of each step, success/failure status, triggering event — to a Log Analytics workspace. This is the audit record that demonstrates compliance with offboarding policy.
+
+## Error handling
+
+Not every step succeeds cleanly. The device might already be wiped. The account might have no licenses. The Logic App uses scope-level error handling: each major step runs in a scope block, and failures are caught and logged without stopping the rest of the workflow.
+
+The notification step at the end includes a failure summary so IT can handle any exceptions manually. The goal is that the automation handles 95% of cases cleanly; the edge cases go to a human with context.
+
+## What this replaced
+
+Before this: a manually-worked Jira ticket with a 23-item checklist. Average completion time: 4–6 hours. Frequent missed steps (usually license removal and OneDrive transfer). No audit trail.
+
+After: 12-minute average end-to-end execution time. Zero missed steps. Full audit log. HR closes the case; everything else happens automatically.
+
+---
+
+The residual risk in any offboarding process is the time between the employee's last day and when IT acts. Automation doesn't eliminate that risk — it eliminates the gap between the HR decision and the IT action. Once the trigger fires, the window is minutes, not hours.
+10:["$","$L5","smart-offboarding-orchestration",{"post":{"metadata":{"title":"Smart Offboarding Orchestration","subtitle":"","publishedAt":"2026-03-20","summary":"Manual offboarding leaves doors open — sometimes for days. Here's how I automated a 15-step enterprise offboarding workflow using Azure Logic Apps and Automation Runbooks triggered by an HR webhook.","image":"/images/blog/smart-offboarding-orchestration.png","images":[],"tag":"Security","team":[],"link":""},"slug":"smart-offboarding-orchestration","content":"$22"},"thumbnail":true,"direction":"column"}]
+23:T179d,
 Most people use Claude Code like a fancy autocomplete. Type a request, read the output, copy-paste, repeat. That works. But it leaves a lot on the table.
 
 When I started seriously using Claude Code, I didn't invent my own system. I borrowed one — specifically, the pattern that Boris Cherny (one of Claude Code's creators) uses himself:
@@ -99,8 +690,8 @@ That's how you build a workflow that sticks instead of one you abandon after two
 The full command reference and hook setup is in my [Claude Code config repo](https://github.com/RohiRIK/claude-code-config/blob/main/docs/workflow-daily.md) if you want to dig deeper.
 
 What does your Claude Code workflow look like? I'm curious whether others have hit the same memory gap or found different failure modes. Let me know.
-0:{"buildId":"OZqR1Aqf3Bzm0EbaQoFke","rsc":["$","$1","c",{"children":[["$","$L2",null,{"maxWidth":"m","paddingTop":"24","children":[["$","$L3",null,{"id":"schema-blogPosting-/blog","type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"BlogPosting\",\"url\":\"https://CloudJourneyBlog.rohi-lab.org/blog\",\"sameAs\":[],\"headline\":\"Writing on security, automation, and infrastructure\",\"description\":\"Practical writing on cloud security, AI agents, and the systems that make them work — by Rohi Rikman\",\"image\":\"https://CloudJourneyBlog.rohi-lab.org/https://CloudJourneyBlog.rohi-lab.org/images/avatar.png\",\"author\":{\"@type\":\"Person\",\"name\":\"Rohi Rikman\",\"url\":\"https://CloudJourneyBlog.rohi-lab.org/blog\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"https://CloudJourneyBlog.rohi-lab.org/images/avatar.png\"}}}"}}],["$","h1",null,{"className":"font-heading font-strong font-xl neutral-on-background-strong ml-24 mb-l","style":{"textWrap":"balance"},"children":"Writing on security, automation, and infrastructure"}],["$","$L2",null,{"fillWidth":true,"flex":1,"gap":"40","children":[["$","$L4",null,{"columns":"1","s":{"columns":1},"fillWidth":true,"marginBottom":"40","gap":"16","children":[["$","$L5","claude-code-daily-workflow",{"post":{"metadata":{"title":"The Claude Code Workflow That Actually Stuck","subtitle":"","publishedAt":"2026-03-18","summary":"I started with a simple 4-step loop and got the best results I'd ever seen from an AI tool. Then I extended it. Here's what changed, what didn't, and why starting with structure beats starting from scratch.","image":"/images/blog/claude-code-daily-workflow.png","images":[],"tag":"Engineering","team":[],"link":""},"slug":"claude-code-daily-workflow","content":"$6"},"thumbnail":true}]]}],"$L7","$L8","$L9"]}]]}],["$La"],"$Lb"]}],"loading":null,"isPartial":false}
-c:T1a15,
+11:["$","$L5","claude-code-daily-workflow",{"post":{"metadata":{"title":"The Claude Code Workflow That Actually Stuck","subtitle":"","publishedAt":"2026-03-18","summary":"I started with a simple 4-step loop and got the best results I'd ever seen from an AI tool. Then I extended it. Here's what changed, what didn't, and why starting with structure beats starting from scratch.","image":"/images/blog/claude-code-daily-workflow.png","images":[],"tag":"Engineering","team":[],"link":""},"slug":"claude-code-daily-workflow","content":"$23"},"thumbnail":true,"direction":"column"}]
+24:T1a15,
 The first version of my Claude Code config replaced the default (no memory) with a structured 4-file system: goals, decisions, progress, gotchas. Markdown files, hooks that read and write them, a summary injected at session start. It worked. For a few months.
 
 The problem with flat markdown files isn't that they fail — it's that they don't scale. After a few hundred entries across a dozen projects, you start noticing the cracks. Duplicate decisions. Gotchas that contradict each other because the older one was never updated. Progress logs that grow faster than they get trimmed. No way to ask "what do I know about Supabase" without reading every file.
@@ -179,9 +770,94 @@ With SQLite, the system improves over time. Memories that matter get used, have 
 The graph visualizer isn't something I use every session — but when I do open it, it answers questions that were previously unanswerable: "what have I decided about this project?", "is there a gotcha about this library I logged a month ago?", "why does this memory exist?"
 
 The config is version-controlled at [github.com/RohiRIK/claude-code-config](https://github.com/RohiRIK/claude-code-config).
-7:["$","$L4",null,{"columns":"2","s":{"columns":1},"fillWidth":true,"marginBottom":"40","gap":"16","children":[["$","$L5","claude-code-config-v2",{"post":{"metadata":{"title":"Claude Code Config v2: SQLite LTM, a Janitor Agent, and a Memory Graph","subtitle":"","publishedAt":"2026-03-11","summary":"The markdown-file memory system worked until it didn't. Here's what I replaced it with — a SQLite LTM, an autonomous Janitor agent, and a D3 graph that shows you what the model actually knows.","image":"/images/blog/claude-code-config-v2.png","images":[],"tag":"Engineering","team":[],"link":""},"slug":"claude-code-config-v2","content":"$c"},"thumbnail":true,"direction":"column"}],"$Ld"]}]
-8:["$","h2",null,{"className":"font-heading font-strong font-xl neutral-on-background-strong ml-l","style":{"textWrap":"balance"},"children":"Earlier posts"}]
-e:T19b0,
+12:["$","$L5","claude-code-config-v2",{"post":{"metadata":{"title":"Claude Code Config v2: SQLite LTM, a Janitor Agent, and a Memory Graph","subtitle":"","publishedAt":"2026-03-11","summary":"The markdown-file memory system worked until it didn't. Here's what I replaced it with — a SQLite LTM, an autonomous Janitor agent, and a D3 graph that shows you what the model actually knows.","image":"/images/blog/claude-code-config-v2.png","images":[],"tag":"Engineering","team":[],"link":""},"slug":"claude-code-config-v2","content":"$24"},"thumbnail":true,"direction":"column"}]
+25:T1f74,
+The brief arrived in a Teams message. The IT team was managing hundreds of Windows devices through Microsoft Intune and they had no good way to answer a simple question: what's actually out there, and what state is it in?
+
+Their proposed solution: a PowerShell script triggered by Jenkins, pulling device data from the Intune API and writing it to SharePoint lists. Power BI would sit on top and refresh on a schedule. Dashboards, filters, the works.
+
+It's a reasonable ask. It's how a lot of IT shops solve this problem. They've got the pieces — Intune, SharePoint, Power BI — and they want to wire them together. The request made sense for where they were.
+
+I said I'd get back to them with a proposal.
+
+## The Ceiling
+
+I spent a day mapping out the pipeline they'd asked for. And the more I built it in my head, the more I saw where it would break.
+
+**SharePoint as a database** is the first problem. SharePoint lists have a 5,000-item view threshold — not a hard limit, but enough to start causing issues at scale. There's no real schema enforcement, no foreign keys, no joins. You end up denormalizing everything and hoping the refresh writes are idempotent. When they're not, you get stale rows and duplicate entries that Power BI dutifully surfaces as real data.
+
+**Jenkins as a scheduler** is infra for infra's sake. You're running a CI/CD system to run a cron job. That means maintaining an agent, managing credentials, monitoring for failed runs, building retry logic from scratch. When the sync breaks at 2am, nobody knows until someone notices the dashboards haven't updated.
+
+**Power BI on a schedule** means the data is stale by definition. If your refresh runs every four hours and a device falls out of compliance at 9am, your dashboard won't show it until 1pm. For a compliance and security use case, that gap matters.
+
+And there was no RBAC anywhere in this design. Anyone with SharePoint access could see everything — all devices, all users, all compliance states. Helpdesk techs, managers, contractors. No audit trail of who looked at what.
+
+But the deepest problem wasn't architectural. The client didn't actually want a pipeline. They wanted **device visibility**. They wanted to know what was out there and whether it was healthy. The pipeline was just the closest solution shape they knew how to ask for.
+
+## The Pitch
+
+I came back with a counter-proposal.
+
+Instead of a pipeline, I pitched a purpose-built web app: FleetWatch. The sell was simple — you'll stop asking "is this data current?" because it always will be.
+
+Specifically:
+- Real-time sync via Microsoft Graph API delta queries, pulling only changed devices instead of exporting everything on a schedule
+- Postgres as the data store — real schema, real queries, real relational data
+- RBAC built in from day one: admins see everything, helpdesk sees their assigned devices
+- Full audit logs of who accessed what and when
+- A proper UI instead of a Power BI dashboard that takes 30 seconds to load and can't drill into a single device
+
+The client said yes. Partly because the technical argument was sound, and partly because I had mocked up what the device detail page would look like. It's easier to approve something you can see.
+
+## The Architecture
+
+The core of FleetWatch is the Microsoft Graph API integration.
+
+Authentication uses a Service Principal with Client Certificate auth — no client secrets that expire. The key endpoint is `/deviceManagement/managedDevices/delta`, which supports delta queries: on first run you get all devices, on subsequent runs you only get devices that changed since your last sync token. Instead of exporting 800 devices every four hours, you're processing 12 changed devices every 30 minutes.
+
+The sync runs on Vercel Cron jobs. No Jenkins, no agents, no infra to maintain. The cron endpoint is protected with a shared secret header — simple, effective. Failed syncs surface in application logs, not in a Jenkins console that nobody checks.
+
+The data layer is Postgres on Vercel with Drizzle ORM. The schema models the actual domain: a `devices` table, a `users` table, `compliance_policies`, `app_inventory`, `security_hardware`. When you need to answer "which devices have BitLocker disabled and are assigned to users in the Finance department," that's a join, not a SharePoint list crawl.
+
+The frontend is Next.js 15 with the App Router. Server Components handle the heavy lifting — device lists, compliance views, filtered queries all render server-side. The device detail page has six tabs: Overview, Compliance, Configuration, Security, Hardware, and Network. Each tab queries only the data it needs.
+
+```
+Before (proposed):
+Jenkins → PowerShell → SharePoint Lists → Power BI (scheduled refresh)
+
+After (FleetWatch):
+Vercel Cron → Microsoft Graph API → Postgres → Next.js (real-time)
+```
+
+Auth is NextAuth with role-based access enforced at the API layer. The middleware checks roles before any data query runs — not just in the UI, where it's trivial to bypass. Admin and read-only roles are stored per-user in the database, not inferred from SharePoint group membership.
+
+Monitoring is a `/api/health` endpoint that checks database connectivity and last successful sync time, plus a `/api/metrics` endpoint for the operational stats I actually care about: sync duration, devices processed, error rate. Redis is wired in as an optional cache layer for the dashboard aggregate queries.
+
+## What It Enables
+
+The gap between the pipeline and the app isn't cosmetic — it's functional.
+
+Search and filter across all 800 devices returns results in under 100ms. You can filter by compliance state, OS version, last sync time, assigned user, or any combination. In Power BI with a scheduled refresh, you're waiting for a report to load and hoping it reflects reality.
+
+The device detail page shows everything in one place: BitLocker status, TPM chip version, Secure Boot state, assigned compliance policies, installed applications, network adapters. That level of detail doesn't exist in the SharePoint list model — you'd need separate lists for each entity and a Power BI data model to join them, which you'd then need to maintain.
+
+RBAC means helpdesk techs can look up devices without needing SharePoint permissions across the entire tenant. No permissions sprawl, no "just give them read access to the list." You grant a role in FleetWatch and that's it.
+
+The export function lets you pull filtered device lists to CSV — useful for compliance reporting, vendor audits, or just sending a list of non-compliant devices to the right team. It works on whatever filter you've currently applied, so you're exporting exactly what you're looking at.
+
+Compliance trend graphs show state over time from the sync history, not from a Power BI snapshot that was current when the report was built. When a device falls out of compliance and comes back, you can see when both events happened.
+
+## The Lesson
+
+Scripts are the right first tool when scope is unclear. If the client had wanted a one-time export to audit their device inventory, the PowerShell approach would have been exactly right. Fast to build, no ongoing maintenance, done.
+
+But when the real problem is ongoing visibility — and when the solution needs RBAC, audit logs, freshness guarantees, and drill-down — the pipeline approach has a ceiling. It would have worked for three months. Then the IT team would have been back asking for user lookup, filtered exports, freshness indicators, device-level detail. The pipeline would have been extended with more scripts, more SharePoint lists, more Power BI datasets. Each addition would have made the system more fragile and harder to reason about.
+
+Building FleetWatch upfront was a harder conversation to have, but it was the right one. The client got a system that solves the problem they actually had — not the problem they knew how to articulate.
+
+The source is on GitHub at [RohiRIK/FleetWatch](https://github.com/RohiRIK/FleetWatch) if you want to see how it's put together.
+13:["$","$L5","fleetwatch-from-script-to-system",{"post":{"metadata":{"title":"From Script to System: How I Turned a Jenkins Pipeline into FleetWatch","subtitle":"","publishedAt":"2026-03-04","summary":"My client wanted PowerShell scripts dumping Intune data into SharePoint for Power BI. I built a web app instead. Here's why — and how.","image":"/images/blog/fleetwatch-from-script-to-system.png","images":[],"tag":"Engineering","team":[],"link":""},"slug":"fleetwatch-from-script-to-system","content":"$25"},"thumbnail":true,"direction":"column"}]
+26:T19b0,
 If you're preparing to migrate to Entra ID and a penetration test just flagged "Netlogon not requiring RPC Sealing" — this is how you close it properly.
 
 This isn't a theoretical hardening checklist. It's the actual playbook I follow: four phases, a hard go/no-go gate between discovery and enforcement, and a PowerShell script to do the discovery work for you.
@@ -331,96 +1007,8 @@ It also puts you in a much cleaner position for Entra ID migration — because t
 ---
 
 The script above is what I run before any enforcement conversation. If you're seeing 5838s you didn't expect, start there — the CSV usually tells you exactly what needs attention.
-9:["$","$L4",null,{"columns":"2","s":{"columns":1},"fillWidth":true,"marginBottom":"40","gap":"16","children":[["$","$L5","netlogon-rpc-sealing-playbook",{"post":{"metadata":{"title":"Netlogon RPC Sealing: The Full Hardening Playbook","subtitle":"","publishedAt":"2026-03-03","summary":"A complete 4-phase execution guide for enforcing Netlogon RPC Sealing and SMB/NTLM hardening before migrating to Entra ID — including the PowerShell discovery script I use to find vulnerable traffic across all DCs.","image":"/images/blog/netlogon-rpc-sealing-playbook.png","images":[],"tag":"Security","team":[],"link":""},"slug":"netlogon-rpc-sealing-playbook","content":"$e"},"thumbnail":true,"direction":"column"}],"$Lf","$L10","$L11","$L12","$L13","$L14","$L15","$L16"]}]
-a:["$","script","script-0",{"src":"/_next/static/chunks/8ac4e8555f09f41a.js","async":true}]
-b:["$","$L17",null,{"children":["$","$18",null,{"name":"Next.MetadataOutlet","children":"$@19"}]}]
-1a:T1f74,
-The brief arrived in a Teams message. The IT team was managing hundreds of Windows devices through Microsoft Intune and they had no good way to answer a simple question: what's actually out there, and what state is it in?
-
-Their proposed solution: a PowerShell script triggered by Jenkins, pulling device data from the Intune API and writing it to SharePoint lists. Power BI would sit on top and refresh on a schedule. Dashboards, filters, the works.
-
-It's a reasonable ask. It's how a lot of IT shops solve this problem. They've got the pieces — Intune, SharePoint, Power BI — and they want to wire them together. The request made sense for where they were.
-
-I said I'd get back to them with a proposal.
-
-## The Ceiling
-
-I spent a day mapping out the pipeline they'd asked for. And the more I built it in my head, the more I saw where it would break.
-
-**SharePoint as a database** is the first problem. SharePoint lists have a 5,000-item view threshold — not a hard limit, but enough to start causing issues at scale. There's no real schema enforcement, no foreign keys, no joins. You end up denormalizing everything and hoping the refresh writes are idempotent. When they're not, you get stale rows and duplicate entries that Power BI dutifully surfaces as real data.
-
-**Jenkins as a scheduler** is infra for infra's sake. You're running a CI/CD system to run a cron job. That means maintaining an agent, managing credentials, monitoring for failed runs, building retry logic from scratch. When the sync breaks at 2am, nobody knows until someone notices the dashboards haven't updated.
-
-**Power BI on a schedule** means the data is stale by definition. If your refresh runs every four hours and a device falls out of compliance at 9am, your dashboard won't show it until 1pm. For a compliance and security use case, that gap matters.
-
-And there was no RBAC anywhere in this design. Anyone with SharePoint access could see everything — all devices, all users, all compliance states. Helpdesk techs, managers, contractors. No audit trail of who looked at what.
-
-But the deepest problem wasn't architectural. The client didn't actually want a pipeline. They wanted **device visibility**. They wanted to know what was out there and whether it was healthy. The pipeline was just the closest solution shape they knew how to ask for.
-
-## The Pitch
-
-I came back with a counter-proposal.
-
-Instead of a pipeline, I pitched a purpose-built web app: FleetWatch. The sell was simple — you'll stop asking "is this data current?" because it always will be.
-
-Specifically:
-- Real-time sync via Microsoft Graph API delta queries, pulling only changed devices instead of exporting everything on a schedule
-- Postgres as the data store — real schema, real queries, real relational data
-- RBAC built in from day one: admins see everything, helpdesk sees their assigned devices
-- Full audit logs of who accessed what and when
-- A proper UI instead of a Power BI dashboard that takes 30 seconds to load and can't drill into a single device
-
-The client said yes. Partly because the technical argument was sound, and partly because I had mocked up what the device detail page would look like. It's easier to approve something you can see.
-
-## The Architecture
-
-The core of FleetWatch is the Microsoft Graph API integration.
-
-Authentication uses a Service Principal with Client Certificate auth — no client secrets that expire. The key endpoint is `/deviceManagement/managedDevices/delta`, which supports delta queries: on first run you get all devices, on subsequent runs you only get devices that changed since your last sync token. Instead of exporting 800 devices every four hours, you're processing 12 changed devices every 30 minutes.
-
-The sync runs on Vercel Cron jobs. No Jenkins, no agents, no infra to maintain. The cron endpoint is protected with a shared secret header — simple, effective. Failed syncs surface in application logs, not in a Jenkins console that nobody checks.
-
-The data layer is Postgres on Vercel with Drizzle ORM. The schema models the actual domain: a `devices` table, a `users` table, `compliance_policies`, `app_inventory`, `security_hardware`. When you need to answer "which devices have BitLocker disabled and are assigned to users in the Finance department," that's a join, not a SharePoint list crawl.
-
-The frontend is Next.js 15 with the App Router. Server Components handle the heavy lifting — device lists, compliance views, filtered queries all render server-side. The device detail page has six tabs: Overview, Compliance, Configuration, Security, Hardware, and Network. Each tab queries only the data it needs.
-
-```
-Before (proposed):
-Jenkins → PowerShell → SharePoint Lists → Power BI (scheduled refresh)
-
-After (FleetWatch):
-Vercel Cron → Microsoft Graph API → Postgres → Next.js (real-time)
-```
-
-Auth is NextAuth with role-based access enforced at the API layer. The middleware checks roles before any data query runs — not just in the UI, where it's trivial to bypass. Admin and read-only roles are stored per-user in the database, not inferred from SharePoint group membership.
-
-Monitoring is a `/api/health` endpoint that checks database connectivity and last successful sync time, plus a `/api/metrics` endpoint for the operational stats I actually care about: sync duration, devices processed, error rate. Redis is wired in as an optional cache layer for the dashboard aggregate queries.
-
-## What It Enables
-
-The gap between the pipeline and the app isn't cosmetic — it's functional.
-
-Search and filter across all 800 devices returns results in under 100ms. You can filter by compliance state, OS version, last sync time, assigned user, or any combination. In Power BI with a scheduled refresh, you're waiting for a report to load and hoping it reflects reality.
-
-The device detail page shows everything in one place: BitLocker status, TPM chip version, Secure Boot state, assigned compliance policies, installed applications, network adapters. That level of detail doesn't exist in the SharePoint list model — you'd need separate lists for each entity and a Power BI data model to join them, which you'd then need to maintain.
-
-RBAC means helpdesk techs can look up devices without needing SharePoint permissions across the entire tenant. No permissions sprawl, no "just give them read access to the list." You grant a role in FleetWatch and that's it.
-
-The export function lets you pull filtered device lists to CSV — useful for compliance reporting, vendor audits, or just sending a list of non-compliant devices to the right team. It works on whatever filter you've currently applied, so you're exporting exactly what you're looking at.
-
-Compliance trend graphs show state over time from the sync history, not from a Power BI snapshot that was current when the report was built. When a device falls out of compliance and comes back, you can see when both events happened.
-
-## The Lesson
-
-Scripts are the right first tool when scope is unclear. If the client had wanted a one-time export to audit their device inventory, the PowerShell approach would have been exactly right. Fast to build, no ongoing maintenance, done.
-
-But when the real problem is ongoing visibility — and when the solution needs RBAC, audit logs, freshness guarantees, and drill-down — the pipeline approach has a ceiling. It would have worked for three months. Then the IT team would have been back asking for user lookup, filtered exports, freshness indicators, device-level detail. The pipeline would have been extended with more scripts, more SharePoint lists, more Power BI datasets. Each addition would have made the system more fragile and harder to reason about.
-
-Building FleetWatch upfront was a harder conversation to have, but it was the right one. The client got a system that solves the problem they actually had — not the problem they knew how to articulate.
-
-The source is on GitHub at [RohiRIK/FleetWatch](https://github.com/RohiRIK/FleetWatch) if you want to see how it's put together.
-d:["$","$L5","fleetwatch-from-script-to-system",{"post":{"metadata":{"title":"From Script to System: How I Turned a Jenkins Pipeline into FleetWatch","subtitle":"","publishedAt":"2026-03-04","summary":"My client wanted PowerShell scripts dumping Intune data into SharePoint for Power BI. I built a web app instead. Here's why — and how.","image":"/images/blog/fleetwatch-from-script-to-system.png","images":[],"tag":"Engineering","team":[],"link":""},"slug":"fleetwatch-from-script-to-system","content":"$1a"},"thumbnail":true,"direction":"column"}]
-1b:T2296,
+14:["$","$L5","netlogon-rpc-sealing-playbook",{"post":{"metadata":{"title":"Netlogon RPC Sealing: The Full Hardening Playbook","subtitle":"","publishedAt":"2026-03-03","summary":"A complete 4-phase execution guide for enforcing Netlogon RPC Sealing and SMB/NTLM hardening before migrating to Entra ID — including the PowerShell discovery script I use to find vulnerable traffic across all DCs.","image":"/images/blog/netlogon-rpc-sealing-playbook.png","images":[],"tag":"Security","team":[],"link":""},"slug":"netlogon-rpc-sealing-playbook","content":"$26"},"thumbnail":true,"direction":"column"}]
+27:T2296,
 The default Claude Code installation does one thing poorly: it forgets everything. Every new session, you re-explain your stack, your preferences, the decisions you made last week. It compounds quickly on any project you're in for more than a few days.
 
 I spent a few months building a configuration layer on top of Claude Code that solves this. Here's what it does and how it works.
@@ -526,8 +1114,8 @@ The skills mean the repetitive parts (planning, verifying, committing) have cons
 None of this is magic. It's structured configuration that enforces a workflow I decided I wanted. The alternative is relying on memory and discipline to apply that workflow manually every time. That doesn't scale.
 
 The config is version-controlled at [github.com/RohiRIK/claude-code-config](https://github.com/RohiRIK/claude-code-config).
-f:["$","$L5","claude-code-config",{"post":{"metadata":{"title":"How I Configured Claude Code to Actually Remember Things","subtitle":"","publishedAt":"2026-03-02","summary":"The default Claude Code setup loses context on every session. Here's the hook system, skill commands, agent definitions, and memory architecture I built to fix that.","image":"/images/blog/claude-code-config.png","images":[],"tag":"Engineering","team":[],"link":""},"slug":"claude-code-config","content":"$1b"},"thumbnail":true,"direction":"column"}]
-1c:T1f79,
+15:["$","$L5","claude-code-config",{"post":{"metadata":{"title":"How I Configured Claude Code to Actually Remember Things","subtitle":"","publishedAt":"2026-03-02","summary":"The default Claude Code setup loses context on every session. Here's the hook system, skill commands, agent definitions, and memory architecture I built to fix that.","image":"/images/blog/claude-code-config.png","images":[],"tag":"Engineering","team":[],"link":""},"slug":"claude-code-config","content":"$27"},"thumbnail":true,"direction":"column"}]
+28:T1f79,
 My homelab runs on a dedicated server, not a cloud VPS. Everything is version-controlled, documented, and designed to run without me touching it. It's been doing that for over a year.
 
 This is what's running, how it's wired together, and what went wrong the first time.
@@ -622,8 +1210,8 @@ The secrets management was the biggest early mistake. Environment variables in C
 The second thing: start modular. A monolithic Compose file is tempting for the first three services because it's less overhead. By service six, you're paying for it. The directory-per-service structure takes five minutes to set up and saves hours later.
 
 Everything else, including the Swarm choice over Kubernetes, I'd make the same way.
-10:["$","$L5","homelab-docker-swarm",{"post":{"metadata":{"title":"My Homelab on Docker Swarm: What Runs, How It's Wired, What Broke","subtitle":"","publishedAt":"2026-03-02","summary":"A tour of my self-hosted infrastructure — Docker Swarm for orchestration, Traefik for ingress, Infisical for secrets, and the modular design that replaced the monolith I should never have written.","image":"/images/blog/homelab-docker-swarm.png","images":[],"tag":"Infrastructure","team":[],"link":""},"slug":"homelab-docker-swarm","content":"$1c"},"thumbnail":true,"direction":"column"}]
-1d:T1eda,
+16:["$","$L5","homelab-docker-swarm",{"post":{"metadata":{"title":"My Homelab on Docker Swarm: What Runs, How It's Wired, What Broke","subtitle":"","publishedAt":"2026-03-02","summary":"A tour of my self-hosted infrastructure — Docker Swarm for orchestration, Traefik for ingress, Infisical for secrets, and the modular design that replaced the monolith I should never have written.","image":"/images/blog/homelab-docker-swarm.png","images":[],"tag":"Infrastructure","team":[],"link":""},"slug":"homelab-docker-swarm","content":"$28"},"thumbnail":true,"direction":"column"}]
+29:T1eda,
 I've been building most of my personal projects with Claude Code for the past year. The tool works, but not in the way most people describe it. The narrative is usually "just describe what you want and it builds it." That's not wrong, but it's missing the part where a bad description causes you to spend two hours steering the model away from the wrong implementation.
 
 The shift that changed everything was treating AI as an analyst team, not a code generator.
@@ -705,8 +1293,8 @@ I've run the experiment. Skipping `/plan` and going straight to implementation f
 The planning phase doesn't write code, so it feels unproductive. It's the opposite. A 20-minute planning session that surfaces a wrong assumption saves two hours of implementation. Every time.
 
 The model isn't the bottleneck. The bottleneck is clarity about what you're building.
-11:["$","$L5","vibe-coding-ai-workflows",{"post":{"metadata":{"title":"What I Actually Learned from Vibe Coding with Claude Code","subtitle":"","publishedAt":"2026-03-02","summary":"A year of building projects with AI: what the workflow looks like, how I keep context alive across sessions, which safety patterns actually work, and what breaks if you skip them.","image":"/images/blog/vibe-coding-ai-workflows.png","images":[],"tag":"Engineering","team":[],"link":""},"slug":"vibe-coding-ai-workflows","content":"$1d"},"thumbnail":true,"direction":"column"}]
-1e:Tdcb,
+17:["$","$L5","vibe-coding-ai-workflows",{"post":{"metadata":{"title":"What I Actually Learned from Vibe Coding with Claude Code","subtitle":"","publishedAt":"2026-03-02","summary":"A year of building projects with AI: what the workflow looks like, how I keep context alive across sessions, which safety patterns actually work, and what breaks if you skip them.","image":"/images/blog/vibe-coding-ai-workflows.png","images":[],"tag":"Engineering","team":[],"link":""},"slug":"vibe-coding-ai-workflows","content":"$29"},"thumbnail":true,"direction":"column"}]
+2a:Tdcb,
 I work in IT security. I've sat through a lot of vendor calls. And somewhere around the third time someone told me their network appliance was "a Zero Trust solution," I started keeping count.
 
 It's not a product. It never was. Here's what it actually is.
@@ -750,8 +1338,8 @@ None of that is a product. All of it is work.
 ---
 
 This is the first of a few posts I'm planning on Zero Trust — what it actually means, how I've implemented pieces of it in real environments, and where the hard parts are. Next up: Conditional Access, which is where most of the practical implementation lives.
-12:["$","$L5","zero-trust-is-not-a-product",{"post":{"metadata":{"title":"Zero Trust Is Not a Product","subtitle":"","publishedAt":"2026-02-20","summary":"Every vendor sells 'Zero Trust.' Most of what they're selling is a marketing label on a firewall. Here's what the model actually means and why it matters.","image":"/images/blog/zero-trust-is-not-a-product.png","images":[],"tag":"Security","team":[],"link":""},"slug":"zero-trust-is-not-a-product","content":"$1e"},"thumbnail":true,"direction":"column"}]
-1f:T15a9,
+18:["$","$L5","zero-trust-is-not-a-product",{"post":{"metadata":{"title":"Zero Trust Is Not a Product","subtitle":"","publishedAt":"2026-02-20","summary":"Every vendor sells 'Zero Trust.' Most of what they're selling is a marketing label on a firewall. Here's what the model actually means and why it matters.","image":"/images/blog/zero-trust-is-not-a-product.png","images":[],"tag":"Security","team":[],"link":""},"slug":"zero-trust-is-not-a-product","content":"$2a"},"thumbnail":true,"direction":"column"}]
+2b:T15a9,
 If you're running Microsoft 365 and you're serious about Zero Trust, Conditional Access is where most of the actual work happens. It's the enforcement layer that sits between your users and your apps — evaluating identity, device health, location, and risk signals before granting access.
 
 I've built Conditional Access policies for several client environments. Here's what I've learned.
@@ -823,8 +1411,8 @@ KQL queries against the sign-in logs in Log Analytics give you more flexibility 
 ---
 
 Next post: endpoint hardening as a Zero Trust control — because Conditional Access requiring a "compliant device" is only as good as what your compliance policies actually check.
-13:["$","$L5","conditional-access-in-practice",{"post":{"metadata":{"title":"Conditional Access in Practice","subtitle":"","publishedAt":"2026-02-15","summary":"Conditional Access is where Zero Trust principles actually land in a Microsoft environment. Here's how to think about it, what to get right, and where I've seen it go wrong.","image":"/images/blog/conditional-access-in-practice.png","images":[],"tag":"Security","team":[],"link":""},"slug":"conditional-access-in-practice","content":"$1f"},"thumbnail":true,"direction":"column"}]
-20:T15f3,
+19:["$","$L5","conditional-access-in-practice",{"post":{"metadata":{"title":"Conditional Access in Practice","subtitle":"","publishedAt":"2026-02-15","summary":"Conditional Access is where Zero Trust principles actually land in a Microsoft environment. Here's how to think about it, what to get right, and where I've seen it go wrong.","image":"/images/blog/conditional-access-in-practice.png","images":[],"tag":"Security","team":[],"link":""},"slug":"conditional-access-in-practice","content":"$2b"},"thumbnail":true,"direction":"column"}]
+2c:T15f3,
 In the last post I talked about Conditional Access requiring device compliance as a gate for accessing sensitive resources. That's a good control — but it's only as strong as what your compliance policies actually check.
 
 A compliance policy that requires Windows 10 or later and nothing else isn't doing much. Here's what meaningful endpoint hardening looks like and how to enforce it at scale.
@@ -895,8 +1483,8 @@ If you can answer those from Intune and DfE dashboards in under 5 minutes, your 
 ---
 
 Next: why I built Project Aegis — an AI agent system for security operations — and how the same Zero Trust principles apply to agentic systems that have access to sensitive tools.
-14:["$","$L5","endpoint-hardening-zero-trust-control",{"post":{"metadata":{"title":"Endpoint Hardening as a Zero Trust Control","subtitle":"","publishedAt":"2026-02-10","summary":"A compliant device in Conditional Access is only meaningful if your compliance policies check things that actually matter. Here's what to harden and how to measure it.","image":"/images/blog/endpoint-hardening-zero-trust-control.png","images":[],"tag":"Security","team":[],"link":""},"slug":"endpoint-hardening-zero-trust-control","content":"$20"},"thumbnail":true,"direction":"column"}]
-21:T1747,
+1a:["$","$L5","endpoint-hardening-zero-trust-control",{"post":{"metadata":{"title":"Endpoint Hardening as a Zero Trust Control","subtitle":"","publishedAt":"2026-02-10","summary":"A compliant device in Conditional Access is only meaningful if your compliance policies check things that actually matter. Here's what to harden and how to measure it.","image":"/images/blog/endpoint-hardening-zero-trust-control.png","images":[],"tag":"Security","team":[],"link":""},"slug":"endpoint-hardening-zero-trust-control","content":"$2c"},"thumbnail":true,"direction":"column"}]
+2d:T1747,
 I've spent the last year building Project Aegis — an AI agent system that automates security operations work. Threat intel ingestion, alert triage, compliance checks, incident drafts. The agents have access to APIs, can query databases, can interact with ticketing systems.
 
 While I was building it, I kept running into the same realization: agentic systems need Zero Trust applied to them too. Most don't have it.
@@ -968,8 +1556,8 @@ The core shift is treating your AI agents as principals that need the same secur
 Identity, least privilege, logging, continuous monitoring, assume breach. The principles are the same. The implementation is different but not dramatically so if you're already doing it for your users and services.
 
 The hard part is the culture: most agentic development moves fast and treats security as something to add later. Later usually doesn't happen. Better to bake it in from the start.
-15:["$","$L5","zero-trust-for-ai-agents",{"post":{"metadata":{"title":"Zero Trust for AI Agents","subtitle":"","publishedAt":"2026-02-05","summary":"AI agents have access to real tools — APIs, databases, shell execution. The same principles that apply to human users apply here, and most agentic systems ignore them.","image":"/images/blog/zero-trust-for-ai-agents.png","images":[],"tag":"Security","team":[],"link":""},"slug":"zero-trust-for-ai-agents","content":"$21"},"thumbnail":true,"direction":"column"}]
-22:T16b6,
+1b:["$","$L5","zero-trust-for-ai-agents",{"post":{"metadata":{"title":"Zero Trust for AI Agents","subtitle":"","publishedAt":"2026-02-05","summary":"AI agents have access to real tools — APIs, databases, shell execution. The same principles that apply to human users apply here, and most agentic systems ignore them.","image":"/images/blog/zero-trust-for-ai-agents.png","images":[],"tag":"Security","team":[],"link":""},"slug":"zero-trust-for-ai-agents","content":"$2d"},"thumbnail":true,"direction":"column"}]
+2e:T16b6,
 There's a version of security that's built around the network. The idea is: defend the boundary, and everything inside is safe. Keep attackers out with firewalls, VPNs, intrusion detection. Trust the inside.
 
 That model has been broken for a long time. Cloud services, remote work, SaaS, third-party integrations — the "inside" isn't a coherent concept anymore. Your users are authenticating from coffee shops. Your apps are in Azure. Your data is in SharePoint and Salesforce and a dozen other places. There's no perimeter to defend.
@@ -1030,5 +1618,5 @@ The conversation shifts from "security is making our lives harder" to "we're bui
 ---
 
 Last post in this series will be practical: what a Zero Trust rollout actually looks like in a mid-size organization, what to do first, and where the first six months usually go wrong.
-16:["$","$L5","identity-first-security",{"post":{"metadata":{"title":"Identity-First Security","subtitle":"","publishedAt":"2026-01-28","summary":"The network perimeter is gone. Identity is what's left. Here's what building security around identity looks like in practice and why it changes almost everything.","image":"/images/blog/identity-first-security.png","images":[],"tag":"Security","team":[],"link":""},"slug":"identity-first-security","content":"$22"},"thumbnail":true,"direction":"column"}]
-19:null
+1c:["$","$L5","identity-first-security",{"post":{"metadata":{"title":"Identity-First Security","subtitle":"","publishedAt":"2026-01-28","summary":"The network perimeter is gone. Identity is what's left. Here's what building security around identity looks like in practice and why it changes almost everything.","image":"/images/blog/identity-first-security.png","images":[],"tag":"Security","team":[],"link":""},"slug":"identity-first-security","content":"$2e"},"thumbnail":true,"direction":"column"}]
+1f:null

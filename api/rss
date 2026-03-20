@@ -5,7 +5,7 @@
     <link>https://CloudJourneyBlog.rohi-lab.org/blog</link>
     <description>Practical writing on cloud security, AI agents, and the systems that make them work — by Rohi Rikman</description>
     <language>en</language>
-    <lastBuildDate>Wed, 18 Mar 2026 08:57:30 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 20 Mar 2026 15:33:29 GMT</lastBuildDate>
     <atom:link href="https://CloudJourneyBlog.rohi-lab.org/api/rss" rel="self" type="application/rss+xml" />
     <managingEditor>rohi@rohirikman.dev (Rohi Rikman)</managingEditor>
     <webMaster>rohi@rohirikman.dev (Rohi Rikman)</webMaster>
@@ -15,6 +15,66 @@
       <link>https://CloudJourneyBlog.rohi-lab.org/blog</link>
     </image>
     
+    <item>
+      <title>Claude Code Config v3: LTM as Infrastructure</title>
+      <link>https://CloudJourneyBlog.rohi-lab.org/blog/claude-code-config-v3</link>
+      <guid>https://CloudJourneyBlog.rohi-lab.org/blog/claude-code-config-v3</guid>
+      <pubDate>Fri, 20 Mar 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[The config got a significant overhaul: SQLite-backed long-term memory, a dedicated MCP server exposing LTM primitives, semantic recall with embedding fallback, graph-based reasoning, and an EvaluateSession hook that extracts decisions automatically.]]></description>
+      <enclosure url="https://CloudJourneyBlog.rohi-lab.org/images/blog/claude-code-config-v3.png" type="image/jpeg" />
+      <category>Dev Tools</category>
+      <author>rohi@rohirikman.dev (Rohi Rikman)</author>
+    </item>
+    <item>
+      <title>Building a Device Inventory Pipeline</title>
+      <link>https://CloudJourneyBlog.rohi-lab.org/blog/device-inventory-pipeline</link>
+      <guid>https://CloudJourneyBlog.rohi-lab.org/blog/device-inventory-pipeline</guid>
+      <pubDate>Fri, 20 Mar 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[When your MDM doesn't tell the full story, build the pipeline yourself. Here's the Jenkins → PowerShell → SharePoint → Power BI architecture I built to unify device data across AD and Intune for a FinTech client.]]></description>
+      <enclosure url="https://CloudJourneyBlog.rohi-lab.org/images/blog/device-inventory-pipeline.png" type="image/jpeg" />
+      <category>Automation</category>
+      <author>rohi@rohirikman.dev (Rohi Rikman)</author>
+    </item>
+    <item>
+      <title>When HiBob Is Your Source of Truth</title>
+      <link>https://CloudJourneyBlog.rohi-lab.org/blog/hibob-hr-automation</link>
+      <guid>https://CloudJourneyBlog.rohi-lab.org/blog/hibob-hr-automation</guid>
+      <pubDate>Fri, 20 Mar 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[Your HR system knows the org better than your IdP does. Here's how I built a bi-directional HiBob ↔ Entra ID sync that keeps departments, titles, managers, and 15 other attributes in sync — automatically.]]></description>
+      <enclosure url="https://CloudJourneyBlog.rohi-lab.org/images/blog/hibob-hr-automation.png" type="image/jpeg" />
+      <category>Automation</category>
+      <author>rohi@rohirikman.dev (Rohi Rikman)</author>
+    </item>
+    <item>
+      <title>The JumpCloud Exit Playbook</title>
+      <link>https://CloudJourneyBlog.rohi-lab.org/blog/jumpcloud-to-intune-migration</link>
+      <guid>https://CloudJourneyBlog.rohi-lab.org/blog/jumpcloud-to-intune-migration</guid>
+      <pubDate>Fri, 20 Mar 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[Migrating 200+ Windows and macOS devices from JumpCloud to Microsoft Intune without breaking MDM coverage, compliance posture, or user productivity.]]></description>
+      <enclosure url="https://CloudJourneyBlog.rohi-lab.org/images/blog/jumpcloud-to-intune-migration.png" type="image/jpeg" />
+      <category>Security</category>
+      <author>rohi@rohirikman.dev (Rohi Rikman)</author>
+    </item>
+    <item>
+      <title>Phishing-Resistant MFA Rollout</title>
+      <link>https://CloudJourneyBlog.rohi-lab.org/blog/phishing-resistant-mfa-rollout</link>
+      <guid>https://CloudJourneyBlog.rohi-lab.org/blog/phishing-resistant-mfa-rollout</guid>
+      <pubDate>Fri, 20 Mar 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[Standard MFA is no longer enough. Here's how we designed a gradual Conditional Access rollout to enforce FIDO2, Windows Hello for Business, and Platform SSO across a security-conscious OT environment.]]></description>
+      <enclosure url="https://CloudJourneyBlog.rohi-lab.org/images/blog/phishing-resistant-mfa-rollout.png" type="image/jpeg" />
+      <category>Security</category>
+      <author>rohi@rohirikman.dev (Rohi Rikman)</author>
+    </item>
+    <item>
+      <title>Smart Offboarding Orchestration</title>
+      <link>https://CloudJourneyBlog.rohi-lab.org/blog/smart-offboarding-orchestration</link>
+      <guid>https://CloudJourneyBlog.rohi-lab.org/blog/smart-offboarding-orchestration</guid>
+      <pubDate>Fri, 20 Mar 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[Manual offboarding leaves doors open — sometimes for days. Here's how I automated a 15-step enterprise offboarding workflow using Azure Logic Apps and Automation Runbooks triggered by an HR webhook.]]></description>
+      <enclosure url="https://CloudJourneyBlog.rohi-lab.org/images/blog/smart-offboarding-orchestration.png" type="image/jpeg" />
+      <category>Security</category>
+      <author>rohi@rohirikman.dev (Rohi Rikman)</author>
+    </item>
     <item>
       <title>The Claude Code Workflow That Actually Stuck</title>
       <link>https://CloudJourneyBlog.rohi-lab.org/blog/claude-code-daily-workflow</link>

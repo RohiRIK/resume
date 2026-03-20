@@ -1,0 +1,262 @@
+1:"$Sreact.fragment"
+2:I[778454,["/_next/static/chunks/6633d7a0fde019af.js","/_next/static/chunks/8a07e6fd7e614a7b.js","/_next/static/chunks/21f080b07a2c63d8.js","/_next/static/chunks/0e235429b8fbdec6.js","/_next/static/chunks/2079049d5abbbd3d.js","/_next/static/chunks/909e86f090b49392.js"],"Row"]
+3:I[273323,["/_next/static/chunks/6633d7a0fde019af.js","/_next/static/chunks/8a07e6fd7e614a7b.js","/_next/static/chunks/21f080b07a2c63d8.js","/_next/static/chunks/0e235429b8fbdec6.js","/_next/static/chunks/2079049d5abbbd3d.js","/_next/static/chunks/909e86f090b49392.js"],"Column"]
+4:I[479520,["/_next/static/chunks/6633d7a0fde019af.js","/_next/static/chunks/8a07e6fd7e614a7b.js","/_next/static/chunks/21f080b07a2c63d8.js","/_next/static/chunks/0e235429b8fbdec6.js","/_next/static/chunks/2079049d5abbbd3d.js","/_next/static/chunks/909e86f090b49392.js"],""]
+5:I[624379,["/_next/static/chunks/6633d7a0fde019af.js","/_next/static/chunks/8a07e6fd7e614a7b.js","/_next/static/chunks/21f080b07a2c63d8.js","/_next/static/chunks/0e235429b8fbdec6.js","/_next/static/chunks/2079049d5abbbd3d.js","/_next/static/chunks/909e86f090b49392.js"],"SmartLink"]
+6:I[145250,["/_next/static/chunks/6633d7a0fde019af.js","/_next/static/chunks/8a07e6fd7e614a7b.js","/_next/static/chunks/21f080b07a2c63d8.js","/_next/static/chunks/0e235429b8fbdec6.js","/_next/static/chunks/2079049d5abbbd3d.js","/_next/static/chunks/909e86f090b49392.js"],"Avatar"]
+7:I[398382,["/_next/static/chunks/6633d7a0fde019af.js","/_next/static/chunks/8a07e6fd7e614a7b.js","/_next/static/chunks/21f080b07a2c63d8.js","/_next/static/chunks/0e235429b8fbdec6.js","/_next/static/chunks/2079049d5abbbd3d.js","/_next/static/chunks/909e86f090b49392.js"],"Media"]
+8:I[811052,["/_next/static/chunks/6633d7a0fde019af.js","/_next/static/chunks/8a07e6fd7e614a7b.js","/_next/static/chunks/21f080b07a2c63d8.js","/_next/static/chunks/0e235429b8fbdec6.js","/_next/static/chunks/2079049d5abbbd3d.js","/_next/static/chunks/909e86f090b49392.js"],"HeadingLink"]
+3d:I[362844,["/_next/static/chunks/6633d7a0fde019af.js","/_next/static/chunks/8a07e6fd7e614a7b.js","/_next/static/chunks/21f080b07a2c63d8.js","/_next/static/chunks/0e235429b8fbdec6.js","/_next/static/chunks/2079049d5abbbd3d.js","/_next/static/chunks/909e86f090b49392.js"],"InlineCode"]
+3e:I[436122,["/_next/static/chunks/6633d7a0fde019af.js","/_next/static/chunks/8a07e6fd7e614a7b.js","/_next/static/chunks/21f080b07a2c63d8.js","/_next/static/chunks/0e235429b8fbdec6.js","/_next/static/chunks/2079049d5abbbd3d.js","/_next/static/chunks/909e86f090b49392.js"],"List"]
+3f:I[626935,["/_next/static/chunks/6633d7a0fde019af.js","/_next/static/chunks/8a07e6fd7e614a7b.js","/_next/static/chunks/21f080b07a2c63d8.js","/_next/static/chunks/0e235429b8fbdec6.js","/_next/static/chunks/2079049d5abbbd3d.js","/_next/static/chunks/909e86f090b49392.js"],"ListItem"]
+40:I[597784,["/_next/static/chunks/6633d7a0fde019af.js","/_next/static/chunks/8a07e6fd7e614a7b.js","/_next/static/chunks/21f080b07a2c63d8.js","/_next/static/chunks/0e235429b8fbdec6.js","/_next/static/chunks/2079049d5abbbd3d.js","/_next/static/chunks/909e86f090b49392.js"],"CodeBlock"]
+41:I[311451,["/_next/static/chunks/6633d7a0fde019af.js","/_next/static/chunks/8a07e6fd7e614a7b.js","/_next/static/chunks/21f080b07a2c63d8.js","/_next/static/chunks/0e235429b8fbdec6.js","/_next/static/chunks/2079049d5abbbd3d.js","/_next/static/chunks/909e86f090b49392.js"],"Line"]
+42:I[448588,["/_next/static/chunks/6633d7a0fde019af.js","/_next/static/chunks/8a07e6fd7e614a7b.js","/_next/static/chunks/21f080b07a2c63d8.js","/_next/static/chunks/0e235429b8fbdec6.js","/_next/static/chunks/2079049d5abbbd3d.js","/_next/static/chunks/909e86f090b49392.js"],"ShareSection"]
+43:I[992713,["/_next/static/chunks/6633d7a0fde019af.js","/_next/static/chunks/8a07e6fd7e614a7b.js","/_next/static/chunks/21f080b07a2c63d8.js","/_next/static/chunks/0e235429b8fbdec6.js","/_next/static/chunks/2079049d5abbbd3d.js","/_next/static/chunks/909e86f090b49392.js"],"Comments"]
+44:I[89532,["/_next/static/chunks/6633d7a0fde019af.js","/_next/static/chunks/8a07e6fd7e614a7b.js","/_next/static/chunks/21f080b07a2c63d8.js","/_next/static/chunks/0e235429b8fbdec6.js","/_next/static/chunks/2079049d5abbbd3d.js","/_next/static/chunks/909e86f090b49392.js"],"Grid"]
+45:I[814360,["/_next/static/chunks/6633d7a0fde019af.js","/_next/static/chunks/8a07e6fd7e614a7b.js","/_next/static/chunks/21f080b07a2c63d8.js","/_next/static/chunks/0e235429b8fbdec6.js","/_next/static/chunks/2079049d5abbbd3d.js","/_next/static/chunks/909e86f090b49392.js"],"default"]
+48:I[988654,["/_next/static/chunks/6633d7a0fde019af.js","/_next/static/chunks/8a07e6fd7e614a7b.js","/_next/static/chunks/21f080b07a2c63d8.js","/_next/static/chunks/0e235429b8fbdec6.js","/_next/static/chunks/2079049d5abbbd3d.js","/_next/static/chunks/909e86f090b49392.js"],"ScrollToHash"]
+49:I[605649,["/_next/static/chunks/6633d7a0fde019af.js","/_next/static/chunks/8a07e6fd7e614a7b.js","/_next/static/chunks/21f080b07a2c63d8.js","/_next/static/chunks/0e235429b8fbdec6.js","/_next/static/chunks/2079049d5abbbd3d.js","/_next/static/chunks/909e86f090b49392.js"],"HeadingNav"]
+4a:I[897367,["/_next/static/chunks/d96012bcfc98706a.js","/_next/static/chunks/73e3194f06db260e.js"],"OutletBoundary"]
+4b:"$Sreact.suspense"
+0:{"buildId":"U5Fk4vgi9NB7WdTw3XXws","rsc":["$","$1","c",{"children":[["$","$L2",null,{"fillWidth":true,"children":[["$","$L2",null,{"maxWidth":12,"m":{"hide":true}}],["$","$L2",null,{"fillWidth":true,"horizontal":"center","children":["$","$L3",null,{"as":"section","maxWidth":"m","horizontal":"center","gap":"l","paddingTop":"24","children":[["$","$L4",null,{"id":"schema-blogPosting-/blog/claude-code-config-v3","type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"BlogPosting\",\"url\":\"https://CloudJourneyBlog.rohi-lab.org/blog/claude-code-config-v3\",\"sameAs\":[],\"headline\":\"Claude Code Config v3: LTM as Infrastructure\",\"description\":\"The config got a significant overhaul: SQLite-backed long-term memory, a dedicated MCP server exposing LTM primitives, semantic recall with embedding fallback, graph-based reasoning, and an EvaluateSession hook that extracts decisions automatically.\",\"image\":\"https://CloudJourneyBlog.rohi-lab.org/images/blog/claude-code-config-v3.png\",\"datePublished\":\"2026-03-20\",\"dateModified\":\"2026-03-20\",\"author\":{\"@type\":\"Person\",\"name\":\"Rohi Rikman\",\"url\":\"https://CloudJourneyBlog.rohi-lab.org/about\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"https://CloudJourneyBlog.rohi-lab.org/images/avatar.png\"}}}"}}],["$","$L3",null,{"maxWidth":"s","gap":"16","horizontal":"center","align":"center","children":[["$","$L5",null,{"href":"/blog","children":["$","span",null,{"className":"font-label font-strong font-m","style":{},"children":"Blog"}]}],["$","span",null,{"className":"font-body font-default font-xs neutral-on-background-weak mb-12","style":{},"children":"March 20, 2026"}],["$","h1",null,{"className":"font-display font-strong font-m neutral-on-background-strong","style":{"textWrap":"balance"},"children":"Claude Code Config v3: LTM as Infrastructure"}],""]}],["$","$L2",null,{"marginBottom":"32","horizontal":"center","children":["$","$L2",null,{"gap":"16","vertical":"center","children":[["$","$L6",null,{"size":"s","src":"/images/avatar.png"}],["$","span",null,{"className":"font-label font-default font-m brand-on-background-weak","style":{},"children":"Rohi Rikman"}]]}]}],["$","$L7",null,{"src":"/images/blog/claude-code-config-v3.png","alt":"Claude Code Config v3: LTM as Infrastructure","aspectRatio":"16/9","priority":true,"sizes":"(min-width: 768px) 100vw, 768px","border":"neutral-alpha-weak","radius":"l","marginTop":"12","marginBottom":"8"}],["$","$L3",null,{"as":"article","maxWidth":"s","children":[["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":"The previous version of my Claude Code config introduced structured context files — goals, decisions, progress, gotchas — persisted as markdown and injected at session start. That worked. But markdown has limits: no querying, no deduplication, no concept of importance or decay, no semantic search, and no way to surface related memories across projects."}],"\n",["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":"This version replaces the markdown context files with a SQLite-backed long-term memory system, a dedicated MCP server that exposes LTM primitives to Claude directly, semantic recall with embedding fallback, a graph reasoning layer, and an EvaluateSession hook that extracts decisions and patterns automatically at session end."}],"\n",["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":"Here's what changed and why."}],"\n",["$","$L8",null,{"marginTop":"24","marginBottom":"12","as":"h2","id":"from-markdown-files-to-sqlite","children":"From markdown files to SQLite"}],"\n",["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":["The old system: four ","$L9"," files per project (","$La",", ","$Lb",", ","$Lc",", ","$Ld","). Hooks read and wrote them. They worked until they didn't — duplicates accumulated, stale entries couldn't be cleaned up automatically, and there was no way to query across them."]}],"\n","$Le","\n","$Lf","\n","$L10","\n","$L11","\n","$L12","\n","$L13","\n","$L14","\n","$L15","\n","$L16","\n","$L17","\n","$L18","\n","$L19","\n","$L1a","\n","$L1b","\n","$L1c","\n","$L1d","\n","$L1e","\n","$L1f","\n","$L20","\n","$L21","\n","$L22","\n","$L23","\n","$L24","\n","$L25","\n","$L26","\n","$L27","\n","$L28","\n","$L29","\n","$L2a","\n","$L2b","\n","$L2c","\n","$L2d","\n","$L2e","\n","$L2f","\n","$L30","\n","$L31","\n","$L32","\n","$L33","\n","$L34","\n","$L35"]}],"$L36","$L37","$L38","$L39"]}]}],"$L3a"]}],["$L3b"],"$L3c"]}],"loading":null,"isPartial":false}
+9:["$","$L3d",null,{"children":".md"}]
+a:["$","$L3d",null,{"children":"context-goals.md"}]
+b:["$","$L3d",null,{"children":"context-decisions.md"}]
+c:["$","$L3d",null,{"children":"context-progress.md"}]
+d:["$","$L3d",null,{"children":"context-gotchas.md"}]
+e:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":["The new system: a single SQLite database at ",["$","$L3d",null,{"children":"~/.claude/memory/ltm.db"}],". Two main tables:"]}]
+f:["$","$L3e",null,{"as":"ul","children":["\n",["$","$L3f",null,{"marginTop":"4","marginBottom":"8","style":{"lineHeight":"175%"},"children":[["$","$L3d",null,{"children":"memories"}]," — long-term insights, patterns, and decisions. Each row has content, category (",["$","$L3d",null,{"children":"preference | architecture | gotcha | pattern | workflow | constraint"}],"), importance score (1–5), project scope (nullable for globals), tags, and a decay counter."]}],"\n",["$","$L3f",null,{"marginTop":"4","marginBottom":"8","style":{"lineHeight":"175%"},"children":[["$","$L3d",null,{"children":"context_items"}]," — short-term session context. Goals, decisions, progress, and gotchas per project. These expire if a project is inactive for 14 days."]}],"\n"]}]
+10:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":["The schema separation is deliberate. ",["$","$L3d",null,{"children":"context_items"}]," are the working memory for an active project — things you need right now. ",["$","$L3d",null,{"children":"memories"}]," are the durable knowledge base — things you want to remember across all future sessions."]}]
+11:["$","$L8",null,{"marginTop":"24","marginBottom":"12","as":"h2","id":"the-ltm-mcp-server","children":"The LTM MCP server"}]
+12:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":"The previous config had Claude calling shell scripts to read and write memory. That worked but was brittle and required careful prompt engineering to get Claude to use it consistently."}]
+13:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":["The new approach: a dedicated MCP server (",["$","$L3d",null,{"children":"ltm"}]," server in ",["$","$L3d",null,{"children":"settings.json"}],") that exposes LTM as first-class MCP tools. Claude has native access to:"]}]
+14:["$","$L3e",null,{"as":"ul","children":["\n",["$","$L3f",null,{"marginTop":"4","marginBottom":"8","style":{"lineHeight":"175%"},"children":[["$","$L3d",null,{"children":"ltm_recall"}]," — FTS5 full-text search across memories with semantic fallback"]}],"\n",["$","$L3f",null,{"marginTop":"4","marginBottom":"8","style":{"lineHeight":"175%"},"children":[["$","$L3d",null,{"children":"ltm_learn"}]," — store a new memory or reinforce an existing one"]}],"\n",["$","$L3f",null,{"marginTop":"4","marginBottom":"8","style":{"lineHeight":"175%"},"children":[["$","$L3d",null,{"children":"ltm_relate"}]," — create typed relationships between memories"]}],"\n",["$","$L3f",null,{"marginTop":"4","marginBottom":"8","style":{"lineHeight":"175%"},"children":[["$","$L3d",null,{"children":"ltm_forget"}]," — delete a memory by ID"]}],"\n",["$","$L3f",null,{"marginTop":"4","marginBottom":"8","style":{"lineHeight":"175%"},"children":[["$","$L3d",null,{"children":"ltm_context"}]," — get merged context (globals + project-scoped memories)"]}],"\n",["$","$L3f",null,{"marginTop":"4","marginBottom":"8","style":{"lineHeight":"175%"},"children":[["$","$L3d",null,{"children":"ltm_graph"}]," — traverse the memory graph from seed nodes"]}],"\n",["$","$L3f",null,{"marginTop":"4","marginBottom":"8","style":{"lineHeight":"175%"},"children":[["$","$L3d",null,{"children":"ltm_context_items"}]," — get context items (goals, decisions, progress, gotchas) for a project"]}],"\n"]}]
+15:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":["With the MCP server active, Claude uses these tools directly without me having to orchestrate shell calls. The pattern in ",["$","$L3d",null,{"children":"CLAUDE.md"}]," is now explicit: call ",["$","$L3d",null,{"children":"mcp__ltm__ltm_recall"}]," before any non-trivial task, call ",["$","$L3d",null,{"children":"mcp__ltm__ltm_learn"}]," after discovering a non-obvious pattern."]}]
+16:["$","$L8",null,{"marginTop":"24","marginBottom":"12","as":"h2","id":"semantic-recall-with-embedding-fallback","children":"Semantic recall with embedding fallback"}]
+17:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":[["$","$L3d",null,{"children":"ltm_recall"}]," does FTS5 full-text search first. If the FTS5 results are below a threshold, it triggers a semantic fallback: it calls an embedding API, generates a vector for the query, and does cosine similarity search against stored embeddings."]}]
+18:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":["The implementation in ",["$","$L3d",null,{"children":"memory/db.ts"}],":"]}]
+19:["$","$L40",null,{"marginTop":"8","marginBottom":"16","codes":[{"code":"export async function recall(query: string, limit = 10): Promise<Memory[]> {\n  const ftsResults = searchFts(query, limit);\n  if (ftsResults.length >= limit * 0.6) return ftsResults;\n\n  // Semantic fallback\n  if (config.ltm.semanticFallback) {\n    const similar = await getSimilarMemories(query, limit);\n    return deduplicateMerge(ftsResults, similar);\n  }\n  return ftsResults;\n}\n","language":"typescript","label":"Typescript"}],"copyButton":true}]
+1a:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":"The graceful degradation is important: if the embedding API fails, the FTS5 results are still returned. Semantic search is an enhancement, not a dependency."}]
+1b:["$","$L8",null,{"marginTop":"24","marginBottom":"12","as":"h2","id":"graph-based-reasoning","children":"Graph-based reasoning"}]
+1c:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":["Memories can have typed relationships: ",["$","$L3d",null,{"children":"supports"}],", ",["$","$L3d",null,{"children":"contradicts"}],", ",["$","$L3d",null,{"children":"refines"}],", ",["$","$L3d",null,{"children":"depends_on"}],", ",["$","$L3d",null,{"children":"related_to"}],", ",["$","$L3d",null,{"children":"supersedes"}],". These are stored in a ",["$","$L3d",null,{"children":"memory_relations"}]," table."]}]
+1d:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":["The ",["$","$L3d",null,{"children":"ltm_graph"}]," tool does BFS traversal from seed nodes up to a configurable depth. The ",["$","$L3d",null,{"children":"getContextMergeWithGraph"}]," function in ",["$","$L3d",null,{"children":"db.ts"}]," uses this to build a richer context injection at session start — rather than just listing top memories, it traverses the graph from the most important ones and includes related memories that would otherwise rank below the injection cutoff."]}]
+1e:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":"In practice this surfaces things like: \"This pattern (memory 88) supports this architectural decision (memory 44) which was made in the context of this constraint (memory 31).\" The chain gives Claude more context than any individual memory provides alone."}]
+1f:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":["Graph reasoning is gated behind ",["$","$L3d",null,{"children":"config.ltm.graphReasoning = true"}]," — it's off by default because it increases session start time and token usage."]}]
+20:["$","$L8",null,{"marginTop":"24","marginBottom":"12","as":"h2","id":"the-evaluatesession-hook","children":"The EvaluateSession hook"}]
+21:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":["The most significant behavioral change: a ",["$","$L3d",null,{"children":"SessionEnd"}]," / ",["$","$L3d",null,{"children":"EvaluateSession"}]," hook that runs an LLM call at session end to extract decisions, patterns, and gotchas from the session transcript and write them to LTM automatically."]}]
+22:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":["Previously, learning required a manual ",["$","$L3d",null,{"children":"/learn"}]," call. Most things worth remembering never got learned because they were discovered mid-task and I didn't stop to capture them."]}]
+23:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":"The EvaluateSession hook:"}]
+24:["$","$L3e",null,{"as":"ol","children":["\n",["$","$L3f",null,{"marginTop":"4","marginBottom":"8","style":{"lineHeight":"175%"},"children":"Gets a compressed summary of the session (the existing PreCompact summary if available, or a fresh one)"}],"\n",["$","$L3f",null,{"marginTop":"4","marginBottom":"8","style":{"lineHeight":"175%"},"children":"Sends it to Claude with a structured extraction prompt asking for: decisions made, patterns discovered, gotchas encountered, progress achieved"}],"\n",["$","$L3f",null,{"marginTop":"4","marginBottom":"8","style":{"lineHeight":"175%"},"children":["Writes each extracted item to ",["$","$L3d",null,{"children":"ltm_learn"}]," with appropriate category and importance"]}],"\n",["$","$L3f",null,{"marginTop":"4","marginBottom":"8","style":{"lineHeight":"175%"},"children":["Also updates ",["$","$L3d",null,{"children":"context_items"}]," for the project with any progress or decisions"]}],"\n"]}]
+25:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":["The hook is gated behind ",["$","$L3d",null,{"children":"config.ltm.evaluateSessionLlm = true"}],". When enabled, every session that produces non-trivial work automatically contributes to the knowledge base."]}]
+26:["$","$L8",null,{"marginTop":"24","marginBottom":"12","as":"h2","id":"memory-decay-and-the-janitor","children":"Memory decay and the Janitor"}]
+27:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":"Memories have an importance score (1–5). Memories at importance 5 never decay — these are the global rules and constraints that must always be in context. Lower-importance memories decay over time if not accessed or reinforced."}]
+28:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":"A Janitor agent runs periodically to:"}]
+29:["$","$L3e",null,{"as":"ul","children":["\n",["$","$L3f",null,{"marginTop":"4","marginBottom":"8","style":{"lineHeight":"175%"},"children":"Decay memories that haven't been accessed recently"}],"\n",["$","$L3f",null,{"marginTop":"4","marginBottom":"8","style":{"lineHeight":"175%"},"children":"Identify near-duplicate memories (via embedding similarity) and merge them"}],"\n",["$","$L3f",null,{"marginTop":"4","marginBottom":"8","style":{"lineHeight":"175%"},"children":"Flag memories that haven't been accessed in 90+ days for review"}],"\n",["$","$L3f",null,{"marginTop":"4","marginBottom":"8","style":{"lineHeight":"175%"},"children":"Prune memories that have decayed below a minimum threshold"}],"\n"]}]
+2a:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":["The Janitor runs as a standalone script (",["$","$L3d",null,{"children":"memory/janitor.ts"}],") triggered by a cron-like scheduler in the background. It's not a hook — it runs independently of sessions."]}]
+2b:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":"The D3 graph visualization app (from the previous post) makes this visible: strong memories glow, decaying ones dim, and the Janitor's merge/prune operations leave a visible trail."}]
+2c:["$","$L8",null,{"marginTop":"24","marginBottom":"12","as":"h2","id":"what-the-config-looks-like-now","children":"What the config looks like now"}]
+2d:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":["The ",["$","$L3d",null,{"children":"CLAUDE.md"}]," instruction for LTM is explicit:"]}]
+2e:["$","blockquote",null,{"children":["\n",["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":["Before any non-trivial task: call ",["$","$L3d",null,{"children":"mcp__ltm__ltm_recall"}]," with the topic as query.\nAfter discovering a non-obvious pattern or gotcha: call ",["$","$L3d",null,{"children":"mcp__ltm__ltm_learn"}],".\nWhen making an architectural decision: call ",["$","$L3d",null,{"children":"mcp__ltm__ltm_learn"}]," with ",["$","$L3d",null,{"children":"category=architecture"}],"."]}],"\n"]}]
+2f:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":["The hooks (",["$","$L3d",null,{"children":"SessionStart"}],", ",["$","$L3d",null,{"children":"EvaluateSession"}],", ",["$","$L3d",null,{"children":"PreCompact"}],") do the background work. The MCP tools give Claude direct access. The decay and Janitor processes keep the database clean without manual curation."]}]
+30:["$","$L8",null,{"marginTop":"24","marginBottom":"12","as":"h2","id":"what-s-still-rough","children":"What's still rough"}]
+31:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":"The semantic fallback adds latency to recall — a few hundred milliseconds on a fast connection, more if the embedding API is cold. FTS5 is fast enough that most recalls don't trigger it, but it's noticeable when it does."}]
+32:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":"The EvaluateSession extraction isn't perfect. The LLM sometimes over-extracts (trivial things get stored as memories) and occasionally misses important architectural decisions. The category classification is roughly right but imprecise. These are prompt engineering problems that improve over time as the extraction prompt gets tuned."}]
+33:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":"The Janitor's duplicate detection via embedding similarity occasionally merges things that shouldn't be merged. Conservative threshold is better — set the similarity cutoff high enough that only near-identical memories get merged."}]
+34:["$","$L2",null,{"fillWidth":true,"horizontal":"center","children":["$","$L41",null,{"maxWidth":"40"}]}]
+35:["$","span",null,{"className":"font-body font-default font-m neutral-on-background-medium mt-8 mb-12","style":{"lineHeight":"175%"},"children":"The overall shift is from \"context files I remember to maintain\" to \"a knowledge base that maintains itself.\" Sessions contribute to it automatically, the Janitor keeps it clean, and recall surfaces relevant history before I start any significant work. The manual hygiene work that v1 and v2 required is mostly gone."}]
+36:["$","$L42",null,{"title":"Claude Code Config v3: LTM as Infrastructure","url":"https://CloudJourneyBlog.rohi-lab.org/blog/claude-code-config-v3"}]
+37:["$","$L43",null,{}]
+46:T17c7,
+Every IT team has some version of the same problem: the MDM says one thing, Active Directory says another, and the spreadsheet someone maintains manually is a third opinion. Nobody knows the real device count. Nobody knows which machines are stale. Asset reviews are a manual reconciliation exercise that takes days and is wrong before it's finished.
+
+For a FinTech client, I built a pipeline that pulls from every authoritative source — AD, Intune, Azure, MDE — and produces a single unified inventory that's always current. Here's the architecture.
+
+## The data problem
+
+The client had devices across three categories:
+- **Windows workstations**: domain-joined, Intune-enrolled, some hybrid Entra joined
+- **Azure VMs**: not domain-joined, sometimes Intune-enrolled, MDE-onboarded
+- **Legacy machines**: domain-joined only, no Intune, no MDE
+
+No single system had the full picture. Intune knew about enrolled devices but didn't know about the legacy machines. AD knew about everything domain-joined but didn't know about Azure VMs or compliance state. MDE knew about onboarded endpoints but didn't map cleanly to AD objects.
+
+The goal: a unified record per device with attributes from all sources — last seen, OS version, compliance state, MDE sensor status, assigned user, department, location.
+
+## The architecture
+
+Four components:
+
+**1. Jenkins** — scheduler and orchestrator. A pipeline job runs nightly and on-demand. It calls the PowerShell scripts in sequence, handles retries, and sends a completion notification.
+
+**2. PowerShell scripts** — data collection and normalization. One script per source, plus a merge script. Each script outputs structured JSON to a staging directory on the Jenkins agent.
+
+**3. SharePoint List** — the inventory store and intermediate layer. PowerShell writes the merged records to a SharePoint list via the SharePoint REST API or PnP PowerShell. The list is the single source of truth that other systems can query.
+
+**4. Power BI** — visualization layer. A Power BI report connects directly to the SharePoint list and refreshes on a schedule. This is the dashboard the IT team and management use.
+
+## The data collection scripts
+
+**AD collector**: Uses `Get-ADComputer` with `-Properties *` to pull all computer objects. Captures name, distinguished name, last logon timestamp, OS version, description, and organizational unit. Filters out disabled objects and objects not seen in 90 days.
+
+```powershell
+Get-ADComputer -Filter * -Properties LastLogonDate, OperatingSystem, Description |
+  Where-Object { $_.LastLogonDate -gt (Get-Date).AddDays(-90) } |
+  Select-Object Name, DistinguishedName, LastLogonDate, OperatingSystem, Description |
+  ConvertTo-Json | Out-File "$stagingPath\ad-devices.json"
+```
+
+**Intune collector**: Uses the Microsoft Graph PowerShell SDK. Calls `Get-MgDeviceManagementManagedDevice` to get all enrolled devices with compliance state, last sync time, enrolled user, and device category.
+
+**MDE collector**: Uses the Defender for Endpoint API (via a service principal with `Machine.Read.All`). Gets onboarding status, sensor health, last seen timestamp, and risk level for every endpoint.
+
+**Azure VM collector**: Uses `Get-AzVM` across all subscriptions the service principal has access to. Gets VM name, resource group, location, OS, running state, and any tags with owner/department information.
+
+## The merge script
+
+The merge script is where the real work happens. It loads all four JSON files and joins them on device name. The join logic:
+
+1. AD is the primary key source — every AD computer object gets a record
+2. Intune records are matched to AD by device name (normalized to uppercase)
+3. MDE records are matched by hostname
+4. Azure VMs get their own records (no AD object)
+
+For each merged record, the script calculates derived fields:
+- `managementState`: `fully-managed` (Intune + MDE), `partially-managed` (Intune only or MDE only), `unmanaged` (AD only)
+- `staleness`: days since last seen across all sources
+- `complianceGap`: boolean — in Intune but not compliant
+
+The merged output is an array of device objects written to `merged-inventory.json`.
+
+## Writing to SharePoint
+
+PnP PowerShell handles the SharePoint write. The script compares the merged inventory against the current SharePoint list state (pulled at the start of the run) and does a delta update: new devices are added, existing devices are updated, devices not seen in 90 days are flagged as stale.
+
+Doing a delta update rather than a full replace matters for performance (the list had 2,000+ items) and for preserving any manual annotations added by the IT team directly in the list.
+
+## Power BI on top
+
+The Power BI report connects to the SharePoint list as a data source and refreshes daily. Key views:
+
+- **Management coverage**: pie/bar showing how many devices are fully managed vs. partially managed vs. unmanaged
+- **Stale devices**: list of devices not seen in 30+ days, sorted by staleness
+- **Compliance gaps**: devices enrolled in Intune but not passing compliance policy
+- **MDE coverage**: which devices have an active sensor vs. not
+
+The report is embedded in a Teams tab so the IT team has it in their daily context without going to Power BI directly.
+
+## What it replaced
+
+Before this pipeline: a manually-maintained Excel spreadsheet updated every quarter. It was always wrong. MDE coverage reports were run manually when someone asked. Compliance gaps were invisible until a CA policy blocked a user.
+
+After: a nightly automated run, a SharePoint list the IT team trusts, and a Power BI dashboard the security team uses in their weekly review.
+
+The pipeline has run without manual intervention for over a year. When a new device shows up as unmanaged, the report flags it. When a compliance gap appears, the security team sees it the next morning.
+
+---
+
+The architecture is not complicated. Jenkins, PowerShell, SharePoint, Power BI are tools every Microsoft-focused IT team already has. The value is in putting them together deliberately and removing the manual reconciliation step entirely.
+38:["$","$L3",null,{"fillWidth":true,"gap":"40","horizontal":"center","marginTop":"40","children":[["$","$L41",null,{"maxWidth":"40"}],["$","h2",null,{"className":"font-heading font-strong font-xl mb-24","style":{},"id":"recent-posts","children":"Recent posts"}],["$","$L44",null,{"columns":"2","s":{"columns":1},"fillWidth":true,"marginBottom":"40","gap":"16","children":[["$","$L45","device-inventory-pipeline",{"post":{"metadata":{"title":"Building a Device Inventory Pipeline","subtitle":"","publishedAt":"2026-03-20","summary":"When your MDM doesn't tell the full story, build the pipeline yourself. Here's the Jenkins → PowerShell → SharePoint → Power BI architecture I built to unify device data across AD and Intune for a FinTech client.","image":"/images/blog/device-inventory-pipeline.png","images":[],"tag":"Automation","team":[],"link":""},"slug":"device-inventory-pipeline","content":"$46"},"thumbnail":true,"direction":"column"}],"$L47"]}]]}]
+39:["$","$L48",null,{}]
+3a:["$","$L3",null,{"maxWidth":12,"paddingLeft":"40","fitHeight":true,"position":"sticky","top":"80","gap":"16","m":{"hide":true},"children":["$","$L49",null,{"fitHeight":true}]}]
+3b:["$","script","script-0",{"src":"/_next/static/chunks/909e86f090b49392.js","async":true}]
+3c:["$","$L4a",null,{"children":["$","$4b",null,{"name":"Next.MetadataOutlet","children":"$@4c"}]}]
+4d:T1a2f,
+Most identity platforms are configured once and then drift. The IdP has the org chart from six months ago. The HR system has been updated 50 times since then — new hires, promotions, reorgs, contractor conversions — and none of it flowed downstream.
+
+The result: Active Directory has the wrong department for half the engineering team, Entra ID shows reporting lines from two restructures ago, and the extension attributes that should drive Conditional Access logic are either empty or stale. The HR system has clean data. The IdP does not.
+
+For an OT Security client, I built a sync between HiBob (their HRIS) and Entra ID / on-premises AD that runs on a schedule and keeps 18 attributes current. Here's how it works.
+
+## What HiBob knows that Entra doesn't
+
+HiBob is the HR system of record. It owns:
+- Department and sub-department
+- Job title and job level
+- Manager (reporting line)
+- Employment type (full-time, part-time, contractor)
+- Start date and tenure
+- Site/office location
+- Cost center
+- Custom fields: clearance level, team function, contractor company
+
+Entra ID has fields that map to most of these — `department`, `jobTitle`, `manager`, `employeeType`, `extensionAttribute1–15` — but they're only as current as the last time someone manually updated them. At most clients, that's "not recently."
+
+## The architecture
+
+Three components:
+
+**HiBob API** — the source. HiBob has a REST API with token-based auth. The key endpoints are `/v1/people` (list all employees) and `/v1/people/{id}` (get individual profile). The API returns rich profile data including all custom fields.
+
+**Azure Automation Runbook** — the sync engine. A PowerShell runbook runs on a schedule (nightly + on-demand for urgent updates). It calls the HiBob API, normalizes the data, and writes changes to Entra ID via Microsoft Graph and to on-premises AD via the AD module.
+
+**Entra ID + on-premises AD** — the targets. The runbook writes to both. For most attributes, Entra ID is updated via Graph API and the change propagates to AD via Entra Connect sync. For attributes that only exist on-prem (like certain extension attributes not synced to Entra), the runbook writes directly to AD.
+
+## The sync logic
+
+The runbook follows a compare-then-write pattern to avoid unnecessary writes:
+
+1. Pull all active employee records from HiBob API
+2. For each employee, look up the corresponding Entra ID user (matched by email or employee ID stored in `employeeId` attribute)
+3. Compare the HiBob values against current Entra ID attribute values
+4. If any value differs, write the update via Graph API
+5. Log every change with before/after values to a Log Analytics workspace
+
+This means the runbook only writes when there's an actual difference — not on every run, not for every user. This keeps the audit log clean (changes are meaningful) and avoids triggering unnecessary sync cycles in Entra Connect.
+
+## What gets synced
+
+The 18 attributes synced in this implementation:
+
+| HiBob Field | Entra ID Attribute |
+|---|---|
+| Department | `department` |
+| Job Title | `jobTitle` |
+| Manager | `manager` (reference) |
+| Employment Type | `employeeType` |
+| Office Location | `officeLocation` |
+| Cost Center | `extension_attribute_1` |
+| Contractor Flag | `extension_attribute_2` |
+| Clearance Level | `extension_attribute_3` |
+| Team Function | `extension_attribute_4` |
+| Contractor Company | `extension_attribute_5` |
+| Start Date | `employeeHireDate` |
+| Display Name | `displayName` |
+| Preferred Name | (custom) |
+| Site | `usageLocation` |
+| Employee ID | `employeeId` |
+| Sub-Department | `extension_attribute_6` |
+| Job Level | `extension_attribute_7` |
+| Profile Picture | (via separate process) |
+
+The manager sync is the most complex. HiBob stores the manager as an employee ID reference. The runbook resolves this to an Entra ID object ID and sets the `manager` attribute as a directory reference — not just a display name string.
+
+## Profile picture sync
+
+Profile pictures are handled separately. HiBob stores profile photos accessible via the API. The runbook downloads the photo, resizes it to the Microsoft 365 preferred size (648×648), and uploads it via the Graph API (`/users/{id}/photo/$value`). This keeps profile pictures in M365, Teams, and Outlook current — which matters more than it sounds for a distributed team.
+
+## Contractor detection and Conditional Access
+
+One of the higher-value outcomes of this sync is accurate contractor flagging. HiBob has an employment type field that distinguishes full-time employees from contractors. The runbook sets `extension_attribute_2` to `contractor` or `employee` accordingly.
+
+This attribute drives Conditional Access policies. Contractors get a stricter policy set: phishing-resistant MFA required for all apps, no persistent browser sessions, stricter sign-in frequency. Full-time employees get the standard policy set with SSO and longer session lifetimes.
+
+Without the sync, this distinction was manually maintained and frequently wrong — contractors who converted to FTE still had contractor-tier policies, and new contractors started with FTE-tier access until someone noticed.
+
+## What breaks
+
+**Employee ID mismatches.** If HiBob and Entra ID have inconsistent employee IDs (which happens during migrations, acquisitions, or manual ID assignment), the sync can't match records. We built a reconciliation report that flags unmatched HiBob employees weekly so the IT team can fix the mapping manually.
+
+**Manager chains with circular references.** A misconfigured org chart in HiBob can create circular manager references that break the Graph API call. The runbook catches these and logs them rather than failing.
+
+**API rate limits.** HiBob's API has rate limits. For orgs with 500+ employees, a naive implementation that calls `/v1/people/{id}` for every employee will hit them. Use `/v1/people` with field expansion to pull all employees in one call.
+
+## 1.5 years of runtime
+
+This runbook has been running for over 18 months at this client. It has processed thousands of attribute updates — reorgs, promotions, contractor conversions, new hires, terminations (though terminations have their own dedicated workflow). The Entra ID directory now reflects HiBob accurately. Conditional Access policies that depend on employment type work correctly. The IT team no longer gets support tickets about wrong department values.
+
+---
+
+The pattern generalises to any HRIS. Workday, BambooHR, Personio — if it has an API and you have Entra ID, you can build this sync. The core principle is the same: the HR system is the source of truth for people data. The IdP should be downstream of it, not a separate silo that drifts.
+47:["$","$L45","hibob-hr-automation",{"post":{"metadata":{"title":"When HiBob Is Your Source of Truth","subtitle":"","publishedAt":"2026-03-20","summary":"Your HR system knows the org better than your IdP does. Here's how I built a bi-directional HiBob ↔ Entra ID sync that keeps departments, titles, managers, and 15 other attributes in sync — automatically.","image":"/images/blog/hibob-hr-automation.png","images":[],"tag":"Automation","team":[],"link":""},"slug":"hibob-hr-automation","content":"$4d"},"thumbnail":true,"direction":"column"}]
+4c:null
